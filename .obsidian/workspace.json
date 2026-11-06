@@ -1,0 +1,252 @@
+{
+  "main": {
+    "id": "0b91c762a2fce185",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a5c43e40492496c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c587a72e671dcdba",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "New System Structure.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "New System Structure"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "17752af43feed6e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "87e1fd89aaeab397",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b863fc0399832112",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "b3ae0d4ec032ba54",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b6d3ffbe55fa23fc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 449.5
+  },
+  "right": {
+    "id": "e441ce8f949f0d55",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d920768fbc62cf2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4020e99b7f9f1a00",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "graph",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      },
+      {
+        "id": "02c795da42a57339",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e0d01e0173807e0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "07-Reports/Report Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "78bd3deb8f3c0cc3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "3c87ab65c88e8117",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f8de88fc31c6f11b",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "8b6d4f7563b58a9e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "New System Structure.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 594.2999877929688,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "c587a72e671dcdba",
+  "lastOpenFiles": [
+    "03-Knowledge/Techniques/The triage is the product running AI agents against Ethereum's protocol code.md",
+    "New System Structure.md",
+    "03-Knowledge/Skills/Probe ERC-4337 Validation Rule Bypass.md",
+    "07-Reports/Report Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04.md",
+    "Cyber_psycho-main/data/hunter-state.json",
+    "Cyber_psycho-main/server/campaignReport.ts",
+    "Cyber_psycho-main/server/datasetEngine.ts",
+    "Cyber_psycho-main/server/zeroDayHunter.ts",
+    "Cyber_psycho-main/server/graphIntel.ts",
+    "03-Knowledge/Claims/Claim when-you-assert-your-point-on-the-nonce-validato.md",
+    "03-Knowledge/Claims/Claim that-is-exactly-where-your-model-breaks-0xnull.md",
+    "03-Knowledge/Claims/Claim after-that-your-economic-security-is-denominated.md",
+    "03-Knowledge/Concepts/Finality.md",
+    "03-Knowledge/Concepts/Reentrancy.md",
+    "03-Knowledge/Concepts/State root.md",
+    "03-Knowledge/Concepts/Bytecode.md",
+    "03-Knowledge/Concepts/Across.md",
+    "03-Knowledge/Concepts/Entropy.md",
+    "03-Knowledge/Concepts/Oracle.md",
+    "03-Knowledge/Concepts/Nonce.md",
+    "03-Knowledge/Concepts/Audit.md",
+    "03-Knowledge/Concepts/Validator.md",
+    "03-Knowledge/Concepts/Collapse.md",
+    "03-Knowledge/Concepts/Bridge.md",
+    "03-Knowledge/Concepts/Formal verification.md",
+    "Cyber_psycho-main/dist/assets/index-DIlVs86C.js",
+    "Cyber_psycho-main/dist/assets/index-COKMKW8p.css",
+    "Cyber_psycho-main/dist/assets/index-CdfNlQmA.js",
+    "00-System/Attack Surface Coverage.md",
+    "02-Debates/Debate 2026-11-05 — ERC-4337 Validation Rule Bypass.md",
+    "03-Knowledge/Skills/Hunt ETH Rangers Program Recap.md",
+    "03-Knowledge/Skills/Probe Selfdestruct-and-Redeploy Identity Confusion.md",
+    "03-Knowledge/Skills/Probe Rogue-Key Attack on BLS Aggregation.md",
+    "03-Knowledge/Skills/Probe Permit2 Signature Replay Across Nonces.md",
+    "03-Knowledge/Skills",
+    "Cyber_psycho-main/data/skill-state.json",
+    "Pasted image 20261104194734.png"
+  ]
+}
