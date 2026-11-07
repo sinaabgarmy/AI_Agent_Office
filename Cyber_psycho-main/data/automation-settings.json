@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "surfaceScanInterval": 60,
+  "agentTrainingInterval": 120,
+  "defensiveReportInterval": 240,
+  "huntSweepInterval": 360,
+  "graphSyncInterval": 720
+}

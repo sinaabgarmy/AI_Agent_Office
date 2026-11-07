@@ -1,186 +1,215 @@
-import fs from 'fs';
-import path from 'path';
+import { SurfaceEngine } from "./surfaceEngine";
+import { IntelEngine } from "./intelEngine";
+import { SkillEngine } from "./skillEngine";
+import { CampaignReportEngine } from "./campaignReport";
+import * as fs from "fs";
+import * as path from "path";
+import * as cron from "node-cron";
 
 export interface SurfacePrediction {
   id: string;
   title: string;
   layer: string;
-  severity: 'Critical' | 'High' | 'Medium';
+  severity: "Critical" | "High" | "Medium";
   coverage: number;
   priorityScore: number;
-  trend: 'new' | 'worsening' | 'improving' | 'stable';
+  trend: "new" | "worsening" | "improving" | "stable";
 }
 
-export interface AutomationJobResult {
-  summary: string;
-  predictions?: SurfacePrediction[];
-}
-
-export interface AutomationJob {
-  id: 'surface-scan' | 'agent-training' | 'defensive-report';
-  run: (previousPredictions: SurfacePrediction[]) => Promise<AutomationJobResult>;
-}
-
-interface AutomationRun {
-  startedAt: string;
-  completedAt: string;
-  jobs: Array<{
-    id: AutomationJob['id'];
-    ok: boolean;
-    summary?: string;
-    error?: string;
-  }>;
-}
-
-interface AutomationState {
+export interface AutomationSettings {
   enabled: boolean;
-  intervalMinutes: number;
-  nextRunAt: string | null;
-  lastCycleAt: string | null;
-  predictions: SurfacePrediction[];
-  history: AutomationRun[];
+  surfaceScanInterval: number; // minutes
+  agentTrainingInterval: number; // minutes
+  defensiveReportInterval: number; // minutes
+  huntSweepInterval: number; // minutes
+  graphSyncInterval: number; // minutes
 }
 
-const DEFAULT_INTERVAL_MINUTES = 60;
-const MIN_INTERVAL_MINUTES = 60;
-const MAX_INTERVAL_MINUTES = 10080;
-const TICK_MS = 15_000;
+const DEFAULT_SETTINGS: AutomationSettings = {
+  enabled: true,
+  surfaceScanInterval: 60,
+  agentTrainingInterval: 120,
+  defensiveReportInterval: 240,
+  huntSweepInterval: 360,
+  graphSyncInterval: 720
+};
 
-function defaultState(): AutomationState {
-  return {
-    enabled: true,
-    intervalMinutes: DEFAULT_INTERVAL_MINUTES,
-    nextRunAt: null,
-    lastCycleAt: null,
-    predictions: [],
-    history: [],
-  };
-}
+const SETTINGS_FILE = "automation-settings.json";
+const PREDICTIONS_FILE = "surface-predictions.json";
+const LAST_RUN_FILE = "last-automation-run.json";
 
 export class AutomationScheduler {
-  private readonly stateFile: string;
-  private state: AutomationState;
-  private timer: NodeJS.Timeout | null = null;
+  private settings: AutomationSettings;
+  private stateFile: string;
+  private predictionsFile: string;
+  private lastRunFile: string;
   private running = false;
+  private jobs: Map<string, any> = new Map();
 
   constructor(
-    dataDir: string,
-    private readonly jobs: AutomationJob[],
+    private dataDir: string,
+    private tasks: Array<{ id: string; run: (previous: any) => Promise<any> }>
   ) {
-    this.stateFile = path.join(dataDir, 'automation-state.json');
-    this.state = this.readState();
+    this.stateFile = path.join(dataDir, SETTINGS_FILE);
+    this.predictionsFile = path.join(dataDir, PREDICTIONS_FILE);
+    this.lastRunFile = path.join(dataDir, LAST_RUN_FILE);
+    this.settings = this.loadSettings();
+  }
+
+  private loadSettings(): AutomationSettings {
+    try {
+      if (fs.existsSync(path.join(this.dataDir, SETTINGS_FILE))) {
+        return { ...DEFAULT_SETTINGS, ...JSON.parse(fs.readFileSync(path.join(this.dataDir, SETTINGS_FILE), "utf8")) };
+      }
+    } catch { }
+    return DEFAULT_SETTINGS;
+  }
+
+  saveSettings(settings: Partial<AutomationSettings>): AutomationSettings {
+    this.settings = { ...this.settings, ...settings };
+    fs.writeFileSync(path.join(this.dataDir, SETTINGS_FILE), JSON.stringify(this.settings, null, 2));
+    this.restartJobs();
+    return this.settings;
+  }
+
+  status(): { running: boolean; settings: AutomationSettings; jobs: string[]; lastRun: any } {
+    const lastRun = this.getLastRun();
+    return {
+      running: this.running,
+      settings: this.settings,
+      jobs: Array.from(this.jobs.keys()),
+      lastRun
+    };
+  }
+
+  private getLastRun(): any {
+    try {
+      if (fs.existsSync(path.join(this.dataDir, LAST_RUN_FILE))) {
+        return JSON.parse(fs.readFileSync(path.join(this.dataDir, LAST_RUN_FILE), "utf8"));
+      }
+    } catch { }
+    return null;
+  }
+
+  private saveLastRun(run: any): void {
+    fs.writeFileSync(path.join(this.dataDir, LAST_RUN_FILE), JSON.stringify(run, null, 2));
   }
 
   start(): void {
-    if (this.timer) return;
-    if (this.state.enabled && !this.state.nextRunAt) {
-      this.state.nextRunAt = this.nextRunTime();
-      this.writeState();
-    }
-    this.timer = setInterval(() => { void this.runIfDue(); }, TICK_MS);
-    this.timer.unref();
+    if (this.running) return;
+    this.running = true;
+    this.scheduleJobs();
+    console.log("[Automation] Scheduler started");
   }
 
   stop(): void {
-    if (!this.timer) return;
-    clearInterval(this.timer);
-    this.timer = null;
-  }
-
-  status(): AutomationState & { running: boolean } {
-    return { ...this.state, predictions: [...this.state.predictions], history: [...this.state.history], running: this.running };
-  }
-
-  updateSettings(settings: { enabled?: unknown; intervalMinutes?: unknown }): AutomationState {
-    if (settings.enabled !== undefined && typeof settings.enabled !== 'boolean') {
-      throw new Error('enabled must be a boolean.');
+    this.running = false;
+    for (const [id, job] of this.jobs) {
+      job.stop();
     }
-    if (settings.intervalMinutes !== undefined) {
-      const interval = Number(settings.intervalMinutes);
-      if (!Number.isInteger(interval) || interval < MIN_INTERVAL_MINUTES || interval > MAX_INTERVAL_MINUTES) {
-        throw new Error(`intervalMinutes must be an integer between ${MIN_INTERVAL_MINUTES} and ${MAX_INTERVAL_MINUTES}.`);
-      }
-      this.state.intervalMinutes = interval;
+    this.jobs.clear();
+    console.log("[Automation] Scheduler stopped");
+  }
+
+  private scheduleJobs(): void {
+    if (!this.settings.enabled) return;
+
+    // Surface scan
+    if (this.settings.surfaceScanInterval > 0) {
+      const job = cron.schedule(`*/${this.settings.surfaceScanInterval} * * * *`, async () => {
+        await this.runTask("surface-scan");
+      });
+      this.jobs.set("surface-scan", job);
     }
-    if (settings.enabled !== undefined) this.state.enabled = settings.enabled;
-    this.state.nextRunAt = this.state.enabled ? this.nextRunTime() : null;
-    this.writeState();
-    return this.state;
+
+    // Agent training
+    if (this.settings.agentTrainingInterval > 0) {
+      const job = cron.schedule(`*/${this.settings.agentTrainingInterval} * * * *`, async () => {
+        await this.runTask("agent-training");
+      });
+      this.jobs.set("agent-training", job);
+    }
+
+    // Defensive report
+    if (this.settings.defensiveReportInterval > 0) {
+      const job = cron.schedule(`*/${this.settings.defensiveReportInterval} * * * *`, async () => {
+        await this.runTask("defensive-report");
+      });
+      this.jobs.set("defensive-report", job);
+    }
+
+    // Hunt sweep
+    if (this.settings.huntSweepInterval > 0) {
+      const job = cron.schedule(`*/${this.settings.huntSweepInterval} * * * *`, async () => {
+        await this.runTask("hunt-sweep");
+      });
+      this.jobs.set("hunt-sweep", job);
+    }
+
+    // Graph sync
+    if (this.settings.graphSyncInterval > 0) {
+      const job = cron.schedule(`*/${this.settings.graphSyncInterval} * * * *`, async () => {
+        await this.runTask("graph-sync");
+      });
+      this.jobs.set("graph-sync", job);
+    }
   }
 
-  async runNow(): Promise<AutomationRun> {
-    if (this.running) throw new Error('An automation cycle is already running.');
-    return this.runCycle();
+  private restartJobs(): void {
+    for (const [, job] of this.jobs) {
+      job.stop();
+    }
+    this.jobs.clear();
+    this.scheduleJobs();
   }
 
-  private async runIfDue(): Promise<void> {
-    if (!this.state.enabled || this.running || !this.state.nextRunAt) return;
-    if (Date.now() < Date.parse(this.state.nextRunAt)) return;
+  async runTask(taskId: string): Promise<any> {
+    const task = this.tasks.find(t => t.id === taskId);
+    if (!task) return { ok: false, error: `Task ${taskId} not found` };
+
+    const previous = this.loadPreviousResults(taskId);
+    const startTime = Date.now();
+
     try {
-      await this.runCycle();
-    } catch (error) {
-      console.error('[Automation] Scheduled cycle failed:', error);
+      const result = await task.run(previous);
+      const duration = Date.now() - startTime;
+      
+      this.saveRunResult(taskId, { ...result, duration, timestamp: new Date().toISOString() });
+      return { ok: true, duration, ...result };
+    } catch (e: any) {
+      return { ok: false, error: e.message };
     }
   }
 
-  private async runCycle(): Promise<AutomationRun> {
-    this.running = true;
-    const run: AutomationRun = {
-      startedAt: new Date().toISOString(),
-      completedAt: '',
-      jobs: [],
-    };
+  async runNow(): Promise<any> {
+    const results: any[] = [];
+    for (const task of this.tasks) {
+      if (task.id !== "surface-scan") continue; // Only run surface scan by default
+      const result = await this.runTask(task.id);
+      results.push({ task: task.id, ...result });
+    }
+    return { ok: true, runs: results };
+  }
+
+  private loadPreviousResults(taskId: string): any {
     try {
-      for (const job of this.jobs) {
-        try {
-          const result = await job.run(this.state.predictions);
-          if (result.predictions) this.state.predictions = result.predictions;
-          run.jobs.push({ id: job.id, ok: true, summary: result.summary });
-        } catch (error) {
-          const message = error instanceof Error ? error.message : String(error);
-          console.error(`[Automation] ${job.id} failed:`, error);
-          run.jobs.push({ id: job.id, ok: false, error: message });
-        }
+      if (fs.existsSync(this.predictionsFile)) {
+        return JSON.parse(fs.readFileSync(this.predictionsFile, "utf8"));
       }
-      run.completedAt = new Date().toISOString();
-      this.state.lastCycleAt = run.completedAt;
-      this.state.history.unshift(run);
-      this.state.history = this.state.history.slice(0, 40);
-      this.state.nextRunAt = this.state.enabled ? this.nextRunTime() : null;
-      this.writeState();
-      return run;
-    } finally {
-      this.running = false;
-    }
+    } catch { }
+    return [];
   }
 
-  private nextRunTime(): string {
-    return new Date(Date.now() + this.state.intervalMinutes * 60_000).toISOString();
+  private saveRunResult(taskId: string, result: any): void {
+    try {
+      const file = path.join(this.dataDir, `${taskId}-results.json`);
+      const existing = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : [];
+      existing.unshift(result);
+      fs.writeFileSync(file, JSON.stringify(existing.slice(0, 50), null, 2));
+    } catch { }
   }
 
-  private readState(): AutomationState {
-    if (!fs.existsSync(this.stateFile)) return defaultState();
-    const parsed: unknown = JSON.parse(fs.readFileSync(this.stateFile, 'utf8'));
-    if (!parsed || typeof parsed !== 'object') {
-      throw new Error(`Invalid automation state at ${this.stateFile}.`);
-    }
-    const raw = parsed as Partial<AutomationState>;
-    const intervalMinutes = Number(raw.intervalMinutes ?? DEFAULT_INTERVAL_MINUTES);
-    if (!Number.isInteger(intervalMinutes) || intervalMinutes < MIN_INTERVAL_MINUTES || intervalMinutes > MAX_INTERVAL_MINUTES) {
-      throw new Error(`Invalid automation interval in ${this.stateFile}.`);
-    }
-    return {
-      enabled: raw.enabled !== false,
-      intervalMinutes,
-      nextRunAt: typeof raw.nextRunAt === 'string' ? raw.nextRunAt : null,
-      lastCycleAt: typeof raw.lastCycleAt === 'string' ? raw.lastCycleAt : null,
-      predictions: Array.isArray(raw.predictions) ? raw.predictions : [],
-      history: Array.isArray(raw.history) ? raw.history.slice(0, 40) : [],
-    };
-  }
-
-  private writeState(): void {
-    fs.mkdirSync(path.dirname(this.stateFile), { recursive: true });
-    fs.writeFileSync(this.stateFile, JSON.stringify(this.state, null, 2), 'utf8');
+  getDataDir(): string {
+    return this.dataDir;
   }
 }

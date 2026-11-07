@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronozero.ai/schemas/claim_passport.schema.json",
+  "title": "Claim Passport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "claim_id",
+    "statement",
+    "bug_class",
+    "target_scope",
+    "status",
+    "evidence",
+    "falsifier",
+    "novelty",
+    "ladder",
+    "confidence",
+    "promotion"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "pattern": "^CL-[A-Z0-9]{8,16}$",
+      "description": "Unique claim identifier"
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 24,
+      "maxLength": 600,
+      "description": "Falsifiable technical claim (24-600 chars)"
+    },
+    "bug_class": {
+      "type": "object",
+      "required": ["cwe"],
+      "properties": {
+        "cwe": {
+          "type": "string",
+          "pattern": "^CWE-\\d+$",
+          "description": "CWE identifier"
+        },
+        "cve": {
+          "type": "string",
+          "pattern": "^CVE-\\d{4}-\\d{4,}$",
+          "description": "Optional CVE reference"
+        }
+      },
+      "additionalProperties": false
+    },
+    "target_scope": {
+      "type": "object",
+      "required": ["repo", "path", "commit"],
+      "properties": {
+        "repo": { "type": "string" },
+        "path": { "type": "string" },
+        "commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": ["SPECULATIVE", "EVIDENCED", "REPRODUCED", "KILLED", "STALE"],
+      "description": "Claim lifecycle status"
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^EV-\\d{8}-\\d{4}$" },
+      "description": "Evidence record IDs supporting this claim"
+    },
+    "falsifier": {
+      "type": "object",
+      "required": ["command", "expected_outcome"],
+      "properties": {
+        "command": { "type": "string", "description": "Reproducible falsification command" },
+        "expected_outcome": { "type": "string", "description": "What outcome falsifies the claim" },
+        "tier": { "type": "integer", "minimum": 1, "maximum": 6 }
+      },
+      "additionalProperties": false
+    },
+    "novelty": {
+      "type": "object",
+      "required": ["label", "nearest_known"],
+      "properties": {
+        "label": { "type": "string", "enum": ["N0", "N1", "N2", "N3"] },
+        "nearest_known": {
+          "type": "object",
+          "required": ["claim_id", "similarity"],
+          "properties": {
+            "claim_id": { "type": "string" },
+            "similarity": { "type": "number", "minimum": 0, "maximum": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ladder": {
+      "type": "object",
+      "required": ["highest_rung_passed", "killed_at_rung"],
+      "properties": {
+        "highest_rung_passed": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "killed_at_rung": { "type": ["integer", "null"], "minimum": 1, "maximum": 4 }
+      },
+      "additionalProperties": false
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["value", "inputs"],
+      "properties": {
+        "value": { "type": "number", "minimum": 0, "maximum": 1 },
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "type": "number", "minimum": 0, "maximum": 1 }
+        }
+      },
+      "additionalProperties": false
+    },
+    "promotion": {
+      "type": "object",
+      "required": ["promotable", "blockers"],
+      "properties": {
+        "promotable": { "type": "boolean" },
+        "blockers": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "if": { "properties": { "status": { "const": "SPECULATIVE" } } },
+  "then": {
+    "properties": {
+      "promotion": { "properties": { "promotable": { "const": false } } }
+    }
+  },
+  "if": { "properties": { "status": { "const": "KILLED" } } },
+  "then": {
+    "required": ["ladder"],
+    "properties": {
+      "ladder": { "properties": { "killed_at_rung": { "type": "integer", "minimum": 1, "maximum": 4 } } },
+      "promotion": { "properties": { "promotable": { "const": false } } }
+    }
+  },
+  "if": { "not": { "properties": { "status": { "const": "SPECULATIVE" } } } },
+  "then": { "properties": { "evidence": { "minItems": 1 } } }
+}

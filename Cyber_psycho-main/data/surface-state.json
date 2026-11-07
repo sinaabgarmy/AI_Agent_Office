@@ -1,9 +1,5 @@
 {
   "acknowledged": [],
-  "promoted": [
-    "consensus-aggregate-signature-forgery",
-    "exec-account-abstraction-validation",
-    "exec-selfdestruct-redeploy"
-  ],
-  "lastScanAt": "2026-11-05T16:35:29.353Z"
+  "promoted": [],
+  "lastScanAt": null
 }

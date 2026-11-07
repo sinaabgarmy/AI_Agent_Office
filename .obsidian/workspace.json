@@ -30,13 +30,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03-Knowledge/Techniques/OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra.md",
+                "file": "New_Feature.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra"
+              "title": "New_Feature"
             }
           }
         ],
@@ -98,12 +98,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 449.5
+    "width": 200
   },
   "right": {
     "id": "e441ce8f949f0d55",
@@ -112,6 +111,7 @@
       {
         "id": "7d920768fbc62cf2",
         "type": "tabs",
+        "dimension": 56.19930475086906,
         "children": [
           {
             "id": "4020e99b7f9f1a00",
@@ -130,6 +130,7 @@
       {
         "id": "02c795da42a57339",
         "type": "tabs",
+        "dimension": 43.80069524913094,
         "children": [
           {
             "id": "1e0d01e0173807e0",
@@ -198,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03-Knowledge/Techniques/OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra.md",
+                "file": "New_Feature.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -212,7 +213,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 792.7000122070312
+    "width": 502.2999267578125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,11 +223,38 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "4199200cde267310",
   "lastOpenFiles": [
+    "Cyber_psycho-main/data/last-ingest.json",
+    "Cyber_psycho-main/data/ingest-state.json",
+    "Cyber_psycho-main/data/last-automation-run.json",
+    "Cyber_psycho-main/data/surface-predictions.json",
+    "Cyber_psycho-main/data/automation-settings.json",
+    "Cyber_psycho-main/server/harness/echidna-harness.ts",
+    "Cyber_psycho-main/server/harness/foundry-harness.ts",
+    "Cyber_psycho-main/server/harness",
+    "Cyber_psycho-main/server/intel/ingest/ingestor.ts",
+    "Cyber_psycho-main/server/intel/ingest",
+    "Cyber_psycho-main/server/intel",
+    "Cyber_psycho-main/prompts/out/SKEPTIC_REFEREE.md",
+    "Cyber_psycho-main/prompts/out/CORPUS_LIBRARIAN.md",
+    "Cyber_psycho-main/prompts/out/PATCH_DIFFER.md",
+    "Cyber_psycho-main/prompts/out/EXECUTOR.md",
+    "Cyber_psycho-main/prompts/out/ZeroCipher.md",
+    "Cyber_psycho-main/prompts/out/StateRoot.md",
+    "Cyber_psycho-main/prompts/out/SentinEL.md",
+    "Cyber_psycho-main/prompts/out/Entropy.md",
+    "Cyber_psycho-main/prompts/out/DarkPool.md",
+    "Cyber_psycho-main/prompts/out/ConsensusGhost.md",
+    "Cyber_psycho-main/prompts/out/Bytecode.md",
+    "Cyber_psycho-main/prompts/out/0xNull.md",
+    "Cyber_psycho-main/prompts/out/_COUNCIL_PREAMBLE.md",
+    "03-Knowledge/Techniques/OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra.md",
+    "New_Feature.md",
     "01-Agents/ConsensusGhost.md",
     "03-Knowledge/Concepts/During.md",
     "03-Knowledge/Concepts/Divergence.md",
@@ -237,32 +265,6 @@
     "New System Structure.md",
     "03-Knowledge/Techniques/The triage is the product running AI agents against Ethereum's protocol code.md",
     "03-Knowledge/Skills/Probe ERC-4337 Validation Rule Bypass.md",
-    "07-Reports/Report Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04.md",
-    "Cyber_psycho-main/data/hunter-state.json",
-    "Cyber_psycho-main/server/campaignReport.ts",
-    "Cyber_psycho-main/server/datasetEngine.ts",
-    "Cyber_psycho-main/server/zeroDayHunter.ts",
-    "Cyber_psycho-main/server/graphIntel.ts",
-    "03-Knowledge/Claims/Claim when-you-assert-your-point-on-the-nonce-validato.md",
-    "03-Knowledge/Claims/Claim that-is-exactly-where-your-model-breaks-0xnull.md",
-    "03-Knowledge/Claims/Claim after-that-your-economic-security-is-denominated.md",
-    "03-Knowledge/Concepts/Finality.md",
-    "03-Knowledge/Concepts/Reentrancy.md",
-    "03-Knowledge/Concepts/State root.md",
-    "03-Knowledge/Concepts/Bytecode.md",
-    "03-Knowledge/Concepts/Across.md",
-    "03-Knowledge/Concepts/Entropy.md",
-    "03-Knowledge/Concepts/Oracle.md",
-    "03-Knowledge/Concepts/Nonce.md",
-    "03-Knowledge/Concepts/Audit.md",
-    "03-Knowledge/Concepts/Validator.md",
-    "03-Knowledge/Concepts/Collapse.md",
-    "03-Knowledge/Concepts/Bridge.md",
-    "Cyber_psycho-main/dist/assets/index-DIlVs86C.js",
-    "Cyber_psycho-main/dist/assets/index-COKMKW8p.css",
-    "Cyber_psycho-main/dist/assets/index-CdfNlQmA.js",
-    "03-Knowledge/Skills",
-    "Cyber_psycho-main/data/skill-state.json",
     "Pasted image 20261104194734.png"
   ]
 }

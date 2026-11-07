@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chronozero.ai/schemas/prediction_record.schema.json",
+  "title": "Prediction Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "horizon_days",
+    "resolve_by",
+    "subject",
+    "prediction",
+    "rationale",
+    "baseline",
+    "resolution"
+  ],
+  "properties": {
+    "horizon_days": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "resolve_by": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "subject": {
+      "type": "object",
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["cve", "commit", "surface-cell", "technique", "agent-tooling"] },
+        "ref": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "prediction": {
+      "type": "object",
+      "required": ["event", "p_event"],
+      "properties": {
+        "event": {
+          "type": "string",
+          "enum": [
+            "cve_assigned",
+            "cve_kev_added",
+            "advisory_published",
+            "patch_merged",
+            "exploit_published",
+            "vulnerability_fixed",
+            "technique_superseded",
+            "tooling_broken"
+          ]
+        },
+        "p_event": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 80,
+      "description": "Must cite EV-/CL-/feature: references"
+    },
+    "baseline": {
+      "type": "object",
+      "required": ["name", "p_event"],
+      "properties": {
+        "name": { "type": "string" },
+        "p_event": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "resolution": {
+      "type": "object",
+      "required": ["brier", "baseline_brier", "skill_score"],
+      "properties": {
+        "brier": { "type": "number", "minimum": 0, "maximum": 1 },
+        "baseline_brier": { "type": "number", "minimum": 0, "maximum": 1 },
+        "skill_score": { "type": "number", "minimum": -1, "maximum": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}
