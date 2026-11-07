@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Radar, RefreshCw, Map, Compass, TriangleAlert, GraduationCap,
   ChevronDown, ChevronRight, Loader2, CheckCircle2, BookOpen,
-  Sparkles, Target, Layers
+  Sparkles, Target, Layers, Clock, Play, Pause, ShieldCheck
 } from 'lucide-react';
 import { apiUrl } from '../lib/api';
 import { Bot } from '../types';
@@ -86,6 +86,30 @@ interface SkillStatus {
   lastBuiltAt: string | null;
 }
 
+interface AutomationPrediction {
+  id: string;
+  title: string;
+  layer: string;
+  severity: 'Critical' | 'High' | 'Medium';
+  coverage: number;
+  priorityScore: number;
+  trend: 'new' | 'worsening' | 'improving' | 'stable';
+}
+
+interface AutomationStatus {
+  enabled: boolean;
+  intervalMinutes: number;
+  nextRunAt: string | null;
+  lastCycleAt: string | null;
+  running: boolean;
+  predictions: AutomationPrediction[];
+  history: Array<{
+    startedAt: string;
+    completedAt: string;
+    jobs: Array<{ id: string; ok: boolean; summary?: string; error?: string }>;
+  }>;
+}
+
 const LAYER_STYLE: Record<string, string> = {
   'Consensus': 'text-sky-300 border-sky-800/50 bg-sky-950/40',
   'Cryptography': 'text-violet-300 border-violet-800/50 bg-violet-950/40',
@@ -122,31 +146,73 @@ export const SurfaceMap: React.FC<SurfaceMapProps> = ({ bots, onScenarioPromoted
   const [coverage, setCoverage] = useState<SurfaceCoverage[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
   const [skillStatus, setSkillStatus] = useState<SkillStatus | null>(null);
+  const [automation, setAutomation] = useState<AutomationStatus | null>(null);
   const [view, setView] = useState<'gaps' | 'map' | 'skills'>('gaps');
   const [layerFilter, setLayerFilter] = useState<string>('all');
   const [expanded, setExpanded] = useState<string | null>(null);
   const [promoting, setPromoting] = useState<string | null>(null);
   const [building, setBuilding] = useState(false);
+  const [automationBusy, setAutomationBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
   const refresh = useCallback(async () => {
     try {
-      const [st, map, sk, skSt] = await Promise.all([
+      const [st, map, sk, skSt, automationStatus] = await Promise.all([
         fetch(apiUrl('/api/surface/status')).then(r => r.json()),
         fetch(apiUrl('/api/surface/map')).then(r => r.json()),
         fetch(apiUrl('/api/skills')).then(r => r.json()),
         fetch(apiUrl('/api/skills/status')).then(r => r.json()),
+        fetch(apiUrl('/api/automation/status')).then(r => r.json()),
       ]);
       setStatus(st);
       setCoverage(Array.isArray(map) ? map : []);
       setSkills(Array.isArray(sk) ? sk : []);
       setSkillStatus(skSt);
+      setAutomation(automationStatus);
     } catch (e: any) {
       setMsg('Could not reach the surface engine: ' + e.message);
     }
   }, []);
 
   useEffect(() => { refresh(); }, [refresh]);
+
+  const updateAutomation = async (settings: { enabled?: boolean; intervalMinutes?: number }) => {
+    setAutomationBusy(true);
+    setMsg(null);
+    try {
+      const res = await fetch(apiUrl('/api/automation/settings'), {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(settings),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? 'Could not update automation settings.');
+      setAutomation(current => current ? { ...current, ...data } : data);
+    } catch (e: any) {
+      setMsg('Automation settings failed: ' + e.message);
+    } finally {
+      setAutomationBusy(false);
+    }
+  };
+
+  const runAutomation = async () => {
+    setAutomationBusy(true);
+    setMsg(null);
+    try {
+      const res = await fetch(apiUrl('/api/automation/run'), { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? 'Could not run automation.');
+      const failures = (data.run?.jobs ?? []).filter((job: { ok: boolean; id: string; error?: string }) => !job.ok);
+      setMsg(failures.length
+        ? `Automation completed with errors: ${failures.map((job: { id: string; error?: string }) => `${job.id}: ${job.error ?? 'failed'}`).join('; ')}`
+        : 'Local automation cycle completed. Coverage, training and report history have been refreshed.');
+      await refresh();
+    } catch (e: any) {
+      setMsg('Automation run failed: ' + e.message);
+    } finally {
+      setAutomationBusy(false);
+    }
+  };
 
   const promote = async (cellId: string, title: string) => {
     setPromoting(cellId);
@@ -260,6 +326,69 @@ export const SurfaceMap: React.FC<SurfaceMapProps> = ({ bots, onScenarioPromoted
           </div>
         </div>
       </div>
+
+      <section className="px-4 py-3 border-b border-slate-800/70 bg-slate-900/20">
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div className="min-w-[220px]">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-300">
+              <ShieldCheck className="w-4 h-4" /> Local automation
+            </div>
+            <p className="text-[11px] text-slate-400 mt-1">
+              Local vault scan, confidence-ranked training and defensive coverage reports. No target probing or scheduled web requests.
+            </p>
+            <p className="text-[10px] text-slate-500 mt-1">
+              {automation?.lastCycleAt ? `Last cycle: ${new Date(automation.lastCycleAt).toLocaleString()}` : 'No completed cycles'}
+              {automation?.enabled && automation.nextRunAt ? ` · Next: ${new Date(automation.nextRunAt).toLocaleString()}` : ''}
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <label className="flex items-center gap-1.5 text-[11px] text-slate-400">
+              <Clock className="w-3.5 h-3.5" />
+              <select
+                value={automation?.intervalMinutes ?? 60}
+                disabled={automationBusy}
+                onChange={e => void updateAutomation({ intervalMinutes: Number(e.target.value) })}
+                className="bg-slate-900 border border-slate-700 rounded-lg px-2 py-1.5 text-xs text-slate-300"
+                aria-label="Automation interval"
+              >
+                <option value={60}>Hourly</option>
+                <option value={360}>Every 6 hours</option>
+                <option value={1440}>Daily</option>
+              </select>
+            </label>
+            <button
+              onClick={() => void updateAutomation({ enabled: !automation?.enabled })}
+              disabled={!automation || automationBusy}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-800/60 border border-slate-700 text-slate-300 text-xs disabled:opacity-50"
+            >
+              {automation?.enabled ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+              {automation?.enabled ? 'Pause' : 'Resume'}
+            </button>
+            <button
+              onClick={runAutomation}
+              disabled={automationBusy || automation?.running}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-900/40 border border-emerald-800/50 text-emerald-300 text-xs disabled:opacity-50"
+            >
+              {automationBusy || automation?.running ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
+              Run now
+            </button>
+          </div>
+        </div>
+        {automation?.predictions?.length ? (
+          <div className="mt-3 flex items-start gap-2">
+            <Target className="w-3.5 h-3.5 text-amber-400 mt-0.5 shrink-0" />
+            <div className="text-[10px] text-slate-400">
+              <span className="text-slate-300 font-semibold">Coverage priorities:</span>{' '}
+              {automation.predictions.slice(0, 3).map((item, index) => (
+                <span key={item.id}>
+                  {index ? ' · ' : ''}{item.title} ({item.severity}, {Math.round(item.coverage * 100)}%, {item.trend})
+                </span>
+              ))}
+              <span className="block text-slate-500 mt-1">Priority scores rank documentation gaps; they do not predict real-world exploitability.</span>
+            </div>
+          </div>
+        ) : null}
+      </section>
 
       {/* View switcher + layer filter */}
       <div className="px-4 py-2 border-b border-slate-800/70 flex items-center gap-3 flex-wrap">

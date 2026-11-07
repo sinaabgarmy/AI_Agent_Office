@@ -16,19 +16,20 @@ import { DebateStore, loadFallbackStore, persistFallbackStore } from './server/d
 import { retrieveForAgent } from './server/memoryRetrieval';
 import { searchWeb, fetchPageText, formatResearchBrief } from './server/webSearch';
 import { IntelEngine } from './server/intelEngine';
-import { SurfaceEngine, SURFACE_MATRIX } from './server/surfaceEngine';
+import { SurfaceEngine, SURFACE_MATRIX, SurfaceCoverage } from './server/surfaceEngine';
 import { SkillEngine } from './server/skillEngine';
 import { GraphIntelligence } from './server/graphIntel';
 import { ZeroDayHunter, PRIMITIVES, SURFACES } from './server/zeroDayHunter';
 import { DatasetEngine, Sheet, sheetToCsv } from './server/datasetEngine';
 import { CampaignReportEngine } from './server/campaignReport';
+import { AutomationScheduler, SurfacePrediction } from './server/automationScheduler';
 import { DEBATE_TOPICS } from './src/data/topics';
 
 dotenv.config();
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
-const HOST = process.env.HOST || '0.0.0.0';
+const HOST = process.env.HOST || '127.0.0.1';
 let currentMongoUri = process.env.MONGODB_URI || '';
 
 // Resolve the project root robustly: works when running from source (server.ts at
@@ -89,6 +90,94 @@ const graphIntel = new GraphIntelligence(vault);
 const hunter = new ZeroDayHunter(vault, DATA_DIR, graphIntel);
 const datasetEngine = new DatasetEngine(vault);
 const campaignReportEngine = new CampaignReportEngine(vault);
+
+function rankSurfaceGaps(coverage: SurfaceCoverage[], previous: SurfacePrediction[]): SurfacePrediction[] {
+  const previousById = new Map(previous.map(item => [item.id, item]));
+  const severityWeight = { Critical: 3, High: 2, Medium: 1 };
+  return coverage
+    .filter(item => item.isGap)
+    .map(item => {
+      const prior = previousById.get(item.cell.id);
+      const change = prior ? prior.coverage - item.coverage : 0;
+      const trend: SurfacePrediction['trend'] = !prior
+        ? 'new'
+        : change > 0.001 ? 'worsening' : change < -0.001 ? 'improving' : 'stable';
+      return {
+        id: item.cell.id,
+        title: item.cell.title,
+        layer: item.cell.layer,
+        severity: item.cell.severity,
+        coverage: item.coverage,
+        priorityScore: Math.round(
+          (1 - item.coverage) * severityWeight[item.cell.severity] * 100
+          + Math.max(0, change) * 50
+        ),
+        trend,
+      };
+    })
+    .sort((a, b) => b.priorityScore - a.priorityScore);
+}
+
+function writeAutomatedCoverageReport(predictions: SurfacePrediction[]): string {
+  const summary = surfaceEngine.status();
+  const generatedAt = new Date().toISOString();
+  const reportDir = path.join(DATA_DIR, 'automation', 'reports');
+  fs.mkdirSync(reportDir, { recursive: true });
+  const filename = `coverage-review-${generatedAt.replace(/[:.]/g, '-')}.md`;
+  const reportPath = path.join(reportDir, filename);
+  const rows = predictions.slice(0, 15).map(item =>
+    `| ${item.severity} | ${item.layer} | ${item.title} | ${Math.round(item.coverage * 100)}% | ${item.priorityScore} | ${item.trend} |`
+  );
+  const body = [
+    '# Automated Defensive Coverage Review',
+    '',
+    `Generated: ${generatedAt}`,
+    '',
+    `This report ranks knowledge-coverage gaps for human review. Scores are prioritization hints, not predictions of exploitability. No target systems were probed.`,
+    '',
+    `- Tracked surfaces: ${summary.total}`,
+    `- Covered: ${summary.covered}`,
+    `- Current gaps: ${summary.gaps}`,
+    '',
+    '## Highest-priority coverage gaps',
+    '',
+    '| Severity | Layer | Surface | Coverage | Priority score | Coverage trend |',
+    '|---|---|---|---:|---:|---|',
+    ...(rows.length ? rows : ['| — | — | No current gaps | — | — | — |']),
+    '',
+  ].join('\n');
+  fs.writeFileSync(reportPath, body, 'utf8');
+  return reportPath;
+}
+
+const automationScheduler = new AutomationScheduler(DATA_DIR, [
+  {
+    id: 'surface-scan',
+    run: async previous => {
+      const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
+      const predictions = rankSurfaceGaps(coverage, previous);
+      const vaultPath = surfaceEngine.writeCoverageMap(coverage);
+      return {
+        summary: `Scanned ${coverage.length} local surfaces; ${predictions.length} prioritized gaps.${vaultPath ? ` Vault note: ${vaultPath}.` : ''}`,
+        predictions,
+      };
+    },
+  },
+  {
+    id: 'agent-training',
+    run: async () => {
+      const taught = intelEngine.teachAll();
+      return { summary: `Added ${taught} confidence-ranked technique assignments from the local intel library.` };
+    },
+  },
+  {
+    id: 'defensive-report',
+    run: async predictions => {
+      const reportPath = writeAutomatedCoverageReport(predictions);
+      return { summary: `Wrote local defensive coverage report: ${reportPath}` };
+    },
+  },
+]);
 
 // Restore the in-memory fallback store from disk so a restart no longer
 // wipes debates/agents/defects/scenarios (free local persistence tier).
@@ -860,6 +949,29 @@ app.get('/api/surface/catalogue', (req, res) => {
   res.json(SURFACE_MATRIX);
 });
 
+// ----------------- LOCAL AUTOMATION -----------------
+
+app.get('/api/automation/status', (_req, res) => {
+  res.json(automationScheduler.status());
+});
+
+app.put('/api/automation/settings', (req, res) => {
+  try {
+    res.json({ ok: true, ...automationScheduler.updateSettings(req.body ?? {}) });
+  } catch (error) {
+    res.status(400).json({ ok: false, error: error instanceof Error ? error.message : String(error) });
+  }
+});
+
+app.post('/api/automation/run', async (_req, res) => {
+  try {
+    res.json({ ok: true, run: await automationScheduler.runNow() });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    res.status(message.includes('already running') ? 409 : 500).json({ ok: false, error: message });
+  }
+});
+
 /* ------------------------------------------------------------------ */
 /* Helpers shared by the surface + skill routes                         */
 /* ------------------------------------------------------------------ */
@@ -1265,6 +1377,7 @@ async function startServer() {
   const displayUrl = `http://localhost:${PORT}`;
 
   const server = app.listen(PORT, HOST, () => {
+    automationScheduler.start();
     console.log(`\n======================================================`);
     console.log(`🛡️  ChronoZero Exploit Defect Lab Live!`);
     console.log(`🌐 Server running at: ${displayUrl}`);
@@ -1302,10 +1415,12 @@ startServer();
 
 // Durable stores get flushed on shutdown (Ctrl+C included)
 process.on('SIGINT', () => {
+  automationScheduler.stop();
   try { debateStore.saveNow(); persistStore(); } catch {}
   process.exit(0);
 });
 process.on('SIGTERM', () => {
+  automationScheduler.stop();
   try { debateStore.saveNow(); persistStore(); } catch {}
   process.exit(0);
 });

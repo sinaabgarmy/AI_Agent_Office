@@ -14,11 +14,16 @@ import { searchWeb, fetchPageText, formatResearchBrief } from "./server/webSearc
 import { IntelEngine } from "./server/intelEngine";
 import { SurfaceEngine, SURFACE_MATRIX } from "./server/surfaceEngine";
 import { SkillEngine } from "./server/skillEngine";
+import { GraphIntelligence } from "./server/graphIntel";
+import { ZeroDayHunter, PRIMITIVES, SURFACES } from "./server/zeroDayHunter";
+import { DatasetEngine, sheetToCsv } from "./server/datasetEngine";
+import { CampaignReportEngine } from "./server/campaignReport";
+import { AutomationScheduler } from "./server/automationScheduler";
 import { DEBATE_TOPICS } from "./src/data/topics";
 dotenv.config();
 const app = express();
 const PORT = parseInt(process.env.PORT || "3000", 10);
-const HOST = process.env.HOST || "0.0.0.0";
+const HOST = process.env.HOST || "127.0.0.1";
 let currentMongoUri = process.env.MONGODB_URI || "";
 function findProjectRoot(startDir) {
   let dir = path.resolve(startDir);
@@ -58,6 +63,89 @@ const debateStore = new DebateStore(DATA_DIR);
 const intelEngine = new IntelEngine(vault, DATA_DIR);
 const surfaceEngine = new SurfaceEngine(vault, DATA_DIR);
 const skillEngine = new SkillEngine(vault, DATA_DIR);
+const graphIntel = new GraphIntelligence(vault);
+const hunter = new ZeroDayHunter(vault, DATA_DIR, graphIntel);
+const datasetEngine = new DatasetEngine(vault);
+const campaignReportEngine = new CampaignReportEngine(vault);
+function rankSurfaceGaps(coverage, previous) {
+  const previousById = new Map(previous.map((item) => [item.id, item]));
+  const severityWeight = { Critical: 3, High: 2, Medium: 1 };
+  return coverage.filter((item) => item.isGap).map((item) => {
+    const prior = previousById.get(item.cell.id);
+    const change = prior ? prior.coverage - item.coverage : 0;
+    const trend = !prior ? "new" : change > 1e-3 ? "worsening" : change < -1e-3 ? "improving" : "stable";
+    return {
+      id: item.cell.id,
+      title: item.cell.title,
+      layer: item.cell.layer,
+      severity: item.cell.severity,
+      coverage: item.coverage,
+      priorityScore: Math.round(
+        (1 - item.coverage) * severityWeight[item.cell.severity] * 100 + Math.max(0, change) * 50
+      ),
+      trend
+    };
+  }).sort((a, b) => b.priorityScore - a.priorityScore);
+}
+function writeAutomatedCoverageReport(predictions) {
+  const summary = surfaceEngine.status();
+  const generatedAt = (/* @__PURE__ */ new Date()).toISOString();
+  const reportDir = path.join(DATA_DIR, "automation", "reports");
+  fs.mkdirSync(reportDir, { recursive: true });
+  const filename = `coverage-review-${generatedAt.replace(/[:.]/g, "-")}.md`;
+  const reportPath = path.join(reportDir, filename);
+  const rows = predictions.slice(0, 15).map(
+    (item) => `| ${item.severity} | ${item.layer} | ${item.title} | ${Math.round(item.coverage * 100)}% | ${item.priorityScore} | ${item.trend} |`
+  );
+  const body = [
+    "# Automated Defensive Coverage Review",
+    "",
+    `Generated: ${generatedAt}`,
+    "",
+    `This report ranks knowledge-coverage gaps for human review. Scores are prioritization hints, not predictions of exploitability. No target systems were probed.`,
+    "",
+    `- Tracked surfaces: ${summary.total}`,
+    `- Covered: ${summary.covered}`,
+    `- Current gaps: ${summary.gaps}`,
+    "",
+    "## Highest-priority coverage gaps",
+    "",
+    "| Severity | Layer | Surface | Coverage | Priority score | Coverage trend |",
+    "|---|---|---|---:|---:|---|",
+    ...rows.length ? rows : ["| \u2014 | \u2014 | No current gaps | \u2014 | \u2014 | \u2014 |"],
+    ""
+  ].join("\n");
+  fs.writeFileSync(reportPath, body, "utf8");
+  return reportPath;
+}
+const automationScheduler = new AutomationScheduler(DATA_DIR, [
+  {
+    id: "surface-scan",
+    run: async (previous) => {
+      const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
+      const predictions = rankSurfaceGaps(coverage, previous);
+      const vaultPath = surfaceEngine.writeCoverageMap(coverage);
+      return {
+        summary: `Scanned ${coverage.length} local surfaces; ${predictions.length} prioritized gaps.${vaultPath ? ` Vault note: ${vaultPath}.` : ""}`,
+        predictions
+      };
+    }
+  },
+  {
+    id: "agent-training",
+    run: async () => {
+      const taught = intelEngine.teachAll();
+      return { summary: `Added ${taught} confidence-ranked technique assignments from the local intel library.` };
+    }
+  },
+  {
+    id: "defensive-report",
+    run: async (predictions) => {
+      const reportPath = writeAutomatedCoverageReport(predictions);
+      return { summary: `Wrote local defensive coverage report: ${reportPath}` };
+    }
+  }
+]);
 const restoredStore = loadFallbackStore(DATA_DIR);
 if (restoredStore) {
   memoryStore.defects = restoredStore.defects ?? [];
@@ -626,6 +714,10 @@ app.post("/api/intel/scenarios/promote", async (req, res) => {
 app.get("/api/surface/status", (req, res) => {
   res.json(surfaceEngine.status());
 });
+app.get("/api/surface/overview", (req, res) => {
+  const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
+  res.json({ ...surfaceEngine.status(), coverage });
+});
 app.get("/api/surface/map", (req, res) => {
   const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
   res.json(coverage);
@@ -673,6 +765,35 @@ app.post("/api/surface/sync", (req, res) => {
 app.get("/api/surface/catalogue", (req, res) => {
   res.json(SURFACE_MATRIX);
 });
+app.get("/api/automation/status", (_req, res) => {
+  res.json(automationScheduler.status());
+});
+app.put("/api/automation/settings", (req, res) => {
+  try {
+    res.json({ ok: true, ...automationScheduler.updateSettings(req.body ?? {}) });
+  } catch (error) {
+    res.status(400).json({ ok: false, error: error instanceof Error ? error.message : String(error) });
+  }
+});
+app.post("/api/automation/run", async (_req, res) => {
+  try {
+    res.json({ ok: true, run: await automationScheduler.runNow() });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    res.status(message.includes("already running") ? 409 : 500).json({ ok: false, error: message });
+  }
+});
+const HUNTER_AGENTS_BY_LAYER = {
+  "Cryptography": ["entropy", "zerocipher", "stateroot"],
+  "Consensus": ["consensusghost", "vesper", "sentinel"],
+  "Execution": ["vesper", "bytecode", "darkpool"],
+  "Economic": ["darkpool", "vesper", "bytecode"],
+  "L2 / Bridge": ["stateroot", "vesper", "zerocipher"],
+  "Governance": ["darkpool", "bytecode", "vesper"],
+  "Infrastructure": ["vesper", "entropy", "consensusghost"],
+  "Supply Chain": ["vesper", "bytecode", "entropy"],
+  "Key Management": ["entropy", "zerocipher", "vesper"]
+};
 function currentScenarioLikeTopics() {
   return [...DEBATE_TOPICS, ...memoryStore.scenarios];
 }
@@ -764,6 +885,260 @@ app.post("/api/skills/:id/used", (req, res) => {
   skillEngine.markUsed(String(req.params.id));
   res.json({ ok: true });
 });
+app.get("/api/graph/snapshot", (req, res) => {
+  const snap = graphIntel.snapshot();
+  res.json({
+    nodes: snap.nodes.length,
+    edges: snap.edgeCount,
+    orphanCount: snap.orphanCount,
+    clusters: snap.clusters.map((c) => ({ layer: c.layer, size: c.size, concepts: c.concepts.slice(0, 12) })),
+    bridges: snap.bridges.slice(0, 40),
+    orphans: snap.orphans.slice(0, 30),
+    overlaps: snap.overlaps.slice(0, 20),
+    hypotheses: snap.hypotheses.slice(0, 60)
+  });
+});
+app.post("/api/graph/sync", (req, res) => {
+  const snap = graphIntel.snapshot();
+  const relPath = graphIntel.writeGraphReport(snap);
+  res.json({ ok: true, relPath, nodes: snap.nodes.length, edges: snap.edgeCount, hypotheses: snap.hypotheses.length });
+});
+app.post("/api/graph/promote", async (req, res) => {
+  const id = String(req.body?.id ?? "");
+  const snap = graphIntel.snapshot();
+  const h = snap.hypotheses.find((x) => x.id === id);
+  if (!h) return res.status(404).json({ error: `Unknown graph hypothesis "${id}".` });
+  const scenario = {
+    id: `graph-${h.id.replace(/^graph-/, "")}`,
+    title: h.title,
+    category: "Custom",
+    briefing: [
+      `Graph-derived threat hypothesis (${h.signal}).`,
+      h.rationale,
+      `Invariant at risk: ${h.hypothesis}`,
+      `Ingredients the council has each argued but never composed: ${h.ingredients.join(" + ")}.`,
+      `This composition has no existing link in the vault \u2014 argue it from first principles.`
+    ].join(" "),
+    targetArchitecture: h.targetArchitecture,
+    coreHypothesis: h.hypothesis,
+    defaultInvolvedBots: h.suitedAgents,
+    promotedFromGraph: true
+  };
+  res.json({ ok: true, scenario: await persistSurfaceScenario(scenario) });
+});
+app.get("/api/hunter/status", (req, res) => {
+  res.json({
+    primitives: PRIMITIVES.length,
+    surfaces: SURFACES.length,
+    combinations: PRIMITIVES.length * SURFACES.length,
+    ...hunter.status()
+  });
+});
+app.get("/api/hunter/catalogue", (req, res) => {
+  res.json({ primitives: PRIMITIVES, surfaces: SURFACES });
+});
+app.post("/api/hunter/sweep", (req, res) => {
+  const result = hunter.sweep({
+    limit: Number(req.body?.limit ?? 40),
+    includeGraphDerived: req.body?.includeGraph !== false
+  });
+  const wrote = req.body?.write !== false ? hunter.writeTargetNotes(result.targets) : 0;
+  res.json({ ok: true, ...result, written: wrote });
+});
+app.get("/api/hunter/targets", (req, res) => {
+  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
+  res.json({ targets: result.targets, exhausted: result.exhausted, totalCombinations: result.totalCombinations });
+});
+app.post("/api/hunter/promote", async (req, res) => {
+  const id = String(req.body?.id ?? "");
+  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
+  const target = result.targets.find((t) => t.id === id);
+  if (!target) return res.status(404).json({ error: `Unknown hunt target "${id}".` });
+  const scenario = {
+    id: `hunt-${target.id.replace(/^hunt-/, "")}`,
+    title: `${target.primitiveName} against ${target.surfaceComponent}`,
+    category: "Custom",
+    briefing: [
+      `ZERO-DAY HUNT \u2014 ${target.primitiveName} (${target.cwe}) against ${target.surfaceComponent} (${target.layer}).`,
+      `Invariant at risk: ${target.invariant}`,
+      `The defender's assumption: ${target.defenderAssumption}`,
+      `Attack chain: ${target.attackChain.join(" ")}`,
+      `Attacker capital: $${target.capitalUSD.toLocaleString()} \xB7 time to exploit: ${target.timeToExploit} \xB7 stealth: ${Math.round(target.stealth * 100)}%.`,
+      `This is a ONE-TIME attack: ${target.oneTimeAttack}`,
+      `RED TEAM ADVANTAGE: the hunter roles lead. Find the chain before the defence argues it.`
+    ].join(" "),
+    targetArchitecture: `${target.surfaceComponent} (${target.layer})`,
+    coreHypothesis: `The primitive "${target.primitiveName}" breaks the invariant "${target.invariant}" on ${target.surfaceComponent} because ${target.defenderAssumption.toLowerCase()}`,
+    defaultInvolvedBots: HUNTER_AGENTS_BY_LAYER[target.layer] ?? ["vesper", "bytecode", "sentinel"],
+    promotedFromHunter: true,
+    hunterTargetId: target.id
+  };
+  res.json({ ok: true, scenario: await persistSurfaceScenario(scenario) });
+});
+app.get("/api/hunter/report", (req, res) => {
+  const id = String(req.query?.id ?? "");
+  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
+  const target = result.targets.find((t) => t.id === id);
+  if (!target) return res.status(404).json({ error: `Unknown hunt target "${id}".` });
+  const report = campaignReportEngine.build(target);
+  const vaultPath = req.query?.write === "true" ? campaignReportEngine.writeReport(report) : null;
+  res.json({ ...report, vaultPath });
+});
+function buildDatasetSheets() {
+  const sheets = [];
+  const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
+  sheets.push({
+    name: "01 Attack Surface Coverage",
+    headers: ["Surface ID", "Layer", "Title", "Severity", "CWE", "Coverage %", "Status", "Debates", "Intel", "Topics", "Hypothesis"],
+    rows: coverage.map((c) => [
+      c.cell.id,
+      c.cell.layer,
+      c.cell.title,
+      c.cell.severity,
+      c.cell.cwe,
+      Math.round(c.coverage * 100),
+      c.isGap ? "UNEXPLORED" : "COVERED",
+      c.evidence.debates,
+      c.evidence.techniques,
+      c.evidence.topics,
+      c.cell.hypothesis
+    ])
+  });
+  const hunt = hunter.sweep({ limit: 60, includeGraphDerived: true });
+  sheets.push({
+    name: "02 Hunt Targets",
+    headers: ["Hunt ID", "Primitive", "Surface", "Layer", "CWE", "Priority", "Capital USD", "Time To Exploit", "Stealth %", "Invariant Broken", "Prevention", "Discovery"],
+    rows: hunt.targets.map((t) => [
+      t.id,
+      t.primitiveName,
+      t.surfaceComponent,
+      t.layer,
+      t.cwe,
+      t.priority,
+      t.capitalUSD,
+      t.timeToExploit,
+      Math.round(t.stealth * 100),
+      t.invariant,
+      t.prevention[0] ?? "",
+      t.discovery
+    ])
+  });
+  const techniques = intelEngine.listTechniques().slice(0, 300);
+  sheets.push({
+    name: "03 Learned Techniques",
+    headers: ["Technique ID", "Title", "Layer", "CWE", "Confidence", "Source", "Source ID", "Primitive", "Detection", "Remediation", "URL"],
+    rows: techniques.map((t) => [
+      t.id,
+      t.title,
+      t.layer,
+      t.cwe,
+      t.confidence,
+      t.sourceName,
+      t.sourceId,
+      t.primitive,
+      t.detection,
+      t.remediation,
+      t.sourceUrl
+    ])
+  });
+  const skills = skillEngine.listSkills();
+  sheets.push({
+    name: "04 Skill Library",
+    headers: ["Skill ID", "Title", "Kind", "Domain", "CWE", "Confidence", "Times Used", "Trained Agents", "Trigger", "Verification"],
+    rows: skills.map((s) => [
+      s.id,
+      s.title,
+      s.kind,
+      s.domain,
+      s.cwe,
+      s.confidence,
+      s.timesUsed,
+      s.trainedAgents.join("; "),
+      s.trigger,
+      s.verification
+    ])
+  });
+  const defects = memoryStore.defects.length ? memoryStore.defects : vault.isConnected() ? (vault.getIndexEngine()?.notesByType("discovery") ?? []).map((n) => ({
+    id: n.title,
+    title: n.title,
+    severity: String(vault.readNote(n.id)?.frontmatter.severity ?? "Unknown"),
+    description: (vault.readNote(n.id)?.body ?? "").split("\n").slice(0, 3).join(" ").slice(0, 300)
+  })) : [];
+  sheets.push({
+    name: "05 Defect Matrix",
+    headers: ["Defect ID", "Title", "Severity", "Layer", "CWE", "Status", "Exploit Cost USD", "Drain USD", "Description"],
+    rows: defects.map((d) => [
+      d.id ?? "",
+      d.title ?? "",
+      d.severity ?? "",
+      d.layer ?? "",
+      d.cwe ?? "",
+      d.status ?? "",
+      d.estimatedExploitCostUSD ?? "",
+      d.estimatedDrainUSD ?? "",
+      (d.description ?? "").slice(0, 300)
+    ])
+  });
+  sheets.push({
+    name: "06 Budget Model",
+    headers: ["Hunt ID", "Target", "Layer", "Attacker Capital USD", "Attacker Total USD", "Defender One-Time USD", "Defender Annual USD", "Value At Risk USD", "Attacker ROI", "Defender Verdict", "Patch Window"],
+    rows: hunt.targets.map((t) => {
+      const report = campaignReportEngine.build(t);
+      return [
+        t.id,
+        `${t.primitiveName} \u2192 ${t.surfaceComponent}`,
+        t.layer,
+        report.budget.lines.filter((l) => l.side === "Attacker" && l.item.startsWith("Capital")).reduce((n, l) => n + l.usd, 0),
+        report.budget.attackerTotal,
+        report.budget.defenderOneTime,
+        report.budget.defenderRecurringAnnual,
+        report.budget.valueAtRisk,
+        report.budget.attackerROI,
+        report.budget.defenderVerdict,
+        report.blueTeam.patchWindow
+      ];
+    })
+  });
+  const debates = memoryStore.debates.map((d) => ({
+    id: d.id,
+    title: d.title,
+    topic: d.topic ?? d.topicId ?? "",
+    messages: (d.messages ?? []).length,
+    savedAt: d.savedAt ?? ""
+  }));
+  sheets.push({
+    name: "07 Debate Ledger",
+    headers: ["Debate ID", "Title", "Topic", "Turns", "Saved At"],
+    rows: debates.map((d) => [d.id, d.title, d.topic, d.messages, d.savedAt])
+  });
+  return sheets;
+}
+app.post("/api/datasets/export", (req, res) => {
+  try {
+    const result = datasetEngine.build(buildDatasetSheets(), req.body?.name ?? "ChronoZero Exploit Dataset");
+    res.json(result);
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+app.get("/api/datasets/preview", (req, res) => {
+  const sheets = buildDatasetSheets();
+  res.json(sheets.map((s) => ({
+    name: s.name,
+    headers: s.headers,
+    rowCount: s.rows.length,
+    sample: s.rows.slice(0, 5)
+  })));
+});
+app.get("/api/datasets/csv", (req, res) => {
+  const name = String(req.query?.sheet ?? "");
+  const sheets = buildDatasetSheets();
+  const sheet = sheets.find((s) => s.name === name);
+  if (!sheet) return res.status(404).json({ error: `Unknown sheet "${name}".` });
+  res.setHeader("Content-Type", "text/csv; charset=utf-8");
+  res.setHeader("Content-Disposition", `attachment; filename="${name.replace(/[^A-Za-z0-9]+/g, "-")}.csv"`);
+  res.send(sheetToCsv(sheet));
+});
 async function startServer() {
   await connectToMongo(currentMongoUri);
   const isProduction = true;
@@ -783,6 +1158,7 @@ async function startServer() {
   }
   const displayUrl = `http://localhost:${PORT}`;
   const server = app.listen(PORT, HOST, () => {
+    automationScheduler.start();
     console.log(`
 ======================================================`);
     console.log(`\u{1F6E1}\uFE0F  ChronoZero Exploit Defect Lab Live!`);
@@ -813,6 +1189,7 @@ async function startServer() {
 }
 startServer();
 process.on("SIGINT", () => {
+  automationScheduler.stop();
   try {
     debateStore.saveNow();
     persistStore();
@@ -821,6 +1198,7 @@ process.on("SIGINT", () => {
   process.exit(0);
 });
 process.on("SIGTERM", () => {
+  automationScheduler.stop();
   try {
     debateStore.saveNow();
     persistStore();

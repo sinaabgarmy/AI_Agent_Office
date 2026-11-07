@@ -5,7 +5,7 @@ name: Bytecode
 ideology: Protocol Governance
 is_custom: false
 tags: [agent]
-updated: "2026-11-05T17:19:43.439Z"
+updated: "2026-11-06T22:46:38.899Z"
 ---
 
 # Bytecode (@Bytecode)

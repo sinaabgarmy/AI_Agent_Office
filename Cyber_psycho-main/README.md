@@ -196,3 +196,16 @@ ChronoZero now ships with a permanent, local, **100% free** knowledge brain powe
 (*Open folder as vault*). Full guide: **OBSIDIAN-SETUP.md**.
 
 *All infrastructure remains free: local Markdown vault, local SQLite/JSON index, keyless research, free-tier AI (or the built-in 100% free engine).*
+
+## Local scheduled automation
+
+The app runs an hourly, local-only automation cycle by default while the server is running:
+
+- Refresh surface-coverage scores from the local vault and scenario list.
+- Assign confidence-ranked techniques from the already-saved intel library to agents.
+- Write a defensive coverage-priority report under `data/automation/reports/`.
+- Persist the schedule, coverage trends, and last 40 cycle results in `data/automation-state.json`.
+
+The Surface Map tab lets you pause or resume automation, choose hourly, six-hourly, or daily intervals, and run a cycle manually. Coverage priorities compare local coverage and severity; they are not predictions of real-world exploitability. Scheduled jobs do not probe targets or make web requests. Manual intel harvesting and web research remain separate actions.
+
+The default server bind address is `127.0.0.1`. Set `HOST` explicitly only if you intend to make the app reachable from another device and have secured that access.

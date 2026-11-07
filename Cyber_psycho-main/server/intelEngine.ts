@@ -1231,11 +1231,14 @@ export class IntelEngine {
 
     // Apply the per-agent cap.
     const perAgentCount = new Map<string, number>();
+    for (const teaching of state.teachings) {
+      perAgentCount.set(teaching.agentHandle, (perAgentCount.get(teaching.agentHandle) ?? 0) + 1);
+    }
     for (const c of candidates) {
       const used = perAgentCount.get(c.handle) ?? 0;
-      if (used >= IntelEngine.PER_AGENT_CAP) continue;
       const key = `${c.tech.id}::${c.handle}`;
       if (known.has(key)) continue;
+      if (used >= IntelEngine.PER_AGENT_CAP) continue;
       known.add(key);
       perAgentCount.set(c.handle, used + 1);
       state.teachings.push({

@@ -23,8 +23,24 @@
               "icon": "lucide-file",
               "title": "New System Structure"
             }
+          },
+          {
+            "id": "4199200cde267310",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-Knowledge/Techniques/OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -58,7 +74,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#cwe-354",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +98,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -181,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "New System Structure.md",
+                "file": "03-Knowledge/Techniques/OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitra.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -195,8 +212,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 594.2999877929688,
-    "collapsed": true
+    "width": 792.7000122070312
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,10 +225,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "c587a72e671dcdba",
+  "active": "4199200cde267310",
   "lastOpenFiles": [
-    "03-Knowledge/Techniques/The triage is the product running AI agents against Ethereum's protocol code.md",
+    "01-Agents/ConsensusGhost.md",
+    "03-Knowledge/Concepts/During.md",
+    "03-Knowledge/Concepts/Divergence.md",
+    "03-Knowledge/Concepts/Contract.md",
+    "03-Knowledge/Concepts/Liquidation.md",
+    "02-Debates/Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo.md",
+    "03-Knowledge/Skills/Hunt Glamsterdam Testnet Announcement.md",
     "New System Structure.md",
+    "03-Knowledge/Techniques/The triage is the product running AI agents against Ethereum's protocol code.md",
     "03-Knowledge/Skills/Probe ERC-4337 Validation Rule Bypass.md",
     "07-Reports/Report Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04.md",
     "Cyber_psycho-main/data/hunter-state.json",
@@ -235,16 +258,9 @@
     "03-Knowledge/Concepts/Validator.md",
     "03-Knowledge/Concepts/Collapse.md",
     "03-Knowledge/Concepts/Bridge.md",
-    "03-Knowledge/Concepts/Formal verification.md",
     "Cyber_psycho-main/dist/assets/index-DIlVs86C.js",
     "Cyber_psycho-main/dist/assets/index-COKMKW8p.css",
     "Cyber_psycho-main/dist/assets/index-CdfNlQmA.js",
-    "00-System/Attack Surface Coverage.md",
-    "02-Debates/Debate 2026-11-05 — ERC-4337 Validation Rule Bypass.md",
-    "03-Knowledge/Skills/Hunt ETH Rangers Program Recap.md",
-    "03-Knowledge/Skills/Probe Selfdestruct-and-Redeploy Identity Confusion.md",
-    "03-Knowledge/Skills/Probe Rogue-Key Attack on BLS Aggregation.md",
-    "03-Knowledge/Skills/Probe Permit2 Signature Replay Across Nonces.md",
     "03-Knowledge/Skills",
     "Cyber_psycho-main/data/skill-state.json",
     "Pasted image 20261104194734.png"

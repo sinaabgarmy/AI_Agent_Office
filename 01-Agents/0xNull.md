@@ -5,7 +5,7 @@ name: Vesper
 ideology: Black-Hat Red-Team
 is_custom: false
 tags: [agent]
-updated: "2026-11-05T17:19:43.415Z"
+updated: "2026-11-06T22:46:38.874Z"
 ---
 
 # Vesper (@0xNull)
