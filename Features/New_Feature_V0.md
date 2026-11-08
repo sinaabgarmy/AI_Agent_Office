@@ -169,3 +169,4 @@ Defensive only, and enforced in code rather than stated in a README. The executo
 Want me to take the next build step: (a) the SQLite evidence ledger + `admit()` wired to an HTTP endpoint, (b) an `osv-batch` / `cvelistV5` hourly-delta ingestor that emits EvidenceRecords in this schema, or © a real Foundry/Echidna harness for one of your actual targets?
 
 
+---
