@@ -23,6 +23,13 @@ import { ZeroDayHunter, PRIMITIVES, SURFACES } from './server/zeroDayHunter';
 import { DatasetEngine, Sheet, sheetToCsv } from './server/datasetEngine';
 import { CampaignReportEngine } from './server/campaignReport';
 import { AutomationScheduler, SurfacePrediction } from './server/automationScheduler';
+import { EvidenceLedger } from './server/ledger/evidence-ledger';
+import { registerLedgerRoutes } from './server/ledger/routes';
+import { admit, BUS_ERROR_CODES, sha256Of } from './server/validate';
+import { IntelIngestor } from './server/intel/ingest/ingestor';
+import { runPatchWatch } from './server/patchwatch';
+import { FoundryHarness } from './server/harness/foundry-harness';
+import { EchidnaHarness } from './server/harness/echidna-harness';
 import { DEBATE_TOPICS } from './src/data/topics';
 
 dotenv.config();
@@ -90,6 +97,27 @@ const graphIntel = new GraphIntelligence(vault);
 const hunter = new ZeroDayHunter(vault, DATA_DIR, graphIntel);
 const datasetEngine = new DatasetEngine(vault);
 const campaignReportEngine = new CampaignReportEngine(vault);
+
+/* ------------------------------------------------------------------ */
+/* ChronoZero admission bus: ledger + ingestor + harnesses             */
+/* ------------------------------------------------------------------ */
+let evidenceLedger: EvidenceLedger | null = null;
+try {
+  evidenceLedger = new EvidenceLedger(DATA_DIR);
+  console.log('[ChronoZero Bus] Evidence ledger online: data/evidence-ledger.sqlite');
+} catch (e: any) {
+  console.warn(`[ChronoZero Bus] Ledger unavailable (${e.message}) — bus runs without evidence resolution`);
+}
+const intelIngestor = new IntelIngestor(DATA_DIR);
+intelIngestor.setEngines(intelEngine, evidenceLedger);
+const foundryHarness = new FoundryHarness(PROJECT_ROOT);
+const echidnaHarness = new EchidnaHarness(PROJECT_ROOT);
+foundryHarness.setLedger(evidenceLedger);
+echidnaHarness.setLedger(evidenceLedger);
+// Session-scoped bus state: monotonic seq per session + truthful memory flag
+// (recorded by /api/memory/for-agent — the bus never trusts the client).
+const busSeqState = new Map<string, number>();
+const busMemoryState = new Map<string, boolean>();
 
 function rankSurfaceGaps(coverage: SurfaceCoverage[], previous: SurfacePrediction[]): SurfacePrediction[] {
   const previousById = new Map(previous.map(item => [item.id, item]));
@@ -175,6 +203,13 @@ const automationScheduler = new AutomationScheduler(DATA_DIR, [
     run: async predictions => {
       const reportPath = writeAutomatedCoverageReport(predictions);
       return { summary: `Wrote local defensive coverage report: ${reportPath}` };
+    },
+  },
+  {
+    id: 'intel-ingest',
+    run: async () => {
+      const summary = await intelIngestor.runScheduled();
+      return { summary };
     },
   },
 ]);
@@ -716,6 +751,11 @@ app.post('/api/memory/for-agent', (req, res) => {
     }
   } catch { /* skills are optional enrichment */ }
 
+  // The bus reads the TRUTHFUL memory flag from here — never from the client.
+  if (sessionId) {
+    busMemoryState.set(`${sessionId}|${String(agentHandle)}`, memoryBlock.length > 0);
+  }
+
   res.json({ memoryBlock, usedLevels: ctx.usedLevels, hits: ctx.hits });
 });
 
@@ -760,16 +800,65 @@ app.post('/api/debates/session', async (req, res) => {
   res.json({ ok: true, sessionId: session.id, research });
 });
 
-// Live transcript capture: the frontend pushes every message as it lands
-app.post('/api/debates/session/:id/messages', (req, res) => {
+// Live transcript capture: the frontend pushes every message as it lands.
+// EVERY message crosses the admission bus first — claims/evidence/predictions
+// are validated in full; plain turns still get M2/M3/M5 enforcement.
+app.post('/api/debates/session/:id/messages', async (req, res) => {
   const messages = req.body?.messages;
   if (!Array.isArray(messages) || messages.length === 0) return res.status(400).json({ error: 'Provide { messages: [...] }' });
-  const session = debateStore.appendMessages(req.params.id, messages as SessionMessage[]);
+
+  const session = debateStore.getSession(req.params.id);
   if (!session) return res.status(404).json({ error: 'Session not found.' });
+
+  const rejections: Array<{ index: number; botId: string; codes: string[]; errors: string[] }> = [];
+  for (let i = 0; i < messages.length; i++) {
+    const m: any = messages[i];
+    if (m?.isUserInterjection) continue; // the operator may always speak
+
+    const botKey = `${req.params.id}|${m.botId ?? m.authorHandle ?? 'agent'}`;
+    const meta: any = m.turn_meta ?? {};
+    const envelope = {
+      seq: (busSeqState.get(req.params.id) ?? 0) + 1,
+      session_id: req.params.id,
+      payload_sha256: m.payload ? sha256Of(m.payload) : undefined,
+      turn_meta: {
+        tier_max: Number(meta.tier_max ?? 2),
+        tool_calls: Number(meta.tool_calls ?? 0),
+        armed: Number(meta.tool_calls ?? 0) > 0, // recomputed by the bus, never accepted from the agent
+        memory_injected: busMemoryState.get(botKey) ?? Boolean(meta.memory_injected),
+        blind_round: Boolean(meta.blind_round)   // enforced when the sender declares a blind round
+      },
+      payload: m.payload ?? { type: 'query', content: { excerpt: String(m.content ?? '').slice(0, 240) } }
+    };
+
+    const verdict = await admit(envelope, {
+      evidenceResolver: evidenceLedger?.resolver(),
+      prevSeq: busSeqState.get(req.params.id)
+    });
+
+    if (!verdict.valid) {
+      rejections.push({ index: i, botId: String(m.botId ?? m.authorHandle ?? 'agent'), codes: verdict.codes, errors: verdict.errors });
+      continue;
+    }
+    busSeqState.set(req.params.id, envelope.seq);
+    m.bus_admitted = true;
+  }
+
+  if (rejections.length > 0) {
+    return res.status(422).json({
+      ok: false,
+      error: 'ChronoZero admission bus rejected one or more payloads',
+      rejections,
+      registry: BUS_ERROR_CODES
+    });
+  }
+
+  const updated = debateStore.appendMessages(req.params.id, messages as SessionMessage[]);
+  if (!updated) return res.status(404).json({ error: 'Session not found.' });
   for (const m of messages) {
     knowledgeEngine.appendLiveMessage(session.id, m as SessionMessage);
   }
-  res.json({ ok: true, stored: session.messages.length });
+  res.json({ ok: true, stored: updated.messages.length });
 });
 
 // Finalizes a debate: knowledge extraction, memories, decision proposal
@@ -1349,6 +1438,100 @@ app.get('/api/datasets/csv', (req, res) => {
   res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', `attachment; filename="${name.replace(/[^A-Za-z0-9]+/g, '-')}.csv"`);
   res.send(sheetToCsv(sheet));
+});
+
+// ----------------- ADMISSION BUS (ChronoZero checkpoint) -----------------
+
+if (evidenceLedger) {
+  registerLedgerRoutes(app, evidenceLedger);
+}
+
+/** Direct admission testing: POST a full envelope, get the verdict. */
+app.post('/api/bus/admit', async (req, res) => {
+  const verdict = await admit(req.body, {
+    evidenceResolver: evidenceLedger?.resolver(),
+    prevSeq: req.body?.session_id ? busSeqState.get(String(req.body.session_id)) : undefined
+  });
+  if (verdict.valid && req.body?.session_id && typeof req.body.seq === 'number') {
+    busSeqState.set(String(req.body.session_id), req.body.seq);
+    // Ledger-side persistence for admitted claims/evidence/predictions.
+    try {
+      if (evidenceLedger && req.body.payload?.type === 'evidence') await evidenceLedger.insertEvidence(req.body.payload.content);
+      if (evidenceLedger && req.body.payload?.type === 'claim') await evidenceLedger.insertClaim(req.body.payload.content);
+      if (evidenceLedger && req.body.payload?.type === 'prediction') await evidenceLedger.insertPrediction(req.body.payload.content);
+    } catch (e: any) {
+      return res.status(500).json({ ok: false, admitted: true, persisted: false, error: e.message });
+    }
+  }
+  res.json({ ok: verdict.valid, ...verdict });
+});
+
+/** Bus status: registry, ledger health, code list. */
+app.get('/api/bus/status', (_req, res) => {
+  res.json({
+    ok: true,
+    codes: BUS_ERROR_CODES,
+    ledger: evidenceLedger
+      ? { online: true, chain: evidenceLedger.verifyChain() }
+      : { online: false, reason: 'better-sqlite3 unavailable or data dir unwritable' },
+    sessionsTracked: busSeqState.size
+  });
+});
+
+// ----------------- PATCHWATCH (pre-CVE window scanner) -----------------
+
+app.post('/api/patchwatch/run', async (req, res) => {
+  const repo = String(req.body?.repo ?? '');
+  const since = String(req.body?.since ?? '7 days ago');
+  const limit = Math.min(Number(req.body?.limit ?? 50), 200);
+  if (!repo) return res.status(400).json({ ok: false, error: 'Provide { repo: "/path/to/repo" }' });
+  try {
+    const report = await runPatchWatch({ repo, since, limit });
+    // Persist rulesets next to the app state (never in the scanned repo).
+    if (report.rules.length > 0) {
+      const dir = path.join(DATA_DIR, 'patchwatch');
+      fs.mkdirSync(dir, { recursive: true });
+      for (const rule of report.rules) {
+        const ymlPath = path.join(dir, `ruleset-${rule.id.replace('cz-synth-', '')}.yml`);
+        fs.writeFileSync(ymlPath, `rules:\n${(await import('./server/lib/synthesize')).rulesToYaml([rule])}`);
+      }
+    }
+    res.json({ ok: true, report });
+  } catch (e: any) {
+    res.status(400).json({ ok: false, error: e.message });
+  }
+});
+
+// ----------------- INTEL INGEST (hourly external delta) -----------------
+
+app.get('/api/ingest/status', (_req, res) => {
+  res.json({ ok: true, ...intelIngestor.getStatus() });
+});
+
+app.post('/api/ingest/run', async (req, res) => {
+  res.json(await intelIngestor.runIngest({
+    maxItems: Number(req.body?.maxItems ?? 120),
+    teach: req.body?.teach !== false,
+    writeEvidence: req.body?.writeEvidence !== false
+  }));
+});
+
+// ----------------- FUZZING HARNESSES (tier-4 evidence) -----------------
+
+app.post('/api/harness/foundry', async (req, res) => {
+  const target = req.body?.target;
+  if (!target?.name || !target?.invariants) {
+    return res.status(400).json({ ok: false, error: 'Provide { target: { name, contractPath, invariants: [...] } }' });
+  }
+  res.json(await foundryHarness.runInvariantTests(target, { seed: req.body?.seed, maxRuns: req.body?.maxRuns }));
+});
+
+app.post('/api/harness/echidna', async (req, res) => {
+  const target = req.body?.target;
+  if (!target?.contractPath || !target?.invariants) {
+    return res.status(400).json({ ok: false, error: 'Provide { target: { contractPath, invariants: [...] } }' });
+  }
+  res.json(await echidnaHarness.runFuzzing(target, { maxRuns: req.body?.maxRuns, seed: req.body?.seed }));
 });
 
 // ----------------- VITE INTEGRATION ------------------ //

@@ -2,11 +2,13 @@
 type: concept
 name: Nonce
 created: 2026-11-04
-mentioned_in: ["[[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo]]"]
+mentioned_in: ["[[Debate 2026-11-05 — ERC-4337 Validation Rule Bypass]]"]
 tags: [concept]
-updated: "2026-11-06T22:51:15.235Z"
-last_discussed: 2026-11-06
+updated: "2026-11-07T16:20:14.028Z"
+last_discussed: 2026-11-05
 ---
+
+
 
 
 # Nonce
@@ -16,3 +18,5 @@ last_discussed: 2026-11-06
 ## Discussed in
 - [[Debate 2026-11-04 — ECDSA Nonce Collapse Across Validator Clusters]] — discussed by [[DarkPool]], [[0xNull]], [[ZeroCipher]], [[StateRoot]], [[SentinEL]], [[Bytecode]], [[ConsensusGhost]], [[Entropy]]
 - [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo]] — discussed by [[ZeroCipher]]
+- [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdown]] — discussed by [[ZeroCipher]]
+- [[Debate 2026-11-05 — ERC-4337 Validation Rule Bypass]] — discussed by [[Entropy]]

@@ -1,21 +1,28 @@
-import * as express from "express";
-import { EvidenceLedger } from "./ledger/evidence-ledger";
-import * as path from "path";
+// =====================================================================
+// Ledger routes — HTTP surface over the EvidenceLedger.
+// ---------------------------------------------------------------------
+// The ledger instance is OWNED by server.ts and injected here, so the
+// admission bus, the ingestor and the harnesses all resolve evidence
+// against the same store. (The previous version constructed its own
+// ledger AND imported it from a path that did not exist.)
+// =====================================================================
 
-export function registerLedgerRoutes(app: express.Express, dataDir: string) {
-  const ledger = new EvidenceLedger(dataDir);
+import express from "express";
+import { EvidenceLedger } from "./evidence-ledger";
 
-  // Health check
+export function registerLedgerRoutes(app: express.Express, ledger: EvidenceLedger) {
+  // Health check + integrity verification of the hash chain.
   app.get("/api/ledger/health", (_req, res) => {
-    res.json({ ok: true, service: "evidence-ledger" });
+    res.json({ ok: true, service: "evidence-ledger", chain: ledger.verifyChain() });
   });
 
   // Evidence endpoints
-  app.post("/api/ledger/evidence", express.json(), async (req, res) => {
+  app.post("/api/ledger/evidence", async (req, res) => {
     try {
       const record = req.body;
+      if (!record?.evidence_id) return res.status(400).json({ ok: false, error: "Missing evidence_id" });
       await ledger.insertEvidence(record);
-      res.json({ ok: true, evidence_id: record.evidence_id });
+      res.json({ ok: true, evidence_id: record.evidence_id, record_sha256: record.integrity?.record_sha256 });
     } catch (e: any) {
       res.status(400).json({ ok: false, error: e.message });
     }
@@ -36,7 +43,6 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
       const commit = req.query.commit as string | undefined;
       const tool = req.query.tool as string | undefined;
       let records;
-      
       if (commit) {
         records = await ledger.getEvidenceByCommit(commit);
       } else if (tool) {
@@ -51,9 +57,10 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
   });
 
   // Claim endpoints
-  app.post("/api/ledger/claims", express.json(), async (req, res) => {
+  app.post("/api/ledger/claims", async (req, res) => {
     try {
       const claim = req.body;
+      if (!claim?.claim_id) return res.status(400).json({ ok: false, error: "Missing claim_id" });
       await ledger.insertClaim(claim);
       res.json({ ok: true, claim_id: claim.claim_id });
     } catch (e: any) {
@@ -73,8 +80,8 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
 
   app.get("/api/ledger/claims", async (req, res) => {
     try {
-      const status = req.query.status as string | undefined;
-      const claims = status ? await ledger.getClaimsByStatus(status) : await ledger.getClaimsByStatus("SPECULATIVE");
+      const status = (req.query.status as string | undefined) ?? "SPECULATIVE";
+      const claims = await ledger.getClaimsByStatus(status);
       res.json({ ok: true, claims });
     } catch (e: any) {
       res.status(500).json({ ok: false, error: e.message });
@@ -82,9 +89,10 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
   });
 
   // Prediction endpoints
-  app.post("/api/ledger/predictions", express.json(), async (req, res) => {
+  app.post("/api/ledger/predictions", async (req, res) => {
     try {
       const pred = req.body;
+      if (!pred?.subject?.ref) return res.status(400).json({ ok: false, error: "Missing subject.ref" });
       await ledger.insertPrediction(pred);
       res.json({ ok: true });
     } catch (e: any) {
@@ -102,7 +110,7 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
     }
   });
 
-  app.post("/api/ledger/predictions/:id/resolve", express.json(), async (req, res) => {
+  app.post("/api/ledger/predictions/:id/resolve", async (req, res) => {
     try {
       await ledger.resolvePrediction(req.params.id, req.body);
       res.json({ ok: true });
@@ -114,36 +122,29 @@ export function registerLedgerRoutes(app: express.Express, dataDir: string) {
   // Stats endpoint
   app.get("/api/ledger/stats", async (_req, res) => {
     try {
-      const db = (ledger as any).db;
-      const stats = {
-        evidence_count: db.prepare("SELECT COUNT(*) as c FROM evidence").get().c,
-        claims_by_status: {
-          SPECULATIVE: db.prepare("SELECT COUNT(*) as c FROM claims WHERE status = 'SPECULATIVE'").get().c,
-          EVIDENCED: db.prepare("SELECT COUNT(*) as c FROM claims WHERE status = 'EVIDENCED'").get().c,
-          REPRODUCED: db.prepare("SELECT COUNT(*) as c FROM claims WHERE status = 'REPRODUCED'").get().c,
-          KILLED: db.prepare("SELECT COUNT(*) as c FROM claims WHERE status = 'KILLED'").get().c,
-          STALE: db.prepare("SELECT COUNT(*) as c FROM claims WHERE status = 'STALE'").get().c,
-        },
-        predictions: {
-          total: (await (async () => {
-            const db2 = (ledger as any).db;
-            return db2.prepare("SELECT COUNT(*) as c FROM predictions").get().c;
-          })()),
-          resolved: (await (async () => {
-            const db2 = (ledger as any).db;
-            return db2.prepare("SELECT COUNT(*) as c FROM predictions WHERE resolved = 1").get().c;
-          })()),
-          pending: (await (async () => {
-            const db2 = (ledger as any).db;
-            return db2.prepare("SELECT COUNT(*) as c FROM predictions WHERE resolved = 0").get().c;
-          })()),
+      const db = ledger.db;
+      const count = (sql: string) => (db.prepare(sql).get() as { c: number }).c;
+      res.json({
+        ok: true,
+        stats: {
+          evidence_count: count("SELECT COUNT(*) as c FROM evidence"),
+          claims_by_status: {
+            SPECULATIVE: count("SELECT COUNT(*) as c FROM claims WHERE status = 'SPECULATIVE'"),
+            EVIDENCED: count("SELECT COUNT(*) as c FROM claims WHERE status = 'EVIDENCED'"),
+            REPRODUCED: count("SELECT COUNT(*) as c FROM claims WHERE status = 'REPRODUCED'"),
+            KILLED: count("SELECT COUNT(*) as c FROM claims WHERE status = 'KILLED'"),
+            STALE: count("SELECT COUNT(*) as c FROM claims WHERE status = 'STALE'")
+          },
+          predictions: {
+            total: count("SELECT COUNT(*) as c FROM predictions"),
+            resolved: count("SELECT COUNT(*) as c FROM predictions WHERE resolved = 1"),
+            pending: count("SELECT COUNT(*) as c FROM predictions WHERE resolved = 0")
+          },
+          chain: ledger.verifyChain()
         }
-      };
-      res.json({ ok: true, stats });
+      });
     } catch (e: any) {
       res.status(500).json({ ok: false, error: e.message });
     }
   });
 }
-
-export { registerLedgerRoutes };

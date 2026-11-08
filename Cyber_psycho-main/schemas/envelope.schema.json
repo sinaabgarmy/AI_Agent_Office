@@ -9,11 +9,25 @@
     "payload"
   ],
   "properties": {
+    "seq": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Monotonic sequence number per session; M5_SEQ_REGRESSION rejects regressions"
+    },
+    "session_id": {
+      "type": "string",
+      "description": "Debate session the envelope belongs to"
+    },
+    "payload_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA-256 of the canonical payload; M1_PAYLOAD_TAMPERED recomputes it"
+    },
     "turn_meta": {
       "type": "object",
       "required": ["armed", "tier_max", "tool_calls", "memory_injected", "blind_round"],
       "properties": {
-        "armed": { "type": "boolean", "description": "Computed by bus, never accepted from agent" },
+        "armed": { "type": "boolean", "description": "Recomputed by the bus, never accepted from the agent" },
         "tier_max": { "type": "integer", "minimum": 1, "maximum": 6 },
         "tool_calls": { "type": "integer", "minimum": 0 },
         "memory_injected": { "type": "boolean" },

@@ -35,10 +35,13 @@ export function getCommitsSince(since: string, repoPath = "."): CommitInfo[] {
 }
 
 export function getDiff(sha: string, repoPath = "."): string {
-  return execFileSync("git", ["show", sha, "--no-color"], { 
-    cwd: repoPath, 
-    encoding: "utf8" 
-  });
+  // Exclude binary blobs (e.g. committed archives) — a 44MB .rar would
+  // blow the spawn buffer (ENOBUFS) and hide the actual code diff.
+  return execFileSync(
+    "git",
+    ["show", sha, "--no-color", "--unified=3", "--no-ext-diff", "--", ".", ":(exclude)*.rar", ":(exclude)*.zip", ":(exclude)*.tar", ":(exclude)*.gz", ":(exclude)*.png", ":(exclude)*.jpg"],
+    { cwd: repoPath, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }
+  );
 }
 
 export function getFileAtCommit(file: string, sha: string, repoPath = "."): string {

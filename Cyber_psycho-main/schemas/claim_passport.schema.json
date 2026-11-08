@@ -126,20 +126,31 @@
       "additionalProperties": false
     }
   },
-  "if": { "properties": { "status": { "const": "SPECULATIVE" } } },
-  "then": {
-    "properties": {
-      "promotion": { "properties": { "promotable": { "const": false } } }
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "SPECULATIVE" } } },
+      "then": {
+        "properties": {
+          "promotion": { "properties": { "promotable": { "const": false } } }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "KILLED" } } },
+      "then": {
+        "properties": {
+          "ladder": { "properties": { "killed_at_rung": { "type": "integer", "minimum": 1, "maximum": 4 } } },
+          "promotion": { "properties": { "promotable": { "const": false } } }
+        }
+      }
+    },
+    {
+      "if": { "not": { "properties": { "status": { "const": "SPECULATIVE" } } } },
+      "then": {
+        "properties": {
+          "evidence": { "minItems": 1 }
+        }
+      }
     }
-  },
-  "if": { "properties": { "status": { "const": "KILLED" } } },
-  "then": {
-    "required": ["ladder"],
-    "properties": {
-      "ladder": { "properties": { "killed_at_rung": { "type": "integer", "minimum": 1, "maximum": 4 } } },
-      "promotion": { "properties": { "promotable": { "const": false } } }
-    }
-  },
-  "if": { "not": { "properties": { "status": { "const": "SPECULATIVE" } } } },
-  "then": { "properties": { "evidence": { "minItems": 1 } } }
+  ]
 }

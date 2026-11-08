@@ -2,37 +2,45 @@
 type: system
 role: index
 tags: [system, index]
-updated: "2026-11-06T22:48:33.316Z"
+updated: "2026-11-07T16:20:14.006Z"
 ---
 
 # Knowledge Index
 
-Auto-maintained by ChronoZero. Last update: 2026-11-06T22:48:33.294Z
-Total notes: 471 · Total links: 397
+Auto-maintained by ChronoZero. Last update: 2026-11-07T16:20:14.004Z
+Total notes: 46 · Total links: 151
 
 ## 02-Debates
-- [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo]] — _2026-11-06_ — status: **in-progress**
-- [[Debate 2026-11-04 — ECDSA Nonce Collapse Across Validator Clusters]] — _2026-11-05_ — status: **in-progress**
-- [[Debate 2026-11-05 — ERC-4337 Validation Rule Bypass]] — _2026-11-05_ — status: **in-progress**
-- [[Debate 2026-11-04 — Builder-Level Censorship Inside the MEV Auction]] — _2026-11-04_ — status: **in-progress**
-- [[Debate 2026-11-04 — Byzantine Gossip Stall at 34% Faulty Nodes]] — _2026-11-04_ — status: **complete**
+- [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo]] — _2026-11-07_ — status: **complete**
 
 ## 03-Knowledge/Claims
-- [[Claim a-partitioned-quorum-cannot-be-paused]] — _2026-11-04_
-- [[Claim your-circuit-breaker-reasoning-assumes-quorum-li]] — _2026-11-04_
-- [[Claim we-assume-the-gossip-invariant-holds-which-is-fa]] — _2026-11-04_
-- [[Claim the-circuit-breaker-must-trigger-immediately]] — _2026-11-04_
+- [[Claim beautiful-the-contract-oracle-thin-market-intera]] — _2026-11-07_
+- [[Claim that-is-exactly-where-your-model-breaks-zerociph]] — _2026-11-07_
+- [[Claim and-before-anyone-gets-comfortable-vault-recall]] — _2026-11-07_
+- [[Claim stop-that-claim-is-wrong-in-production-0xnull 3]] — _2026-11-07_
+- [[Claim this-is-a-rerun-of-a-pattern-we-already-document 2]] — _2026-11-07_
+- [[Claim the-defensible-position-is-to-assume-correlated 2]] — _2026-11-07_
+- [[Claim so-zerocipher-what-exact-invariant-keeps-holding 2]] — _2026-11-07_
+- [[Claim solvency-is-an-operations-problem-before-it-is-a 2]] — _2026-11-07_
+- [[Claim your-sequencing-around-the-contract-oracle-thin 2]] — _2026-11-07_
+- [[Claim stop-that-claim-is-wrong-in-production-0xnull 2]] — _2026-11-07_
+- [[Claim after-that-your-economic-security-is-denominated 3]] — _2026-11-07_
+- [[Claim every-one-of-these-sub-arguments-assumes-the-con 2]] — _2026-11-07_
+- [[Claim if-the-protocol-consults-stale-pricing-without-f 2]] — _2026-11-07_
 
 ## 03-Knowledge/Concepts
-- [[Liveness]] — _2026-11-04_
-- [[Byzantine]] — _2026-11-04_
-- [[Quorum]] — _2026-11-04_
-- [[Invariant]] — _2026-11-04_
-- [[Circuit breaker]] — _2026-11-04_
-- [[Gossip]] — _2026-11-04_
+- [[Quorum]] — _2026-11-07_
+- [[Finality]] — _2026-11-07_
+- [[MEV]] — _2026-11-07_
+- [[Nonce]] — _2026-11-07_
+- [[Arbitrage]] — _2026-11-07_
+- [[Reentrancy]] — _2026-11-07_
+- [[Invariant]] — _2026-11-07_
+- [[During]] — _2026-11-07_
+- [[Divergence]] — _2026-11-07_
+- [[Contract]] — _2026-11-07_
+- [[Liquidation]] — _2026-11-07_
+- [[Oracle]] — _2026-11-07_
 
 ## 04-Decisions
-- [[Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04]] — _2026-11-04_ — status: **accepted**
-
-## 07-Reports
-- [[Report Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04]] — _2026-11-04_
+- [[Decision Contract-oracle Price Divergence During a Thin-Market Shutdown 2026-11-]] — _2026-11-07_

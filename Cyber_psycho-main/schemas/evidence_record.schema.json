@@ -28,11 +28,11 @@
           "type": "string",
           "enum": [
             "grep", "ripgrep", "semgrep", "codeql", "slither", "echidna",
-            "foundry", "afl", "libfuzzer", "zzuf", "radamsa", "dredd",
-            "z3", "cvc5", "klee", "angr", "manticore", "maat", "truffle",
-            "hardhat", "forge", "anvil", "ganache", "manticore", "crowbar",
+            "foundry", "foundry-invariant", "afl", "libfuzzer", "zzuf", "radamsa",
+            "dredd", "z3", "cvc5", "klee", "angr", "manticore", "maat",
+            "truffle", "hardhat", "forge", "anvil", "ganache", "crowbar",
             "securify", "mythril", "solhint", "solc", "surya", "hevm",
-            "evmfuzz", "ityfuzz"
+            "evmfuzz", "ityfuzz", "intel-harvest"
           ]
         },
         "tier": { "type": "integer", "minimum": 1, "maximum": 6 },
@@ -101,11 +101,15 @@
   },
   "allOf": [
     {
-      "if": { "properties": { "tool": { "properties": { "tier": { "minimum": 3 } } } },
-      "then": { "properties": { "target": { "properties": { "in_scope_authorization": { "not": { "const": "none" } } } } }
+      "if": { "properties": { "tool": { "properties": { "tier": { "minimum": 3 } } } } },
+      "then": {
+        "properties": {
+          "target": { "properties": { "in_scope_authorization": { "not": { "const": "none" } } } }
+        }
+      }
     },
     {
-      "if": { "properties": { "tool": { "properties": { "tier": { "minimum": 4 } } } },
+      "if": { "properties": { "tool": { "properties": { "tier": { "minimum": 4 } } } } },
       "then": {
         "properties": {
           "environment": { "properties": { "network": { "enum": ["none", "loopback"] } } },

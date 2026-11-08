@@ -5,15 +5,20 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "issued_at",
     "horizon_days",
     "resolve_by",
     "subject",
     "prediction",
     "rationale",
-    "baseline",
-    "resolution"
+    "baseline"
   ],
   "properties": {
+    "issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp the forecast was issued (before the outcome is knowable)"
+    },
     "horizon_days": {
       "type": "integer",
       "minimum": 1,

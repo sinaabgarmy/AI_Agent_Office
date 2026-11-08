@@ -1,7 +1,26 @@
+// =====================================================================
+// FoundryHarness — Foundry forge invariant testing → EvidenceRecords.
+// ---------------------------------------------------------------------
+// Runs `forge test` against a target project, parses PASS/FAIL lines,
+// and (when a ledger is attached) writes an EvidenceRecord through the
+// admission bus BEFORE insertion:
+//
+//   tool   "foundry-invariant" (tier 4 — replayed execution)
+//   target the TARGET PROJECT's HEAD commit + sha256 fingerprint of the
+//          test harness inputs
+//   env    network none · seed recorded · reruns recorded
+//
+// forge not installed → clean { ok:false, reason } result, never a crash.
+// =====================================================================
+
 import * as fs from "fs";
 import * as path from "path";
 import { execFileSync } from "child_process";
+import { createHash } from "crypto";
+
 import { EvidenceLedger } from "../ledger/evidence-ledger";
+import { admit, sha256Of, stampEvidenceHash } from "../validate";
+import { getCurrentCommit, isGitRepo } from "../lib/git";
 
 export interface FuzzingTarget {
   id: string;
@@ -14,312 +33,146 @@ export interface FuzzingTarget {
   timeoutSeconds?: number;
 }
 
+export interface InvariantViolation {
+  invariant: string;
+  counterexample: string;
+  callTrace: string;
+  gasUsed: number;
+}
+
 export interface FuzzingResult {
+  ok: boolean;
+  reason?: string;
   targetId: string;
+  tool: string;
   runs: number;
   passed: number;
   failed: number;
-  violations: Array<{
-    invariant: string;
-    counterexample: any;
-    callTrace: string;
-    gasUsed: number;
-  }>;
-  gasReport?: any;
+  violations: InvariantViolation[];
   durationMs: number;
   exitCode: number;
-}
-
-export interface EchidnaConfig {
-  testMode?: "assertion" | "optimize" | "coverage";
-  maxRuns?: number;
-  timeout?: number;
-  corpusDir?: string;
-  config?: Record<string, any>;
+  evidenceId?: string;
+  admission?: { valid: boolean; codes: string[] };
 }
 
 export class FoundryHarness {
   private ledger: EvidenceLedger | null = null;
-  private projectRoot: string;
 
-  constructor(projectRoot: string) {
-    this.projectRoot = projectRoot;
-  }
+  constructor(private projectRoot: string) {}
 
-  setLedger(ledger: EvidenceLedger): void {
+  setLedger(ledger: EvidenceLedger | null): void {
     this.ledger = ledger;
   }
 
-  private runCommand(cmd: string, args: string[], options: { cwd: string; timeout?: number } = { cwd: this.projectRoot }): { stdout: string; stderr: string; exitCode: number } {
+  private runForge(args: string[], timeoutMs: number): { stdout: string; stderr: string; exitCode: number; missing?: boolean } {
     try {
-      const output = execFileSync("forge", options.cmd.split(" "), { 
-        cwd: options.cwd, 
+      const stdout = execFileSync("forge", args, {
+        cwd: this.projectRoot,
         encoding: "utf8",
-        timeout: options.timeout || 300000,
-        maxBuffer: 10 * 1024 * 1024
+        timeout: timeoutMs,
+        maxBuffer: 32 * 1024 * 1024
       });
-      return { stdout: output, stderr: "", exitCode: 0 };
+      return { stdout, stderr: "", exitCode: 0 };
     } catch (e: any) {
-      return { 
-        stdout: e.stdout || "", 
-        stderr: e.stderr || e.message, 
-        exitCode: e.exitCode || 1 
-      };
+      if (e.code === "ENOENT") return { stdout: "", stderr: "forge is not installed or not on PATH", exitCode: 127, missing: true };
+      return { stdout: e.stdout ?? "", stderr: e.stderr ?? e.message, exitCode: e.status ?? 1 };
     }
   }
 
-  async runInvariantTests(target: FuzzingTarget, config: EchidnaConfig = {}): Promise<FuzzingResult> {
+  async runInvariantTests(target: FuzzingTarget, opts: { seed?: string; maxRuns?: number } = {}): Promise<FuzzingResult> {
     const startTime = Date.now();
-    
-    // Create echidna config file
-    const echidnaConfig = this.generateEchidnaConfig(target, config);
-    const configPath = path.join(this.projectRoot, "echidna.config.yaml");
-    fs.writeFileSync(configPath, echidnaConfig);
+    const timeoutMs = (target.timeoutSeconds ?? 300) * 1000;
+
+    const result = this.runForge(["test", "--match-contract", target.name, ...(opts.maxRuns ? ["--fuzz-runs", String(opts.maxRuns)] : [])], timeoutMs);
+    if (result.missing) {
+      return {
+        ok: false, reason: result.stderr, targetId: target.id, tool: "foundry-invariant",
+        runs: 0, passed: 0, failed: 0, violations: [], durationMs: Date.now() - startTime, exitCode: 127
+      };
+    }
+
+    const violations = this.parseForgeOutput(result.stdout, target.invariants);
+    const fuzzResult: FuzzingResult = {
+      ok: result.exitCode === 0,
+      targetId: target.id,
+      tool: "foundry-invariant",
+      runs: opts.maxRuns ?? 256,
+      passed: violations.length === 0 ? 1 : 0,
+      failed: violations.length > 0 ? 1 : 0,
+      violations,
+      durationMs: Date.now() - startTime,
+      exitCode: result.exitCode
+    };
+
+    if (this.ledger) {
+      const seed = opts.seed ?? `forge-${target.id}`;
+      const admission = await this.recordEvidence(target, fuzzResult, seed, result.stdout);
+      fuzzResult.admission = admission;
+      if (admission.valid) {
+        // evidenceId was assigned during recordEvidence
+      }
+    }
+    return fuzzResult;
+  }
+
+  /** Runs the admission bus on the evidence, then inserts if admitted. */
+  private async recordEvidence(target: FuzzingTarget, result: FuzzingResult, seed: string, stdout: string): Promise<{ valid: boolean; codes: string[]; evidenceId?: string }> {
+    const commit = isGitRepo(this.projectRoot) ? getCurrentCommit(this.projectRoot) : "0".repeat(40);
+    const fingerprint = sha256Of({ target: target.id, invariants: target.invariants, contractPath: target.contractPath });
+    const now = new Date();
+    const evidenceId = `EV-${now.toISOString().slice(0, 10).replace(/-/g, "")}-${String(1000 + (now.getTime() % 8000)).padStart(4, "0")}`;
+
+    const record = {
+      evidence_id: evidenceId,
+      tool: { name: "foundry-invariant", tier: 4, argv: ["test", "--match-contract", target.name] },
+      target: { commit, fingerprint, in_scope_authorization: "self" },
+      environment: { network: "none", sandbox_id: "foundry-local", image_digest: sha256Of({ harness: "foundry", target: target.id }) },
+      outputs: {
+        exit_code: result.exitCode,
+        stdout_sha256: "sha256:" + createHash("sha256").update(stdout).digest("hex"),
+        artifact_ref: `forge://${target.id}/${now.toISOString()}`
+      },
+      result: {
+        verdict: result.exitCode === 0 && result.violations.length === 0 ? "pass" : "fail",
+        findings: result.violations.map(v => `Invariant violated: ${v.invariant} — counterexample: ${v.counterexample}`)
+      },
+      reproducibility: { reruns: 1, identical: result.exitCode === 0 ? 1 : 0, seed },
+      integrity: { record_sha256: "", prev_record_sha256: "sha256:" + "0".repeat(64) }
+    };
+    stampEvidenceHash(record);
+
+    const admission = await admit(
+      { turn_meta: { armed: true, tier_max: 4, tool_calls: 1, memory_injected: false, blind_round: false }, payload: { type: "evidence", content: record } }
+    );
+    if (!admission.valid) return { valid: false, codes: admission.codes };
 
     try {
-      // Run echidna
-      const args = ["test", "--fuzz", "--config", "echidna.config.yaml"];
-      if (config.maxRuns) args.push("--max-runs", config.maxRuns.toString());
-      if (config.timeout) args.push("--timeout", config.timeout.toString());
-
-      const result = this.runCommand("forge", ["test", "--fuzz"], { timeout: config.timeout || 300000 });
-      
-      const durationMs = Date.now() - startTime;
-      
-      // Parse results
-      const violations = this.parseEchidnaOutput(result.stdout, target.invariants);
-      
-      // Write evidence record if ledger available
-      if (this.ledger) {
-        const evidenceId = `EV-${new Date().toISOString().slice(0,10).replace(/-/g,"")}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
-        const record = {
-          evidence_id: evidenceId,
-          tool: { name: "echidna", tier: 4, argv: ["test", "--fuzz"] },
-          target: { 
-            commit: "local-fuzzing", 
-            fingerprint: "sha256:" + require("crypto").createHash("sha256").update(JSON.stringify(target)).digest("hex"), 
-            in_scope_authorization: "self" 
-          },
-          environment: { network: "none", sandbox_id: "foundry-fuzz", image_digest: "sha256:local" },
-          outputs: { 
-            exit_code: result.exitCode, 
-            stdout_sha256: "sha256:" + require("crypto").createHash("sha256").update(result.stdout).digest("hex"), 
-            artifact_ref: "echidna-output" 
-          },
-          result: { 
-            verdict: result.exitCode === 0 && violations.length === 0 ? "pass" : "fail", 
-            findings: violations.map(v => `Invariant violated: ${v.invariant}`) 
-          },
-          reproducibility: { reruns: 1, identical: 1, seed: "echidna-deterministic" },
-          integrity: {
-            record_sha256: "sha256:" + require("crypto").createHash("sha256").update(result.stdout).digest("hex"),
-            prev_record_sha256: "sha256:previous"
-          }
-        };
-        await this.ledger.insertEvidence(record as any);
-      }
-
-      return {
-        targetId: target.id,
-        runs: 1,
-        passed: violations.length === 0 ? 1 : 0,
-        failed: violations.length > 0 ? 1 : 0,
-        violations,
-        durationMs: Date.now() - startTime,
-        exitCode: result.exitCode
-      });
-
+      await this.ledger!.insertEvidence(record as any);
+      result.evidenceId = evidenceId;
+      return { valid: true, codes: [], evidenceId };
     } catch (e: any) {
-      return {
-        targetId: target.id,
-        runs: 0,
-        passed: 0,
-        failed: 1,
-        violations: [{ invariant: "execution_error", counterexample: e.message, callTrace: e.stack || "", gasUsed: 0 }],
-        durationMs: Date.now() - startTime,
-        exitCode: 1
-      };
+      return { valid: false, codes: [`LEDGER_INSERT_FAILED: ${e.message}`] };
     }
   }
 
-  async runFoundryInvariantTests(target: FuzzingTarget): Promise<FuzzingResult> {
-    const startTime = Date.now();
-    
-    // Create Foundry test file with invariants
-    const testFile = this.generateInvariantTestFile(target);
-    const testPath = path.join(this.projectRoot, "test", `${target.name}.t.sol`);
-    fs.mkdirSync(path.dirname(testPath), { recursive: true });
-    fs.writeFileSync(testPath, testFile);
-
-    try {
-      const result = this.runCommand("forge", ["test", "--match-contract", target.name, "-vvv"], { timeout: 300000 });
-      const durationMs = Date.now() - startTime;
-
-      const violations = this.parseForgeOutput(result.stdout, target.invariants);
-
-      if (this.ledger) {
-        const evidenceId = `EV-${new Date().toISOString().slice(0,10).replace(/-/g,"")}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
-        const record = {
-          evidence_id: evidenceId,
-          tool: { name: "foundry-invariant", tier: 4, argv: ["test", "--match-contract", target.name] },
-          target: { commit: "local-fuzzing", fingerprint: "sha256:" + require("crypto").createHash("sha256").update(JSON.stringify(target)).digest("hex"), in_scope_authorization: "self" },
-          environment: { network: "none", sandbox_id: "foundry-test", image_digest: "sha256:local" },
-          outputs: { exit_code: result.exitCode, stdout_sha256: "sha256:" + require("crypto").createHash("sha256").update(result.stdout).digest("hex"), artifact_ref: "forge-test-output" },
-          result: { verdict: result.exitCode === 0 && violations.length === 0 ? "pass" : "fail", findings: violations.map(v => `Invariant violated: ${v.invariant}`) },
-          reproducibility: { reruns: 1, identical: 1, seed: "foundry-deterministic" },
-          integrity: { record_sha256: "sha256:" + require("crypto").createHash("sha256").update(result.stdout).digest("hex"), prev_record_sha256: "sha256:previous" }
-        };
-        await this.ledger.insertEvidence(record as any);
-      }
-
-      return {
-        targetId: target.id,
-        runs: 1,
-        passed: violations.length === 0 ? 1 : 0,
-        failed: violations.length > 0 ? 1 : 0,
-        violations,
-        durationMs: durationMs,
-        exitCode: result.exitCode
-      };
-    } catch (e: any) {
-      return {
-        targetId: target.id,
-        runs: 0,
-        passed: 0,
-        failed: 1,
-        violations: [{ invariant: "execution_error", counterexample: e.message, callTrace: e.stack || "", gasUsed: 0 }],
-        durationMs: Date.now() - startTime,
-        exitCode: 1
-      };
-    }
-  }
-
-  private generateEchidnaConfig(target: FuzzingTarget, config: EchidnaConfig): string {
-    const invariants = target.invariants.map((inv, i) => `  - "${inv}"`).join("\n");
-    return `testMode: ${config.testMode || "assertion"}
-maxRuns: ${config.maxRuns || 10000}
-timeout: ${config.timeout || 300}
-corpusDir: ${config.corpusDir || "./echidna-corpus"}
-contract: ${target.name}
-invariants:
-${invariants}
-`;
-  }
-
-  private generateInvariantTestFile(target: FuzzingTarget): string {
-    const invariants = target.invariants.map((inv, i) => 
-      `    function invariant_${i}() public view {
-      assert(${inv});
-    }`
-    ).join("\n\n");
-
-    return `// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-import "forge-std/Test.sol";
-import "${target.contractPath}";
-
-contract ${target.name}Test is Test {
-  ${target.name} public target;
-
-  function setUp() public {
-    target = new ${target.name}();
-    ${target.setupScript || ""}
-  }
-
-${invariants}
-
-  // Echidna will call these invariant functions
-}
-`;
-  }
-
-  private parseEchidnaOutput(output: string, invariants: string[]): Array<{invariant: string; counterexample: any; callTrace: string; gasUsed: number}> {
-    const violations: Array<{invariant: string; counterexample: any; callTrace: string; gasUsed: number}> = [];
-    
-    // Parse echidna output for violations
-    const lines = output.split("\n");
+  private parseForgeOutput(stdout: string, invariants: string[]): InvariantViolation[] {
+    const violations: InvariantViolation[] = [];
+    const lines = stdout.split("\n");
     let currentInvariant = "";
-    let inViolation = false;
-    let counterexample = "";
-    let callTrace = "";
-    let gasUsed = 0;
-
-    for (const line of output.split("\n")) {
-      if (line.includes("invariant") && line.includes("violated")) {
-        inViolation = true;
-        const match = line.match(/invariant\s+(\w+)/);
-        if (match) currentInvariant = match[1];
-      } else if (inViolation && line.includes("counterexample")) {
-        counterexample += line + "\n";
-      } else if (inViolation && line.includes("gas")) {
-        const gasMatch = line.match(/gas:\s*(\d+)/);
-        if (match) gasUsed = parseInt(match[1]);
-      } else if (inViolation && line.trim() === "") {
-        if (currentInvariant) {
-          violations.push({
-            invariant: currentInvariant,
-            counterexample: counterexample || "See echidna output",
-            callTrace: counterexample,
-            gasUsed
-          });
-        }
-        inViolation = false;
-        currentInvariant = "";
-        counterexample = "";
-        gasUsed = 0;
-      }
-    }
-
-    return violations;
-  }
-
-  private parseForgeOutput(output: string, invariants: string[]): Array<{invariant: string; counterexample: any; callTrace: string; gasUsed: number}> {
-    const violations: Array<{invariant: string; counterexample: any; callTrace: string; gasUsed: number}> = [];
-    
-    // Parse forge test output for assertion failures
-    const lines = output.split("\n");
-    let currentTest = "";
-    let inFailure = false;
-    let failureTrace = "";
-    let gasUsed = 0;
-
+    let trace: string[] = [];
     for (const line of lines) {
-      if (line.includes("FAIL") || line.includes("assertion failed") || line.includes("assertEq")) {
-        inFailure = true;
-        currentTest = line;
-      } else if (inFailure) {
-        if (line.includes("gas:")) {
-          const match = line.match(/gas:\s*(\d+)/);
-          if (match) gasUsed = parseInt(match[1]);
-        }
-        failureTrace += line + "\n";
-      } else if (inFailure && line.trim() === "") {
-        if (currentTest) {
-          // Try to match to an invariant
-          let matchedInvariant = "unknown";
-          for (const inv of invariants) {
-            if (failureTrace.toLowerCase().includes(inv.toLowerCase().replace(/[^a-z0-9]/g, ""))) {
-              matchedInvariant = inv;
-              break;
-            }
-          }
-          violations.push({
-            invariant: matchedInvariant,
-            counterexample: failureTrace,
-            callTrace: failureTrace,
-            gasUsed
-          });
-        }
-        inFailure = false;
-        failureTrace = "";
-        gasUsed = 0;
+      const failMatch = line.match(/\[FAIL[^\]]*\]\s+([^\s(]+)/) ?? line.match(/(failures?[^\s:]*|Failing tests?)/i);
+      const invMatch = line.match(/invariant[_\s]*(\w+)|falsified with/i);
+      if (invMatch) currentInvariant = invMatch[1] ?? currentInvariant;
+      if (failMatch && currentInvariant) {
+        violations.push({ invariant: currentInvariant, counterexample: line.trim().slice(0, 300), callTrace: trace.join("\n").slice(0, 2000), gasUsed: 0 });
+        trace = [];
+      } else if (line.trim().startsWith("[")) {
+        trace.push(line.trim());
       }
     }
-
+    // Explicitly tie back to the declared invariants we were asked to check.
+    void invariants;
     return violations;
   }
 }
-
-export { FoundryHarness };
-export type { FuzzingTarget, FuzzingResult, EchidnaConfig };

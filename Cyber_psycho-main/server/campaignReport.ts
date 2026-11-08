@@ -1,337 +1,346 @@
-import * as fs from "fs";
-import * as path from "path";
-import { EvidenceLedger } from "../ledger/evidence-ledger";
+// =====================================================================
+// CampaignReport — the full RED/BLUE research brief.
+//
+// ---------------------------------------------------------------------
+// The operator's actual question is not "list vulnerabilities". It is:
+//
+//   "What is the next big exploit likely to be, how would the attacker
+//    do it, how would I stop it, what would it cost, and how would I
+//    even know it is happening?"
+//
+// This engine produces that brief for every hunt target, with five
+// sections that a real red/blue engagement requires:
+//
+//   1. RED TEAM     the attack, step by step, from the attacker's seat
+//   2. BLUE TEAM    the defence, matched line by line
+//   3. BUDGET       attacker cost vs defender cost vs value at risk
+//   4. ONE-TIME     why this specific attack cannot simply be repeated
+//   5. MONITORING   what the attacker sees, what the defender sees, and
+//                   the gap between them (the part that decides whether
+//                   the attack is caught or successful)
+//
+// 100% local, deterministic, zero API cost.
+// =====================================================================
 
-export interface HuntTarget {
-  id: string;
-  primitiveName: string;
-  surfaceComponent: string;
-  layer: string;
-  cwe: string;
-  invariant: string;
-  defenderAssumption: string;
-  capitalUSD: number;
-  timeToExploit: string;
-  stealth: number;
-  attackerMonitoring: string[];
-  defenderMonitoring: string[];
-  defenderBlindSpot: string;
-  oneTimeAttack: string;
-  prevention: string[];
-  containment: string;
-  redTeamAdvantage: number;
-  priority: number;
-}
+import fs from 'fs';
+import path from 'path';
+import { ObsidianVault } from './obsidianVault';
+import { HuntTarget } from './zeroDayHunter';
 
 export interface BudgetLine {
+  side: 'Attacker' | 'Defender';
   item: string;
-  side: "Attacker" | "Defender";
+  /** Cost in USD. Defender lines are one-time engineering costs. */
   usd: number;
-  recurring: boolean;
-  description: string;
-}
-
-export interface BudgetModel {
-  lines: BudgetLine[];
-  attackerTotal: number;
-  defenderOneTime: number;
-  defenderRecurringAnnual: number;
-  valueAtRisk: number;
-  attackerROI: number;
-  defenderVerdict: string;
-}
-
-export interface BlueTeamReport {
-  patchWindow: string;
-  detectionRules: string[];
-  containmentSteps: string[];
-  monitoringGaps: string[];
-  budget: BudgetModel;
-  riskRating: "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
+  /** How often this recurs. */
+  recurrence: 'one-time' | 'per-incident' | 'recurring-annual';
+  note: string;
 }
 
 export interface CampaignReport {
   targetId: string;
   title: string;
-  layer: string;
-  cwe: string;
   generatedAt: string;
   redTeam: {
+    objective: string;
     attackChain: string[];
+    invariant: string;
     capitalUSD: number;
     timeToExploit: string;
-    stealth: number;
-    monitoring: string[];
-    oneTimeAttack: string;
+    prerequisites: string[];
+    cwe: string;
+    layer: string;
+    surface: string;
+    successCriteria: string;
   };
-  blueTeam: BlueTeamReport;
-  budget: BudgetModel;
-  evidence: string[];
-  verdict: "EXPLOITABLE" | "MITIGATED" | "UNKNOWN";
-  recommendation: string;
+  blueTeam: {
+    countermeasure: string;
+    prevention: string[];
+    detectionRules: string[];
+    containment: string;
+    falsePositiveRisk: string;
+    patchWindow: string;
+  };
+  budget: {
+    lines: BudgetLine[];
+    attackerTotal: number;
+    defenderOneTime: number;
+    defenderRecurringAnnual: number;
+    valueAtRisk: number;
+    attackerROI: string;
+    defenderVerdict: string;
+  };
+  oneTime: {
+    statement: string;
+    whyNotRepeatable: string[];
+    evidenceThatClosesIt: string[];
+  };
+  monitoring: {
+    attackerSees: string[];
+    defenderSees: string[];
+    /** The gap — what only the attacker can observe. */
+    asymmetricGap: string[];
+    /** Where the defender CAN observe it. */
+    earliestWarning: string;
+    /** What to log to close the gap. */
+    loggingRequirements: string[];
+  };
 }
 
 export class CampaignReportEngine {
-  private ledger: EvidenceLedger | null = null;
+  constructor(private vault: ObsidianVault) {}
 
-  setLedger(ledger: EvidenceLedger): void {
-    this.ledger = ledger;
-  }
-
+  /** Builds the full brief for one hunt target. */
   build(target: HuntTarget): CampaignReport {
-    const budget = this.buildBudgetModel(target);
-    const blueTeam = this.buildBlueTeamReport(target, budget);
-    
+    const redTeam = this.buildRedTeam(target);
+    const blueTeam = this.buildBlueTeam(target);
+    const budget = this.buildBudget(target);
+    const oneTime = this.buildOneTime(target);
+    const monitoring = this.buildMonitoring(target);
+
     return {
       targetId: target.id,
-      title: `${target.primitiveName} against ${target.surfaceComponent}`,
-      layer: target.layer,
-      cwe: target.cwe,
+      title: `${target.primitiveName} → ${target.surfaceComponent}`,
       generatedAt: new Date().toISOString(),
-      redTeam: {
-        attackChain: this.generateAttackChain(target),
-        capitalUSD: target.capitalUSD,
-        timeToExploit: target.timeToExploit,
-        stealth: target.stealth,
-        monitoring: target.attackerMonitoring,
-        oneTimeAttack: target.oneTimeAttack
-      },
+      redTeam,
       blueTeam,
       budget,
-      evidence: this.gatherEvidence(target),
-      verdict: budget.attackerROI > 1 && budget.defenderVerdict !== "MITIGATED" ? "EXPLOITABLE" : 
-               budget.defenderVerdict === "MITIGATED" ? "MITIGATED" : "UNKNOWN",
-      recommendation: this.generateRecommendation(target, budget)
+      oneTime,
+      monitoring,
     };
   }
 
-  private generateAttackChain(target: HuntTarget): string[] {
-    return [
-      `1. RECON: Monitor ${target.surfaceComponent} for ${target.primitiveName.toLowerCase()} preconditions`,
-      `2. PREP: Establish ${target.primitiveName.toLowerCase()} capability (${target.timeToExploit} prep)`,
-      `3. DELIVERY: Trigger ${target.primitiveName.toLowerCase()} against ${target.surfaceComponent}`,
-      `4. EXPLOITATION: Exploit ${target.invariant} via ${target.defenderAssumption}`,
-      `5. EXTRACTION: Achieve objective: ${target.oneTimeAttack}`,
-      `6. CLEANUP: ${target.containment}`
-    ];
+  private buildRedTeam(t: HuntTarget): CampaignReport['redTeam'] {
+    return {
+      objective: `Achieve "${t.primitiveName}" against ${t.surfaceComponent} — break the invariant "${t.invariant}".`,
+      attackChain: t.attackChain,
+      invariant: t.invariant,
+      capitalUSD: t.capitalUSD,
+      timeToExploit: t.timeToExploit,
+      prerequisites: [
+        `The precondition must hold: ${t.defenderAssumption}`,
+        `Surface reached through ${t.surfaceComponent}.`,
+      ],
+      cwe: t.cwe,
+      layer: t.layer,
+      surface: t.surfaceComponent,
+      successCriteria: `The attack succeeds when the objective state is reached and no alert has fired. Success is observable to the attacker BEFORE the defender can reconcile, because the attack does not need to return to the scene.`,
+    };
   }
 
-  private buildBudgetModel(target: HuntTarget): BudgetModel {
-    const lines: BudgetLine[] = [];
-    
-    // Attacker costs
-    lines.push({
-      item: "Capital Deployment",
-      side: "Attacker",
-      usd: target.capitalUSD,
-      recurring: false,
-      description: `Capital required to execute ${target.primitiveName} against ${target.surfaceComponent}`
-    });
-    
-    if (target.capitalUSD > 10000) {
-      lines.push({
-        item: "Operational Security",
-        side: "Attacker",
-        usd: Math.round(target.capitalUSD * 0.1),
-        recurring: false,
-        description: "OpSec infrastructure, burner accounts, laundering"
-      });
-    }
-    
-    lines.push({
-      item: "Time Investment",
-      side: "Attacker",
-      usd: this.timeToUsd(target.timeToExploit),
-      recurring: false,
-      description: `Attacker time: ${target.timeToExploit}`
-    });
+  private buildBlueTeam(t: HuntTarget): CampaignReport['blueTeam'] {
+    return {
+      countermeasure: `Assert "${t.invariant}" at every state transition that can be affected, and remove the assumption: ${t.defenderAssumption}`,
+      prevention: t.prevention,
+      detectionRules: t.defenderMonitoring,
+      containment: t.containment,
+      falsePositiveRisk: `Moderate. The tripwatches for this defect class ("${t.invariant}") can fire on legitimate traffic — especially in ${t.layer}, where the invariant is often maintained by convention rather than by construction. Tune to the boundary, not the symptom.`,
+      patchWindow: t.timeToExploit === 'Minutes' || t.timeToExploit === 'Hours'
+        ? 'CRITICAL — an attacker can prepare and launch inside a single working day. The control must ship before the first attempt, not after the first incident.'
+        : t.timeToExploit === 'Days'
+        ? 'HIGH — a sprint is enough for a prepared attacker. Prioritise within the week.'
+          : 'MODERATE — exploitation needs sustained preparation, so a planned remediation window is viable, but monitoring must be in place NOW because preparation is observable.',
+    };
+  }
 
-    // Defender one-time costs
-    const patchCost = this.estimatePatchCost(target);
-    lines.push({
-      item: "Emergency Patch Development",
-      side: "Defender",
-      usd: patchCost,
-      recurring: false,
-      description: "Engineering time to develop, test, and deploy fix"
-    });
+  private buildBudget(t: HuntTarget): CampaignReport['budget'] {
+    // Attacker side
+    const attackerLines: BudgetLine[] = [
+      { side: 'Attacker', item: 'Capital deployed (flash loan or own funds)', usd: t.capitalUSD, recurrence: 'one-time', note: 'Recoverable in most cases once the objective is reached — the loss is the preparation, not the capital.' },
+      { side: 'Attacker', item: 'Engineering time to build the exploit', usd: 8000, recurrence: 'one-time', note: `${t.timeToExploit} of focused work at a specialist rate.` },
+      { side: 'Attacker', item: 'Infrastructure (RPC, monitoring, clean exit)', usd: 1200, recurrence: 'one-time', note: 'Attacker-side monitoring and operational security.' },
+    ];
 
-    lines.push({
-      item: "Emergency Deployment",
-      side: "Defender",
-      usd: Math.round(patchCost * 0.2),
-      recurring: false,
-      description: "Emergency deployment, coordination, communication"
-    });
+    // Defender side — scaled by how invasive the fix must be.
+    const invasive = t.layer === 'Consensus' || t.layer === 'Key Management' || t.layer === 'L2 / Bridge';
+    const engineering = invasive ? 45000 : 18000;
+    const audit = invasive ? 20000 : 8000;
+    const monitoring = invasive ? 15000 : 7000;
 
-    lines.push({
-      item: "Monitoring Deployment",
-      side: "Defender",
-      usd: 50000,
-      recurring: false,
-      description: "Deploy detection rules, monitoring dashboards, alerting"
-    });
+    const defenderLines: BudgetLine[] = [
+      { side: 'Defender', item: 'Engineering — implement the invariant assertion', usd: engineering, recurrence: 'one-time', note: invasive ? 'Cross-cutting: touches the core state machine and requires coordinated rollout.' : 'Contained to the affected module.' },
+      { side: 'Defender', item: 'Independent audit / verification of the fix', usd: audit, recurrence: 'one-time', note: 'The fix must be proven, not reviewed — this is the difference between closing the defect and moving it.' },
+      { side: 'Defender', item: 'Monitoring & detection engineering', usd: monitoring, recurrence: 'one-time', note: 'Builds the tripwires described in the detection rules.' },
+      { side: 'Defender', item: 'On-call / incident response readiness', usd: 9000, recurrence: 'recurring-annual', note: 'Staffed capability, not a tool.' },
+      { side: 'Defender', item: 'Logging & observability retention', usd: 3600, recurrence: 'recurring-annual', note: 'The telemetry the attack would have left behind.' },
+    ];
 
-    // Defender recurring costs
-    lines.push({
-      item: "Continuous Monitoring",
-      side: "Defender",
-      usd: 120000,
-      recurring: true,
-      description: "24/7 monitoring, alert triage, threat hunting"
-    });
+    const attackerTotal = attackerLines.reduce((n, l) => n + l.usd, 0);
+    const defenderOneTime = defenderLines.filter(l => l.recurrence === 'one-time').reduce((n, l) => n + l.usd, 0);
+    const defenderRecurringAnnual = defenderLines.filter(l => l.recurrence === 'recurring-annual').reduce((n, l) => n + l.usd, 0);
+    const valueAtRisk = Math.max(t.capitalUSD * 40, 250000);
 
-    lines.push({
-      item: "Audit & Penetration Testing",
-      side: "Defender",
-      usd: 200000,
-      recurring: true,
-      description: "Annual third-party audits and continuous pen testing"
-    });
+    const roi = t.capitalUSD <= 100
+      ? 'EXTREME — the attacker needs almost no capital, so any defence priced above a few hundred dollars is rational on their side and on yours.'
+      : t.capitalUSD <= 25000
+        ? 'HIGH — a few tens of thousands buys the attack; the value at risk is orders of magnitude larger.'
+        : 'MODERATE — meaningful capital is required, which narrows the attacker pool to funded operators.';
 
-    lines.push({
-      item: "Insurance & Reserves",
-      side: "Defender",
-      usd: 500000,
-      recurring: true,
-      description: "Cyber insurance, incident response reserves"
-    );
-
-    const attackerTotal = lines.filter(l => l.side === "Attacker" && !l.recurring).reduce((sum, l) => sum + l.usd, 0);
-    const defenderOneTime = lines.filter(l => l.side === "Defender" && !l.recurring).reduce((sum, l) => sum + l.usd, 0);
-    const defenderRecurring = lines.filter(l => l.side === "Defender" && l.recurring).reduce((sum, l) => sum + l.usd, 0);
-    const valueAtRisk = Math.max(target.capitalUSD * 10, 1000000); // Conservative estimate
-
-    const attackerROI = attackerTotal > 0 ? ((target.capitalUSD * 100) / attackerTotal) : 0;
-    
-    let defenderVerdict = "EXPOSED";
-    if (defenderOneTime + defenderRecurring > attackerTotal * 5) defenderVerdict = "MITIGATED";
-    else if (defenderOneTime + defenderRecurring > attackerTotal * 2) defenderVerdict = "PARTIAL";
-    else if (defenderOneTime + defenderRecurring > attackerTotal) defenderVerdict = "MANAGED";
+    const defenderVerdict = defenderOneTime <= valueAtRisk * 0.2
+      ? `RECOMMENDED — a ${defenderOneTime.toLocaleString()} USD one-time defence against ${valueAtRisk.toLocaleString()} USD at risk is an easy call.`
+      : `CONDITIONAL — the defence costs ${defenderOneTime.toLocaleString()} USD against ${valueAtRisk.toLocaleString()} USD at risk. Still positive, but it should be scheduled deliberately, not deferred indefinitely.`;
 
     return {
-      lines,
+      lines: [...attackerLines, ...defenderLines],
       attackerTotal,
       defenderOneTime,
-      defenderRecurringAnnual: defenderRecurring,
+      defenderRecurringAnnual,
       valueAtRisk,
-      attackerROI: Math.round(attackerROI * 100) / 100,
-      defenderVerdict
+      attackerROI: roi,
+      defenderVerdict,
     };
   }
 
-  private estimatePatchCost(target: HuntTarget): number {
-    // Base cost by layer
-    const layerCosts: Record<string, number> = {
-      "Consensus": 500000,
-      "Cryptography": 300000,
-      "Execution": 200000,
-      "Economic": 250000,
-      "L2 / Bridge": 400000,
-      "Governance": 150000,
-      "Infrastructure": 100000,
-      "Supply Chain": 200000,
-      "Key Management": 300000
-    };
-    
-    const baseCost = layerCosts[target.layer] || 200000;
-    const severityMultiplier = target.severity === "Critical" ? 2 : target.severity === "High" ? 1.5 : 1;
-    const stealthMultiplier = target.stealth > 0.7 ? 1.5 : target.stealth > 0.4 ? 1.2 : 1;
-    
-    return Math.round(baseCost * severityMultiplier * stealthMultiplier);
-  }
-
-  private timeToUsd(timeStr: string): number {
-    const multipliers: Record<string, number> = {
-      "Minutes": 100,
-      "Hours": 1000,
-      "Days": 5000,
-      "Weeks": 25000,
-      "Months": 100000,
-      "Years": 500000
-    };
-    
-    for (const [unit, value] of Object.entries(multipliers)) {
-      if (timeStr.includes(unit)) return value;
-    }
-    return 5000;
-  }
-
-  private buildBlueTeamReport(target: HuntTarget, budget: BudgetModel): BlueTeamReport {
-    const detectionRules = [
-      `Monitor ${target.surfaceComponent} for ${target.primitiveName.toLowerCase()} preconditions`,
-      `Alert on ${target.defenderSignal}`,
-      `Track ${target.invariant} invariant violations`,
-      `Monitor ${target.surfaceComponent} for anomalous ${target.attackerSignal.toLowerCase()}`
-    ];
-
-    const containmentSteps = target.containment.split(". ").filter(s => s.length > 0);
-
-    const monitoringGaps = [
-      `No monitoring for ${target.primitiveName.toLowerCase()} preconditions`,
-      `No alerting on ${target.defenderSignal}`,
-      `No automated containment for ${target.invariant} violations`
-    ];
-
-    const riskRating = target.severity as "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
-
+  private buildOneTime(t: HuntTarget): CampaignReport['oneTime'] {
     return {
-      patchWindow: target.severity === "Critical" ? "0-24 hours" : 
-                   target.severity === "High" ? "24-72 hours" : "1-2 weeks",
-      detectionRules,
-      containmentSteps,
-      monitoringGaps,
-      budget,
-      riskRating
+      statement: t.oneTimeAttack,
+      whyNotRepeatable: [
+        `The value is extracted in a single action — once ${t.surfaceComponent} has been exploited, the objective is achieved and the balance is gone.`,
+        `The precondition ("${t.defenderAssumption}") is consumed or revealed by the attempt, so the same path rarely works twice without re-preparation.`,
+        `A successful exploit leaves evidence the defender will act on, which closes the path even if the attacker wanted to run it again.`,
+      ],
+      evidenceThatClosesIt: [
+        `The defender's own incident response closes it — which is why the attack must land before anyone is looking at ${t.surfaceComponent}.`,
+        `The invariant assertion described in the prevention section makes the attack mathematically impossible rather than merely expensive.`,
+        `Monitoring for the attacker's pre-flight signal gives the defender a window in which to patch before the objective is reached.`,
+      ],
     };
   }
 
-  private gatherEvidence(target: HuntTarget): string[] {
-    return [
-      `Primitive: ${target.primitiveName} (${target.cwe})`,
-      `Surface: ${target.surfaceComponent} (${target.layer})`,
-      `Invariant at risk: ${target.invariant}`,
-      `Defender assumption: ${target.defenderAssumption}`,
-      `Capital required: $${target.capitalUSD.toLocaleString()}`,
-      `Time to exploit: ${target.timeToExploit}`,
-      `Stealth: ${Math.round(target.stealth * 100)}%`,
-      `Red team advantage: ${Math.round((target.redTeamAdvantage - 1) * 100)}%`
-    ];
+  private buildMonitoring(t: HuntTarget): CampaignReport['monitoring'] {
+    const gap = t.defenderBlindSpot;
+    return {
+      attackerSees: t.attackerMonitoring,
+      defenderSees: t.defenderMonitoring,
+      asymmetricGap: [
+        gap,
+        `The attacker observes the surface continuously and cheaply; the defender observes it only through logs that were designed for a different failure mode.`,
+        `The attacker's success criterion ("${t.invariant}" broken) is a state change; the defender's alert is usually an event, and the event may be entirely ordinary.`,
+      ],
+      earliestWarning: `The earliest reliable signal is PRE-EXPLOITATION, not the exploit itself: the precondition forming. Monitoring for "${t.attackerMonitoring[0]}" is the difference between a 2-hour and a 2-week response.`,
+      loggingRequirements: [
+        `Log every boundary crossing at ${t.surfaceComponent} with the actor, the capability asserted and the state observed BEFORE the interaction — not after.`,
+        `Log the precondition indicators explicitly, so the defender can alert on the setup phase rather than only on the payoff.`,
+        `Retain the logs long enough to cover the exploit's time-to-exploit window (${t.timeToExploit}) — an attacker that prepares for a week may act on a month-old log.`,
+        `Alert on the invariant directly: assert "${t.invariant}" continuously and alert on violation, not only on the action that tends to cause it.`,
+      ],
+    };
   }
 
-  private generateRecommendation(target: HuntTarget, budget: BudgetModel): string {
-    const parts = [
-      `PRIORITY: ${target.severity} — ${target.primitiveName} against ${target.surfaceComponent} is ${budget.defenderVerdict.toLowerCase()}.`
-    ];
-
-    if (budget.defenderVerdict === "EXPOSED") {
-      parts.push("IMMEDIATE ACTION REQUIRED: Deploy emergency monitoring within 24h, begin emergency patch development.");
-      parts.push(`Deploy detection for: ${target.defenderSignal}`);
-    } else if (budget.defenderVerdict === "MANAGED") {
-      parts.push("Schedule patch within patch window. Deploy enhanced monitoring immediately.");
-    } else if (budget.defenderVerdict === "PARTIAL") {
-      parts.push("Accelerate patch timeline. Deploy detection rules within 72h.");
-    } else {
-      parts.push("Current defenses adequate. Maintain monitoring and schedule next review.");
-    }
-
-    parts.push(`Patch window: ${budget.attackerROI > 10 ? "EMERGENCY (<24h)" : budget.attackerROI > 1 ? "URGENT (24-72h)" : "NORMAL (1-2 weeks)"}`);
-    parts.push(`Budget impact: Attacker ROI ${budget.attackerROI}x, Defender one-time $${budget.defenderOneTime.toLocaleString()}, Annual $${budget.defenderRecurringAnnual.toLocaleString()}`);
-
-    return parts.join(" ");
-  }
-
+  /** Writes the report into the vault as a Markdown note. */
   writeReport(report: CampaignReport): string | null {
-    if (!this.ledger) return null;
-    // Would write to vault
-    return null;
-  }
+    if (!this.vault.isConnected()) return null;
+    const b = report.budget;
+    const budgetRows = b.lines.map(l => `| ${l.side} | ${l.item} | $${l.usd.toLocaleString()} | ${l.recurrence} | ${l.note} |`);
 
-  static build(target: HuntTarget): CampaignReport {
-    const engine = new CampaignReportEngine();
-    return engine.build(target);
+    const body = [
+      `# Campaign Brief — ${report.title}`,
+      '',
+      `> **Layer:** ${report.redTeam.layer} · **CWE:** ${report.redTeam.cwe} · **Capital:** $${report.redTeam.capitalUSD.toLocaleString()} · **Time to exploit:** ${report.redTeam.timeToExploit}`,
+      `> Generated ${report.generatedAt} · Target ID \`${report.targetId}\``,
+      '',
+      '---',
+      '',
+      '## 1. RED TEAM — the attack',
+      '',
+      `**Objective:** ${report.redTeam.objective}`,
+      '',
+      '**Attack chain:**',
+      ...report.redTeam.attackChain.map((s, i) => `${i + 1}. ${s}`),
+      '',
+      `**Invariant broken:** ${report.redTeam.invariant}`,
+      '',
+      '**Prerequisites:**',
+      ...report.redTeam.prerequisites.map(s => `- ${s}`),
+      '',
+      `**Success criteria:** ${report.redTeam.successCriteria}`,
+      '',
+      '## 2. BLUE TEAM — the defence',
+      '',
+      `**Countermeasure:** ${report.blueTeam.countermeasure}`,
+      '',
+      '**Prevention (specific to this attack):**',
+      ...report.blueTeam.prevention.map(s => `- ${s}`),
+      '',
+      '**Detection rules:**',
+      ...report.blueTeam.detectionRules.map(s => `- ${s}`),
+      '',
+      `**Containment:** ${report.blueTeam.containment}`,
+      '',
+      `**False-positive risk:** ${report.blueTeam.falsePositiveRisk}`,
+      '',
+      `**Patch window:** ${report.blueTeam.patchWindow}`,
+      '',
+      '## 3. BUDGET',
+      '',
+      '| Side | Item | Cost | Recurrence | Note |',
+      '|---|---|---|---|---|',
+      ...budgetRows,
+      '',
+      `**Attacker total:** $${b.attackerTotal.toLocaleString()}`,
+      `**Defender one-time:** $${b.defenderOneTime.toLocaleString()}`,
+      `**Defender recurring:** $${b.defenderRecurringAnnual.toLocaleString()} / year`,
+      `**Value at risk:** $${b.valueAtRisk.toLocaleString()}`,
+      '',
+      `**Attacker ROI:** ${b.attackerROI}`,
+      '',
+      `**Defender verdict:** ${b.defenderVerdict}`,
+      '',
+      '## 4. WHY THIS IS A ONE-TIME ATTACK',
+      '',
+      report.oneTime.statement,
+      '',
+      '**Why it is not repeatable:**',
+      ...report.oneTime.whyNotRepeatable.map(s => `- ${s}`),
+      '',
+      '**What closes it permanently:**',
+      ...report.oneTime.evidenceThatClosesIt.map(s => `- ${s}`),
+      '',
+      '## 5. MONITORING — how the attacker and the defender each see it',
+      '',
+      '**What the attacker monitors:**',
+      ...report.monitoring.attackerSees.map(s => `- ${s}`),
+      '',
+      '**What the defender monitors:**',
+      ...report.monitoring.defenderSees.map(s => `- ${s}`),
+      '',
+      '**The asymmetric gap (attacker advantage):**',
+      ...report.monitoring.asymmetricGap.map(s => `- ${s}`),
+      '',
+      `**Earliest warning:** ${report.monitoring.earliestWarning}`,
+      '',
+      '**Logging requirements to close the gap:**',
+      ...report.monitoring.loggingRequirements.map(s => `- ${s}`),
+      '',
+      '---',
+      '',
+      '_Generated by the ChronoZero Campaign Report engine._',
+    ].join('\n');
+
+    try {
+      const { relPath } = this.vault.writeNote({
+        dir: '11-Reports',
+        filename: `Campaign Brief — ${report.title}`,
+        type: 'report',
+        dedupe: 'suffix',
+        linkType: 'mentions',
+        frontmatter: {
+          type: 'report',
+          report_kind: 'red-blue-campaign',
+          target_id: report.targetId,
+          layer: report.redTeam.layer,
+          cwe: report.redTeam.cwe,
+          attacker_total_usd: report.budget.attackerTotal,
+          defender_one_time_usd: report.budget.defenderOneTime,
+          value_at_risk_usd: report.budget.valueAtRisk,
+          patch_window: report.blueTeam.patchWindow,
+          tags: ['report', 'red-team', 'blue-team', 'budget'],
+        },
+        body,
+      });
+      return relPath;
+    } catch {
+      return null;
+    }
   }
 }
-
-export { CampaignReportEngine };
-export type { HuntTarget, CampaignReport, BudgetModel, BlueTeamReport, BudgetLine };

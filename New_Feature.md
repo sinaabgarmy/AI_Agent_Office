@@ -167,3 +167,5 @@ Rung 4 is the bottleneck and it is a _build_ task, not a prompt task — which i
 Defensive only, and enforced in code rather than stated in a README. The executor refuses `in_scope_authorization: none` and any `egress` network at tier ≥ 4 (`E3_SCOPE_UNAUTHORIZED`, `E3_EGRESS`). The library targets your own repos, synthetic targets, lab images and published-PoC reproductions. Deliverables are the reachability argument, the counterexample input, the minimal regression test, the detection rule with a benign control, and the patch — no weaponised payloads, no key-recovery tooling against real addresses; `Entropy.md` names that ban explicitly.
 
 Want me to take the next build step: (a) the SQLite evidence ledger + `admit()` wired to an HTTP endpoint, (b) an `osv-batch` / `cvelistV5` hourly-delta ingestor that emits EvidenceRecords in this schema, or © a real Foundry/Echidna harness for one of your actual targets?
+
+

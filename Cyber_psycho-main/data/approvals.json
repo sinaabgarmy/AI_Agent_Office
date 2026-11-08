@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "decisionPath": "04-Decisions/Open-Questions/Decision Contract-oracle Price Divergence During a Thin-Market Shutdown 2026-11-.md",
+    "title": "Decision Contract-oracle Price Divergence During a Thin-Market Shutdown 2026-11-",
+    "debateId": "deb-1794005207170-f7bx6a",
+    "debateTitle": "Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdown",
+    "proposedBy": "council-knowledge-engine",
+    "id": "apr-1794068413967-rjcyy",
+    "proposedAt": "2026-11-07T16:20:13.967Z",
+    "status": "pending"
+  },
+  {
+    "decisionPath": "04-Decisions/Accepted-Conclusions/Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04.md",
+    "title": "Decision Byzantine Gossip Stall at 34% Faulty Nodes 2026-11-04",
+    "debateId": "deb-1793807545769-fi7mnh",
+    "debateTitle": "Debate 2026-11-04 — Byzantine Gossip Stall at 34% Faulty Nodes",
+    "proposedBy": "council-knowledge-engine",
+    "id": "apr-1793807550462-t17a6",
+    "proposedAt": "2026-11-04T15:52:30.462Z",
+    "status": "approved",
+    "decidedAt": "2026-11-04T18:51:12.394Z"
+  }
+]
