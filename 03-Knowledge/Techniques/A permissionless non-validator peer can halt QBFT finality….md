@@ -13,9 +13,10 @@ source_id: GHSA-g5j7-4r2x-rx9j
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-400]
-updated: "2026-11-10T11:50:59.720Z"
+updated: "2026-11-10T15:28:32.988Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ prevent the network from assembling a finality quorum
 > **Refreshed 2026-11-10T08:12:51.673Z** — A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding
 > **Refreshed 2026-11-10T11:08:39.432Z** — A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding
 > **Refreshed 2026-11-10T11:50:59.720Z** — A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding
+> **Refreshed 2026-11-10T15:28:32.987Z** — A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding

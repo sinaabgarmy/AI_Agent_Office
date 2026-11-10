@@ -10,12 +10,13 @@ remediation: Expose liveness and participation metrics with alerting thresholds 
 source: Trail of Bits Research
 source_url: "https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/"
 source_id: tob-blog-state-divergence-enables-unauthorized-ac
-confidence: 0.81
+confidence: 0.94
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.662Z"
+updated: "2026-11-10T15:28:32.916Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.633Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
 > **Refreshed 2026-11-10T11:08:39.308Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
 > **Refreshed 2026-11-10T11:50:59.662Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-10T15:28:32.916Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="

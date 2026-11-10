@@ -15,9 +15,10 @@ harvested: 2026-11-10
 origin: web
 trust: trusted
 tags: [technique, execution, cwe-841, web-capture]
-updated: "2026-11-10T11:50:59.807Z"
+updated: "2026-11-10T15:28:33.065Z"
 status: known
 ---
+
 
 
 
@@ -42,3 +43,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.734Z** — [ 1 ] Several non-governmental organizations (NGOs) and eyewitness accounts report cases of human trafficking, forced labor, torture, child exploitation and other forms of abuse from Cambodian scam centers.
 > **Refreshed 2026-11-10T11:08:39.525Z** — [ 1 ] Several non-governmental organizations (NGOs) and eyewitness accounts report cases of human trafficking, forced labor, torture, child exploitation and other forms of abuse from Cambodian scam centers.
 > **Refreshed 2026-11-10T11:50:59.807Z** — [ 1 ] Several non-governmental organizations (NGOs) and eyewitness accounts report cases of human trafficking, forced labor, torture, child exploitation and other forms of abuse from Cambodian scam centers.
+> **Refreshed 2026-11-10T15:28:33.065Z** — [ 1 ] Several non-governmental organizations (NGOs) and eyewitness accounts report cases of human trafficking, forced labor, torture, child exploitation and other forms of abuse from Cambodian scam centers.

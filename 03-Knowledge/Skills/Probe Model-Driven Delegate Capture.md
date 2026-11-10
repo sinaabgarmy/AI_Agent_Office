@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, governance, surface-gap]
-updated: "2026-11-10T12:06:24.812Z"
+updated: "2026-11-10T15:27:53.357Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.348Z** — When the council opens a debate on Model-Driven Delegate Capture, or when auditing a system that matches "Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say.".
 > **Refreshed 2026-11-10T11:49:59.883Z** — When the council opens a debate on Model-Driven Delegate Capture, or when auditing a system that matches "Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say.".
 > **Refreshed 2026-11-10T12:06:24.812Z** — When the council opens a debate on Model-Driven Delegate Capture, or when auditing a system that matches "Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say.".
+> **Refreshed 2026-11-10T15:27:53.357Z** — When the council opens a debate on Model-Driven Delegate Capture, or when auditing a system that matches "Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say.".

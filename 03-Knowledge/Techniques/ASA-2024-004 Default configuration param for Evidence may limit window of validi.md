@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-1188]
-updated: "2026-11-10T11:50:59.813Z"
+updated: "2026-11-10T15:28:33.073Z"
 ---
 
 # ASA-2024-004: Default configuration param for Evidence may limit window of validity

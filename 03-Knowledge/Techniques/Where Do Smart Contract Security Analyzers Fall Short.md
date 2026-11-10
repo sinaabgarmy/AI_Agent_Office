@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.671Z"
+updated: "2026-11-10T15:28:32.931Z"
 ---
 
 # Where Do Smart Contract Security Analyzers Fall Short?

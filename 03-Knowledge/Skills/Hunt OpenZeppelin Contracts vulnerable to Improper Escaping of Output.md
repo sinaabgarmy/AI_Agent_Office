@@ -19,9 +19,10 @@ confidence: 0.77
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, supply-chain, cwe-116]
-updated: "2026-11-10T12:06:24.803Z"
+updated: "2026-11-10T15:27:53.345Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.342Z** — When reviewing or red-teaming code in the Supply Chain layer, or when the target system mentions CWE-116.
 > **Refreshed 2026-11-10T11:49:59.875Z** — When reviewing or red-teaming code in the Supply Chain layer, or when the target system mentions CWE-116.
 > **Refreshed 2026-11-10T12:06:24.803Z** — When reviewing or red-teaming code in the Supply Chain layer, or when the target system mentions CWE-116.
+> **Refreshed 2026-11-10T15:27:53.345Z** — When reviewing or red-teaming code in the Supply Chain layer, or when the target system mentions CWE-116.

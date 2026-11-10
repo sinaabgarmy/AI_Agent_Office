@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, cryptography, surface-gap]
-updated: "2026-11-10T12:06:24.809Z"
+updated: "2026-11-10T15:27:53.352Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.345Z** — When the council opens a debate on Encrypted-State Leakage via Decryption Oracles, or when auditing a system that matches "Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.".
 > **Refreshed 2026-11-10T11:49:59.880Z** — When the council opens a debate on Encrypted-State Leakage via Decryption Oracles, or when auditing a system that matches "Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.".
 > **Refreshed 2026-11-10T12:06:24.809Z** — When the council opens a debate on Encrypted-State Leakage via Decryption Oracles, or when auditing a system that matches "Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.".
+> **Refreshed 2026-11-10T15:27:53.352Z** — When the council opens a debate on Encrypted-State Leakage via Decryption Oracles, or when auditing a system that matches "Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.".

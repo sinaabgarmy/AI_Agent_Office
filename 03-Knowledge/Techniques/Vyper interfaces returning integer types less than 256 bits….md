@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.758Z"
+updated: "2026-11-10T15:28:33.017Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ workaround while the correct resolution is in process
 > **Refreshed 2026-11-10T08:12:51.696Z** — This allows users to read an interface that returns a uint8 value to be stored into a uint256 variable without any explicit casting or input validation.
 > **Refreshed 2026-11-10T11:08:39.484Z** — This allows users to read an interface that returns a uint8 value to be stored into a uint256 variable without any explicit casting or input validation.
 > **Refreshed 2026-11-10T11:50:59.758Z** — This allows users to read an interface that returns a uint8 value to be stored into a uint256 variable without any explicit casting or input validation.
+> **Refreshed 2026-11-10T15:28:33.017Z** — This allows users to read an interface that returns a uint8 value to be stored into a uint256 variable without any explicit casting or input validation.

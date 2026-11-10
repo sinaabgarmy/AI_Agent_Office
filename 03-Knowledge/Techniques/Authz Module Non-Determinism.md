@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-754]
-updated: "2026-11-10T11:50:59.797Z"
+updated: "2026-11-10T15:28:33.056Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.723Z** — Authz Module Non-Determinism Consensus failure for 0.43.x and 0.44.{0,1} users.
 > **Refreshed 2026-11-10T11:08:39.516Z** — Authz Module Non-Determinism Consensus failure for 0.43.x and 0.44.{0,1} users.
 > **Refreshed 2026-11-10T11:50:59.797Z** — Authz Module Non-Determinism Consensus failure for 0.43.x and 0.44.{0,1} users.
+> **Refreshed 2026-11-10T15:28:33.056Z** — Authz Module Non-Determinism Consensus failure for 0.43.x and 0.44.{0,1} users.

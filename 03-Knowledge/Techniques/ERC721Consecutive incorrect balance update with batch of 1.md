@@ -13,9 +13,10 @@ source_id: GHSA-878m-3g6q-594q
 confidence: 0.67
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.752Z"
+updated: "2026-11-10T15:28:33.008Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.692Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-10T11:08:39.476Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-10T11:50:59.752Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T15:28:33.008Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.

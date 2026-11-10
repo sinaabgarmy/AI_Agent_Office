@@ -13,9 +13,10 @@ source_id: GHSA-5h3x-9wvq-w4m2
 confidence: 0.92
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.754Z"
+updated: "2026-11-10T15:28:33.009Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ prevent a proposal from being proposed at all
 > **Refreshed 2026-11-10T08:12:51.693Z** — Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.
 > **Refreshed 2026-11-10T11:08:39.479Z** — Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.
 > **Refreshed 2026-11-10T11:50:59.754Z** — Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.
+> **Refreshed 2026-11-10T15:28:33.009Z** — Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.

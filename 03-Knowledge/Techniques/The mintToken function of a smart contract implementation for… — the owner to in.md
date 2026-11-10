@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.637Z"
+updated: "2026-11-10T15:28:32.881Z"
 ---
 
 # The mintToken function of a smart contract implementation for… — the owner to increase the total s

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, l-bridge, cwe-345]
-updated: "2026-11-10T11:50:59.731Z"
+updated: "2026-11-10T15:28:32.994Z"
 ---
 
 # snap-sync isValidRangeProof accepts a non-empty range as… — when the full subtrie is supplied as proof

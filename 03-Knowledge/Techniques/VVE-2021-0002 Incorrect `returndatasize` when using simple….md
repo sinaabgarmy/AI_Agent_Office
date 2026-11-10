@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.757Z"
+updated: "2026-11-10T15:28:33.015Z"
 ---
 
 # VVE-2021-0002: Incorrect `returndatasize` when using simple…

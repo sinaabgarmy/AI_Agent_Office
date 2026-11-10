@@ -19,9 +19,10 @@ confidence: 0.97
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, consensus, cwe-125]
-updated: "2026-11-10T12:06:24.801Z"
+updated: "2026-11-10T15:27:53.344Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.341Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-125.
 > **Refreshed 2026-11-10T11:49:59.873Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-125.
 > **Refreshed 2026-11-10T12:06:24.801Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-125.
+> **Refreshed 2026-11-10T15:27:53.343Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-125.

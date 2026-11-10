@@ -13,9 +13,10 @@ source_id: ef-blog-eth-rangers-program-recap
 confidence: 0.65
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.643Z"
+updated: "2026-11-10T15:28:32.886Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.619Z** — ETH Rangers Program Recap In late 2024, the Ethereum Foundation, together with Secureum, The Red Guild, and Security Alliance (SEAL), launched the ETH Rangers Program, an initiative to provide stipends for individuals doing public goods security work in the…
 > **Refreshed 2026-11-10T11:08:39.261Z** — ETH Rangers Program Recap In late 2024, the Ethereum Foundation, together with Secureum, The Red Guild, and Security Alliance (SEAL), launched the ETH Rangers Program, an initiative to provide stipends for individuals doing public goods security work in the…
 > **Refreshed 2026-11-10T11:50:59.643Z** — ETH Rangers Program Recap In late 2024, the Ethereum Foundation, together with Secureum, The Red Guild, and Security Alliance (SEAL), launched the ETH Rangers Program, an initiative to provide stipends for individuals doing public goods security work in the…
+> **Refreshed 2026-11-10T15:28:32.886Z** — ETH Rangers Program Recap In late 2024, the Ethereum Foundation, together with Secureum, The Red Guild, and Security Alliance (SEAL), launched the ETH Rangers Program, an initiative to provide stipends for individuals doing public goods security work in the…

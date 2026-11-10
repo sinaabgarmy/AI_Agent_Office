@@ -13,9 +13,10 @@ source_id: CVE-2018-10706
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, execution, cwe-190]
-updated: "2026-11-10T11:50:59.634Z"
+updated: "2026-11-10T15:28:32.878Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.613Z** — An integer overflow in the transferMulti function of a smart contract implementation for Social Chain (SCA), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized An integer overflow in the transferMulti function of a smart contract…
 > **Refreshed 2026-11-10T11:08:39.244Z** — An integer overflow in the transferMulti function of a smart contract implementation for Social Chain (SCA), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized An integer overflow in the transferMulti function of a smart contract…
 > **Refreshed 2026-11-10T11:50:59.634Z** — An integer overflow in the transferMulti function of a smart contract implementation for Social Chain (SCA), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized An integer overflow in the transferMulti function of a smart contract…
+> **Refreshed 2026-11-10T15:28:32.878Z** — An integer overflow in the transferMulti function of a smart contract implementation for Social Chain (SCA), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized An integer overflow in the transferMulti function of a smart contract…

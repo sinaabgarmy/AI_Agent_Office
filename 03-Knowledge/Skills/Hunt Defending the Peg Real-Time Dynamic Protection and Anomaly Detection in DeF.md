@@ -19,9 +19,10 @@ confidence: 0.82
 created: "2026-11-09T23:13:46.132Z"
 times_used: 0
 tags: [skill, hunt, l-bridge, cwe-345]
-updated: "2026-11-10T12:06:24.792Z"
+updated: "2026-11-10T15:27:53.334Z"
 status: active
 ---
+
 
 
 
@@ -70,3 +71,4 @@ Verify every input against its expected form before it can influence state or va
 > **Refreshed 2026-11-10T07:31:07.333Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.
 > **Refreshed 2026-11-10T11:49:59.863Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.
 > **Refreshed 2026-11-10T12:06:24.792Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.
+> **Refreshed 2026-11-10T15:27:53.334Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.

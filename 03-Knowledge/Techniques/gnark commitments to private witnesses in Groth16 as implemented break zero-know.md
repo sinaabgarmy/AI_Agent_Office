@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-200]
-updated: "2026-11-10T11:50:59.818Z"
+updated: "2026-11-10T15:28:33.078Z"
 ---
 
 # gnark commitments to private witnesses in Groth16 as implemented break zero-knowledge property

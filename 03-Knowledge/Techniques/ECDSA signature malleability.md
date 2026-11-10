@@ -13,9 +13,10 @@ source_id: GHSA-4h98-2769-gh6h
 confidence: 0.96
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.746Z"
+updated: "2026-11-10T15:28:33.004Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.689Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
 > **Refreshed 2026-11-10T11:08:39.473Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
 > **Refreshed 2026-11-10T11:50:59.746Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-10T15:28:33.004Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.

@@ -13,9 +13,10 @@ source_id: ef-blog-glamsterdam-repricing-impact-for-smart-c
 confidence: 0.67
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.656Z"
+updated: "2026-11-10T15:28:32.905Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.628Z** — Glamsterdam Repricing Impact for Smart Contract Developers...
 > **Refreshed 2026-11-10T11:08:39.289Z** — Glamsterdam Repricing Impact for Smart Contract Developers...
 > **Refreshed 2026-11-10T11:50:59.656Z** — Glamsterdam Repricing Impact for Smart Contract Developers...
+> **Refreshed 2026-11-10T15:28:32.905Z** — Glamsterdam Repricing Impact for Smart Contract Developers...

@@ -19,9 +19,10 @@ confidence: 0.81
 created: "2026-11-09T23:13:46.132Z"
 times_used: 5
 tags: [skill, hunt, consensus, cwe-664]
-updated: "2026-11-10T12:06:24.790Z"
+updated: "2026-11-10T15:27:53.331Z"
 status: active
 ---
+
 
 
 
@@ -69,3 +70,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T07:31:07.330Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-664.
 > **Refreshed 2026-11-10T11:49:59.861Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-664.
 > **Refreshed 2026-11-10T12:06:24.790Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-664.
+> **Refreshed 2026-11-10T15:27:53.331Z** — When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-664.

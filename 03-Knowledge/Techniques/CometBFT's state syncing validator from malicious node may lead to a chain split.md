@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.812Z"
+updated: "2026-11-10T15:28:33.070Z"
+status: known
 ---
+
 
 # CometBFT's state syncing validator from malicious node may lead to a chain split
 
@@ -35,3 +37,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 - OSV — cometbft — GHSA-g5xx-c4hv-9ccc
 - https://github.com/advisories/GHSA-g5xx-c4hv-9ccc
 - Harvested: 2026-11-10T11:50:59.619Z
+> **Refreshed 2026-11-10T15:28:33.070Z** — In order for this node to be ready to run consensus and block sync from the installed snapshot height, we also need to install a valid State in the node, which is the starting state from which it is able to validate new blocks and append them to the…

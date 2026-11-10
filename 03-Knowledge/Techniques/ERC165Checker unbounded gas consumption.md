@@ -13,9 +13,10 @@ source_id: GHSA-7grf-83vw-6f5x
 confidence: 0.68
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.749Z"
+updated: "2026-11-10T15:28:33.005Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.690Z** — ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
 > **Refreshed 2026-11-10T11:08:39.475Z** — ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
 > **Refreshed 2026-11-10T11:50:59.748Z** — ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
+> **Refreshed 2026-11-10T15:28:33.005Z** — ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.

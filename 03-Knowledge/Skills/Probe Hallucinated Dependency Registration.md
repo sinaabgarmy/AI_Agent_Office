@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, supply-chain, surface-gap]
-updated: "2026-11-10T12:06:24.816Z"
+updated: "2026-11-10T15:27:53.360Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.350Z** — When the council opens a debate on Hallucinated Dependency Registration, or when auditing a system that matches "Code assistants recommend package names that do not exist with stable regularity, so registering those names turns a model’s mistake into a distribution channel.".
 > **Refreshed 2026-11-10T11:49:59.886Z** — When the council opens a debate on Hallucinated Dependency Registration, or when auditing a system that matches "Code assistants recommend package names that do not exist with stable regularity, so registering those names turns a model’s mistake into a distribution channel.".
 > **Refreshed 2026-11-10T12:06:24.816Z** — When the council opens a debate on Hallucinated Dependency Registration, or when auditing a system that matches "Code assistants recommend package names that do not exist with stable regularity, so registering those names turns a model’s mistake into a distribution channel.".
+> **Refreshed 2026-11-10T15:27:53.360Z** — When the council opens a debate on Hallucinated Dependency Registration, or when auditing a system that matches "Code assistants recommend package names that do not exist with stable regularity, so registering those names turns a model’s mistake into a distribution channel.".

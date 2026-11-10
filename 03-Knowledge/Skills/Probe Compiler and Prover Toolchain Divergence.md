@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, supply-chain, surface-gap]
-updated: "2026-11-10T12:06:24.817Z"
+updated: "2026-11-10T15:27:53.361Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.350Z** — When the council opens a debate on Compiler and Prover Toolchain Divergence, or when auditing a system that matches "Source is verified, bytecode is deployed, and a circuit is proven; when the compiler, the zk transpiler and the verifier disagree on semantics, each artefact is correct against a different program.".
 > **Refreshed 2026-11-10T11:49:59.888Z** — When the council opens a debate on Compiler and Prover Toolchain Divergence, or when auditing a system that matches "Source is verified, bytecode is deployed, and a circuit is proven; when the compiler, the zk transpiler and the verifier disagree on semantics, each artefact is correct against a different program.".
 > **Refreshed 2026-11-10T12:06:24.817Z** — When the council opens a debate on Compiler and Prover Toolchain Divergence, or when auditing a system that matches "Source is verified, bytecode is deployed, and a circuit is proven; when the compiler, the zk transpiler and the verifier disagree on semantics, each artefact is correct against a different program.".
+> **Refreshed 2026-11-10T15:27:53.361Z** — When the council opens a debate on Compiler and Prover Toolchain Divergence, or when auditing a system that matches "Source is verified, bytecode is deployed, and a circuit is proven; when the compiler, the zk transpiler and the verifier disagree on semantics, each artefact is correct against a different program.".

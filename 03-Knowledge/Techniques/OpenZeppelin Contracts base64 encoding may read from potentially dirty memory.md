@@ -13,9 +13,10 @@ source_id: GHSA-9vx6-7xxf-x967
 confidence: 0.65
 harvested: 2026-11-04
 tags: [technique, execution, cwe-125]
-updated: "2026-11-10T11:50:59.705Z"
+updated: "2026-11-10T15:28:32.976Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.664Z** — When this input is not a multiple of 3, the last iteration may read parts of the memory that are beyond the input buffer.
 > **Refreshed 2026-11-10T11:08:39.408Z** — When this input is not a multiple of 3, the last iteration may read parts of the memory that are beyond the input buffer.
 > **Refreshed 2026-11-10T11:50:59.705Z** — When this input is not a multiple of 3, the last iteration may read parts of the memory that are beyond the input buffer.
+> **Refreshed 2026-11-10T15:28:32.976Z** — When this input is not a multiple of 3, the last iteration may read parts of the memory that are beyond the input buffer.

@@ -13,9 +13,10 @@ source_id: GHSA-69v6-xc2j-r2jf
 confidence: 0.85
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.716Z"
+updated: "2026-11-10T15:28:32.983Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.671Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
 > **Refreshed 2026-11-10T11:08:39.425Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
 > **Refreshed 2026-11-10T11:50:59.716Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T15:28:32.982Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.

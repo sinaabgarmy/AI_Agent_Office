@@ -19,9 +19,10 @@ confidence: 0.75
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-617]
-updated: "2026-11-10T12:06:24.775Z"
+updated: "2026-11-10T15:27:53.316Z"
 status: active
 ---
+
 
 
 
@@ -71,3 +72,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.312Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
 > **Refreshed 2026-11-10T11:49:59.843Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
 > **Refreshed 2026-11-10T12:06:24.775Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T15:27:53.316Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.

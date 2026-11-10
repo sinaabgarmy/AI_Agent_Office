@@ -19,9 +19,10 @@ confidence: 0.98
 created: "2026-11-05T16:15:55.468Z"
 times_used: 179
 tags: [skill, hunt, execution, cwe-20]
-updated: "2026-11-10T12:06:24.772Z"
+updated: "2026-11-10T15:27:53.312Z"
 status: active
 ---
+
 
 
 
@@ -71,3 +72,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.309Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
 > **Refreshed 2026-11-10T11:49:59.841Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
 > **Refreshed 2026-11-10T12:06:24.772Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T15:27:53.312Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.

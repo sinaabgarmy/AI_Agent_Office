@@ -13,9 +13,10 @@ source_id: tob-blog-shipping-post-quantum-cryptography-to-py
 confidence: 0.48
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.665Z"
+updated: "2026-11-10T15:28:32.921Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.634Z** — The order says large-scale quantum computers, especially in adversarial hands, will threaten widely used cryptographic systems, and that attackers may already be collecting encrypted data now so they can decrypt it later.
 > **Refreshed 2026-11-10T11:08:39.312Z** — The order says large-scale quantum computers, especially in adversarial hands, will threaten widely used cryptographic systems, and that attackers may already be collecting encrypted data now so they can decrypt it later.
 > **Refreshed 2026-11-10T11:50:59.665Z** — The order says large-scale quantum computers, especially in adversarial hands, will threaten widely used cryptographic systems, and that attackers may already be collecting encrypted data now so they can decrypt it later.
+> **Refreshed 2026-11-10T15:28:32.921Z** — The order says large-scale quantum computers, especially in adversarial hands, will threaten widely used cryptographic systems, and that attackers may already be collecting encrypted data now so they can decrypt it later.

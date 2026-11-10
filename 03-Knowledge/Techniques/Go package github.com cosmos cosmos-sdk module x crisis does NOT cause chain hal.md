@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-682]
-updated: "2026-11-10T11:50:59.808Z"
+updated: "2026-11-10T15:28:33.067Z"
 ---
 
 # Go package github.com/cosmos/cosmos-sdk module x/crisis does NOT cause chain halt

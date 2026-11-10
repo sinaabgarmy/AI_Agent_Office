@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.791Z"
+updated: "2026-11-10T15:28:33.051Z"
 ---
 
 # Denial of service in github.com/ethereum/go-ethereum

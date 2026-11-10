@@ -5,7 +5,7 @@ name: Mara Okafor
 ideology: Formal Cryptography
 is_custom: true
 tags: [agent]
-updated: "2026-11-10T11:07:47.353Z"
+updated: "2026-11-10T15:27:27.746Z"
 ---
 
 # Mara Okafor (@KeyWarden)

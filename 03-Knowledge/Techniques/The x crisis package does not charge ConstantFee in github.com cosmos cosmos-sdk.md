@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, supply-chain, cwe-682]
-updated: "2026-11-10T11:50:59.809Z"
+updated: "2026-11-10T15:28:33.067Z"
 ---
 
 # The x/crisis package does not charge ConstantFee in github.com/cosmos/cosmos-sdk

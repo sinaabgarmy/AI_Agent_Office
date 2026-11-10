@@ -13,9 +13,10 @@ source_id: GHSA-4g63-c64m-25w9
 confidence: 0.89
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.742Z"
+updated: "2026-11-10T15:28:33.002Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.687Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
 > **Refreshed 2026-11-10T11:08:39.468Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
 > **Refreshed 2026-11-10T11:50:59.742Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
+> **Refreshed 2026-11-10T15:28:33.002Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.

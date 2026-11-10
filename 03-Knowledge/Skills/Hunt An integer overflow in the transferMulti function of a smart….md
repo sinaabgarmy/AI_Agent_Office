@@ -1,11 +1,11 @@
 ---
 type: skill
-skill_id: skill-solidity-0-7-5-in-smtutil-chcsmtlib2interfac
-name: "Hunt Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver"
+skill_id: skill-an-integer-overflow-in-the-transfermulti-fun
+name: Hunt An integer overflow in the transferMulti function of a smart…
 kind: hunt
 domain: Execution
-cwe: CWE-787
-trigger: "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-787."
+cwe: CWE-190
+trigger: "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190."
 preconditions:
   - Read access to the target contract or system.
   - A test harness or fork environment that can execute the path.
@@ -13,31 +13,34 @@ verification: "Instrument external calls, state-transition ordering and balance 
 stop_condition: "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class."
 countermeasure: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.
 trained_agents: [bytecode, vesper, sentinel, darkpool]
-source: NVD — Solidity CVEs — tech-solidity-0-7-5-in-smtutil-chcsmtlib2interfac
-source_url: "https://nvd.nist.gov/vuln/detail/CVE-2020-36402"
-confidence: 0.71
+source: NVD — Ethereum CVEs — tech-an-integer-overflow-in-the-transfermulti-fun
+source_url: "https://nvd.nist.gov/vuln/detail/CVE-2018-10706"
+confidence: 0.98
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
-tags: [skill, hunt, execution, cwe-787]
-updated: "2026-11-09T23:13:47.079Z"
-status: retired
-retired: "2026-11-09T23:13:47.079Z"
-retire_reason: "not-a-defect — Built from an announcement or general post: there is no defect, attack or defence to practise."
+tags: [skill, hunt, execution, cwe-190]
+updated: "2026-11-10T15:28:02.946Z"
+status: active
+retired: ""
+retire_reason: ""
 ---
 
 
 
-# Hunt Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver
-> **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-787 · **Confidence:** 71%
+
+
+
+# Hunt An integer overflow in the transferMulti function of a smart…
+> **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-190 · **Confidence:** 98%
 ## When to invoke
-When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-787.
+When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
 ## Preconditions
 - Read access to the target contract or system.
 - A test harness or fork environment that can execute the path.
 ## Procedure
-1. **Locate the trust boundary in the code path that handles CWE-787 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.**
+1. **Locate the trust boundary in the code path that handles CWE-190 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.**
    - _Evidence:_ A written list of external calls and state writes on the path, each with its caller.
-2. **Test the primitive directly: Solidity 0.7.5 has a stack-use-after-return issue in smtutil::CHCSmtLib2Interface::querySolver.**
+2. **Test the primitive directly: An integer overflow in the transferMulti function of a smart contract implementation for Social Chain (SCA), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized An integer overflow in the transferMulti function of a smart contract…**
    - _Evidence:_ A failing test or trace that reproduces the unsafe ordering or missing check.
 3. **Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.**
    - _Evidence:_ A named invariant (e.g. "Σ(balances) == Reserves") plus the state delta the exploit produces.
@@ -54,7 +57,9 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 ## Trained agents
 [[bytecode]], [[vesper]], [[sentinel]], [[darkpool]]
 ## Source
-- NVD — Solidity CVEs — tech-solidity-0-7-5-in-smtutil-chcsmtlib2interfac
-- https://nvd.nist.gov/vuln/detail/CVE-2020-36402
+- NVD — Ethereum CVEs — tech-an-integer-overflow-in-the-transfermulti-fun
+- https://nvd.nist.gov/vuln/detail/CVE-2018-10706
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
-> **Refreshed 2026-11-09T23:13:46.260Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-787.
+> **Refreshed 2026-11-05T16:35:17.646Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-05T16:35:51.821Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-09T23:13:46.378Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.

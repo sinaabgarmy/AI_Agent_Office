@@ -13,9 +13,10 @@ source_id: arxiv-towards-decentralized-searcher-competiti
 confidence: 0.89
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.687Z"
+updated: "2026-11-10T15:28:32.956Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.652Z** — While much of the existing analysis has focused on builders, validators, and block-building markets, this paper studies centralization from the perspective of searcher competition.
 > **Refreshed 2026-11-10T11:08:39.364Z** — While much of the existing analysis has focused on builders, validators, and block-building markets, this paper studies centralization from the perspective of searcher competition.
 > **Refreshed 2026-11-10T11:50:59.687Z** — While much of the existing analysis has focused on builders, validators, and block-building markets, this paper studies centralization from the perspective of searcher competition.
+> **Refreshed 2026-11-10T15:28:32.956Z** — While much of the existing analysis has focused on builders, validators, and block-building markets, this paper studies centralization from the perspective of searcher competition.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.735Z"
+updated: "2026-11-10T15:28:32.998Z"
 ---
 
 # FutureMessageBuffer bounds buffered future-height BFT… — FutureMessageBuffer bounds buffered future-height…

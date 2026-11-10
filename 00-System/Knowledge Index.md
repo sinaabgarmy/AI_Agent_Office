@@ -2,13 +2,13 @@
 type: system
 role: index
 tags: [system, index]
-updated: "2026-11-10T12:06:24.827Z"
+updated: "2026-11-10T15:28:46.655Z"
 ---
 
 # Knowledge Index
 
-Auto-maintained by ChronoZero. Last update: 2026-11-10T12:06:24.827Z
-Total notes: 558 · Total links: 1326
+Auto-maintained by ChronoZero. Last update: 2026-11-10T15:28:46.654Z
+Total notes: 568 · Total links: 1336
 
 ## 02-Debates
 - [[Debate 2026-11-10 — Defect path Data-Availability Fee Market Starvation → Signat]] — _2026-11-10_ — status: **in-progress**

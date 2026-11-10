@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.788Z"
+updated: "2026-11-10T15:28:33.049Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.718Z** — Go Ethereum Improper Input Validation In Go Ethereum (aka geth) before 1.8.14, TraceChain in eth/api_tracer.go does not verify that the end block is after the start block.
 > **Refreshed 2026-11-10T11:08:39.508Z** — Go Ethereum Improper Input Validation In Go Ethereum (aka geth) before 1.8.14, TraceChain in eth/api_tracer.go does not verify that the end block is after the start block.
 > **Refreshed 2026-11-10T11:50:59.788Z** — Go Ethereum Improper Input Validation In Go Ethereum (aka geth) before 1.8.14, TraceChain in eth/api_tracer.go does not verify that the end block is after the start block.
+> **Refreshed 2026-11-10T15:28:33.049Z** — Go Ethereum Improper Input Validation In Go Ethereum (aka geth) before 1.8.14, TraceChain in eth/api_tracer.go does not verify that the end block is after the start block.

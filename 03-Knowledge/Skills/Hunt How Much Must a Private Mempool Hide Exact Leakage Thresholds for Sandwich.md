@@ -19,9 +19,10 @@ confidence: 0.87
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, economic, cwe-682]
-updated: "2026-11-10T12:06:24.795Z"
+updated: "2026-11-10T15:27:53.338Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T07:31:07.337Z** — When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.
 > **Refreshed 2026-11-10T11:49:59.866Z** — When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.
 > **Refreshed 2026-11-10T12:06:24.795Z** — When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T15:27:53.338Z** — When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.

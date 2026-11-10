@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-369]
-updated: "2026-11-10T11:50:59.802Z"
+updated: "2026-11-10T15:28:33.060Z"
 ---
 
 # Cosmos SDK: Groups module can halt chain when handling a malicious proposal

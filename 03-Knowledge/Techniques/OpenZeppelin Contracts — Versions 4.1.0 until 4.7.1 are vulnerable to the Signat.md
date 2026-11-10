@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.626Z"
+updated: "2026-11-10T15:28:32.867Z"
 ---
 
 # OpenZeppelin Contracts — Versions 4.1.0 until 4.7.1 are vulnerable to the SignatureChecker reverting.

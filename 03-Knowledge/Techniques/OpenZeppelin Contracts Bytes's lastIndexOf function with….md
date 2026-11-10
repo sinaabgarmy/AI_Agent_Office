@@ -13,9 +13,10 @@ source_id: GHSA-9rcw-c2f9-2j55
 confidence: 0.97
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-125]
-updated: "2026-11-10T11:50:59.696Z"
+updated: "2026-11-10T15:28:32.966Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.659Z** — The pos argument could be used to access arbitrary data outside of the buffer bounds.
 > **Refreshed 2026-11-10T11:08:39.387Z** — The pos argument could be used to access arbitrary data outside of the buffer bounds.
 > **Refreshed 2026-11-10T11:50:59.695Z** — The pos argument could be used to access arbitrary data outside of the buffer bounds.
+> **Refreshed 2026-11-10T15:28:32.966Z** — The pos argument could be used to access arbitrary data outside of the buffer bounds.

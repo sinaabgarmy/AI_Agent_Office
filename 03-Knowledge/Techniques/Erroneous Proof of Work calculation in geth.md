@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, l-bridge, cwe-682]
-updated: "2026-11-10T11:50:59.788Z"
+updated: "2026-11-10T15:28:33.049Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.718Z** — Erroneous Proof of Work calculation in geth An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
 > **Refreshed 2026-11-10T11:08:39.508Z** — Erroneous Proof of Work calculation in geth An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
 > **Refreshed 2026-11-10T11:50:59.788Z** — Erroneous Proof of Work calculation in geth An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T15:28:33.048Z** — Erroneous Proof of Work calculation in geth An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).

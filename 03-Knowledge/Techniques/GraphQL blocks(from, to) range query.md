@@ -13,9 +13,10 @@ source_id: GHSA-8g2r-qvch-4c9j
 confidence: 0.7
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.740Z"
+updated: "2026-11-10T15:28:33.000Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.685Z** — GraphQLDataFetchers.getRangeBlockDataFetcher() uses the supplied to raw;
 > **Refreshed 2026-11-10T11:08:39.466Z** — GraphQLDataFetchers.getRangeBlockDataFetcher() uses the supplied to raw;
 > **Refreshed 2026-11-10T11:50:59.740Z** — GraphQLDataFetchers.getRangeBlockDataFetcher() uses the supplied to raw;
+> **Refreshed 2026-11-10T15:28:33.000Z** — GraphQLDataFetchers.getRangeBlockDataFetcher() uses the supplied to raw;

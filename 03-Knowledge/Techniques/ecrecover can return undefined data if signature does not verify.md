@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-252]
-updated: "2026-11-10T11:50:59.757Z"
+updated: "2026-11-10T15:28:33.016Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.695Z** — ecrecover can return undefined data if signature does not verify the ecrecover precompile does not fill the output buffer if the signature does not verify, see
 > **Refreshed 2026-11-10T11:08:39.483Z** — ecrecover can return undefined data if signature does not verify the ecrecover precompile does not fill the output buffer if the signature does not verify, see
 > **Refreshed 2026-11-10T11:50:59.757Z** — ecrecover can return undefined data if signature does not verify the ecrecover precompile does not fill the output buffer if the signature does not verify, see
+> **Refreshed 2026-11-10T15:28:33.016Z** — ecrecover can return undefined data if signature does not verify the ecrecover precompile does not fill the output buffer if the signature does not verify, see

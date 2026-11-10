@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-436]
-updated: "2026-11-10T11:50:59.700Z"
+updated: "2026-11-10T15:28:32.972Z"
 ---
 
 # OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated

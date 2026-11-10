@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-228]
-updated: "2026-11-10T11:50:59.815Z"
+updated: "2026-11-10T15:28:33.075Z"
+status: known
 ---
+
 
 # CometBFT's invalid BitArray handling can lead to network halt
 
@@ -35,3 +37,4 @@ prevent processing BitArray's in this invalid state, as well as guards to preven
 - OSV — cometbft — GHSA-hrhf-2vcr-ghch
 - https://github.com/advisories/GHSA-hrhf-2vcr-ghch
 - Harvested: 2026-11-10T11:50:59.621Z
+> **Refreshed 2026-11-10T15:28:33.074Z** — Additional validation was added to prevent processing BitArray's in this invalid state, as well as guards to prevent panics on BitArray methods if one of these invalid states is processed.

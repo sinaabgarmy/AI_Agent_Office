@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-664]
-updated: "2026-11-10T11:50:59.691Z"
+updated: "2026-11-10T15:28:32.959Z"
 ---
 
 # Slow and Steady: Preventing MEV with Verifiable Delays

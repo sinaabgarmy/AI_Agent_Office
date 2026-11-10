@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 102
 tags: [skill, probe, cryptography, surface-gap]
-updated: "2026-11-10T12:06:24.786Z"
+updated: "2026-11-10T15:27:53.327Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.323Z** — When the council opens a debate on Rogue-Key Attack on BLS Aggregation, or when auditing a system that matches "An attacker who can register a crafted public key can forge an aggregate signature that verifies under a legitimate group key, without ever knowing the corresponding secret.".
 > **Refreshed 2026-11-10T11:49:59.856Z** — When the council opens a debate on Rogue-Key Attack on BLS Aggregation, or when auditing a system that matches "An attacker who can register a crafted public key can forge an aggregate signature that verifies under a legitimate group key, without ever knowing the corresponding secret.".
 > **Refreshed 2026-11-10T12:06:24.786Z** — When the council opens a debate on Rogue-Key Attack on BLS Aggregation, or when auditing a system that matches "An attacker who can register a crafted public key can forge an aggregate signature that verifies under a legitimate group key, without ever knowing the corresponding secret.".
+> **Refreshed 2026-11-10T15:27:53.327Z** — When the council opens a debate on Rogue-Key Attack on BLS Aggregation, or when auditing a system that matches "An attacker who can register a crafted public key can forge an aggregate signature that verifies under a legitimate group key, without ever knowing the corresponding secret.".

@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 701
 tags: [skill, probe, consensus, surface-gap]
-updated: "2026-11-10T12:06:24.810Z"
+updated: "2026-11-10T15:27:53.353Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.346Z** — When the council opens a debate on Restaked Security Correlated Slashing, or when auditing a system that matches "Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.".
 > **Refreshed 2026-11-10T11:49:59.881Z** — When the council opens a debate on Restaked Security Correlated Slashing, or when auditing a system that matches "Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.".
 > **Refreshed 2026-11-10T12:06:24.810Z** — When the council opens a debate on Restaked Security Correlated Slashing, or when auditing a system that matches "Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.".
+> **Refreshed 2026-11-10T15:27:53.353Z** — When the council opens a debate on Restaked Security Correlated Slashing, or when auditing a system that matches "Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.".

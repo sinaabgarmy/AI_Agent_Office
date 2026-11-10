@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, key-management, surface-gap]
-updated: "2026-11-10T12:06:24.819Z"
+updated: "2026-11-10T15:27:53.365Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.353Z** — When the council opens a debate on Over-Broad Authority Delegated to Agents, or when auditing a system that matches "Giving an automated agent a session key is a key-management decision: without spend limits, scopes and expiry enforced on-chain, the agent’s compromise is the owner’s compromise.".
 > **Refreshed 2026-11-10T11:49:59.889Z** — When the council opens a debate on Over-Broad Authority Delegated to Agents, or when auditing a system that matches "Giving an automated agent a session key is a key-management decision: without spend limits, scopes and expiry enforced on-chain, the agent’s compromise is the owner’s compromise.".
 > **Refreshed 2026-11-10T12:06:24.819Z** — When the council opens a debate on Over-Broad Authority Delegated to Agents, or when auditing a system that matches "Giving an automated agent a session key is a key-management decision: without spend limits, scopes and expiry enforced on-chain, the agent’s compromise is the owner’s compromise.".
+> **Refreshed 2026-11-10T15:27:53.365Z** — When the council opens a debate on Over-Broad Authority Delegated to Agents, or when auditing a system that matches "Giving an automated agent a session key is a key-management decision: without spend limits, scopes and expiry enforced on-chain, the agent’s compromise is the owner’s compromise.".

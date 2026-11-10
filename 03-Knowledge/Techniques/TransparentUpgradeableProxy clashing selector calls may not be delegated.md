@@ -13,9 +13,10 @@ source_id: GHSA-mx2q-35m2-x2rh
 confidence: 0.74
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.751Z"
+updated: "2026-11-10T15:28:33.007Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.691Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
 > **Refreshed 2026-11-10T11:08:39.476Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
 > **Refreshed 2026-11-10T11:50:59.751Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-10T15:28:33.007Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.

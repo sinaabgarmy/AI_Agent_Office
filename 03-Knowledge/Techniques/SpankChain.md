@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: web
 trust: quarantined
 tags: [technique, execution, cwe-362, web-capture]
-updated: "2026-11-10T11:50:59.804Z"
+updated: "2026-11-10T15:28:33.062Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Prevent Ethereum Blockchain Smart Contract Reentrancy Attacks" (PDF)
 > **Refreshed 2026-11-10T08:12:51.729Z** — SpankChain [ 7 ] In 2018, a malicious attacker stole 165 Ether (valued at $40,000) from SpankChain by exploiting a vulnerability in the Ethereum blockchain.
 > **Refreshed 2026-11-10T11:08:39.522Z** — SpankChain [ 7 ] In 2018, a malicious attacker stole 165 Ether (valued at $40,000) from SpankChain by exploiting a vulnerability in the Ethereum blockchain.
 > **Refreshed 2026-11-10T11:50:59.803Z** — SpankChain [ 7 ] In 2018, a malicious attacker stole 165 Ether (valued at $40,000) from SpankChain by exploiting a vulnerability in the Ethereum blockchain.
+> **Refreshed 2026-11-10T15:28:33.062Z** — SpankChain [ 7 ] In 2018, a malicious attacker stole 165 Ether (valued at $40,000) from SpankChain by exploiting a vulnerability in the Ethereum blockchain.

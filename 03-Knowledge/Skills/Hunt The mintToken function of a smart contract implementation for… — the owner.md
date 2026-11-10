@@ -19,9 +19,10 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-841]
-updated: "2026-11-10T12:06:24.783Z"
+updated: "2026-11-10T15:27:53.324Z"
 status: active
 ---
+
 
 
 
@@ -71,3 +72,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T07:31:07.318Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
 > **Refreshed 2026-11-10T11:49:59.852Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
 > **Refreshed 2026-11-10T12:06:24.782Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T15:27:53.324Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.

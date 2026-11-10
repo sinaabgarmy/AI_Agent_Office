@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-347]
-updated: "2026-11-10T11:50:59.816Z"
+updated: "2026-11-10T15:28:33.076Z"
 ---
 
 # gnark is vulnerable to signature malleability in EdDSA and ECDSA due to missing scalar checks

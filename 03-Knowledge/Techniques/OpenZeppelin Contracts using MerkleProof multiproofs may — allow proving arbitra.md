@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-354]
-updated: "2026-11-10T11:50:59.701Z"
+updated: "2026-11-10T15:28:32.973Z"
 ---
 
 # OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitrary leaves for specific trees

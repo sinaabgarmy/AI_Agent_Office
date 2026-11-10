@@ -15,9 +15,10 @@ harvested: 2026-11-10
 origin: web
 trust: trusted
 tags: [technique, consensus, cwe-664, web-capture]
-updated: "2026-11-10T11:50:59.806Z"
+updated: "2026-11-10T15:28:33.064Z"
 status: known
 ---
+
 
 
 
@@ -42,3 +43,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.733Z** — [ 30 ] [ 31 ] On 6 August 2010, a major vulnerability in the bitcoin protocol was spotted.
 > **Refreshed 2026-11-10T11:08:39.524Z** — [ 30 ] [ 31 ] On 6 August 2010, a major vulnerability in the bitcoin protocol was spotted.
 > **Refreshed 2026-11-10T11:50:59.806Z** — [ 30 ] [ 31 ] On 6 August 2010, a major vulnerability in the bitcoin protocol was spotted.
+> **Refreshed 2026-11-10T15:28:33.064Z** — [ 30 ] [ 31 ] On 6 August 2010, a major vulnerability in the bitcoin protocol was spotted.

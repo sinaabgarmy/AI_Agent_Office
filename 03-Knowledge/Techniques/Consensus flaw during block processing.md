@@ -13,9 +13,10 @@ source_id: GHSA-xw37-57qp-9mm4
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.712Z"
+updated: "2026-11-10T15:28:32.981Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.668Z** — Consensus flaw during block processing A consensus-vulnerability in Geth could cause a chain split, where vulnerable versions refuse to accept the canonical chain.
 > **Refreshed 2026-11-10T11:08:39.419Z** — Consensus flaw during block processing A consensus-vulnerability in Geth could cause a chain split, where vulnerable versions refuse to accept the canonical chain.
 > **Refreshed 2026-11-10T11:50:59.712Z** — Consensus flaw during block processing A consensus-vulnerability in Geth could cause a chain split, where vulnerable versions refuse to accept the canonical chain.
+> **Refreshed 2026-11-10T15:28:32.981Z** — Consensus flaw during block processing A consensus-vulnerability in Geth could cause a chain split, where vulnerable versions refuse to accept the canonical chain.

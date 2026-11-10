@@ -2,11 +2,12 @@
 type: concept
 name: Liquidation
 created: 2026-11-06
-mentioned_in: ["[[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdown]]"]
+mentioned_in: ["[[Debate 2026-11-10 — Permit2 Approval Griefing via EIP-712 Signature Capture]]"]
 tags: [concept]
-updated: "2026-11-07T16:20:13.922Z"
-last_discussed: 2026-11-06
+updated: "2026-11-10T15:33:54.423Z"
+last_discussed: 2026-11-10
 ---
+
 
 
 # Liquidation
@@ -16,3 +17,4 @@ last_discussed: 2026-11-06
 ## Discussed in
 - [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdo]] — discussed by [[DarkPool]], [[SentinEL]]
 - [[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdown]] — discussed by [[DarkPool]], [[SentinEL]]
+- [[Debate 2026-11-10 — Permit2 Approval Griefing via EIP-712 Signature Capture]] — discussed by [[DarkPool]]

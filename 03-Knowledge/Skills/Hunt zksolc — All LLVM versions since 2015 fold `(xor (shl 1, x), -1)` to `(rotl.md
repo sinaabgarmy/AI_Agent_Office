@@ -19,9 +19,10 @@ confidence: 0.94
 created: "2026-11-05T16:15:55.468Z"
 times_used: 179
 tags: [skill, hunt, execution, cwe-682]
-updated: "2026-11-10T12:06:24.774Z"
+updated: "2026-11-10T15:27:53.315Z"
 status: active
 ---
+
 
 
 
@@ -71,3 +72,4 @@ workarounds for this vulnerability
 > **Refreshed 2026-11-10T07:31:07.311Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
 > **Refreshed 2026-11-10T11:49:59.843Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
 > **Refreshed 2026-11-10T12:06:24.774Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T15:27:53.314Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.

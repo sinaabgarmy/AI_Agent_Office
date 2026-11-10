@@ -15,7 +15,7 @@ agents:
   - "[[Bytecode]]"
   - "[[StateRoot]]"
 tags: [system, agents]
-updated: "2026-11-10T11:07:47.410Z"
+updated: "2026-11-10T15:27:27.806Z"
 ---
 
 # Agent Registry

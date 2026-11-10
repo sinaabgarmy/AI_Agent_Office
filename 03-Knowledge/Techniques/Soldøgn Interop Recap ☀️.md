@@ -13,9 +13,10 @@ source_id: ef-blog-sold-gn-interop-recap
 confidence: 0.67
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.658Z"
+updated: "2026-11-10T15:28:32.907Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.630Z** — Soldøgn Interop Recap ☀️ This past week, just over 100 Ethereum core contributors gathered above the Arctic Circle — in Longyearbyen, Svalbard — for the Soldøgn Interop: a week of intense work on the Glamsterdam network upgrade.
 > **Refreshed 2026-11-10T11:08:39.295Z** — Soldøgn Interop Recap ☀️ This past week, just over 100 Ethereum core contributors gathered above the Arctic Circle — in Longyearbyen, Svalbard — for the Soldøgn Interop: a week of intense work on the Glamsterdam network upgrade.
 > **Refreshed 2026-11-10T11:50:59.658Z** — Soldøgn Interop Recap ☀️ This past week, just over 100 Ethereum core contributors gathered above the Arctic Circle — in Longyearbyen, Svalbard — for the Soldøgn Interop: a week of intense work on the Glamsterdam network upgrade.
+> **Refreshed 2026-11-10T15:28:32.907Z** — Soldøgn Interop Recap ☀️ This past week, just over 100 Ethereum core contributors gathered above the Arctic Circle — in Longyearbyen, Svalbard — for the Soldøgn Interop: a week of intense work on the Glamsterdam network upgrade.

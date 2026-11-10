@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>ChronoZero System Brief</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--ink:#14181f;--muted:#5b6472;--line:#e2e6ec;
+  --accent:#0b6e99;--accent-soft:#dcedf5;--track:#e9edf2;
+  --crit:#b3261e;--crit-bg:#fbe9e7;--high:#9a5b00;--high-bg:#fff1d6;--med:#3d5a80;--med-bg:#e6edf6;
+  --ok:#1b6e3c;--ok-bg:#e3f4e9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1319;--surface:#171c24;--ink:#e8ecf2;--muted:#98a2b3;--line:#262d38;
+    --accent:#5ab8dd;--accent-soft:#16303c;--track:#232a35;
+    --crit:#ff8a80;--crit-bg:#3a1a18;--high:#ffc46b;--high-bg:#35280f;--med:#a9c1e6;--med-bg:#1b2637;
+    --ok:#7fd4a0;--ok-bg:#143021;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 56px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:18px;margin:36px 0 12px;letter-spacing:-.005em}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.lede{color:var(--muted);max-width:68ch}
+.meta{color:var(--muted);font-size:13px}
+a{color:var(--accent)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-size:26px;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tile .s{font-size:12px;color:var(--muted);margin-top:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.scroll{overflow-x:auto}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+  padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.row{display:grid;grid-template-columns:minmax(110px,170px) 1fr auto;gap:12px;align-items:center;padding:7px 0;
+  border-bottom:1px solid var(--line);font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .v{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;
+  background:var(--med-bg);color:var(--med)}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}
+.pill.high{background:var(--high-bg);color:var(--high)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.plain{background:var(--accent-soft);color:var(--accent)}
+.quiet{color:var(--muted)}
+.hyp{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:8px 0}
+.small{font-size:13px}
+ul.flat{list-style:none;margin:0;padding:0}
+ul.flat li{padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+ul.flat li:last-child{border-bottom:0}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.card,.tile{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">System brief</div>
+  <h1>ChronoZero System Brief</h1>
+  <p class="lede">The current state of the lab: what the council has covered, what it has learned, who is on the roster, and what the autopilot changed on its own.</p>
+  <p class="meta">Generated 2026-11-10 15:28 UTC · ChronoZero Exploit Defect Lab · local, self-contained document</p>
+</header>
+
+<div class="grid">
+    <div class="tile"><div class="n">77%</div><div class="l">attack surfaces covered</div><div class="s">56 of 73 · 17 gaps</div></div>
+    <div class="tile"><div class="n">278</div><div class="l">techniques learned</div><div class="s">617 agent assignments</div></div>
+    <div class="tile"><div class="n">65</div><div class="l">active skills</div><div class="s">35 retired · 5897 uses</div></div>
+    <div class="tile"><div class="n">12</div><div class="l">agents on the council</div><div class="s">4 added automatically</div></div>
+    <div class="tile"><div class="n">62</div><div class="l">debate scenarios</div><div class="s">16 auto-generated · 15 waiting</div></div>
+    <div class="tile"><div class="n">561</div><div class="l">notes in the vault</div><div class="s">7 written by you · 7 digested</div></div>
+  </div>
+
+<h2>Coverage by layer</h2>
+<div class="cols">
+  <div class="card"><div class="row"><div>Supply Chain</div><div class="bar" role="img" aria-label="Supply Chain: 3/6 covered"><i style="width:50%"></i></div><div class="v">3/6 covered</div></div><div class="row"><div>Key Management</div><div class="bar" role="img" aria-label="Key Management: 3/6 covered"><i style="width:50%"></i></div><div class="v">3/6 covered</div></div><div class="row"><div>Governance</div><div class="bar" role="img" aria-label="Governance: 3/5 covered"><i style="width:60%"></i></div><div class="v">3/5 covered</div></div><div class="row"><div>L2 / Bridge</div><div class="bar" role="img" aria-label="L2 / Bridge: 6/8 covered"><i style="width:75%"></i></div><div class="v">6/8 covered</div></div><div class="row"><div>Execution</div><div class="bar" role="img" aria-label="Execution: 11/14 covered"><i style="width:79%"></i></div><div class="v">11/14 covered</div></div><div class="row"><div>Infrastructure</div><div class="bar" role="img" aria-label="Infrastructure: 5/6 covered"><i style="width:83%"></i></div><div class="v">5/6 covered</div></div><div class="row"><div>Consensus</div><div class="bar" role="img" aria-label="Consensus: 8/9 covered"><i style="width:89%"></i></div><div class="v">8/9 covered</div></div><div class="row"><div>Economic</div><div class="bar" role="img" aria-label="Economic: 8/9 covered"><i style="width:89%"></i></div><div class="v">8/9 covered</div></div><div class="row"><div>Cryptography</div><div class="bar" role="img" aria-label="Cryptography: 9/10 covered"><i style="width:90%"></i></div><div class="v">9/10 covered</div></div></div>
+  <div class="card">
+    <h3>Techniques learned per layer</h3>
+    <div class="row"><div>Execution</div><div class="bar" role="img" aria-label="Execution: 131"><i style="width:100%"></i></div><div class="v">131</div></div><div class="row"><div>Infrastructure</div><div class="bar" role="img" aria-label="Infrastructure: 46"><i style="width:35%"></i></div><div class="v">46</div></div><div class="row"><div>Cryptography</div><div class="bar" role="img" aria-label="Cryptography: 29"><i style="width:22%"></i></div><div class="v">29</div></div><div class="row"><div>Consensus</div><div class="bar" role="img" aria-label="Consensus: 24"><i style="width:18%"></i></div><div class="v">24</div></div><div class="row"><div>Economic</div><div class="bar" role="img" aria-label="Economic: 19"><i style="width:15%"></i></div><div class="v">19</div></div><div class="row"><div>Governance</div><div class="bar" role="img" aria-label="Governance: 11"><i style="width:8%"></i></div><div class="v">11</div></div><div class="row"><div>Supply Chain</div><div class="bar" role="img" aria-label="Supply Chain: 10"><i style="width:8%"></i></div><div class="v">10</div></div><div class="row"><div>L2 / Bridge</div><div class="bar" role="img" aria-label="L2 / Bridge: 8"><i style="width:6%"></i></div><div class="v">8</div></div>
+    <p class="meta" style="margin-top:10px">31 of 31 sources enabled ·
+      7 from open-web research · 3 awaiting review · last harvest 2026-11-10 11:50</p>
+  </div>
+</div>
+
+<h2>Highest-priority gaps</h2>
+<div class="card scroll"><table>
+  <thead><tr><th>Surface</th><th>Layer</th><th>Severity</th><th class="num">Coverage</th><th>Class</th></tr></thead>
+  <tbody><tr>
+      <td>Permit2 Signature Replay Across Nonces</td><td>Execution</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-287</td></tr><tr>
+      <td>Shared Sequencer Cross-Rollup Atomicity</td><td>L2 / Bridge</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-662</td></tr><tr>
+      <td>Security Council as a Permanent Upgrade Path</td><td>Governance</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-269</td></tr><tr>
+      <td>MPC Custody Provider Concentration</td><td>Key Management</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-654</td></tr><tr>
+      <td>Autonomous Agent Wallet Steering</td><td>Economic</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">33%</td><td class="quiet">CWE-1427</td></tr><tr>
+      <td>Frontend and Signing-UI Substitution</td><td>Supply Chain</td><td><span class="pill crit">Critical</span></td>
+      <td class="num">33%</td><td class="quiet">CWE-451</td></tr><tr>
+      <td>Model-Driven Delegate Capture</td><td>Governance</td><td><span class="pill high">High</span></td>
+      <td class="num">0%</td><td class="quiet">CWE-451</td></tr><tr>
+      <td>Hallucinated Dependency Registration</td><td>Supply Chain</td><td><span class="pill high">High</span></td>
+      <td class="num">0%</td><td class="quiet">CWE-829</td></tr><tr>
+      <td>Compiler and Prover Toolchain Divergence</td><td>Supply Chain</td><td><span class="pill high">High</span></td>
+      <td class="num">0%</td><td class="quiet">CWE-733</td></tr><tr>
+      <td>Passkey and Social-Recovery Weakest Path</td><td>Key Management</td><td><span class="pill high">High</span></td>
+      <td class="num">0%</td><td class="quiet">CWE-640</td></tr><tr>
+      <td>Encrypted-State Leakage via Decryption Oracles</td><td>Cryptography</td><td><span class="pill high">High</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-203</td></tr><tr>
+      <td>Fast-Finality Signature Aggregation Overload</td><td>Consensus</td><td><span class="pill high">High</span></td>
+      <td class="num">17%</td><td class="quiet">CWE-400</td></tr></tbody>
+</table></div>
+
+<h2>Council staffing</h2>
+<div class="card scroll"><table>
+  <thead><tr><th>Layer</th><th class="num">Open gaps</th><th class="num">Techniques</th><th>Specialists</th><th class="num">Unmet demand</th><th>Status</th></tr></thead>
+  <tbody><tr>
+      <td>Supply Chain</td>
+      <td class="num">3 <span class="quiet">(1 critical)</span></td>
+      <td class="num">10</td>
+      <td>Provenance</td>
+      <td class="num">4.75</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Execution</td>
+      <td class="num">3 <span class="quiet">(1 critical)</span></td>
+      <td class="num">131</td>
+      <td>Bytecode, 0xNull</td>
+      <td class="num">4.33</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Consensus</td>
+      <td class="num">1</td>
+      <td class="num">24</td>
+      <td>ConsensusGhost</td>
+      <td class="num">4</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Infrastructure</td>
+      <td class="num">1</td>
+      <td class="num">46</td>
+      <td>Uplink</td>
+      <td class="num">4</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Economic</td>
+      <td class="num">1 <span class="quiet">(1 critical)</span></td>
+      <td class="num">19</td>
+      <td>DarkPool</td>
+      <td class="num">3.88</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Governance</td>
+      <td class="num">2 <span class="quiet">(1 critical)</span></td>
+      <td class="num">11</td>
+      <td>Quorum</td>
+      <td class="num">3.88</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>L2 / Bridge</td>
+      <td class="num">2 <span class="quiet">(1 critical)</span></td>
+      <td class="num">8</td>
+      <td>StateRoot</td>
+      <td class="num">3.5</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Key Management</td>
+      <td class="num">3 <span class="quiet">(1 critical)</span></td>
+      <td class="num">0</td>
+      <td>KeyWarden</td>
+      <td class="num">3.5</td>
+      <td><span class="pill ok">staffed</span></td></tr><tr>
+      <td>Cryptography</td>
+      <td class="num">1</td>
+      <td class="num">29</td>
+      <td>ZeroCipher, Entropy</td>
+      <td class="num">2.67</td>
+      <td><span class="pill ok">staffed</span></td></tr></tbody>
+</table></div>
+<div class="card"><h3>Agents added beyond the built-in roster</h3><ul class="flat"><li><strong>Tomas Reyes</strong> <span class="quiet">@Uplink</span> — Node &amp; Network Infrastructure Analyst
+        <span class="pill plain">Infrastructure</span>
+        <span class="pill">auto-added</span>
+        <div class="quiet small">Infrastructure had no dedicated specialist while 0 of its surfaces are uncovered (0 critical) and 18 techniques are on file.</div></li><li><strong>Noor Haddad</strong> <span class="quiet">@Provenance</span> — Supply Chain Security Analyst
+        <span class="pill plain">Supply Chain</span>
+        <span class="pill">auto-added</span>
+        <div class="quiet small">Supply Chain had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 6 techniques are on file.</div></li><li><strong>Mara Okafor</strong> <span class="quiet">@KeyWarden</span> — Key Management Auditor
+        <span class="pill plain">Key Management</span>
+        <span class="pill">auto-added</span>
+        <div class="quiet small">Key Management had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 0 techniques are on file.</div></li><li><strong>Idris Vale</strong> <span class="quiet">@Quorum</span> — Governance Security Analyst
+        <span class="pill plain">Governance</span>
+        <span class="pill">auto-added</span>
+        <div class="quiet small">Governance had no dedicated specialist while 2 of its surfaces are uncovered (1 critical) and 7 techniques are on file.</div></li></ul></div>
+
+<h2>Generated scenarios</h2>
+<div class="card"><ul class="flat"><li>
+      <strong>GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior</strong>
+      <span class="pill plain">intel</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">External intel (OSV — @openzeppelin/contracts), confidence 93%.</div></li><li>
+      <strong>Defect path: Security Council as a Permanent Upgrade Path → Shared Sequencer Cross-Rollup Atomicity → Permit2 Signature Replay Across Nonces</strong>
+      <span class="pill plain">path</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">Three-layer chain Governance → L2 / Bridge → Execution (2 of 3 steps are 2030-era surfaces); no existing scenario composes these.</div></li><li>
+      <strong>Encrypted-State Leakage via Decryption Oracles</strong>
+      <span class="pill plain">surface</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">2030-era surface · Coverage gap (0% covered, High) — Uncovered — never debated, no external intel, no scenario.</div></li><li>
+      <strong>Besu&#39;s DiscV4 UDP discovery remote DoS</strong>
+      <span class="pill plain">intel</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">External intel (GitHub Advisories — Hyperledger Besu), confidence 97%.</div></li><li>
+      <strong>Defect path: Data-Availability Fee Market Starvation → Signature Malleability Enabling Message Replay → Restaked Security Correlated Slashing</strong>
+      <span class="pill plain">path</span>
+      <span class="pill ok">debated</span>
+      <div class="quiet small">Three-layer chain Infrastructure → Cryptography → Consensus (2 of 3 steps are 2030-era surfaces); no existing scenario composes these.</div></li><li>
+      <strong>MPC Custody Provider Concentration</strong>
+      <span class="pill plain">surface</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario.</div></li><li>
+      <strong>A permissionless non-validator peer can halt QBFT finality…</strong>
+      <span class="pill plain">intel</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">External intel (GitHub Advisories — Hyperledger Besu), confidence 98%.</div></li><li>
+      <strong>Defect path: MPC Custody Provider Concentration → Permit2 Signature Replay Across Nonces → Prover Market Liveness Failure</strong>
+      <span class="pill plain">path</span>
+      <span class="pill">waiting</span>
+      <div class="quiet small">Three-layer chain Key Management → Execution → L2 / Bridge (2 of 3 steps are 2030-era surfaces); no existing scenario composes these.</div></li></ul></div>
+
+<div class="cols">
+  <div>
+    <h2>Open-web research</h2>
+    <div class="card">
+      <p class="meta">24 pages examined · 8 filed · 0 flagged for review</p>
+      <ul class="flat"><li><a href="https://en.wikipedia.org/wiki/Timeline_of_women&#39;s_legal_rights_(other_than_voting)_in_the_20th_century" rel="noopener noreferrer nofollow">Timeline of women&#39;s legal rights (other than voting) in the 20th century</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/United_Kingdom_constitutional_law" rel="noopener noreferrer nofollow">United Kingdom constitutional law</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/Peter_Thiel" rel="noopener noreferrer nofollow">Peter Thiel</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/Slopsquatting" rel="noopener noreferrer nofollow">Slopsquatting</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/List_of_House_characters" rel="noopener noreferrer nofollow">List of House characters</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/OCaml" rel="noopener noreferrer nofollow">OCaml</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li><li><a href="https://en.wikipedia.org/wiki/RISC-V" rel="noopener noreferrer nofollow">RISC-V</a>
+      <span class="pill ok">filed</span>
+      </li><li><a href="https://en.wikipedia.org/wiki/Password_manager" rel="noopener noreferrer nofollow">Password manager</a>
+      <span class="pill ">skipped</span>
+      <span class="quiet small">not about blockchain security</span></li></ul>
+    </div>
+  </div>
+  <div>
+    <h2>What the autopilot changed</h2>
+    <div class="card"><ul class="flat"><li><span class="quiet">2026-11-10 07:31</span> ·
+      <span class="pill plain">artifact</span> Published 3 artifact(s): system-brief-20261110-073112.html, scenario-pack-20261110-073112.html, skill-audit-20261110-073112.html.</li><li><span class="quiet">2026-11-10 07:31</span> ·
+      <span class="pill plain">web</span> Web research on 3 gap(s): 1 page(s) filed, 0 flagged, 0 technique(s) distilled.</li><li><span class="quiet">2026-11-10 07:30</span> ·
+      <span class="pill plain">vault</span> Vault reconciled with disk: 0 new, 63 changed, 0 removed (524 notes).</li><li><span class="quiet">2026-11-10 07:28</span> ·
+      <span class="pill plain">artifact</span> Published 3 artifact(s): system-brief-20261110-072823.html, scenario-pack-20261110-072823.html, skill-audit-20261110-072823.html.</li><li><span class="quiet">2026-11-10 07:28</span> ·
+      <span class="pill plain">scenario</span> Generated 3 debate scenario(s): &quot;MPC Custody Provider Concentration&quot; [surface]; &quot;Defect path: Data-Availability Fee Market Starvation → Signature Malleability Enabling Message Replay → Restaked Security Correlated Slashing&quot; [path]; &quot;Besu&#39;s DiscV4 UDP discovery remote DoS&quot; [intel].</li><li><span class="quiet">2026-11-10 07:28</span> ·
+      <span class="pill plain">config</span> Autopilot tuned settings: webCapture.maxQueries: 3 → 4</li><li><span class="quiet">2026-11-10 07:28</span> ·
+      <span class="pill plain">web</span> Web research on 3 gap(s): 3 page(s) filed, 0 flagged, 3 technique(s) distilled.</li><li><span class="quiet">2026-11-10 07:28</span> ·
+      <span class="pill plain">vault</span> Vault reconciled with disk: 0 new, 68 changed, 0 removed (515 notes).</li><li><span class="quiet">2026-11-10 07:27</span> ·
+      <span class="pill plain">artifact</span> Published 3 artifact(s): system-brief-20261110-072726.html, scenario-pack-20261110-072726.html, skill-audit-20261110-072726.html.</li><li><span class="quiet">2026-11-10 07:27</span> ·
+      <span class="pill plain">scenario</span> Generated 3 debate scenario(s): &quot;Security Council as a Permanent Upgrade Path&quot; [surface]; &quot;Defect path: MPC Custody Provider Concentration → Permit2 Signature Replay Across Nonces → Prover Market Liveness Failure&quot; [path]; &quot;A permissionless non-validator peer can halt QBFT finality…&quot; [intel].</li><li><span class="quiet">2026-11-10 07:27</span> ·
+      <span class="pill plain">web</span> Web research on 3 gap(s): 1 page(s) filed, 0 flagged, 1 technique(s) distilled.</li><li><span class="quiet">2026-11-10 07:26</span> ·
+      <span class="pill plain">agent</span> Taught 7 technique assignment(s) after the roster change.</li><li><span class="quiet">2026-11-10 07:26</span> ·
+      <span class="pill plain">agent</span> Hired Idris Vale (@Quorum) — Governance Security Analyst.</li><li><span class="quiet">2026-11-10 07:26</span> ·
+      <span class="pill plain">config</span> Operator changed settings: webCapture.trustWeb: false → true</li></ul></div>
+  </div>
+</div>
+<footer>
+  This artifact was generated automatically from the local knowledge vault. Coverage scores measure how much the
+  council has argued and learned about a topic — they are not predictions of real-world exploitability.
+  Web captures and techniques marked “unverified” have not been reviewed by a human.
+</footer>
+</div>
+</body>
+</html>

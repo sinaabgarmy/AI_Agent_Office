@@ -13,9 +13,10 @@ source_id: GHSA-878m-3g6q-594q
 confidence: 0.71
 harvested: 2026-11-04
 tags: [technique, execution, cwe-682]
-updated: "2026-11-10T11:50:59.692Z"
+updated: "2026-11-10T15:28:32.960Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.656Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-10T11:08:39.374Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-10T11:50:59.692Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T15:28:32.959Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.

@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.813Z"
+updated: "2026-11-10T15:28:33.072Z"
+status: known
 ---
+
 
 # CometBFT's default for `BlockParams.MaxBytes` consensus…
 
@@ -35,3 +37,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 - OSV — cometbft — GHSA-hq58-p9mv-338c
 - https://github.com/advisories/GHSA-hq58-p9mv-338c
 - Harvested: 2026-11-10T11:50:59.620Z
+> **Refreshed 2026-11-10T15:28:33.072Z** — It is advised that chains consider their specific needs for their use case when setting the BlockParams.MaxBytes consensus parameter.

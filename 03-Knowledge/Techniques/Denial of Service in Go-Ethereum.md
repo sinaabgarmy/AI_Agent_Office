@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.786Z"
+updated: "2026-11-10T15:28:33.046Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ prevent new transactions from entering the pool, resulting in a denial of servic
 > **Refreshed 2026-11-10T08:12:51.715Z** — Denial of Service in Go-Ethereum A design flaw in all versions of Go-Ethereum allows an attacker node to send 5120 pending transactions of a high gas price from one account that all fully spend the full balance of the account to a victim Geth node, which can…
 > **Refreshed 2026-11-10T11:08:39.505Z** — Denial of Service in Go-Ethereum A design flaw in all versions of Go-Ethereum allows an attacker node to send 5120 pending transactions of a high gas price from one account that all fully spend the full balance of the account to a victim Geth node, which can…
 > **Refreshed 2026-11-10T11:50:59.786Z** — Denial of Service in Go-Ethereum A design flaw in all versions of Go-Ethereum allows an attacker node to send 5120 pending transactions of a high gas price from one account that all fully spend the full balance of the account to a victim Geth node, which can…
+> **Refreshed 2026-11-10T15:28:33.046Z** — Denial of Service in Go-Ethereum A design flaw in all versions of Go-Ethereum allows an attacker node to send 5120 pending transactions of a high gas price from one account that all fully spend the full balance of the account to a victim Geth node, which can…

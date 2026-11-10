@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-703]
-updated: "2026-11-10T11:50:59.811Z"
+updated: "2026-11-10T15:28:33.069Z"
+status: known
 ---
+
 
 # CometBFT
 
@@ -35,3 +37,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - OSV — cometbft — GHSA-c32p-wcqj-j677
 - https://github.com/advisories/GHSA-c32p-wcqj-j677
 - Harvested: 2026-11-10T11:50:59.619Z
+> **Refreshed 2026-11-10T15:28:33.069Z** — This breaks a core BFT Time guarantee: "A faulty process cannot arbitrarily increase the Time value." Downstream impact on chains affects any module, smart contract, or system that relies on the block timestamp.

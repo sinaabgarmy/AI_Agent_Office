@@ -13,9 +13,10 @@ source_id: ef-blog-allocation-update-q1-2026
 confidence: 0.69
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.646Z"
+updated: "2026-11-10T15:28:32.892Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.623Z** — Allocation Update - Q1 2026 Q1 2026 continued our focus on strengthening Ethereum’s foundations, with sustained investment in core domains like cryptography, zero-knowledge proofs, security, and protocol research.
 > **Refreshed 2026-11-10T11:08:39.269Z** — Allocation Update - Q1 2026 Q1 2026 continued our focus on strengthening Ethereum’s foundations, with sustained investment in core domains like cryptography, zero-knowledge proofs, security, and protocol research.
 > **Refreshed 2026-11-10T11:50:59.646Z** — Allocation Update - Q1 2026 Q1 2026 continued our focus on strengthening Ethereum’s foundations, with sustained investment in core domains like cryptography, zero-knowledge proofs, security, and protocol research.
+> **Refreshed 2026-11-10T15:28:32.892Z** — Allocation Update - Q1 2026 Q1 2026 continued our focus on strengthening Ethereum’s foundations, with sustained investment in core domains like cryptography, zero-knowledge proofs, security, and protocol research.

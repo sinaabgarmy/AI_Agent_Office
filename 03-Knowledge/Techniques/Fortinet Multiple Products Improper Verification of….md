@@ -13,9 +13,10 @@ source_id: CVE-2025-59718
 confidence: 0.55
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-287]
-updated: "2026-11-10T11:50:59.642Z"
+updated: "2026-11-10T15:28:32.885Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ patches mentioned in the advisory
 > **Refreshed 2026-11-10T08:12:51.618Z** — Fortinet FortiOS, FortiSwitchMaster, FortiProxy, and FortiWeb contain an improper verification of cryptographic signature vulnerability that may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication via a crafted SAML message.
 > **Refreshed 2026-11-10T11:08:39.258Z** — Fortinet FortiOS, FortiSwitchMaster, FortiProxy, and FortiWeb contain an improper verification of cryptographic signature vulnerability that may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication via a crafted SAML message.
 > **Refreshed 2026-11-10T11:50:59.642Z** — Fortinet FortiOS, FortiSwitchMaster, FortiProxy, and FortiWeb contain an improper verification of cryptographic signature vulnerability that may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication via a crafted SAML message.
+> **Refreshed 2026-11-10T15:28:32.884Z** — Fortinet FortiOS, FortiSwitchMaster, FortiProxy, and FortiWeb contain an improper verification of cryptographic signature vulnerability that may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication via a crafted SAML message.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.815Z"
+updated: "2026-11-10T15:28:33.075Z"
 ---
 
 # Denial of service via OOM in github.com/cometbft/cometbft

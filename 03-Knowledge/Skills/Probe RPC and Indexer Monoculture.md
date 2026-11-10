@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, infrastructure, surface-gap]
-updated: "2026-11-10T12:06:24.815Z"
+updated: "2026-11-10T15:27:53.359Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.349Z** — When the council opens a debate on RPC and Indexer Monoculture, or when auditing a system that matches "Wallets, frontends and agents that all read chain state through the same few providers share one view of reality, so whoever controls that view decides what users believe they are signing.".
 > **Refreshed 2026-11-10T11:49:59.884Z** — When the council opens a debate on RPC and Indexer Monoculture, or when auditing a system that matches "Wallets, frontends and agents that all read chain state through the same few providers share one view of reality, so whoever controls that view decides what users believe they are signing.".
 > **Refreshed 2026-11-10T12:06:24.815Z** — When the council opens a debate on RPC and Indexer Monoculture, or when auditing a system that matches "Wallets, frontends and agents that all read chain state through the same few providers share one view of reality, so whoever controls that view decides what users believe they are signing.".
+> **Refreshed 2026-11-10T15:27:53.359Z** — When the council opens a debate on RPC and Indexer Monoculture, or when auditing a system that matches "Wallets, frontends and agents that all read chain state through the same few providers share one view of reality, so whoever controls that view decides what users believe they are signing.".

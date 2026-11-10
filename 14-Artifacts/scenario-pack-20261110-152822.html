@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Scenario Pack</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--ink:#14181f;--muted:#5b6472;--line:#e2e6ec;
+  --accent:#0b6e99;--accent-soft:#dcedf5;--track:#e9edf2;
+  --crit:#b3261e;--crit-bg:#fbe9e7;--high:#9a5b00;--high-bg:#fff1d6;--med:#3d5a80;--med-bg:#e6edf6;
+  --ok:#1b6e3c;--ok-bg:#e3f4e9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1319;--surface:#171c24;--ink:#e8ecf2;--muted:#98a2b3;--line:#262d38;
+    --accent:#5ab8dd;--accent-soft:#16303c;--track:#232a35;
+    --crit:#ff8a80;--crit-bg:#3a1a18;--high:#ffc46b;--high-bg:#35280f;--med:#a9c1e6;--med-bg:#1b2637;
+    --ok:#7fd4a0;--ok-bg:#143021;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 56px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:18px;margin:36px 0 12px;letter-spacing:-.005em}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.lede{color:var(--muted);max-width:68ch}
+.meta{color:var(--muted);font-size:13px}
+a{color:var(--accent)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-size:26px;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tile .s{font-size:12px;color:var(--muted);margin-top:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.scroll{overflow-x:auto}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+  padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.row{display:grid;grid-template-columns:minmax(110px,170px) 1fr auto;gap:12px;align-items:center;padding:7px 0;
+  border-bottom:1px solid var(--line);font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .v{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;
+  background:var(--med-bg);color:var(--med)}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}
+.pill.high{background:var(--high-bg);color:var(--high)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.plain{background:var(--accent-soft);color:var(--accent)}
+.quiet{color:var(--muted)}
+.hyp{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:8px 0}
+.small{font-size:13px}
+ul.flat{list-style:none;margin:0;padding:0}
+ul.flat li{padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+ul.flat li:last-child{border-bottom:0}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.card,.tile{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Auto-generated scenarios</div>
+  <h1>Scenario Pack</h1>
+  <p class="lede">Debate scenarios the system proposed on its own from coverage gaps, harvested intel, graph analysis, hunt targets and your vault seed notes. Each is a hypothesis to argue, not an established finding.</p>
+  <p class="meta">Generated 2026-11-10 15:28 UTC · ChronoZero Exploit Defect Lab · local, self-contained document</p>
+</header>
+<div class="grid">
+    <div class="tile"><div class="n">16</div><div class="l">auto-generated scenarios</div></div>
+    <div class="tile"><div class="n">15</div><div class="l">waiting to be debated</div></div>
+    <div class="tile"><div class="n">6</div><div class="l">from intel</div></div><div class="tile"><div class="n">5</div><div class="l">from path</div></div><div class="tile"><div class="n">5</div><div class="l">from surface</div></div>
+  </div><h2>Briefings</h2><article class="card">
+      <h3>GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Governance Attack</span>
+        <span class="pill">Governance</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When GovernorCompatibilityBravo ABI encoding may lead to unexpected behavior The GovernorCompatibilityBravo module…, the CWE-841 class invariant around GovernorCompatibilityBravo incorrect ABI encoding may… fails, so fix is included in version v4 becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Governance — CWE-841 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-m6w8-fq7v-ph4m). Attack primitive: GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior The GovernorCompatibilityBravo module may lead to the creation of governance proposals that execute function calls with incorrect arguments due to bad ABI encoding. The invariant at risk: Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction. Proposed remediation under review: fix is included in version v4</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 93%. · Suggested council: Quorum, DarkPool, SentinEL</p>
+    </article><article class="card">
+      <h3>Defect path: Security Council as a Permanent Upgrade Path → Shared Sequencer Cross-Rollup Atomicity → Permit2 Signature Replay Across Nonces</h3>
+      <p><span class="pill plain">path</span> <span class="pill">Smart Contract Exploit</span>
+        <span class="pill">Execution</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;Security Council as a Permanent Upgrade Path&quot; supplies the precondition for &quot;Shared Sequencer Cross-Rollup Atomicity&quot;, which in turn makes &quot;Permit2 Signature Replay Across Nonces&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> Rollup or Protocol with an Upgrade Council Above the Timelock + Multiple Rollups Ordered by One Shared Sequencer + Permit2 / EIP-712 Allowance Contract</p>
+      <p class="small">Cross-layer defect path (Governance → L2 / Bridge → Execution). ENTRY — Security Council as a Permanent Upgrade Path: An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is. PIVOT — Shared Sequencer Cross-Rollup Atomicity: A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so &quot;atomic&quot; cross-rollup actions can half-complete. IMPACT — Permit2 Signature Replay Across Nonces: A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yields the precondition the pivot needs,</p>
+      <p class="meta">Why it was generated: Three-layer chain Governance → L2 / Bridge → Execution (2 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: Quorum, DarkPool, StateRoot, Bytecode</p>
+    </article><article class="card">
+      <h3>Encrypted-State Leakage via Decryption Oracles</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Cryptographic Vulnerability</span>
+        <span class="pill">Cryptography</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.</div>
+      <p class="small"><strong>Target architecture.</strong> FHE or MPC-Based Confidential Smart Contracts</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Infer encrypted values from the public side effects of operations that depend on them. Invariant at risk: Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle. Target architecture: FHE or MPC-Based Confidential Smart Contracts. Reference class: CWE-203 · Severity: High. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, High) — Uncovered — never debated, no external intel, no scenario. · Suggested council: ZeroCipher, Entropy, Bytecode</p>
+    </article><article class="card">
+      <h3>Besu&#39;s DiscV4 UDP discovery remote DoS</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Infrastructure Attack</span>
+        <span class="pill">Infrastructure</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When One remote host can send datagrams faster than the thread decodes., the CWE-400 class invariant around Besu&#39;s DiscV4 UDP discovery remote DoS fails, so bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than… becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Infrastructure — CWE-400 class</p>
+      <p class="small">External intel harvested from GitHub Advisories — Hyperledger Besu (GHSA-xw6x-9526-6w9r). Attack primitive: One remote host can send datagrams faster than the thread decodes. The invariant at risk: Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts. Proposed remediation under review: Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.</p>
+      <p class="meta">Why it was generated: External intel (GitHub Advisories — Hyperledger Besu), confidence 97%. · Suggested council: Uplink, 0xNull, ConsensusGhost</p>
+    </article><article class="card">
+      <h3>Defect path: Data-Availability Fee Market Starvation → Signature Malleability Enabling Message Replay → Restaked Security Correlated Slashing</h3>
+      <p><span class="pill plain">path</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill ok">debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;Data-Availability Fee Market Starvation&quot; supplies the precondition for &quot;Signature Malleability Enabling Message Replay&quot;, which in turn makes &quot;Restaked Security Correlated Slashing&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> Rollups Posting to a Shared Blob / DA Fee Market + ECDSA Order / Permit Verification + Restaking Layer Securing Multiple Actively Validated Services</p>
+      <p class="small">Cross-layer defect path (Infrastructure → Cryptography → Consensus). ENTRY — Data-Availability Fee Market Starvation: Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time. PIVOT — Signature Malleability Enabling Message Replay: If a verifier does not reject the alternate (s, n-s) form of an ECDSA signature, an attacker can replay a signed message under a different transaction hash. IMPACT — Restaked Security Correlated Slashing: Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yields the precondition the pivot needs, whether the pivot really reaches the </p>
+      <p class="meta">Why it was generated: Three-layer chain Infrastructure → Cryptography → Consensus (2 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: Uplink, 0xNull, ZeroCipher, ConsensusGhost</p>
+    </article><article class="card">
+      <h3>MPC Custody Provider Concentration</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Key Management</span>
+        <span class="pill">Key Management</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.</div>
+      <p class="small"><strong>Target architecture.</strong> Institutional Custody Using Threshold-Signature Services</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: A single defect in the shared signing library or provider control plane affects enough shares to meet the threshold. Invariant at risk: A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share. Target architecture: Institutional Custody Using Threshold-Signature Services. Reference class: CWE-654 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: KeyWarden, ZeroCipher, Entropy, 0xNull</p>
+    </article><article class="card">
+      <h3>A permissionless non-validator peer can halt QBFT finality…</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding, the CWE-400 class invariant fails, so prevent the network from assembling a finality quorum becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Consensus — CWE-400 class</p>
+      <p class="small">External intel harvested from GitHub Advisories — Hyperledger Besu (GHSA-g5j7-4r2x-rx9j). Attack primitive: A permissionless non-validator peer can halt QBFT finality through pre-authorization proposal decoding The invariant at risk: Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated. Proposed remediation under review: prevent the network from assembling a finality quorum</p>
+      <p class="meta">Why it was generated: External intel (GitHub Advisories — Hyperledger Besu), confidence 98%. · Suggested council: ConsensusGhost, SentinEL, ZeroCipher</p>
+    </article><article class="card">
+      <h3>Defect path: MPC Custody Provider Concentration → Permit2 Signature Replay Across Nonces → Prover Market Liveness Failure</h3>
+      <p><span class="pill plain">path</span> <span class="pill">L2 Rollup Security</span>
+        <span class="pill">L2 / Bridge</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;MPC Custody Provider Concentration&quot; supplies the precondition for &quot;Permit2 Signature Replay Across Nonces&quot;, which in turn makes &quot;Prover Market Liveness Failure&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> Institutional Custody Using Threshold-Signature Services + Permit2 / EIP-712 Allowance Contract + Validity Rollup with an Outsourced or Permissioned Prover Set</p>
+      <p class="small">Cross-layer defect path (Key Management → Execution → L2 / Bridge). ENTRY — MPC Custody Provider Concentration: A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share. PIVOT — Permit2 Signature Replay Across Nonces: A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance. IMPACT — Prover Market Liveness Failure: A validity rollup finalises only when someone produces a proof; if proving is concentrated or unprofitable under load, withdrawals stall even though every sequencer is honest. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yields the precondition the pivot needs, whether the pivot really reaches the impact</p>
+      <p class="meta">Why it was generated: Three-layer chain Key Management → Execution → L2 / Bridge (2 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: KeyWarden, ZeroCipher, Bytecode, StateRoot</p>
+    </article><article class="card">
+      <h3>Security Council as a Permanent Upgrade Path</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Governance Attack</span>
+        <span class="pill">Governance</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is.</div>
+      <p class="small"><strong>Target architecture.</strong> Rollup or Protocol with an Upgrade Council Above the Timelock</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Reach the council threshold (through stale signers, shared custody providers or social pressure) and upgrade without delay. Invariant at risk: An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is. Target architecture: Rollup or Protocol with an Upgrade Council Above the Timelock. Reference class: CWE-269 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: Quorum, DarkPool, ZeroCipher, SentinEL</p>
+    </article><article class="card">
+      <h3>OpenZeppelin Contracts initializer reentrancy may lead to double initialization</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Smart Contract Exploit</span>
+        <span class="pill">Execution</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When OpenZeppelin Contracts initializer reentrancy may lead to double initialization Initializer functions that are invoked…, the CWE-665 class invariant fails, so fix is included in the version v4 becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Execution — CWE-665 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-9c22-pwxw-p6hx). Attack primitive: OpenZeppelin Contracts initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view… The invariant at risk: Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction. Proposed remediation under review: fix is included in the version v4</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 97%. · Suggested council: Bytecode, SentinEL, 0xNull</p>
+    </article><article class="card">
+      <h3>Defect path: Model-Driven Delegate Capture → Prover Market Liveness Failure → Intent Solver Collusion and Quote Shading</h3>
+      <p><span class="pill plain">path</span> <span class="pill">Economic Attack</span>
+        <span class="pill">Economic</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;Model-Driven Delegate Capture&quot; supplies the precondition for &quot;Prover Market Liveness Failure&quot;, which in turn makes &quot;Intent Solver Collusion and Quote Shading&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> DAO Where Voting Power Is Delegated to Automated or AI Delegates + Validity Rollup with an Outsourced or Permissioned Prover Set + Intent-Based Trading with Solver or Filler Auctions</p>
+      <p class="small">Cross-layer defect path (Governance → L2 / Bridge → Economic). ENTRY — Model-Driven Delegate Capture: Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say. PIVOT — Prover Market Liveness Failure: A validity rollup finalises only when someone produces a proof; if proving is concentrated or unprofitable under load, withdrawals stall even though every sequencer is honest. IMPACT — Intent Solver Collusion and Quote Shading: A user who signs an outcome rather than a transaction delegates execution to a solver market; if that market is thin or colluding, the user reliably receives the worst outcome their signed limits allow. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yields the precondition the pivot ne</p>
+      <p class="meta">Why it was generated: Three-layer chain Governance → L2 / Bridge → Economic (3 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: DarkPool, StateRoot, SentinEL</p>
+    </article><article class="card">
+      <h3>Shared Sequencer Cross-Rollup Atomicity</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">L2 Rollup Security</span>
+        <span class="pill">L2 / Bridge</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so &quot;atomic&quot; cross-rollup actions can half-complete.</div>
+      <p class="small"><strong>Target architecture.</strong> Multiple Rollups Ordered by One Shared Sequencer</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Cause one leg of an atomically-included pair to revert on its rollup after the other leg has taken effect. Invariant at risk: A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so &quot;atomic&quot; cross-rollup actions can half-complete. Target architecture: Multiple Rollups Ordered by One Shared Sequencer. Reference class: CWE-662 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: StateRoot, ConsensusGhost, DarkPool</p>
+    </article><article class="card">
+      <h3>TimelockController vulnerability in OpenZeppelin Contracts</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Governance Attack</span>
+        <span class="pill">Governance</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When Instances with the executor role set to &quot;open&quot; anyone to use the executor role, thus leaving the timelock at risk…, the CWE-269 class invariant around TimelockController vulnerability in OpenZeppelin Contracts fails, so fix is included in the following releases of @openzeppelin/contracts and… becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Governance — CWE-269 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-fg47-3c2x-m2wr). Attack primitive: Instances with the executor role set to &quot;open&quot; allow anyone to use the executor role, thus leaving the timelock at risk of being taken over by an attacker. The invariant at risk: Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated. Proposed remediation under review: fix is included in the following releases of @openzeppelin/contracts and @openzeppelin/contracts-upgradeable: - 4</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 98%. · Suggested council: DarkPool, SentinEL, Bytecode</p>
+    </article><article class="card">
+      <h3>Defect path: Security Council as a Permanent Upgrade Path → Restaked Security Correlated Slashing → Shared Sequencer Cross-Rollup Atomicity</h3>
+      <p><span class="pill plain">path</span> <span class="pill">L2 Rollup Security</span>
+        <span class="pill">L2 / Bridge</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;Security Council as a Permanent Upgrade Path&quot; supplies the precondition for &quot;Restaked Security Correlated Slashing&quot;, which in turn makes &quot;Shared Sequencer Cross-Rollup Atomicity&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> Rollup or Protocol with an Upgrade Council Above the Timelock + Restaking Layer Securing Multiple Actively Validated Services + Multiple Rollups Ordered by One Shared Sequencer</p>
+      <p class="small">Cross-layer defect path (Governance → Consensus → L2 / Bridge). ENTRY — Security Council as a Permanent Upgrade Path: An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is. PIVOT — Restaked Security Correlated Slashing: Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on. IMPACT — Shared Sequencer Cross-Rollup Atomicity: A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so &quot;atomic&quot; cross-rollup actions can half-complete. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yi</p>
+      <p class="meta">Why it was generated: Three-layer chain Governance → Consensus → L2 / Bridge (3 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: DarkPool, ConsensusGhost, StateRoot, SentinEL</p>
+    </article><article class="card">
+      <h3>Restaked Security Correlated Slashing</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.</div>
+      <p class="small"><strong>Target architecture.</strong> Restaking Layer Securing Multiple Actively Validated Services</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Trigger a slashing condition in the weakest service to remove collateral that the others assumed was independent. Invariant at risk: Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on. Target architecture: Restaking Layer Securing Multiple Actively Validated Services. Reference class: CWE-664 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: ConsensusGhost, DarkPool, SentinEL</p>
+    </article><article class="card">
+      <h3>OpenZeppelin Contracts Bytes&#39;s lastIndexOf function with…</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When The pos argument could be used to access arbitrary data outside of the buffer bounds., the CWE-125 class invariant around OpenZeppelin Contracts Bytes&#39;s lastIndexOf function with… fails, so adopt the upstream advisory’s remediation guidance and verify the fix against the stated… becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Consensus — CWE-125 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-9rcw-c2f9-2j55). Attack primitive: The pos argument could be used to access arbitrary data outside of the buffer bounds. The invariant at risk: Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated. Proposed remediation under review: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 97%. · Suggested council: ConsensusGhost, SentinEL, ZeroCipher</p>
+    </article>
+<footer>
+  This artifact was generated automatically from the local knowledge vault. Coverage scores measure how much the
+  council has argued and learned about a topic — they are not predictions of real-world exploitability.
+  Web captures and techniques marked “unverified” have not been reviewed by a human.
+</footer>
+</div>
+</body>
+</html>

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.802Z"
+updated: "2026-11-10T15:28:33.061Z"
 ---
 
 # Slashing evasion in github.com/cosmos/cosmos-sdk

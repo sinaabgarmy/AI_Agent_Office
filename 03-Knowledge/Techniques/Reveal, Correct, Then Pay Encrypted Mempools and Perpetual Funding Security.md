@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.691Z"
+updated: "2026-11-10T15:28:32.958Z"
 ---
 
 # Reveal, Correct, Then Pay: Encrypted Mempools and Perpetual Funding Security

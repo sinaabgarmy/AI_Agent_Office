@@ -13,9 +13,10 @@ source_id: GHSA-q26p-9cq4-7fc2
 confidence: 0.93
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.710Z"
+updated: "2026-11-10T15:28:32.979Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ fix has been included in geth version 1
 > **Refreshed 2026-11-10T08:12:51.667Z** — DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
 > **Refreshed 2026-11-10T11:08:39.416Z** — DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
 > **Refreshed 2026-11-10T11:50:59.709Z** — DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
+> **Refreshed 2026-11-10T15:28:32.979Z** — DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-345]
-updated: "2026-11-10T11:50:59.814Z"
+updated: "2026-11-10T15:28:33.073Z"
 ---
 
 # CometBFT — a malicious peer to stall the network by disseminating seemingly valid block…

@@ -3,9 +3,12 @@ type: memory
 scope: individual
 agent: bot-custom-auto-governance-quorum
 tags: [memory, agent]
-updated: "2026-11-10T11:50:59.829Z"
-last_technique: "CometBFT Vote Extensions: Panic when receiving a Pre-commit with an invalid data"
+updated: "2026-11-10T15:28:33.097Z"
+last_technique: The cryptography behind electronic voting (and why paper ballots are still essential)
 ---
+
+
+
 
 
 
@@ -84,3 +87,16 @@ last_technique: "CometBFT Vote Extensions: Panic when receiving a Pre-commit wit
 - **How to detect:** Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.
 - **How to fix:** Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.
 - **Source:** OSV — cometbft (GHSA-p7mv-53f2-4cwj) — https://github.com/advisories/GHSA-p7mv-53f2-4cwj
+> Memory log initialized for @Quorum (Idris Vale) on 2026-11-10.
+### 2026-11-10 — Learned technique: Governor proposal creation may be blocked by frontrunning
+- **Layer:** Governance · **CWE:** CWE-841 · **Confidence:** 92%
+- **Primitive:** Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.
+- **How to detect:** Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.
+- **How to fix:** prevent a proposal from being proposed at all
+- **Source:** GitHub Advisories — OpenZeppelin Contracts (GHSA-5h3x-9wvq-w4m2) — https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-5h3x-9wvq-w4m2
+### 2026-11-10 — Learned technique: The cryptography behind electronic voting (and why paper ballots are still essential)
+- **Layer:** Governance · **CWE:** CWE-863 · **Confidence:** 50%
+- **Primitive:** You may wonder why we still use paper for our elections and voting systems when tasks like banking, tax filing, and document signing have moved away from paper-based legacy systems and become fully electronic.
+- **How to detect:** Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.
+- **How to fix:** Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.
+- **Source:** Trail of Bits Research (tob-blog-the-cryptography-behind-electronic-votin) — https://blog.trailofbits.com/2026/11/03/the-cryptography-behind-electronic-voting-and-why-paper-ballots-are-still-essential/

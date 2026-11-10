@@ -13,9 +13,10 @@ source_id: ef-blog-glamsterdam-testnet-announcement
 confidence: 0.66
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.649Z"
+updated: "2026-11-10T15:28:32.895Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.624Z** — Glamsterdam Testnet Announcement Glamsterdam follows the Fusaka upgrade, advancing Ethereum's L1 scaling roadmap with enshrined proposer-builder separation, block-level access lists, and changes to gas pricing that better reflect the cost of execution and…
 > **Refreshed 2026-11-10T11:08:39.275Z** — Glamsterdam Testnet Announcement Glamsterdam follows the Fusaka upgrade, advancing Ethereum's L1 scaling roadmap with enshrined proposer-builder separation, block-level access lists, and changes to gas pricing that better reflect the cost of execution and…
 > **Refreshed 2026-11-10T11:50:59.649Z** — Glamsterdam Testnet Announcement Glamsterdam follows the Fusaka upgrade, advancing Ethereum's L1 scaling roadmap with enshrined proposer-builder separation, block-level access lists, and changes to gas pricing that better reflect the cost of execution and…
+> **Refreshed 2026-11-10T15:28:32.895Z** — Glamsterdam Testnet Announcement Glamsterdam follows the Fusaka upgrade, advancing Ethereum's L1 scaling roadmap with enshrined proposer-builder separation, block-level access lists, and changes to gas pricing that better reflect the cost of execution and…

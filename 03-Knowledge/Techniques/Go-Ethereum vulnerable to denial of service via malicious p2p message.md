@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.787Z"
+updated: "2026-11-10T15:28:33.048Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ fix is included in geth version 1
 > **Refreshed 2026-11-10T08:12:51.717Z** — Go-Ethereum vulnerable to denial of service via malicious p2p message A vulnerable node, can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.
 > **Refreshed 2026-11-10T11:08:39.507Z** — Go-Ethereum vulnerable to denial of service via malicious p2p message A vulnerable node, can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.
 > **Refreshed 2026-11-10T11:50:59.787Z** — Go-Ethereum vulnerable to denial of service via malicious p2p message A vulnerable node, can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.
+> **Refreshed 2026-11-10T15:28:33.048Z** — Go-Ethereum vulnerable to denial of service via malicious p2p message A vulnerable node, can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-10T11:50:59.786Z"
+updated: "2026-11-10T15:28:33.047Z"
 ---
 
 # Consensus flaw during block processing in github.com/ethereum/go-ethereum

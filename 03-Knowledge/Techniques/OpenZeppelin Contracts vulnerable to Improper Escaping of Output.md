@@ -13,9 +13,10 @@ source_id: GHSA-g4vp-m682-qqmp
 confidence: 0.77
 harvested: 2026-11-04
 tags: [technique, execution, cwe-116]
-updated: "2026-11-10T11:50:59.697Z"
+updated: "2026-11-10T15:28:32.967Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.660Z** — OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.
 > **Refreshed 2026-11-10T11:08:39.390Z** — OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.
 > **Refreshed 2026-11-10T11:50:59.697Z** — OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.
+> **Refreshed 2026-11-10T15:28:32.967Z** — OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.

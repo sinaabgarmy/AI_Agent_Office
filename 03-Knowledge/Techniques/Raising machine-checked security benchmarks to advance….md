@@ -13,9 +13,10 @@ source_id: ef-blog-raising-machine-checked-security-benchma
 confidence: 0.7
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.645Z"
+updated: "2026-11-10T15:28:32.890Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.622Z** — better.codes takes a self-contained problem from the Proximity Prize research, formalized in Lean, and puts its soundness bound on a public leaderboard that anyone can push forward....
 > **Refreshed 2026-11-10T11:08:39.267Z** — better.codes takes a self-contained problem from the Proximity Prize research, formalized in Lean, and puts its soundness bound on a public leaderboard that anyone can push forward....
 > **Refreshed 2026-11-10T11:50:59.645Z** — better.codes takes a self-contained problem from the Proximity Prize research, formalized in Lean, and puts its soundness bound on a public leaderboard that anyone can push forward....
+> **Refreshed 2026-11-10T15:28:32.890Z** — better.codes takes a self-contained problem from the Proximity Prize research, formalized in Lean, and puts its soundness bound on a public leaderboard that anyone can push forward....

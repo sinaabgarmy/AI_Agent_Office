@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.789Z"
+updated: "2026-11-10T15:27:53.329Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.327Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
 > **Refreshed 2026-11-10T11:49:59.858Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
 > **Refreshed 2026-11-10T12:06:24.788Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T15:27:53.329Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".

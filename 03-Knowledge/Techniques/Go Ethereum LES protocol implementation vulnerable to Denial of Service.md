@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-129]
-updated: "2026-11-10T11:50:59.787Z"
+updated: "2026-11-10T15:28:33.047Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.717Z** — The vulnerable remote node would be crashed by such an attack immediately, aka the EPoD (Ethereum Packet of Death) issue.
 > **Refreshed 2026-11-10T11:08:39.507Z** — The vulnerable remote node would be crashed by such an attack immediately, aka the EPoD (Ethereum Packet of Death) issue.
 > **Refreshed 2026-11-10T11:50:59.787Z** — The vulnerable remote node would be crashed by such an attack immediately, aka the EPoD (Ethereum Packet of Death) issue.
+> **Refreshed 2026-11-10T15:28:33.047Z** — The vulnerable remote node would be crashed by such an attack immediately, aka the EPoD (Ethereum Packet of Death) issue.

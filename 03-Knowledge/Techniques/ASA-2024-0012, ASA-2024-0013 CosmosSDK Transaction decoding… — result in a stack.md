@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.800Z"
+updated: "2026-11-10T15:28:33.059Z"
 ---
 
 # ASA-2024-0012, ASA-2024-0013: CosmosSDK: Transaction decoding… — result in a stack overflow or resource…

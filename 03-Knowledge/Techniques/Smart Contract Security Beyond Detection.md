@@ -13,9 +13,10 @@ source_id: arxiv-smart-contract-security-beyond-detection
 confidence: 0.94
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.670Z"
+updated: "2026-11-10T15:28:32.929Z"
 status: known
 ---
+
 
 
 
@@ -51,3 +52,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.639Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
 > **Refreshed 2026-11-10T11:08:39.323Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
 > **Refreshed 2026-11-10T11:50:59.670Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-10T15:28:32.928Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.

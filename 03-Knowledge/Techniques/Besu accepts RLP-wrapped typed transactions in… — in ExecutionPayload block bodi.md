@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-20]
-updated: "2026-11-10T11:50:59.725Z"
+updated: "2026-11-10T15:28:32.991Z"
 ---
 
 # Besu accepts RLP-wrapped typed transactions in… — in ExecutionPayload block bodies

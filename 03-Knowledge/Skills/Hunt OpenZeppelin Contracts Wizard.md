@@ -19,11 +19,12 @@ confidence: 0.79
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-94]
-updated: "2026-11-09T23:13:47.074Z"
-status: retired
-retired: "2026-11-09T23:13:47.074Z"
-retire_reason: "not-a-defect — Built from an announcement or general post: there is no defect, attack or defence to practise."
+updated: "2026-11-10T15:27:59.853Z"
+status: active
+retired: ""
+retire_reason: ""
 ---
+
 
 
 

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-20]
-updated: "2026-11-10T11:50:59.798Z"
+updated: "2026-11-10T15:28:33.057Z"
 ---
 
 # ASA-2024-003: Missing `BlockedAddressed` Validation in Vesting Module

@@ -13,9 +13,10 @@ source_id: GHSA-v592-xf75-856p
 confidence: 0.71
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.717Z"
+updated: "2026-11-10T15:28:32.983Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.672Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
 > **Refreshed 2026-11-10T11:08:39.427Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
 > **Refreshed 2026-11-10T11:50:59.717Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T15:28:32.983Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).

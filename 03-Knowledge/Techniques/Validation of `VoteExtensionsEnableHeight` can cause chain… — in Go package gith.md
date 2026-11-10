@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-863]
-updated: "2026-11-10T11:50:59.812Z"
+updated: "2026-11-10T15:28:33.071Z"
 ---
 
 # Validation of `VoteExtensionsEnableHeight` can cause chain… — in Go package github

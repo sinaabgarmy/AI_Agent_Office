@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-670]
-updated: "2026-11-10T11:50:59.702Z"
+updated: "2026-11-10T15:28:32.974Z"
 ---
 
 # OpenZeppelin Contracts and Contracts Upgradeable duplicated execution of subcalls in v4.9.4

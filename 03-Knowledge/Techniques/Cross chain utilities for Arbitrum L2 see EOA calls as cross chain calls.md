@@ -13,9 +13,10 @@ source_id: GHSA-9j3m-g383-29qr
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, l-bridge, cwe-345]
-updated: "2026-11-10T11:50:59.742Z"
+updated: "2026-11-10T15:28:33.001Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Verify every input against its expected form before it can influence state or va
 > **Refreshed 2026-11-10T08:12:51.686Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
 > **Refreshed 2026-11-10T11:08:39.467Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
 > **Refreshed 2026-11-10T11:50:59.741Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-10T15:28:33.001Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.

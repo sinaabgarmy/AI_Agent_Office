@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-20]
-updated: "2026-11-10T11:50:59.794Z"
+updated: "2026-11-10T15:28:33.054Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.722Z** — Go Ethereum affected by DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
 > **Refreshed 2026-11-10T11:08:39.514Z** — Go Ethereum affected by DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
 > **Refreshed 2026-11-10T11:50:59.794Z** — Go Ethereum affected by DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.
+> **Refreshed 2026-11-10T15:28:33.054Z** — Go Ethereum affected by DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.

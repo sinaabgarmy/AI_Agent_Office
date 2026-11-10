@@ -13,9 +13,10 @@ source_id: GHSA-wprv-93r4-jj2p
 confidence: 0.93
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.750Z"
+updated: "2026-11-10T15:28:33.006Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.691Z** — A contract may be vulnerable if it uses multiproofs for verification and the merkle tree that is processed includes a node with value 0 at depth 1 (just under the root).
 > **Refreshed 2026-11-10T11:08:39.475Z** — A contract may be vulnerable if it uses multiproofs for verification and the merkle tree that is processed includes a node with value 0 at depth 1 (just under the root).
 > **Refreshed 2026-11-10T11:50:59.749Z** — A contract may be vulnerable if it uses multiproofs for verification and the merkle tree that is processed includes a node with value 0 at depth 1 (just under the root).
+> **Refreshed 2026-11-10T15:28:33.006Z** — A contract may be vulnerable if it uses multiproofs for verification and the merkle tree that is processed includes a node with value 0 at depth 1 (just under the root).

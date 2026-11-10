@@ -13,9 +13,10 @@ source_id: GHSA-qh9x-gcfh-pcrw
 confidence: 0.88
 harvested: 2026-11-04
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.698Z"
+updated: "2026-11-10T15:28:32.967Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.660Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-165 as expected, specifically if it returns a value other than 0 or 1.
 > **Refreshed 2026-11-10T11:08:39.392Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-165 as expected, specifically if it returns a value other than 0 or 1.
 > **Refreshed 2026-11-10T11:50:59.698Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-165 as expected, specifically if it returns a value other than 0 or 1.
+> **Refreshed 2026-11-10T15:28:32.967Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-165 as expected, specifically if it returns a value other than 0 or 1.

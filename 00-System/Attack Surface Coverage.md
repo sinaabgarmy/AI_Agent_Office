@@ -4,14 +4,14 @@ role: surface-coverage
 total_surfaces: 73
 covered: 56
 gaps: 17
-scanned: "2026-11-10T12:06:09.364Z"
+scanned: "2026-11-10T15:27:41.120Z"
 tags: [system, surface-map]
-updated: "2026-11-10T12:06:09.364Z"
+updated: "2026-11-10T15:27:41.120Z"
 ---
 
 # Attack Surface Coverage
 
-> 73 tracked attack surfaces · **56 covered** · **17 gaps** · scanned 2026-11-10T12:06:09.364Z
+> 73 tracked attack surfaces · **56 covered** · **17 gaps** · scanned 2026-11-10T15:27:41.120Z
 
 ## Coverage by layer
 - **Execution** — 11/14 covered · **3 gaps**

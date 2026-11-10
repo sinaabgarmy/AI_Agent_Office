@@ -13,9 +13,10 @@ source_id: arxiv-imperfect-commitment-in-maximal-extracta
 confidence: 0.86
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.689Z"
+updated: "2026-11-10T15:28:32.957Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.654Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
 > **Refreshed 2026-11-10T11:08:39.367Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
 > **Refreshed 2026-11-10T11:50:59.689Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-10T15:28:32.957Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.

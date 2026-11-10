@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.785Z"
+updated: "2026-11-10T15:27:53.326Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.321Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
 > **Refreshed 2026-11-10T11:49:59.856Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
 > **Refreshed 2026-11-10T12:06:24.785Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T15:27:53.326Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".

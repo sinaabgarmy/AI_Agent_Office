@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, key-management, surface-gap]
-updated: "2026-11-10T12:06:24.817Z"
+updated: "2026-11-10T15:27:53.362Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.351Z** — When the council opens a debate on Passkey and Social-Recovery Weakest Path, or when auditing a system that matches "A wallet secured by a passkey plus recovery guardians is as strong as its easiest recovery route, which is usually an email account, a cloud sync or a guardian who was never asked to verify anything.".
 > **Refreshed 2026-11-10T11:49:59.888Z** — When the council opens a debate on Passkey and Social-Recovery Weakest Path, or when auditing a system that matches "A wallet secured by a passkey plus recovery guardians is as strong as its easiest recovery route, which is usually an email account, a cloud sync or a guardian who was never asked to verify anything.".
 > **Refreshed 2026-11-10T12:06:24.817Z** — When the council opens a debate on Passkey and Social-Recovery Weakest Path, or when auditing a system that matches "A wallet secured by a passkey plus recovery guardians is as strong as its easiest recovery route, which is usually an email account, a cloud sync or a guardian who was never asked to verify anything.".
+> **Refreshed 2026-11-10T15:27:53.362Z** — When the council opens a debate on Passkey and Social-Recovery Weakest Path, or when auditing a system that matches "A wallet secured by a passkey plus recovery guardians is as strong as its easiest recovery route, which is usually an email account, a cloud sync or a guardian who was never asked to verify anything.".

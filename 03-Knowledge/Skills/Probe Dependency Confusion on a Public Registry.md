@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, supply-chain, surface-gap]
-updated: "2026-11-10T12:06:24.790Z"
+updated: "2026-11-10T15:27:53.330Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.328Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
 > **Refreshed 2026-11-10T11:49:59.859Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
 > **Refreshed 2026-11-10T12:06:24.789Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T15:27:53.330Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".

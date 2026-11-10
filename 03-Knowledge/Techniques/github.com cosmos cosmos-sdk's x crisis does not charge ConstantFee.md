@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-682]
-updated: "2026-11-10T11:50:59.796Z"
+updated: "2026-11-10T15:28:33.055Z"
 ---
 
 # github.com/cosmos/cosmos-sdk's x/crisis does not charge ConstantFee

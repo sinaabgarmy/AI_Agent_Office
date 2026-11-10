@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-755]
-updated: "2026-11-10T11:50:59.800Z"
+updated: "2026-11-10T15:28:33.059Z"
 ---
 
 # Cosmos SDK: x/group can halt when erroring in EndBlocker

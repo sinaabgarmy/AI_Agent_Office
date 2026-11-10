@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, economic, surface-gap]
-updated: "2026-11-10T12:06:24.825Z"
+updated: "2026-11-10T15:27:53.369Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.357Z** — When the council opens a debate on Autonomous Agent Wallet Steering, or when auditing a system that matches "An autonomous agent that reads on-chain or off-chain text before it signs treats that text as instruction, so anyone who can place text where the agent will read it can influence how it spends.".
 > **Refreshed 2026-11-10T11:49:59.893Z** — When the council opens a debate on Autonomous Agent Wallet Steering, or when auditing a system that matches "An autonomous agent that reads on-chain or off-chain text before it signs treats that text as instruction, so anyone who can place text where the agent will read it can influence how it spends.".
 > **Refreshed 2026-11-10T12:06:24.824Z** — When the council opens a debate on Autonomous Agent Wallet Steering, or when auditing a system that matches "An autonomous agent that reads on-chain or off-chain text before it signs treats that text as instruction, so anyone who can place text where the agent will read it can influence how it spends.".
+> **Refreshed 2026-11-10T15:27:53.369Z** — When the council opens a debate on Autonomous Agent Wallet Steering, or when auditing a system that matches "An autonomous agent that reads on-chain or off-chain text before it signs treats that text as instruction, so anyone who can place text where the agent will read it can influence how it spends.".

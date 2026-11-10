@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-20]
-updated: "2026-11-10T11:50:59.798Z"
+updated: "2026-11-10T15:28:33.057Z"
 ---
 
 # ASA-2024-006: ValidateVoteExtensions helper function in… — allow incorrect voting power assumptions

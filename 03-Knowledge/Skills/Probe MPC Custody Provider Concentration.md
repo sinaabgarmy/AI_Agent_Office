@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, key-management, surface-gap]
-updated: "2026-11-10T12:06:24.818Z"
+updated: "2026-11-10T15:27:53.364Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.351Z** — When the council opens a debate on MPC Custody Provider Concentration, or when auditing a system that matches "A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.".
 > **Refreshed 2026-11-10T11:49:59.889Z** — When the council opens a debate on MPC Custody Provider Concentration, or when auditing a system that matches "A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.".
 > **Refreshed 2026-11-10T12:06:24.818Z** — When the council opens a debate on MPC Custody Provider Concentration, or when auditing a system that matches "A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.".
+> **Refreshed 2026-11-10T15:27:53.363Z** — When the council opens a debate on MPC Custody Provider Concentration, or when auditing a system that matches "A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.".

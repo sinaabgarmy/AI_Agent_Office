@@ -10,12 +10,13 @@ remediation: Never make an external call before final state mutation; validate t
 source: GitHub Advisories — OpenZeppelin Contracts
 source_url: "https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-g4vp-m682-qqmp"
 source_id: GHSA-g4vp-m682-qqmp
-confidence: 0.64
+confidence: 0.72
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.755Z"
+updated: "2026-11-10T15:28:33.010Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.694Z** — ERC2771Context with custom forwarder may lead to zero-valued _msgSender Contracts using ERC2771Context along with a custom trusted forwarder may see _msgSender return address(0) in calls that originate from the forwarder with calldata shorter than 20 bytes.
 > **Refreshed 2026-11-10T11:08:39.480Z** — ERC2771Context with custom forwarder may lead to zero-valued _msgSender Contracts using ERC2771Context along with a custom trusted forwarder may see _msgSender return address(0) in calls that originate from the forwarder with calldata shorter than 20 bytes.
 > **Refreshed 2026-11-10T11:50:59.755Z** — ERC2771Context with custom forwarder may lead to zero-valued _msgSender Contracts using ERC2771Context along with a custom trusted forwarder may see _msgSender return address(0) in calls that originate from the forwarder with calldata shorter than 20 bytes.
+> **Refreshed 2026-11-10T15:28:33.010Z** — ERC2771Context with custom forwarder may lead to zero-valued _msgSender Contracts using ERC2771Context along with a custom trusted forwarder may see _msgSender return address(0) in calls that originate from the forwarder with calldata shorter than 20 bytes.

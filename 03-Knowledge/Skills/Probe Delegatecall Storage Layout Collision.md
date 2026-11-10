@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.787Z"
+updated: "2026-11-10T15:27:53.328Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.325Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
 > **Refreshed 2026-11-10T11:49:59.857Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
 > **Refreshed 2026-11-10T12:06:24.787Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T15:27:53.328Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".

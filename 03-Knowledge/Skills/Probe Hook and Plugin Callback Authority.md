@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.824Z"
+updated: "2026-11-10T15:27:53.369Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.357Z** — When the council opens a debate on Hook and Plugin Callback Authority, or when auditing a system that matches "A protocol that calls third-party hooks inside its own state transition lends them its invariants; the core contract is then only as safe as the least careful hook any pool may attach.".
 > **Refreshed 2026-11-10T11:49:59.892Z** — When the council opens a debate on Hook and Plugin Callback Authority, or when auditing a system that matches "A protocol that calls third-party hooks inside its own state transition lends them its invariants; the core contract is then only as safe as the least careful hook any pool may attach.".
 > **Refreshed 2026-11-10T12:06:24.824Z** — When the council opens a debate on Hook and Plugin Callback Authority, or when auditing a system that matches "A protocol that calls third-party hooks inside its own state transition lends them its invariants; the core contract is then only as safe as the least careful hook any pool may attach.".
+> **Refreshed 2026-11-10T15:27:53.368Z** — When the council opens a debate on Hook and Plugin Callback Authority, or when auditing a system that matches "A protocol that calls third-party hooks inside its own state transition lends them its invariants; the core contract is then only as safe as the least careful hook any pool may attach.".

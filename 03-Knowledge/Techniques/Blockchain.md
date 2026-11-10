@@ -15,9 +15,10 @@ harvested: 2026-11-10
 origin: web
 trust: trusted
 tags: [technique, cryptography, cwe-330, web-capture]
-updated: "2026-11-10T11:50:59.806Z"
+updated: "2026-11-10T15:28:33.064Z"
 status: known
 ---
+
 
 
 
@@ -42,3 +43,4 @@ mitigate the effects of a theft of 50 million NXT from a major cryptocurrency ex
 > **Refreshed 2026-11-10T08:12:51.731Z** — [ 4 ] [ 12 ] They wanted to implement a system wherein document timestamps could not be tampered with.
 > **Refreshed 2026-11-10T11:08:39.524Z** — [ 4 ] [ 12 ] They wanted to implement a system wherein document timestamps could not be tampered with.
 > **Refreshed 2026-11-10T11:50:59.806Z** — [ 4 ] [ 12 ] They wanted to implement a system wherein document timestamps could not be tampered with.
+> **Refreshed 2026-11-10T15:28:33.064Z** — [ 4 ] [ 12 ] They wanted to implement a system wherein document timestamps could not be tampered with.

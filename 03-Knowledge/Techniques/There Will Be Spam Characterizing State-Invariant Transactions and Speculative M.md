@@ -16,7 +16,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.682Z"
+updated: "2026-11-10T15:28:32.947Z"
 ---
 
 # There Will Be Spam: Characterizing State-Invariant Transactions and Speculative MEV

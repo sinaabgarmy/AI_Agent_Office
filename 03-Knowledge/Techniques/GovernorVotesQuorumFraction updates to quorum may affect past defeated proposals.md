@@ -13,9 +13,10 @@ source_id: GHSA-xrc4-737v-9q75
 confidence: 0.96
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.747Z"
+updated: "2026-11-10T15:28:33.005Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.690Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
 > **Refreshed 2026-11-10T11:08:39.474Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
 > **Refreshed 2026-11-10T11:50:59.747Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T15:28:33.004Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.

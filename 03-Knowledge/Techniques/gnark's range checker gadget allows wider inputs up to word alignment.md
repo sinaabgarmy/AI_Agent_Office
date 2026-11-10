@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-682]
-updated: "2026-11-10T11:50:59.818Z"
+updated: "2026-11-10T15:28:33.078Z"
+status: known
 ---
+
 
 # gnark's range checker gadget allows wider inputs up to word alignment
 
@@ -35,3 +37,4 @@ patched in the stable branch of gnark
 - OSV — gnark (zk-SNARK library) — GHSA-rjjm-x32p-m3f7
 - https://github.com/advisories/GHSA-rjjm-x32p-m3f7
 - Harvested: 2026-11-10T11:50:59.622Z
+> **Refreshed 2026-11-10T15:28:33.078Z** — gnark's range checker gadget allows wider inputs up to word alignment gnark provides a gadget in the standard library to allow optimized checking of the bitwidth of the inputs.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-10T11:50:59.676Z"
+updated: "2026-11-10T15:28:32.938Z"
 ---
 
 # FLAMES: Fine-tuning LLMs to Synthesize Invariants for Smart Contract Security

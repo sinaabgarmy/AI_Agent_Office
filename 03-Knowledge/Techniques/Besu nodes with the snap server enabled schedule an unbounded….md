@@ -13,9 +13,10 @@ source_id: GHSA-pcv4-pxhv-99m7
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.738Z"
+updated: "2026-11-10T15:28:32.999Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.683Z** — SnapProtocolManager.processMessage forwards every request to EthScheduler's services executor, an unbounded cached thread pool, so a new native thread is created whenever no idle thread can immediately accept the task.
 > **Refreshed 2026-11-10T11:08:39.464Z** — SnapProtocolManager.processMessage forwards every request to EthScheduler's services executor, an unbounded cached thread pool, so a new native thread is created whenever no idle thread can immediately accept the task.
 > **Refreshed 2026-11-10T11:50:59.738Z** — SnapProtocolManager.processMessage forwards every request to EthScheduler's services executor, an unbounded cached thread pool, so a new native thread is created whenever no idle thread can immediately accept the task.
+> **Refreshed 2026-11-10T15:28:32.999Z** — SnapProtocolManager.processMessage forwards every request to EthScheduler's services executor, an unbounded cached thread pool, so a new native thread is created whenever no idle thread can immediately accept the task.

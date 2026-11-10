@@ -14,12 +14,25 @@
     "intel-a-permissionless-non-validator-peer-can-halt",
     "surface-f30-keys-mpc-provider-concentration",
     "path-blob-da-pricing-signature-malleability-restaking-correlated-s",
-    "intel-besu-s-discv4-udp-discovery-remote-dos"
+    "intel-besu-s-discv4-udp-discovery-remote-dos",
+    "surface-f30-crypto-fhe-noise-budget",
+    "path-security-council-key-r-shared-sequencer-atomi-permit2-unlimited-appr",
+    "intel-governorcompatibilitybravo-incorrect-abi-enc"
   ],
   "dismissed": [
     "graph-orphan-apache-struts-remote-code-execution-vuln"
   ],
   "log": [
+    {
+      "at": "2026-11-10T15:28:16.603Z",
+      "generated": 3,
+      "candidates": 98,
+      "byOrigin": {
+        "surface": 1,
+        "path": 1,
+        "intel": 1
+      }
+    },
     {
       "at": "2026-11-10T07:28:21.925Z",
       "generated": 3,
@@ -71,5 +84,5 @@
       }
     }
   ],
-  "lastRunAt": "2026-11-10T07:28:21.925Z"
+  "lastRunAt": "2026-11-10T15:28:16.603Z"
 }

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-330]
-updated: "2026-11-10T11:50:59.686Z"
+updated: "2026-11-10T15:28:32.953Z"
 ---
 
 # Themis Consensus Extension v1: MEV Mitigation by Randomized… — in Application-Specific Blockchains

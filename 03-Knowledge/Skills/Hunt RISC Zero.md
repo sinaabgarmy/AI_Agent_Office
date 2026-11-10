@@ -19,11 +19,12 @@ confidence: 0.98
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-159]
-updated: "2026-11-09T23:13:47.073Z"
-status: retired
-retired: "2026-11-09T23:13:47.073Z"
-retire_reason: off-domain — No blockchain context in the skill itself — it came from a generic feed keyword match.
+updated: "2026-11-10T15:27:58.234Z"
+status: active
+retired: ""
+retire_reason: ""
 ---
+
 
 
 

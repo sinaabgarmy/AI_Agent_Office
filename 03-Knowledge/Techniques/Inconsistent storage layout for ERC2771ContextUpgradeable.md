@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, supply-chain, cwe-494]
-updated: "2026-11-10T11:50:59.756Z"
+updated: "2026-11-10T15:28:33.014Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Pin and verify every build dependency by digest; sign release artifacts.
 > **Refreshed 2026-11-10T08:12:51.695Z** — This difference in layout could result in breaking upgrades if someone upgrades from an affected version to a non-affected version.
 > **Refreshed 2026-11-10T11:08:39.482Z** — This difference in layout could result in breaking upgrades if someone upgrades from an affected version to a non-affected version.
 > **Refreshed 2026-11-10T11:50:59.756Z** — This difference in layout could result in breaking upgrades if someone upgrades from an affected version to a non-affected version.
+> **Refreshed 2026-11-10T15:28:33.014Z** — This difference in layout could result in breaking upgrades if someone upgrades from an affected version to a non-affected version.

@@ -3,9 +3,13 @@ type: memory
 scope: individual
 agent: bot-custom-auto-supply-chain-provenance
 tags: [memory, agent]
-updated: "2026-11-10T11:50:59.828Z"
-last_technique: The x/crisis package does not charge ConstantFee in github.com/cosmos/cosmos-sdk
+updated: "2026-11-10T15:28:33.097Z"
+last_technique: Package managers have an integrity problem
 ---
+
+
+
+
 
 
 
@@ -88,3 +92,22 @@ last_technique: The x/crisis package does not charge ConstantFee in github.com/c
 - **How to detect:** invariant, the ConstantFee parameter of the chain is not charged
 - **How to fix:** patch will be released, as the package is planned to be deprecated and replaced
 - **Source:** OSV — cosmos-sdk (GO-2023-1881) — https://osv.dev/vulnerability/GO-2023-1881
+> Memory log initialized for @Provenance (Noor Haddad) on 2026-11-10.
+### 2026-11-10 — Learned technique: State divergence enables unauthorized access
+- **Layer:** Supply Chain · **CWE:** CWE-664 · **Confidence:** 94%
+- **Primitive:** State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+- **How to detect:** Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.
+- **How to fix:** Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.
+- **Source:** Trail of Bits Research (tob-blog-state-divergence-enables-unauthorized-ac) — https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/
+### 2026-11-10 — Learned technique: Denial of service via `MulMod`
+- **Layer:** Supply Chain · **CWE:** CWE-400 · **Confidence:** 94%
+- **Primitive:** Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+- **How to detect:** Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.
+- **How to fix:** fix this would be to merge the fix into uint256, make a new release of that library and then update the geth-dependency
+- **Source:** GitHub Advisories — go-ethereum (GHSA-jm5c-rv3w-w83m) — https://github.com/ethereum/go-ethereum/security/advisories/GHSA-jm5c-rv3w-w83m
+### 2026-11-10 — Learned technique: Package managers have an integrity problem
+- **Layer:** Supply Chain · **CWE:** CWE-494 · **Confidence:** 63%
+- **Primitive:** This code integrity problem could be solved using cryptographic hashes or signatures, but many package managers are still vulnerable to this threat.
+- **How to detect:** detect a compromised package repository injecting malicious code into legitimate packages
+- **How to fix:** mitigation attempts, including work by Trail of Bits<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, are successful
+- **Source:** Trail of Bits Research (tob-blog-package-managers-have-an-integrity-probl) — https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-problem/

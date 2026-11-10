@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.633Z"
+updated: "2026-11-10T15:28:32.877Z"
 ---
 
 # The transferFrom function of a smart contract implementation… — attackers to steal assets (e

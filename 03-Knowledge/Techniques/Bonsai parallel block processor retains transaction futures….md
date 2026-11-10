@@ -13,9 +13,10 @@ source_id: GHSA-xg9p-226c-vxvw
 confidence: 0.76
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-400]
-updated: "2026-11-10T11:50:59.728Z"
+updated: "2026-11-10T15:28:32.993Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.678Z** — When the sequential fallback rejects the block at transaction 0 (e.g.
 > **Refreshed 2026-11-10T11:08:39.448Z** — When the sequential fallback rejects the block at transaction 0 (e.g.
 > **Refreshed 2026-11-10T11:50:59.728Z** — When the sequential fallback rejects the block at transaction 0 (e.g.
+> **Refreshed 2026-11-10T15:28:32.993Z** — When the sequential fallback rejects the block at transaction 0 (e.g.

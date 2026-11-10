@@ -13,9 +13,10 @@ source_id: tob-blog-building-secure-uniswap-v4-hooks
 confidence: 0.68
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.663Z"
+updated: "2026-11-10T15:28:32.918Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.633Z** — This flexibility moves some security responsibilities into application and hook code.</p> <p>The Cork and Bunni exploits are two app-level incidents that show what can go wrong in that code.
 > **Refreshed 2026-11-10T11:08:39.309Z** — This flexibility moves some security responsibilities into application and hook code.</p> <p>The Cork and Bunni exploits are two app-level incidents that show what can go wrong in that code.
 > **Refreshed 2026-11-10T11:50:59.663Z** — This flexibility moves some security responsibilities into application and hook code.</p> <p>The Cork and Bunni exploits are two app-level incidents that show what can go wrong in that code.
+> **Refreshed 2026-11-10T15:28:32.918Z** — This flexibility moves some security responsibilities into application and hook code.</p> <p>The Cork and Bunni exploits are two app-level incidents that show what can go wrong in that code.

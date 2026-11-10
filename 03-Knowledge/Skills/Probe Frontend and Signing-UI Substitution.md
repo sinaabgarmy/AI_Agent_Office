@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, supply-chain, surface-gap]
-updated: "2026-11-10T12:06:24.826Z"
+updated: "2026-11-10T15:27:53.371Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.359Z** — When the council opens a debate on Frontend and Signing-UI Substitution, or when auditing a system that matches "The contract a user audits is not the thing they interact with; the transaction is assembled by a web frontend and displayed by a wallet, and either can show one action while requesting another.".
 > **Refreshed 2026-11-10T11:49:59.895Z** — When the council opens a debate on Frontend and Signing-UI Substitution, or when auditing a system that matches "The contract a user audits is not the thing they interact with; the transaction is assembled by a web frontend and displayed by a wallet, and either can show one action while requesting another.".
 > **Refreshed 2026-11-10T12:06:24.826Z** — When the council opens a debate on Frontend and Signing-UI Substitution, or when auditing a system that matches "The contract a user audits is not the thing they interact with; the transaction is assembled by a web frontend and displayed by a wallet, and either can show one action while requesting another.".
+> **Refreshed 2026-11-10T15:27:53.371Z** — When the council opens a debate on Frontend and Signing-UI Substitution, or when auditing a system that matches "The contract a user audits is not the thing they interact with; the transaction is assembled by a web frontend and displayed by a wallet, and either can show one action while requesting another.".

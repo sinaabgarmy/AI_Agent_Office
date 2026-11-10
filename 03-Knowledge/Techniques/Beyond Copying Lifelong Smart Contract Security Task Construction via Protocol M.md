@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.673Z"
+updated: "2026-11-10T15:28:32.932Z"
 ---
 
 # Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation

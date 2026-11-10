@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-863]
-updated: "2026-11-10T11:50:59.803Z"
+updated: "2026-11-10T15:28:33.062Z"
 ---
 
 # ValidateVoteExtensions function in Cosmos SDK may — allow incorrect voting power assumptions in github

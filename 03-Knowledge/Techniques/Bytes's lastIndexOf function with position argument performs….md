@@ -13,9 +13,10 @@ source_id: GHSA-9rcw-c2f9-2j55
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.755Z"
+updated: "2026-11-10T15:28:33.012Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.694Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
 > **Refreshed 2026-11-10T11:08:39.481Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
 > **Refreshed 2026-11-10T11:50:59.755Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-10T15:28:33.012Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…

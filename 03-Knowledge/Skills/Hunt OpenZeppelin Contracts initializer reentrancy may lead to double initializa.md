@@ -19,9 +19,10 @@ confidence: 0.97
 created: "2026-11-09T23:23:30.738Z"
 times_used: 179
 tags: [skill, hunt, execution, cwe-665]
-updated: "2026-11-10T12:06:24.800Z"
+updated: "2026-11-10T15:27:53.342Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ fix is included in the version v4
 > **Refreshed 2026-11-10T07:31:07.340Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.
 > **Refreshed 2026-11-10T11:49:59.871Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.
 > **Refreshed 2026-11-10T12:06:24.799Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.
+> **Refreshed 2026-11-10T15:27:53.342Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.

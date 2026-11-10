@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-770]
-updated: "2026-11-10T11:50:59.737Z"
+updated: "2026-11-10T15:28:32.998Z"
 ---
 
 # GraphQL logs(filter) accepts an unbounded block range (sibling of GHSA-8g2r-qvch-4c9j)

@@ -13,9 +13,10 @@ source_id: ef-blog-treasury-staking-initiative
 confidence: 0.76
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.652Z"
+updated: "2026-11-10T15:28:32.902Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.627Z** — Treasury Staking Initiative The Ethereum Foundation has begun staking a portion of its treasury, in line with its Treasury Policy announced last year.
 > **Refreshed 2026-11-10T11:08:39.283Z** — Treasury Staking Initiative The Ethereum Foundation has begun staking a portion of its treasury, in line with its Treasury Policy announced last year.
 > **Refreshed 2026-11-10T11:50:59.652Z** — Treasury Staking Initiative The Ethereum Foundation has begun staking a portion of its treasury, in line with its Treasury Policy announced last year.
+> **Refreshed 2026-11-10T15:28:32.901Z** — Treasury Staking Initiative The Ethereum Foundation has begun staking a portion of its treasury, in line with its Treasury Policy announced last year.

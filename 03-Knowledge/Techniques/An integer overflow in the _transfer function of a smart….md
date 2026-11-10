@@ -13,9 +13,10 @@ source_id: CVE-2018-11239
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, execution, cwe-190]
-updated: "2026-11-10T11:50:59.635Z"
+updated: "2026-11-10T15:28:32.880Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.614Z** — An integer overflow in the _transfer function of a smart contract implementation for Hexagon (HXG), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized increase An integer overflow in the _transfer function of a smart contract…
 > **Refreshed 2026-11-10T11:08:39.247Z** — An integer overflow in the _transfer function of a smart contract implementation for Hexagon (HXG), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized increase An integer overflow in the _transfer function of a smart contract…
 > **Refreshed 2026-11-10T11:50:59.635Z** — An integer overflow in the _transfer function of a smart contract implementation for Hexagon (HXG), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized increase An integer overflow in the _transfer function of a smart contract…
+> **Refreshed 2026-11-10T15:28:32.880Z** — An integer overflow in the _transfer function of a smart contract implementation for Hexagon (HXG), an Ethereum ERC20 token, allows attackers to accomplish an unauthorized increase An integer overflow in the _transfer function of a smart contract…

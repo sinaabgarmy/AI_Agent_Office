@@ -13,9 +13,10 @@ source_id: GHSA-9c22-pwxw-p6hx
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, execution, cwe-362]
-updated: "2026-11-10T11:50:59.745Z"
+updated: "2026-11-10T15:28:33.003Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ fix is included in the version v4
 > **Refreshed 2026-11-10T08:12:51.688Z** — Initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
 > **Refreshed 2026-11-10T11:08:39.472Z** — Initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
 > **Refreshed 2026-11-10T11:50:59.745Z** — Initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-10T15:28:33.003Z** — Initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.

@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-203]
-updated: "2026-11-10T11:50:59.791Z"
+updated: "2026-11-10T15:28:33.051Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.720Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file <datadir>/geth/nodekey before starting Geth.
 > **Refreshed 2026-11-10T11:08:39.510Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file <datadir>/geth/nodekey before starting Geth.
 > **Refreshed 2026-11-10T11:50:59.790Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file <datadir>/geth/nodekey before starting Geth.
+> **Refreshed 2026-11-10T15:28:33.051Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file <datadir>/geth/nodekey before starting Geth.

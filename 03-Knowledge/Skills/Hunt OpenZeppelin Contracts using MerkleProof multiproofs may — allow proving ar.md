@@ -19,9 +19,10 @@ confidence: 0.93
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, cryptography, cwe-354]
-updated: "2026-11-10T12:06:24.808Z"
+updated: "2026-11-10T15:27:53.351Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.345Z** — When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.
 > **Refreshed 2026-11-10T11:49:59.880Z** — When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.
 > **Refreshed 2026-11-10T12:06:24.808Z** — When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.
+> **Refreshed 2026-11-10T15:27:53.351Z** — When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.

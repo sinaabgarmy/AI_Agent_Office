@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-476]
-updated: "2026-11-10T11:50:59.783Z"
+updated: "2026-11-10T15:28:33.044Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.712Z** — Go Ethereum Denial of Service cmd/evm/runner.go in Go Ethereum (aka geth) allows attackers to cause a denial of service (SEGV) via crafted bytecode.
 > **Refreshed 2026-11-10T11:08:39.502Z** — Go Ethereum Denial of Service cmd/evm/runner.go in Go Ethereum (aka geth) allows attackers to cause a denial of service (SEGV) via crafted bytecode.
 > **Refreshed 2026-11-10T11:50:59.783Z** — Go Ethereum Denial of Service cmd/evm/runner.go in Go Ethereum (aka geth) allows attackers to cause a denial of service (SEGV) via crafted bytecode.
+> **Refreshed 2026-11-10T15:28:33.044Z** — Go Ethereum Denial of Service cmd/evm/runner.go in Go Ethereum (aka geth) allows attackers to cause a denial of service (SEGV) via crafted bytecode.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.678Z"
+updated: "2026-11-10T15:28:32.941Z"
 ---
 
 # Decoupled Smart Contract Audits: Lightweight LLM Framework via Distillation and Aggregation

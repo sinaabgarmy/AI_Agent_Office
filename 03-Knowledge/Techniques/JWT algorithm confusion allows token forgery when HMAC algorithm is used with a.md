@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-287]
-updated: "2026-11-10T11:50:59.726Z"
+updated: "2026-11-10T15:28:32.992Z"
 ---
 
 # JWT algorithm confusion allows token forgery when HMAC algorithm is used with a public key file

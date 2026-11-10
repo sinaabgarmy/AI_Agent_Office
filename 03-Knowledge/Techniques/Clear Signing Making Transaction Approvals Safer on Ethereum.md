@@ -2,7 +2,7 @@
 type: technique
 technique_id: tech-clear-signing-making-transaction-approvals-s
 name: "Clear Signing: Making Transaction Approvals Safer on Ethereum"
-layer: Execution
+layer: Key Management
 cwe: CWE-841
 primitive: Ethereum Foundation’s Trillion Dollar Security Initiative...
 detection: "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction."
@@ -10,17 +10,17 @@ remediation: Never make an external call before final state mutation; validate t
 source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/05/12/clear-signing-announcement"
 source_id: ef-blog-clear-signing-making-transaction-approva
-confidence: 0.65
+confidence: 0.73
 harvested: 2026-11-10
 origin: feed
 trust: trusted
-tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.642Z"
+tags: [technique, key-management, cwe-841]
+updated: "2026-11-10T15:28:32.885Z"
 ---
 
 # Clear Signing: Making Transaction Approvals Safer on Ethereum
 
-> **Layer:** Execution · **CWE:** CWE-841 · **Confidence:** 65%
+> **Layer:** Key Management · **CWE:** CWE-841 · **Confidence:** 73%
 
 ## Attack primitive
 Ethereum Foundation’s Trillion Dollar Security Initiative...

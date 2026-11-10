@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, l-bridge, surface-gap]
-updated: "2026-11-10T12:06:24.811Z"
+updated: "2026-11-10T15:27:53.355Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.347Z** — When the council opens a debate on Shared Sequencer Cross-Rollup Atomicity, or when auditing a system that matches "A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so "atomic" cross-rollup actions can half-complete.".
 > **Refreshed 2026-11-10T11:49:59.882Z** — When the council opens a debate on Shared Sequencer Cross-Rollup Atomicity, or when auditing a system that matches "A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so "atomic" cross-rollup actions can half-complete.".
 > **Refreshed 2026-11-10T12:06:24.811Z** — When the council opens a debate on Shared Sequencer Cross-Rollup Atomicity, or when auditing a system that matches "A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so "atomic" cross-rollup actions can half-complete.".
+> **Refreshed 2026-11-10T15:27:53.355Z** — When the council opens a debate on Shared Sequencer Cross-Rollup Atomicity, or when auditing a system that matches "A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so "atomic" cross-rollup actions can half-complete.".

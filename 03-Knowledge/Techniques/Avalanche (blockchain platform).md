@@ -15,9 +15,10 @@ harvested: 2026-11-10
 origin: web
 trust: quarantined
 tags: [technique, consensus, cwe-664, web-capture]
-updated: "2026-11-10T11:50:59.805Z"
+updated: "2026-11-10T15:28:33.063Z"
 status: known
 ---
+
 
 
 
@@ -42,3 +43,4 @@ prevent a single actor from dominating the random samples by running many nodes 
 > **Refreshed 2026-11-10T08:12:51.730Z** — Avalanche (blockchain platform) [ 9 ] [ 10 ] In August 2022, the whistleblower group Crypto Leaks published a report alleging that Ava Labs had entered secret agreements with Kyle Roche of Roche Freedmen law firm with the intent to legally undermine…
 > **Refreshed 2026-11-10T11:08:39.523Z** — Avalanche (blockchain platform) [ 9 ] [ 10 ] In August 2022, the whistleblower group Crypto Leaks published a report alleging that Ava Labs had entered secret agreements with Kyle Roche of Roche Freedmen law firm with the intent to legally undermine…
 > **Refreshed 2026-11-10T11:50:59.805Z** — Avalanche (blockchain platform) [ 9 ] [ 10 ] In August 2022, the whistleblower group Crypto Leaks published a report alleging that Ava Labs had entered secret agreements with Kyle Roche of Roche Freedmen law firm with the intent to legally undermine…
+> **Refreshed 2026-11-10T15:28:33.063Z** — Avalanche (blockchain platform) [ 9 ] [ 10 ] In August 2022, the whistleblower group Crypto Leaks published a report alleging that Ava Labs had entered secret agreements with Kyle Roche of Roche Freedmen law firm with the intent to legally undermine…

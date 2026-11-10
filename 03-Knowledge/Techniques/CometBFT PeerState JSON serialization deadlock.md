@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-401]
-updated: "2026-11-10T11:50:59.813Z"
+updated: "2026-11-10T15:28:33.072Z"
+status: known
 ---
+
 
 # CometBFT PeerState JSON serialization deadlock
 
@@ -35,3 +37,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - OSV — cometbft — GHSA-mvj3-qrqh-cjvr
 - https://github.com/advisories/GHSA-mvj3-qrqh-cjvr
 - Harvested: 2026-11-10T11:50:59.620Z
+> **Refreshed 2026-11-10T15:28:33.072Z** — CometBFT PeerState JSON serialization deadlock An internal modification to the way struct PeerState is serialized to JSON introduced a deadlock when new function MarshallJSON is called.

@@ -5,7 +5,7 @@ name: Noor Haddad
 ideology: White-Hat Defense
 is_custom: true
 tags: [agent]
-updated: "2026-11-10T11:07:47.351Z"
+updated: "2026-11-10T15:27:27.742Z"
 ---
 
 # Noor Haddad (@Provenance)

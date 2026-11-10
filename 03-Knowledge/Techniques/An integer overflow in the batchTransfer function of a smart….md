@@ -13,9 +13,10 @@ source_id: CVE-2018-10299
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, execution, cwe-190]
-updated: "2026-11-10T11:50:59.632Z"
+updated: "2026-11-10T15:28:32.875Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.612Z** — An integer overflow in the batchTransfer function of a smart contract implementation for Beauty Ecosystem Coin (BEC), the Ethereum ERC20 token used in the Beauty Chain economic sys An integer overflow in the batchTransfer function of a smart contract…
 > **Refreshed 2026-11-10T11:08:39.236Z** — An integer overflow in the batchTransfer function of a smart contract implementation for Beauty Ecosystem Coin (BEC), the Ethereum ERC20 token used in the Beauty Chain economic sys An integer overflow in the batchTransfer function of a smart contract…
 > **Refreshed 2026-11-10T11:50:59.631Z** — An integer overflow in the batchTransfer function of a smart contract implementation for Beauty Ecosystem Coin (BEC), the Ethereum ERC20 token used in the Beauty Chain economic sys An integer overflow in the batchTransfer function of a smart contract…
+> **Refreshed 2026-11-10T15:28:32.875Z** — An integer overflow in the batchTransfer function of a smart contract implementation for Beauty Ecosystem Coin (BEC), the Ethereum ERC20 token used in the Beauty Chain economic sys An integer overflow in the batchTransfer function of a smart contract…

@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 701
 tags: [skill, probe, infrastructure, surface-gap]
-updated: "2026-11-10T12:06:24.815Z"
+updated: "2026-11-10T15:27:53.360Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.349Z** — When the council opens a debate on Data-Availability Fee Market Starvation, or when auditing a system that matches "Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time.".
 > **Refreshed 2026-11-10T11:49:59.885Z** — When the council opens a debate on Data-Availability Fee Market Starvation, or when auditing a system that matches "Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time.".
 > **Refreshed 2026-11-10T12:06:24.815Z** — When the council opens a debate on Data-Availability Fee Market Starvation, or when auditing a system that matches "Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time.".
+> **Refreshed 2026-11-10T15:27:53.359Z** — When the council opens a debate on Data-Availability Fee Market Starvation, or when auditing a system that matches "Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time.".

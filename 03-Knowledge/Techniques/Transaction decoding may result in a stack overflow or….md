@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.808Z"
+updated: "2026-11-10T15:28:33.066Z"
+status: known
 ---
+
 
 # Transaction decoding may result in a stack overflow or…
 
@@ -35,3 +37,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 - OSV — cosmos-sdk — GO-2024-3339
 - https://osv.dev/vulnerability/GO-2024-3339
 - Harvested: 2026-11-10T11:50:59.618Z
+> **Refreshed 2026-11-10T15:28:33.066Z** — Transaction decoding may result in a stack overflow or resource exhaustion in github.com/cosmos/cosmos-sdk Transaction decoding may result in a stack overflow or resource exhaustion in github.com/cosmos/cosmos-sdk

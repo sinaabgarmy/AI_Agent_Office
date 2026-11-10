@@ -13,9 +13,10 @@ source_id: ef-blog-how-native-transaction-assertions-could
 confidence: 0.69
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.648Z"
+updated: "2026-11-10T15:28:32.893Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.623Z** — This post covers why a valid signature doesn't always guarantee the...
 > **Refreshed 2026-11-10T11:08:39.271Z** — This post covers why a valid signature doesn't always guarantee the...
 > **Refreshed 2026-11-10T11:50:59.647Z** — This post covers why a valid signature doesn't always guarantee the...
+> **Refreshed 2026-11-10T15:28:32.893Z** — This post covers why a valid signature doesn't always guarantee the...

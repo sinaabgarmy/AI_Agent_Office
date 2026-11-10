@@ -13,9 +13,10 @@ source_id: ef-blog-allocation-update-q2-2026
 confidence: 0.68
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.648Z"
+updated: "2026-11-10T15:28:32.894Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-10T08:12:51.624Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
 > **Refreshed 2026-11-10T11:08:39.273Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
 > **Refreshed 2026-11-10T11:50:59.648Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-10T15:28:32.894Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.

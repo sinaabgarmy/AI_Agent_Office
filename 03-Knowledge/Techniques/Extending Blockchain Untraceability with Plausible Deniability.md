@@ -13,9 +13,10 @@ source_id: arxiv-extending-blockchain-untraceability-with
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.684Z"
+updated: "2026-11-10T15:28:32.950Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.649Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
 > **Refreshed 2026-11-10T11:08:39.353Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
 > **Refreshed 2026-11-10T11:50:59.684Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-10T15:28:32.949Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.

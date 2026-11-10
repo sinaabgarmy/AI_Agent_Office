@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "intervalMinutes": 60,
-  "nextRunAt": "2026-11-10T13:06:10.815Z",
-  "lastCycleAt": "2026-11-10T12:06:10.815Z",
+  "nextRunAt": "2026-11-10T16:28:33.104Z",
+  "lastCycleAt": "2026-11-10T15:28:33.104Z",
   "predictions": [
     {
       "id": "exec-permit2-unlimited-approval",
@@ -159,6 +159,42 @@
     }
   ],
   "history": [
+    {
+      "startedAt": "2026-11-10T15:27:39.721Z",
+      "completedAt": "2026-11-10T15:28:33.104Z",
+      "jobs": [
+        {
+          "id": "vault-sync",
+          "ok": true,
+          "summary": "Vault sync: 558 notes, 0 new, 25 changed, 5 removed; learned from 0 operator note(s)."
+        },
+        {
+          "id": "surface-scan",
+          "ok": true,
+          "summary": "Scanned 73 local surfaces; 17 prioritized gaps. Vault note: 00-System/Attack Surface Coverage.md."
+        },
+        {
+          "id": "agent-training",
+          "ok": true,
+          "summary": "Added 0 confidence-ranked technique assignments from the local intel library."
+        },
+        {
+          "id": "defensive-report",
+          "ok": true,
+          "summary": "Wrote local defensive coverage report: E:\\My Vault\\Hermes_AI\\123\\AI_Agent_Office\\Cyber_psycho-main\\data\\automation\\reports\\coverage-review-2026-11-10T15-27-42-400Z.md"
+        },
+        {
+          "id": "intel-ingest",
+          "ok": true,
+          "summary": "Ingest complete: 303 harvested, 7 distilled, 8 taught, 0 evidence admitted, 0 rejected"
+        },
+        {
+          "id": "autopilot",
+          "ok": true,
+          "summary": "Autopilot waiting — last cycle 2026-11-10 15:28, next after 6h."
+        }
+      ]
+    },
     {
       "startedAt": "2026-11-10T12:06:08.000Z",
       "completedAt": "2026-11-10T12:06:10.815Z",

@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.793Z"
+updated: "2026-11-10T15:28:33.053Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.721Z** — DoS via malicious p2p message in Go Ethereum A vulnerable node, if configured to use high verbosity logging, can be made to crash when handling specially crafted p2p messages sent from an attacker node.
 > **Refreshed 2026-11-10T11:08:39.512Z** — DoS via malicious p2p message in Go Ethereum A vulnerable node, if configured to use high verbosity logging, can be made to crash when handling specially crafted p2p messages sent from an attacker node.
 > **Refreshed 2026-11-10T11:50:59.793Z** — DoS via malicious p2p message in Go Ethereum A vulnerable node, if configured to use high verbosity logging, can be made to crash when handling specially crafted p2p messages sent from an attacker node.
+> **Refreshed 2026-11-10T15:28:33.052Z** — DoS via malicious p2p message in Go Ethereum A vulnerable node, if configured to use high verbosity logging, can be made to crash when handling specially crafted p2p messages sent from an attacker node.

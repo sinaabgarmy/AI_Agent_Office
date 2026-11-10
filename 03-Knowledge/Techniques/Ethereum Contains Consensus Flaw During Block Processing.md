@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-436]
-updated: "2026-11-10T11:50:59.783Z"
+updated: "2026-11-10T15:28:33.044Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ patch is included in the v1
 > **Refreshed 2026-11-10T08:12:51.712Z** — Ethereum Contains Consensus Flaw During Block Processing A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
 > **Refreshed 2026-11-10T11:08:39.502Z** — Ethereum Contains Consensus Flaw During Block Processing A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
 > **Refreshed 2026-11-10T11:50:59.782Z** — Ethereum Contains Consensus Flaw During Block Processing A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-10T15:28:33.043Z** — Ethereum Contains Consensus Flaw During Block Processing A vulnerability in the Geth EVM could cause a node to reject the canonical chain.

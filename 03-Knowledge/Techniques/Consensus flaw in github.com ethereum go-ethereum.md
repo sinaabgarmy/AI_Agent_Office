@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, supply-chain, cwe-494]
-updated: "2026-11-10T11:50:59.793Z"
+updated: "2026-11-10T15:28:33.054Z"
 ---
 
 # Consensus flaw in github.com/ethereum/go-ethereum

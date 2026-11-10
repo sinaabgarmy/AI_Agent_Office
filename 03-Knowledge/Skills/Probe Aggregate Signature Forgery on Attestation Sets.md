@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 803
 tags: [skill, probe, consensus, surface-gap]
-updated: "2026-11-10T12:06:24.783Z"
+updated: "2026-11-10T15:27:53.325Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.319Z** — When the council opens a debate on Aggregate Signature Forgery on Attestation Sets, or when auditing a system that matches "If BLS aggregate verification does not bind the participant bitmap to the signed message, an attacker can present a valid aggregate that hides which signers actually participated.".
 > **Refreshed 2026-11-10T11:49:59.854Z** — When the council opens a debate on Aggregate Signature Forgery on Attestation Sets, or when auditing a system that matches "If BLS aggregate verification does not bind the participant bitmap to the signed message, an attacker can present a valid aggregate that hides which signers actually participated.".
 > **Refreshed 2026-11-10T12:06:24.783Z** — When the council opens a debate on Aggregate Signature Forgery on Attestation Sets, or when auditing a system that matches "If BLS aggregate verification does not bind the participant bitmap to the signed message, an attacker can present a valid aggregate that hides which signers actually participated.".
+> **Refreshed 2026-11-10T15:27:53.324Z** — When the council opens a debate on Aggregate Signature Forgery on Attestation Sets, or when auditing a system that matches "If BLS aggregate verification does not bind the participant bitmap to the signed message, an attacker can present a valid aggregate that hides which signers actually participated.".

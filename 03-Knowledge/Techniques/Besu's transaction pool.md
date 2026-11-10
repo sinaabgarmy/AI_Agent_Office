@@ -13,9 +13,10 @@ source_id: GHSA-rw6m-h55m-hggm
 confidence: 0.96
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.724Z"
+updated: "2026-11-10T15:28:32.990Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.675Z** — A transaction can be crafted with a large calldata payload that stays under Besu's gas-limit, EIP-7623, and EIP-7825 checks but exceeds 128 KiB once RLP-encoded.
 > **Refreshed 2026-11-10T11:08:39.438Z** — A transaction can be crafted with a large calldata payload that stays under Besu's gas-limit, EIP-7623, and EIP-7825 checks but exceeds 128 KiB once RLP-encoded.
 > **Refreshed 2026-11-10T11:50:59.724Z** — A transaction can be crafted with a large calldata payload that stays under Besu's gas-limit, EIP-7623, and EIP-7825 checks but exceeds 128 KiB once RLP-encoded.
+> **Refreshed 2026-11-10T15:28:32.990Z** — A transaction can be crafted with a large calldata payload that stays under Besu's gas-limit, EIP-7623, and EIP-7825 checks but exceeds 128 KiB once RLP-encoded.

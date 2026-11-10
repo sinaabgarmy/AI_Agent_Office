@@ -13,9 +13,10 @@ source_id: CVE-2025-58360
 confidence: 0.62
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.638Z"
+updated: "2026-11-10T15:28:32.882Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ remediation by 2026-01-01
 > **Refreshed 2026-11-10T08:12:51.616Z** — OSGeo GeoServer contains an improper restriction of XML external entity reference vulnerability that occurs when the application accepts XML input through a specific endpoint /geoserver/wms operation GetMap and could allow an attacker to define external…
 > **Refreshed 2026-11-10T11:08:39.253Z** — OSGeo GeoServer contains an improper restriction of XML external entity reference vulnerability that occurs when the application accepts XML input through a specific endpoint /geoserver/wms operation GetMap and could allow an attacker to define external…
 > **Refreshed 2026-11-10T11:50:59.638Z** — OSGeo GeoServer contains an improper restriction of XML external entity reference vulnerability that occurs when the application accepts XML input through a specific endpoint /geoserver/wms operation GetMap and could allow an attacker to define external…
+> **Refreshed 2026-11-10T15:28:32.882Z** — OSGeo GeoServer contains an improper restriction of XML external entity reference vulnerability that occurs when the application accepts XML input through a specific endpoint /geoserver/wms operation GetMap and could allow an attacker to define external…

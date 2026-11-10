@@ -13,9 +13,10 @@ source_id: ef-blog-announcing-cohort-7-of-the-ethereum-prot
 confidence: 0.59
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.659Z"
+updated: "2026-11-10T15:28:32.908Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.631Z** — Announcing Cohort 7 of the Ethereum Protocol Fellowship TL;DR: 📝 Applications for EPF7 are open until May 13 🔎 Review the program details for EPF7 🎙️ An introductory town hall will be held on May 6 at 1500 UTC We are excited to announce that applications…
 > **Refreshed 2026-11-10T11:08:39.299Z** — Announcing Cohort 7 of the Ethereum Protocol Fellowship TL;DR: 📝 Applications for EPF7 are open until May 13 🔎 Review the program details for EPF7 🎙️ An introductory town hall will be held on May 6 at 1500 UTC We are excited to announce that applications…
 > **Refreshed 2026-11-10T11:50:59.658Z** — Announcing Cohort 7 of the Ethereum Protocol Fellowship TL;DR: 📝 Applications for EPF7 are open until May 13 🔎 Review the program details for EPF7 🎙️ An introductory town hall will be held on May 6 at 1500 UTC We are excited to announce that applications…
+> **Refreshed 2026-11-10T15:28:32.908Z** — Announcing Cohort 7 of the Ethereum Protocol Fellowship TL;DR: 📝 Applications for EPF7 are open until May 13 🔎 Review the program details for EPF7 🎙️ An introductory town hall will be held on May 6 at 1500 UTC We are excited to announce that applications…

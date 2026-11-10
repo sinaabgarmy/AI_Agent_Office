@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-862]
-updated: "2026-11-10T11:50:59.701Z"
+updated: "2026-11-10T15:28:32.974Z"
 ---
 
 # OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning

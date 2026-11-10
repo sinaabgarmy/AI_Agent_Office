@@ -13,9 +13,10 @@ source_id: GHSA-ffqr-pj4h-xq37
 confidence: 0.79
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.733Z"
+updated: "2026-11-10T15:28:32.996Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.679Z** — eth_subscribe over WebSocket allows unbounded subscription creation, growing SubscriptionManager's in-memory state without limit A client could open eth_subscribe WebSocket subscriptions indefinitely, growing SubscriptionManager's in-memory state without…
 > **Refreshed 2026-11-10T11:08:39.456Z** — eth_subscribe over WebSocket allows unbounded subscription creation, growing SubscriptionManager's in-memory state without limit A client could open eth_subscribe WebSocket subscriptions indefinitely, growing SubscriptionManager's in-memory state without…
 > **Refreshed 2026-11-10T11:50:59.733Z** — eth_subscribe over WebSocket allows unbounded subscription creation, growing SubscriptionManager's in-memory state without limit A client could open eth_subscribe WebSocket subscriptions indefinitely, growing SubscriptionManager's in-memory state without…
+> **Refreshed 2026-11-10T15:28:32.996Z** — eth_subscribe over WebSocket allows unbounded subscription creation, growing SubscriptionManager's in-memory state without limit A client could open eth_subscribe WebSocket subscriptions indefinitely, growing SubscriptionManager's in-memory state without…

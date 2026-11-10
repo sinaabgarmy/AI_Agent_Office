@@ -19,9 +19,10 @@ confidence: 0.93
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, governance, cwe-841]
-updated: "2026-11-10T12:06:24.807Z"
+updated: "2026-11-10T15:27:53.349Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ fix is included in version v4
 > **Refreshed 2026-11-10T07:31:07.344Z** — When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-841.
 > **Refreshed 2026-11-10T11:49:59.878Z** — When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-841.
 > **Refreshed 2026-11-10T12:06:24.806Z** — When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T15:27:53.349Z** — When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-841.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-190]
-updated: "2026-11-10T11:50:59.636Z"
+updated: "2026-11-10T15:28:32.881Z"
 ---
 
 # The buy function of a smart contract implementation for Gold… — a potential trap that could be used to cause…

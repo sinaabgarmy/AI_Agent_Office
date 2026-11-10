@@ -5,7 +5,7 @@ name: Idris Vale
 ideology: Protocol Governance
 is_custom: true
 tags: [agent]
-updated: "2026-11-10T11:07:47.358Z"
+updated: "2026-11-10T15:27:27.747Z"
 ---
 
 # Idris Vale (@Quorum)

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-129]
-updated: "2026-11-10T11:50:59.815Z"
+updated: "2026-11-10T15:28:33.075Z"
 ---
 
 # CometBFT Vote Extensions: Panic when receiving a Pre-commit with an invalid data

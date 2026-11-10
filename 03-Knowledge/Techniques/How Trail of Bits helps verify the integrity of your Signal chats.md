@@ -13,9 +13,10 @@ source_id: tob-blog-how-trail-of-bits-helps-verify-the-integ
 confidence: 0.44
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.667Z"
+updated: "2026-11-10T15:28:32.924Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-10T08:12:51.637Z** — A compromised server could provide a false public key, allowing the client to encrypt messages to an attacker rather than the intended recipient.</p> <p>Until now, the only way to detect such malfeasance was to verify safety numbers with your contact in…
 > **Refreshed 2026-11-10T11:08:39.317Z** — A compromised server could provide a false public key, allowing the client to encrypt messages to an attacker rather than the intended recipient.</p> <p>Until now, the only way to detect such malfeasance was to verify safety numbers with your contact in…
 > **Refreshed 2026-11-10T11:50:59.667Z** — A compromised server could provide a false public key, allowing the client to encrypt messages to an attacker rather than the intended recipient.</p> <p>Until now, the only way to detect such malfeasance was to verify safety numbers with your contact in…
+> **Refreshed 2026-11-10T15:28:32.924Z** — A compromised server could provide a false public key, allowing the client to encrypt messages to an attacker rather than the intended recipient.</p> <p>Until now, the only way to detect such malfeasance was to verify safety numbers with your contact in…

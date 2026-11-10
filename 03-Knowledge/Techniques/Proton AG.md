@@ -15,9 +15,10 @@ harvested: 2026-11-10
 origin: web
 trust: quarantined
 tags: [technique, execution, cwe-287, web-capture]
-updated: "2026-11-10T11:50:59.804Z"
+updated: "2026-11-10T15:28:33.063Z"
 status: known
 ---
+
 
 
 
@@ -42,3 +43,4 @@ Bind signatures to chain id, contract address and nonce; reject replays at the v
 > **Refreshed 2026-11-10T08:12:51.729Z** — On 21 January 2020, Proton announced that Proton VPN would now be open source, to allow independent security experts to analyze it, becoming the first VPN service to do so, simultaneously announcing that an independent security audit had been conducted.
 > **Refreshed 2026-11-10T11:08:39.523Z** — On 21 January 2020, Proton announced that Proton VPN would now be open source, to allow independent security experts to analyze it, becoming the first VPN service to do so, simultaneously announcing that an independent security audit had been conducted.
 > **Refreshed 2026-11-10T11:50:59.804Z** — On 21 January 2020, Proton announced that Proton VPN would now be open source, to allow independent security experts to analyze it, becoming the first VPN service to do so, simultaneously announcing that an independent security audit had been conducted.
+> **Refreshed 2026-11-10T15:28:33.063Z** — On 21 January 2020, Proton announced that Proton VPN would now be open source, to allow independent security experts to analyze it, becoming the first VPN service to do so, simultaneously announcing that an independent security audit had been conducted.

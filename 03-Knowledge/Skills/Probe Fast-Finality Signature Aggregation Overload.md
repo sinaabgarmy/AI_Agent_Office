@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, consensus, surface-gap]
-updated: "2026-11-10T12:06:24.810Z"
+updated: "2026-11-10T15:27:53.354Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.346Z** — When the council opens a debate on Fast-Finality Signature Aggregation Overload, or when auditing a system that matches "Finalising in one slot requires aggregating the whole validator set within seconds, so the aggregation network becomes a liveness bottleneck that an adversary can stress without holding stake.".
 > **Refreshed 2026-11-10T11:49:59.881Z** — When the council opens a debate on Fast-Finality Signature Aggregation Overload, or when auditing a system that matches "Finalising in one slot requires aggregating the whole validator set within seconds, so the aggregation network becomes a liveness bottleneck that an adversary can stress without holding stake.".
 > **Refreshed 2026-11-10T12:06:24.810Z** — When the council opens a debate on Fast-Finality Signature Aggregation Overload, or when auditing a system that matches "Finalising in one slot requires aggregating the whole validator set within seconds, so the aggregation network becomes a liveness bottleneck that an adversary can stress without holding stake.".
+> **Refreshed 2026-11-10T15:27:53.354Z** — When the council opens a debate on Fast-Finality Signature Aggregation Overload, or when auditing a system that matches "Finalising in one slot requires aggregating the whole validator set within seconds, so the aggregation network becomes a liveness bottleneck that an adversary can stress without holding stake.".

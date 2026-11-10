@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, governance, cwe-863]
-updated: "2026-11-10T11:50:59.816Z"
+updated: "2026-11-10T15:28:33.076Z"
 ---
 
 # Chain halt panic in github.com/cometbft/cometbft

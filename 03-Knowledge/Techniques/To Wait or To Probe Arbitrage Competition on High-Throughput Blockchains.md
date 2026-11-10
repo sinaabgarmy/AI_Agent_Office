@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.689Z"
+updated: "2026-11-10T15:28:32.957Z"
 ---
 
 # To Wait or To Probe: Arbitrage Competition on High-Throughput Blockchains

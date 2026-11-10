@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-10T11:50:59.627Z"
+updated: "2026-11-10T15:28:32.868Z"
 ---
 
 # zksolc — All LLVM versions since 2015 fold `(xor (shl 1, x), -1)` to `(rotl ~1, x)` if…

@@ -13,9 +13,10 @@ source_id: GHSA-m6j8-rg6r-7mv8
 confidence: 0.83
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.709Z"
+updated: "2026-11-10T15:28:32.979Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.666Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file /geth/nodekey before starting Geth.
 > **Refreshed 2026-11-10T11:08:39.415Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file /geth/nodekey before starting Geth.
 > **Refreshed 2026-11-10T11:50:59.709Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file /geth/nodekey before starting Geth.
+> **Refreshed 2026-11-10T15:28:32.979Z** — We recommend rotating the node key after applying the upgrade, which can be done by removing the file /geth/nodekey before starting Geth.

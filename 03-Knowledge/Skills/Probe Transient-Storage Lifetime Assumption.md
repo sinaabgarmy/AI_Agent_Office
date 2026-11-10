@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.823Z"
+updated: "2026-11-10T15:27:53.368Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.356Z** — When the council opens a debate on Transient-Storage Lifetime Assumption, or when auditing a system that matches "A guard held in transient storage is cleared at the end of the transaction, not the end of the call, so code that assumes per-call isolation carries state between calls inside one transaction.".
 > **Refreshed 2026-11-10T11:49:59.892Z** — When the council opens a debate on Transient-Storage Lifetime Assumption, or when auditing a system that matches "A guard held in transient storage is cleared at the end of the transaction, not the end of the call, so code that assumes per-call isolation carries state between calls inside one transaction.".
 > **Refreshed 2026-11-10T12:06:24.823Z** — When the council opens a debate on Transient-Storage Lifetime Assumption, or when auditing a system that matches "A guard held in transient storage is cleared at the end of the transaction, not the end of the call, so code that assumes per-call isolation carries state between calls inside one transaction.".
+> **Refreshed 2026-11-10T15:27:53.368Z** — When the council opens a debate on Transient-Storage Lifetime Assumption, or when auditing a system that matches "A guard held in transient storage is cleared at the end of the transaction, not the end of the call, so code that assumes per-call isolation carries state between calls inside one transaction.".

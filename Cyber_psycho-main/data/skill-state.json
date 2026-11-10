@@ -46,7 +46,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-31170",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 179,
       "tags": [
         "skill",
@@ -103,15 +103,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-31172",
       "confidence": 0.97,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
-      "timesUsed": 982,
+      "updatedAt": "2026-11-10T15:27:53.308Z",
+      "timesUsed": 1075,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
       ],
-      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "lastUsedAt": "2026-11-10T15:33:06.549Z",
       "status": "active"
     },
     {
@@ -160,7 +160,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-45056",
       "confidence": 0.94,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 179,
       "tags": [
         "skill",
@@ -216,8 +216,8 @@
       "source": "NVD — Solidity CVEs — tech-risc-zero",
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52884",
       "confidence": 0.98,
-      "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-09T23:13:47.073Z",
+      "createdAt": "2026-11-10T15:27:58.228Z",
+      "updatedAt": "2026-11-10T15:27:58.228Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -225,9 +225,7 @@
         "execution",
         "cwe-159"
       ],
-      "status": "retired",
-      "retiredAt": "2026-11-09T23:13:47.073Z",
-      "retireReason": "off-domain"
+      "status": "active"
     },
     {
       "id": "skill-openzeppelin-contracts-wizard",
@@ -274,8 +272,8 @@
       "source": "NVD — Solidity CVEs — tech-openzeppelin-contracts-wizard",
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57583",
       "confidence": 0.79,
-      "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-09T23:13:47.073Z",
+      "createdAt": "2026-11-10T15:27:59.851Z",
+      "updatedAt": "2026-11-10T15:27:59.851Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -283,9 +281,7 @@
         "execution",
         "cwe-94"
       ],
-      "status": "retired",
-      "retiredAt": "2026-11-09T23:13:47.073Z",
-      "retireReason": "not-a-defect"
+      "status": "active"
     },
     {
       "id": "skill-era-compiler-solidity",
@@ -391,7 +387,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-33069",
       "confidence": 0.75,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -446,8 +442,8 @@
       "source": "NVD — Solidity CVEs — tech-solidity-0-7-5-in-smtutil-chcsmtlib2interfac",
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2020-36402",
       "confidence": 0.71,
-      "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-09T23:13:47.073Z",
+      "createdAt": "2026-11-10T15:28:01.375Z",
+      "updatedAt": "2026-11-10T15:28:01.375Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -455,9 +451,7 @@
         "execution",
         "cwe-787"
       ],
-      "status": "retired",
-      "retiredAt": "2026-11-09T23:13:47.073Z",
-      "retireReason": "not-a-defect"
+      "status": "active"
     },
     {
       "id": "skill-an-integer-overflow-in-the-batchtransfer-fun",
@@ -505,7 +499,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10299",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 179,
       "tags": [
         "skill",
@@ -620,7 +614,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10468",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -676,7 +670,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10666",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -731,8 +725,8 @@
       "source": "NVD — Ethereum CVEs — tech-an-integer-overflow-in-the-transfermulti-fun",
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10706",
       "confidence": 0.98,
-      "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-09T23:13:47.073Z",
+      "createdAt": "2026-11-10T15:28:02.941Z",
+      "updatedAt": "2026-11-10T15:28:02.941Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -740,9 +734,7 @@
         "execution",
         "cwe-190"
       ],
-      "status": "retired",
-      "retiredAt": "2026-11-09T23:13:47.073Z",
-      "retireReason": "duplicate"
+      "status": "active"
     },
     {
       "id": "skill-the-request-dividend-function-of-a-smart-con",
@@ -790,7 +782,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10944",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -904,7 +896,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12702",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -960,7 +952,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-11446",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -1016,7 +1008,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12062",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -1072,7 +1064,7 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12078",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -2349,14 +2341,14 @@
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
       "updatedAt": "2026-11-10T11:49:59.838Z",
-      "timesUsed": 803,
+      "timesUsed": 896,
       "tags": [
         "skill",
         "probe",
         "consensus",
         "surface-gap"
       ],
-      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "lastUsedAt": "2026-11-10T15:33:06.549Z",
       "status": "active"
     },
     {
@@ -2404,15 +2396,15 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
-      "timesUsed": 803,
+      "updatedAt": "2026-11-10T15:27:53.309Z",
+      "timesUsed": 896,
       "tags": [
         "skill",
         "probe",
         "execution",
         "surface-gap"
       ],
-      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "lastUsedAt": "2026-11-10T15:33:06.549Z",
       "status": "active"
     },
     {
@@ -2461,13 +2453,14 @@
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
       "updatedAt": "2026-11-05T16:15:55.468Z",
-      "timesUsed": 0,
+      "timesUsed": 93,
       "tags": [
         "skill",
         "probe",
         "execution",
         "surface-gap"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T15:33:06.549Z"
     },
     {
       "id": "skill-probe-crypto-rogue-key-attack",
@@ -2624,7 +2617,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -2797,7 +2790,7 @@
       "sourceUrl": "https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/",
       "confidence": 0.81,
       "createdAt": "2026-11-09T23:13:46.132Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 5,
       "tags": [
         "skill",
@@ -2854,7 +2847,7 @@
       "sourceUrl": "https://blog.trailofbits.com/2026/07/30/building-secure-uniswap-v4-hooks/",
       "confidence": 0.68,
       "createdAt": "2026-11-09T23:13:46.132Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -2969,7 +2962,7 @@
       "sourceUrl": "http://arxiv.org/abs/2608.25600v1",
       "confidence": 0.82,
       "createdAt": "2026-11-09T23:13:46.132Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3083,7 +3076,7 @@
       "sourceUrl": "http://arxiv.org/abs/2605.09124v2",
       "confidence": 0.94,
       "createdAt": "2026-11-09T23:13:46.132Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3604,7 +3597,7 @@
       "sourceUrl": "http://arxiv.org/abs/2508.17964v3",
       "confidence": 0.68,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3660,7 +3653,7 @@
       "sourceUrl": "http://arxiv.org/abs/2604.06975v3",
       "confidence": 0.69,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3717,7 +3710,7 @@
       "sourceUrl": "http://arxiv.org/abs/2609.31379v2",
       "confidence": 0.87,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3773,7 +3766,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-878m-3g6q-594q",
       "confidence": 0.71,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3831,7 +3824,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-fg47-3c2x-m2wr",
       "confidence": 0.98,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 179,
       "tags": [
         "skill",
@@ -3888,7 +3881,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-wmpv-c2jp-j2xg",
       "confidence": 0.87,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -3944,15 +3937,15 @@
       "sourceUrl": "https://github.com/advisories/GHSA-4g63-c64m-25w9",
       "confidence": 0.88,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
-      "timesUsed": 102,
+      "updatedAt": "2026-11-10T15:27:53.308Z",
+      "timesUsed": 195,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
       ],
-      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "lastUsedAt": "2026-11-10T15:33:06.549Z",
       "status": "active"
     },
     {
@@ -4001,7 +3994,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-9c22-pwxw-p6hx",
       "confidence": 0.97,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 179,
       "tags": [
         "skill",
@@ -4059,7 +4052,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-9j3m-g383-29qr",
       "confidence": 0.85,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4116,7 +4109,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-9rcw-c2f9-2j55",
       "confidence": 0.97,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4172,7 +4165,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-5vp3-v4hc-gx76",
       "confidence": 0.84,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4230,7 +4223,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-g4vp-m682-qqmp",
       "confidence": 0.77,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4286,7 +4279,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-qh9x-gcfh-pcrw",
       "confidence": 0.88,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4342,15 +4335,15 @@
       "sourceUrl": "https://github.com/advisories/GHSA-4h98-2769-gh6h",
       "confidence": 0.93,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
-      "timesUsed": 803,
+      "updatedAt": "2026-11-10T15:27:53.308Z",
+      "timesUsed": 896,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-354"
       ],
-      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "lastUsedAt": "2026-11-10T15:33:06.549Z",
       "status": "active"
     },
     {
@@ -4401,7 +4394,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-m6w8-fq7v-ph4m",
       "confidence": 0.93,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4457,7 +4450,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-mx2q-35m2-x2rh",
       "confidence": 0.74,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4513,7 +4506,7 @@
       "sourceUrl": "https://github.com/advisories/GHSA-wprv-93r4-jj2p",
       "confidence": 0.93,
       "createdAt": "2026-11-09T23:23:30.738Z",
-      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "updatedAt": "2026-11-10T15:27:53.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4568,7 +4561,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4681,7 +4674,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4737,7 +4730,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4793,7 +4786,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4850,7 +4843,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4907,7 +4900,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -4963,7 +4956,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5077,7 +5070,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5134,7 +5127,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5191,7 +5184,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5248,7 +5241,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5305,7 +5298,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5415,7 +5408,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5470,7 +5463,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5525,7 +5518,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5581,7 +5574,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5694,7 +5687,7 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-10T07:26:24.964Z",
-      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "updatedAt": "2026-11-10T15:27:53.309Z",
       "timesUsed": 0,
       "tags": [
         "skill",
@@ -5705,8 +5698,14 @@
       "status": "active"
     }
   ],
-  "lastBuiltAt": "2026-11-10T12:06:24.769Z",
+  "lastBuiltAt": "2026-11-10T15:27:53.309Z",
   "buildLog": [
+    {
+      "at": "2026-11-10T15:27:53.309Z",
+      "built": 0,
+      "skipped": 209,
+      "total": 100
+    },
     {
       "at": "2026-11-10T12:06:24.769Z",
       "built": 0,
@@ -5772,16 +5771,16 @@
       "built": 0,
       "skipped": 175,
       "total": 47
-    },
-    {
-      "at": "2026-11-05T16:15:55.468Z",
-      "built": 47,
-      "skipped": 130,
-      "total": 47
     }
   ],
   "usageTrackingSince": "2026-11-09T23:13:46.133Z",
   "pruneLog": [
+    {
+      "at": "2026-11-10T15:27:53.378Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
     {
       "at": "2026-11-10T07:31:07.365Z",
       "retired": 0,

@@ -13,9 +13,10 @@ source_id: GHSA-93hq-5wgc-jc82
 confidence: 0.57
 harvested: 2026-11-04
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.708Z"
+updated: "2026-11-10T15:28:32.977Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.665Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
 > **Refreshed 2026-11-10T11:08:39.410Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
 > **Refreshed 2026-11-10T11:50:59.707Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-10T15:28:32.977Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.

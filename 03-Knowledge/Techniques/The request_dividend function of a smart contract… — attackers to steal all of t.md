@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.634Z"
+updated: "2026-11-10T15:28:32.879Z"
 ---
 
 # The request_dividend function of a smart contract… — attackers to steal all of the contract's Ether

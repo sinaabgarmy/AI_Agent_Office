@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, cryptography, surface-gap]
-updated: "2026-11-10T12:06:24.820Z"
+updated: "2026-11-10T15:27:53.366Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.354Z** — When the council opens a debate on Post-Quantum Migration Window, or when auditing a system that matches "During a signature-scheme migration an account is only as strong as the weakest scheme still accepted for it, so every address that has revealed a classical public key stays exposed until the old path is disabled — not until the new one is enabled.".
 > **Refreshed 2026-11-10T11:49:59.890Z** — When the council opens a debate on Post-Quantum Migration Window, or when auditing a system that matches "During a signature-scheme migration an account is only as strong as the weakest scheme still accepted for it, so every address that has revealed a classical public key stays exposed until the old path is disabled — not until the new one is enabled.".
 > **Refreshed 2026-11-10T12:06:24.820Z** — When the council opens a debate on Post-Quantum Migration Window, or when auditing a system that matches "During a signature-scheme migration an account is only as strong as the weakest scheme still accepted for it, so every address that has revealed a classical public key stays exposed until the old path is disabled — not until the new one is enabled.".
+> **Refreshed 2026-11-10T15:27:53.366Z** — When the council opens a debate on Post-Quantum Migration Window, or when auditing a system that matches "During a signature-scheme migration an account is only as strong as the weakest scheme still accepted for it, so every address that has revealed a classical public key stays exposed until the old path is disabled — not until the new one is enabled.".

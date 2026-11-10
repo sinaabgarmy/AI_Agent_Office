@@ -2,8 +2,21 @@
 type: log
 month: 2026-11
 tags: [log]
-updated: "2026-11-10T12:06:24.829Z"
+updated: "2026-11-10T15:30:42.111Z"
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -248,3 +261,16 @@ updated: "2026-11-04T15:45:00.289Z"
 - **2026-11-10T11:53:59.431Z** [search] Web capture — 3 queries, 3 page(s): 0 filed, 0 flagged, 3 skipped, 0 technique(s) distilled.
 - **2026-11-10T12:06:09.364Z** [discovery] Surface map refreshed — 56/73 covered, 17 gaps.
 - **2026-11-10T12:06:24.828Z** [memory] Skill library built — 61 active skills (0 new), 0 notes written.
+- **2026-11-10T15:27:41.121Z** [discovery] Surface map refreshed — 56/73 covered, 17 gaps.
+- **2026-11-10T15:27:53.374Z** [memory] Skill library built — 61 active skills (0 new), 0 notes written.
+- **2026-11-10T15:27:58.235Z** [memory] Skill restored: "Hunt RISC Zero".
+- **2026-11-10T15:27:59.855Z** [memory] Skill restored: "Hunt OpenZeppelin Contracts Wizard".
+- **2026-11-10T15:28:01.378Z** [memory] Skill restored: "Hunt Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver".
+- **2026-11-10T15:28:02.949Z** [memory] Skill restored: "Hunt An integer overflow in the transferMulti function of a smart…".
+- **2026-11-10T15:28:16.612Z** [discovery] Scenario Forge generated 3 scenario(s): "Encrypted-State Leakage via Decryption Oracles" [surface]; "Defect path: Security Council as a Permanent Upgrade Path → Shared Sequencer Cross-Rollup Atomicity → Permit2 Signature Replay Across Nonces" [path]; "GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior" [intel].
+- **2026-11-10T15:28:33.100Z** [memory] Intel taught 8 new technique assignments to agents.
+- **2026-11-10T15:28:33.102Z** [discovery] Intel harvest — 303 items, 7 new techniques, 8 taught.
+- **2026-11-10T15:28:46.659Z** [system] Manual sync complete: 0 debates archived, 8 skipped, 0 approvals reconciled from Obsidian.
+- **2026-11-10T15:29:21.209Z** [discovery] Surface promoted to scenario: "Permit2 Signature Replay Across Nonces" (CWE-287).
+- **2026-11-10T15:30:42.098Z** [search] Research brief gathered for "Permit2 Approval Griefing via EIP-712 Signature Capture" via duckduckgo (5 sources).
+- **2026-11-10T15:30:42.110Z** [debate] Debate started — Permit2 Approval Griefing via EIP-712 Signature Capture (12 agents).

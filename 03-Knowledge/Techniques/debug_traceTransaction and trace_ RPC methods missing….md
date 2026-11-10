@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.724Z"
+updated: "2026-11-10T15:28:32.990Z"
 ---
 
 # debug_traceTransaction and trace_* RPC methods missing…

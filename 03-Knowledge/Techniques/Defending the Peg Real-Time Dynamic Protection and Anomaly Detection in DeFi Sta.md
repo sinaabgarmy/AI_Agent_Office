@@ -16,7 +16,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, l-bridge, cwe-345]
-updated: "2026-11-10T11:50:59.668Z"
+updated: "2026-11-10T15:28:32.925Z"
 ---
 
 # Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins

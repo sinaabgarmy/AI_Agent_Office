@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-10T11:50:59.799Z"
+updated: "2026-11-10T15:28:33.058Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.725Z** — If a validator is utilizing an affected version of Cosmovisor with DAEMON_ALLOW_DOWNLOAD_BINARIES set to true, a non-default configuration, it may be possible for an attacker to trigger a Remote Code Execution path as well on the host.
 > **Refreshed 2026-11-10T11:08:39.517Z** — If a validator is utilizing an affected version of Cosmovisor with DAEMON_ALLOW_DOWNLOAD_BINARIES set to true, a non-default configuration, it may be possible for an attacker to trigger a Remote Code Execution path as well on the host.
 > **Refreshed 2026-11-10T11:50:59.799Z** — If a validator is utilizing an affected version of Cosmovisor with DAEMON_ALLOW_DOWNLOAD_BINARIES set to true, a non-default configuration, it may be possible for an attacker to trigger a Remote Code Execution path as well on the host.
+> **Refreshed 2026-11-10T15:28:33.058Z** — If a validator is utilizing an affected version of Cosmovisor with DAEMON_ALLOW_DOWNLOAD_BINARIES set to true, a non-default configuration, it may be possible for an attacker to trigger a Remote Code Execution path as well on the host.

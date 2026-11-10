@@ -13,9 +13,10 @@ source_id: GHSA-xrc4-737v-9q75
 confidence: 0.93
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-682]
-updated: "2026-11-10T11:50:59.701Z"
+updated: "2026-11-10T15:28:32.973Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.662Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
 > **Refreshed 2026-11-10T11:08:39.399Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
 > **Refreshed 2026-11-10T11:50:59.701Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T15:28:32.973Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.

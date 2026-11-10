@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 803
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.784Z"
+updated: "2026-11-10T15:27:53.325Z"
 status: active
 ---
+
 
 
 
@@ -74,3 +75,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.320Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
 > **Refreshed 2026-11-10T11:49:59.855Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
 > **Refreshed 2026-11-10T12:06:24.784Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T15:27:53.325Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".

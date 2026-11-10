@@ -13,9 +13,10 @@ source_id: tob-blog-auditing-in-the-age-of-good-enough-ai
 confidence: 0.41
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.666Z"
+updated: "2026-11-10T15:28:32.923Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ patch-the-planet/">we’re one of them</a>)
 > **Refreshed 2026-11-10T08:12:51.636Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
 > **Refreshed 2026-11-10T11:08:39.315Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
 > **Refreshed 2026-11-10T11:50:59.666Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-10T15:28:32.923Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="

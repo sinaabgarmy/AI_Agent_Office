@@ -15,9 +15,10 @@ harvested: 2026-11-09
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-10T11:50:59.789Z"
+updated: "2026-11-10T15:28:33.050Z"
 status: known
 ---
+
 
 
 
@@ -44,3 +45,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.719Z** — Shallow copy bug in geth This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
 > **Refreshed 2026-11-10T11:08:39.509Z** — Shallow copy bug in geth This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
 > **Refreshed 2026-11-10T11:50:59.789Z** — Shallow copy bug in geth This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T15:28:33.050Z** — Shallow copy bug in geth This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.

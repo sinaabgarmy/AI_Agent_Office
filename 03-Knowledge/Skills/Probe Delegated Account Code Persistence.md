@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-10T12:06:24.822Z"
+updated: "2026-11-10T15:27:53.367Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.356Z** — When the council opens a debate on Delegated Account Code Persistence, or when auditing a system that matches "An externally owned account that delegates its behaviour to contract code keeps that delegation after the signing session ends, so a one-time approval becomes a standing authority over the whole account.".
 > **Refreshed 2026-11-10T11:49:59.891Z** — When the council opens a debate on Delegated Account Code Persistence, or when auditing a system that matches "An externally owned account that delegates its behaviour to contract code keeps that delegation after the signing session ends, so a one-time approval becomes a standing authority over the whole account.".
 > **Refreshed 2026-11-10T12:06:24.822Z** — When the council opens a debate on Delegated Account Code Persistence, or when auditing a system that matches "An externally owned account that delegates its behaviour to contract code keeps that delegation after the signing session ends, so a one-time approval becomes a standing authority over the whole account.".
+> **Refreshed 2026-11-10T15:27:53.367Z** — When the council opens a debate on Delegated Account Code Persistence, or when auditing a system that matches "An externally owned account that delegates its behaviour to contract code keeps that delegation after the signing session ends, so a one-time approval becomes a standing authority over the whole account.".

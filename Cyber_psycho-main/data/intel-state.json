@@ -528,7 +528,7 @@
     {
       "id": "tech-clear-signing-making-transaction-approvals-s",
       "title": "Clear Signing: Making Transaction Approvals Safer on Ethereum",
-      "layer": "Execution",
+      "layer": "Key Management",
       "cwe": "CWE-841",
       "primitive": "Ethereum Foundation’s Trillion Dollar Security Initiative...",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -536,7 +536,7 @@
       "sourceName": "Ethereum Foundation Blog",
       "sourceUrl": "https://blog.ethereum.org/en/2026/05/12/clear-signing-announcement",
       "sourceId": "ef-blog-clear-signing-making-transaction-approva",
-      "confidence": 0.65,
+      "confidence": 0.73,
       "harvestedAt": "2026-11-04T17:19:58.230Z",
       "tags": [
         "execution",
@@ -1116,7 +1116,7 @@
     {
       "id": "tech-state-divergence-enables-unauthorized-access",
       "title": "State divergence enables unauthorized access",
-      "layer": "Consensus",
+      "layer": "Supply Chain",
       "cwe": "CWE-664",
       "primitive": "State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href=\"",
       "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
@@ -1124,7 +1124,7 @@
       "sourceName": "Trail of Bits Research",
       "sourceUrl": "https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/",
       "sourceId": "tob-blog-state-divergence-enables-unauthorized-ac",
-      "confidence": 0.81,
+      "confidence": 0.94,
       "harvestedAt": "2026-11-04T17:19:58.232Z",
       "tags": [
         "consensus",
@@ -2447,7 +2447,7 @@
       "sourceName": "OSV — @openzeppelin/contracts",
       "sourceUrl": "https://github.com/advisories/GHSA-m6w8-fq7v-ph4m",
       "sourceId": "GHSA-m6w8-fq7v-ph4m",
-      "confidence": 0.93,
+      "confidence": 0.96,
       "harvestedAt": "2026-11-04T18:52:17.326Z",
       "tags": [
         "execution",
@@ -2775,7 +2775,7 @@
     {
       "id": "tech-denial-of-service-via-mulmod",
       "title": "Denial of service via `MulMod`",
-      "layer": "Infrastructure",
+      "layer": "Supply Chain",
       "cwe": "CWE-400",
       "primitive": "Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…",
       "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
@@ -2783,7 +2783,7 @@
       "sourceName": "GitHub Advisories — go-ethereum",
       "sourceUrl": "https://github.com/ethereum/go-ethereum/security/advisories/GHSA-jm5c-rv3w-w83m",
       "sourceId": "GHSA-jm5c-rv3w-w83m",
-      "confidence": 0.87,
+      "confidence": 0.94,
       "harvestedAt": "2026-11-04T18:52:17.336Z",
       "tags": [
         "infrastructure",
@@ -3216,7 +3216,7 @@
     {
       "id": "tech-engine-api-jwt-secret-exposed-in-application",
       "title": "Engine API JWT secret exposed in application logs when ephemeral key file cannot be written",
-      "layer": "Execution",
+      "layer": "Key Management",
       "cwe": "CWE-287",
       "primitive": "Engine API JWT secret exposed in application logs when ephemeral key file cannot be written When Besu starts with Engine API enabled and no --engine-jwt-secret configured, it generates an ephemeral signing key and writes it to jwt.hex in the data directory.",
       "detection": "monitoring pipelines, or operators with log-read-only access — could recover the key and obtain full, unauthenticated Engine API access, bypassing the",
@@ -3224,7 +3224,7 @@
       "sourceName": "GitHub Advisories — Hyperledger Besu",
       "sourceUrl": "https://github.com/besu-eth/besu/security/advisories/GHSA-f429-4669-7rpx",
       "sourceId": "GHSA-f429-4669-7rpx",
-      "confidence": 0.63,
+      "confidence": 0.89,
       "harvestedAt": "2026-11-04T18:52:17.341Z",
       "tags": [
         "execution",
@@ -3636,7 +3636,7 @@
     {
       "id": "tech-governor-proposal-creation-may-be-blocked-by",
       "title": "Governor proposal creation may be blocked by frontrunning",
-      "layer": "Execution",
+      "layer": "Governance",
       "cwe": "CWE-841",
       "primitive": "Governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -3657,7 +3657,7 @@
     {
       "id": "tech-erc2771context-with-custom-forwarder-may-lea",
       "title": "ERC2771Context with custom forwarder may lead to zero-valued _msgSender",
-      "layer": "Execution",
+      "layer": "Key Management",
       "cwe": "CWE-841",
       "primitive": "ERC2771Context with custom forwarder may lead to zero-valued _msgSender Contracts using ERC2771Context along with a custom trusted forwarder may see _msgSender return address(0) in calls that originate from the forwarder with calldata shorter than 20 bytes.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -3665,7 +3665,7 @@
       "sourceName": "GitHub Advisories — OpenZeppelin Contracts",
       "sourceUrl": "https://github.com/OpenZeppelin/openzeppelin-contracts/security/advisories/GHSA-g4vp-m682-qqmp",
       "sourceId": "GHSA-g4vp-m682-qqmp",
-      "confidence": 0.64,
+      "confidence": 0.72,
       "harvestedAt": "2026-11-04T18:52:17.344Z",
       "tags": [
         "execution",
@@ -5934,6 +5934,160 @@
         "advisory"
       ],
       "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-ivanti-endpoint-manager-mobile-epmm-code-inj",
+      "title": "Ivanti Endpoint Manager Mobile (EPMM) Code Injection…",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "Ivanti Endpoint Manager Mobile (EPMM) contains a code injection vulnerability in the API component that allows an authenticated attacker to remotely execute arbitrary code via crafted API requests.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "remediation by 2025-06-09",
+      "sourceName": "CISA — Known Exploited Vulnerabilities",
+      "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-4428",
+      "sourceId": "CVE-2025-4428",
+      "confidence": 0.43,
+      "harvestedAt": "2026-11-10T15:28:32.849Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1.05,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-qbft-roundchange-executes-the-piggybacked-bl",
+      "title": "QBFT RoundChange executes the piggybacked block before the…",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "Consequently an attacker who captures a single genuine validator-signed RoundChange carrying a prepared block can replay it with arbitrary blocks substituted, buying a full block execution on the single BFT consensus thread per replay.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+      "sourceName": "GitHub Advisories — Hyperledger Besu",
+      "sourceUrl": "https://github.com/besu-eth/besu/security/advisories/GHSA-hhgq-3gvc-4jhp",
+      "sourceId": "GHSA-hhgq-3gvc-4jhp",
+      "confidence": 0.94,
+      "harvestedAt": "2026-11-10T15:28:32.851Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1.4,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-ibft-accepts-oversized-base-fees-that-can-st",
+      "title": "IBFT Accepts Oversized Base Fees That Can Stop Block Production",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "IBFT Accepts Oversized Base Fees That Can Stop Block Production The IBFT 2.0 header ruleset does not validate the base-fee value.",
+      "detection": "observe the subsequent block-creation failure and lack of height advancement across the four validators",
+      "remediation": "Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+      "sourceName": "GitHub Advisories — Hyperledger Besu",
+      "sourceUrl": "https://github.com/besu-eth/besu/security/advisories/GHSA-6pcq-hcgg-5q76",
+      "sourceId": "GHSA-6pcq-hcgg-5q76",
+      "confidence": 0.89,
+      "harvestedAt": "2026-11-10T15:28:32.855Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1.4,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-eip-8037-eip-8038-glamsterdam",
+      "title": "EIP-8037/EIP-8038 Glamsterdam",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "EIP-8037/EIP-8038 Glamsterdam Glamsterdam, the next update for Ethereum, is currently being tested on testnets.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "Ethereum Foundation Blog",
+      "sourceUrl": "https://blog.ethereum.org/en/2026/11/06/glamsterdam-8037-8038",
+      "sourceId": "ef-blog-eip-8037-eip-8038-glamsterdam",
+      "confidence": 0.62,
+      "harvestedAt": "2026-11-10T15:28:32.859Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "research"
+      ],
+      "sourceWeight": 1.12,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-after-binance-check-what-your-signing-system",
+      "title": "After Binance, check what your signing systems can approve",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Its <a href=\" update</a> reported additional bre",
+      "detection": "monitors transfers and ownership changes, it may miss the shift in wallet authority until assets move",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "Trail of Bits Research",
+      "sourceUrl": "https://blog.trailofbits.com/2026/11/06/after-binance-check-what-your-signing-systems-can-approve/",
+      "sourceId": "tob-blog-after-binance-check-what-your-signing-sy",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-10T15:28:32.861Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "research"
+      ],
+      "sourceWeight": 1.12,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-package-managers-have-an-integrity-problem",
+      "title": "Package managers have an integrity problem",
+      "layer": "Supply Chain",
+      "cwe": "CWE-494",
+      "primitive": "This code integrity problem could be solved using cryptographic hashes or signatures, but many package managers are still vulnerable to this threat.",
+      "detection": "detect a compromised package repository injecting malicious code into legitimate packages",
+      "remediation": "mitigation attempts, including work by Trail of Bits<sup id=\"fnref:2\"><a href=\"#fn:2\" class=\"footnote-ref\" role=\"doc-noteref\">2</a></sup>, are successful",
+      "sourceName": "Trail of Bits Research",
+      "sourceUrl": "https://blog.trailofbits.com/2026/10/14/package-managers-have-an-integrity-problem/",
+      "sourceId": "tob-blog-package-managers-have-an-integrity-probl",
+      "confidence": 0.63,
+      "harvestedAt": "2026-11-10T15:28:32.861Z",
+      "tags": [
+        "supply-chain",
+        "cwe-494",
+        "external-intel",
+        "research"
+      ],
+      "sourceWeight": 1.12,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-the-cryptography-behind-electronic-voting-an",
+      "title": "The cryptography behind electronic voting (and why paper ballots are still essential)",
+      "layer": "Governance",
+      "cwe": "CWE-863",
+      "primitive": "You may wonder why we still use paper for our elections and voting systems when tasks like banking, tax filing, and document signing have moved away from paper-based legacy systems and become fully electronic.",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.",
+      "sourceName": "Trail of Bits Research",
+      "sourceUrl": "https://blog.trailofbits.com/2026/11/03/the-cryptography-behind-electronic-voting-and-why-paper-ballots-are-still-essential/",
+      "sourceId": "tob-blog-the-cryptography-behind-electronic-votin",
+      "confidence": 0.5,
+      "harvestedAt": "2026-11-10T15:28:32.862Z",
+      "tags": [
+        "governance",
+        "cwe-863",
+        "external-intel",
+        "research"
+      ],
+      "sourceWeight": 1.12,
       "origin": "feed"
     }
   ],
@@ -9639,11 +9793,234 @@
       "agentHandle": "bot-custom-auto-governance-quorum",
       "taughtAt": "2026-11-10T11:50:59.829Z",
       "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-state-divergence-enables-unauthorized-access",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T15:28:33.091Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-via-mulmod",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T15:28:33.092Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-governor-proposal-creation-may-be-blocked-by",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T15:28:33.093Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-engine-api-jwt-secret-exposed-in-application",
+      "agentHandle": "bot-custom-auto-key-management-keywarden",
+      "taughtAt": "2026-11-10T15:28:33.094Z",
+      "rationale": "Layer Key Management is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-clear-signing-making-transaction-approvals-s",
+      "agentHandle": "bot-custom-auto-key-management-keywarden",
+      "taughtAt": "2026-11-10T15:28:33.095Z",
+      "rationale": "Layer Key Management is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-erc2771context-with-custom-forwarder-may-lea",
+      "agentHandle": "bot-custom-auto-key-management-keywarden",
+      "taughtAt": "2026-11-10T15:28:33.096Z",
+      "rationale": "Layer Key Management is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-package-managers-have-an-integrity-problem",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T15:28:33.097Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-the-cryptography-behind-electronic-voting-an",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T15:28:33.097Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
     }
   ],
-  "lastHarvestAt": "2026-11-10T11:50:59.623Z",
-  "lastHarvestCount": 455,
+  "lastHarvestAt": "2026-11-10T15:28:32.862Z",
+  "lastHarvestCount": 303,
   "log": [
+    {
+      "at": "2026-11-10T15:28:32.862Z",
+      "harvested": 303,
+      "distilled": 7,
+      "sourcesOk": 20,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-ethers",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-web3",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-vyper",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-geth",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-gnark",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": false,
+          "items": 0,
+          "error": "osv http 403"
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "kev",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": true,
+          "items": 17
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "ef-blog",
+          "ok": true,
+          "items": 11
+        },
+        {
+          "id": "tob-blog",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": true,
+          "items": 10
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": true,
+          "items": 9
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "solidity-blog",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "oz-blog",
+          "ok": true,
+          "items": 8
+        }
+      ]
+    },
     {
       "at": "2026-11-10T11:50:59.623Z",
       "harvested": 455,

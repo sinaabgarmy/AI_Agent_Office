@@ -13,9 +13,10 @@ source_id: ef-blog-ethereum-foundation-board-update
 confidence: 0.59
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.657Z"
+updated: "2026-11-10T15:28:32.905Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-10T08:12:51.629Z** — Ethereum Foundation Board Update We are pleased to share that pcaversaccio (pc) has joined the Ethereum Foundation Board.
 > **Refreshed 2026-11-10T11:08:39.292Z** — Ethereum Foundation Board Update We are pleased to share that pcaversaccio (pc) has joined the Ethereum Foundation Board.
 > **Refreshed 2026-11-10T11:50:59.656Z** — Ethereum Foundation Board Update We are pleased to share that pcaversaccio (pc) has joined the Ethereum Foundation Board.
+> **Refreshed 2026-11-10T15:28:32.905Z** — Ethereum Foundation Board Update We are pleased to share that pcaversaccio (pc) has joined the Ethereum Foundation Board.

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-10T11:50:59.741Z"
+updated: "2026-11-10T15:28:33.000Z"
 ---
 
 # QBFT/IBFT validator forgets its prepared certificate when the…

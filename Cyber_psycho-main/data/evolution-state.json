@@ -1,6 +1,32 @@
 {
-  "lastCycleAt": "2026-11-10T11:53:59.435Z",
+  "lastCycleAt": "2026-11-10T15:28:31.470Z",
   "cycles": [
+    {
+      "startedAt": "2026-11-10T15:28:30.234Z",
+      "completedAt": "2026-11-10T15:28:31.470Z",
+      "trigger": "manual",
+      "steps": [
+        {
+          "id": "agents",
+          "ok": true,
+          "summary": "Roster is adequately staffed for current demand."
+        }
+      ],
+      "changes": []
+    },
+    {
+      "startedAt": "2026-11-10T15:27:52.054Z",
+      "completedAt": "2026-11-10T15:27:53.379Z",
+      "trigger": "manual",
+      "steps": [
+        {
+          "id": "skills",
+          "ok": true,
+          "summary": "0 built · 0 retired, 61 active"
+        }
+      ],
+      "changes": []
+    },
     {
       "startedAt": "2026-11-10T11:53:45.760Z",
       "completedAt": "2026-11-10T11:53:59.435Z",

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.637Z"
+updated: "2026-11-10T15:28:32.882Z"
 ---
 
 # GNU Bourne-Again Shell (Bash) Arbitrary Code Execution… — GNU Bourne-Again Shell (Bash) Arbitrary Code…

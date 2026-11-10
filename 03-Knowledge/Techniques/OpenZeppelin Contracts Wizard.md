@@ -13,9 +13,10 @@ source_id: CVE-2026-57583
 confidence: 0.79
 harvested: 2026-11-04
 tags: [technique, execution, cwe-94]
-updated: "2026-11-10T11:50:59.628Z"
+updated: "2026-11-10T15:28:32.873Z"
 status: known
 ---
+
 
 
 
@@ -50,3 +51,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.610Z** — OpenZeppelin Contracts Wizard is a web application to interactively build a contract out of components from OpenZeppelin Contracts.
 > **Refreshed 2026-11-10T11:08:39.231Z** — OpenZeppelin Contracts Wizard is a web application to interactively build a contract out of components from OpenZeppelin Contracts.
 > **Refreshed 2026-11-10T11:50:59.628Z** — OpenZeppelin Contracts Wizard is a web application to interactively build a contract out of components from OpenZeppelin Contracts.
+> **Refreshed 2026-11-10T15:28:32.872Z** — OpenZeppelin Contracts Wizard is a web application to interactively build a contract out of components from OpenZeppelin Contracts.

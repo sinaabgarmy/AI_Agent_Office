@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-10T11:50:59.811Z"
+updated: "2026-11-10T15:28:33.068Z"
 ---
 
 # Cosmos SDK can halt when erroring in EndBlocker in github.com/cosmos/cosmos-sdk/

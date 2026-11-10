@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, execution, cwe-787]
-updated: "2026-11-10T11:50:59.631Z"
+updated: "2026-11-10T15:28:32.874Z"
 ---
 
 # Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver

@@ -15,7 +15,7 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, supply-chain, cwe-191]
-updated: "2026-11-10T11:50:59.817Z"
+updated: "2026-11-10T15:28:33.077Z"
 ---
 
 # gnark unsoundness in variable comparison / non-unique binary decomposition

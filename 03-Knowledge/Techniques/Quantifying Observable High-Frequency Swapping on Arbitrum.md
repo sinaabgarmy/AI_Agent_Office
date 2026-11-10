@@ -13,9 +13,10 @@ source_id: arxiv-quantifying-observable-high-frequency-sw
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-10T11:50:59.682Z"
+updated: "2026-11-10T15:28:32.946Z"
 status: known
 ---
+
 
 
 
@@ -51,3 +52,4 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-10T08:12:51.647Z** — Quantifying Observable High-Frequency Swapping on Arbitrum Layer-2 rollups have reshaped Ethereum's transaction economy by replacing mempool competition with deterministic sequencing, sub-second block times, and negligible gas fees.
 > **Refreshed 2026-11-10T11:08:39.346Z** — Quantifying Observable High-Frequency Swapping on Arbitrum Layer-2 rollups have reshaped Ethereum's transaction economy by replacing mempool competition with deterministic sequencing, sub-second block times, and negligible gas fees.
 > **Refreshed 2026-11-10T11:50:59.681Z** — Quantifying Observable High-Frequency Swapping on Arbitrum Layer-2 rollups have reshaped Ethereum's transaction economy by replacing mempool competition with deterministic sequencing, sub-second block times, and negligible gas fees.
+> **Refreshed 2026-11-10T15:28:32.945Z** — Quantifying Observable High-Frequency Swapping on Arbitrum Layer-2 rollups have reshaped Ethereum's transaction economy by replacing mempool competition with deterministic sequencing, sub-second block times, and negligible gas fees.

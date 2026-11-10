@@ -19,9 +19,10 @@ confidence: 0.85
 created: "2026-11-09T23:23:30.738Z"
 times_used: 0
 tags: [skill, hunt, l-bridge, cwe-669]
-updated: "2026-11-10T12:06:24.800Z"
+updated: "2026-11-10T15:27:53.343Z"
 status: active
 ---
+
 
 
 
@@ -67,3 +68,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T07:31:07.340Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-669.
 > **Refreshed 2026-11-10T11:49:59.872Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-669.
 > **Refreshed 2026-11-10T12:06:24.800Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-669.
+> **Refreshed 2026-11-10T15:27:53.343Z** — When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-669.

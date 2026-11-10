@@ -13,9 +13,10 @@ source_id: GHSA-4g63-c64m-25w9
 confidence: 0.88
 harvested: 2026-11-04
 tags: [technique, execution, cwe-20]
-updated: "2026-11-10T11:50:59.693Z"
+updated: "2026-11-10T15:28:32.964Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 > **Refreshed 2026-11-10T08:12:51.658Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
 > **Refreshed 2026-11-10T11:08:39.380Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
 > **Refreshed 2026-11-10T11:50:59.693Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.
+> **Refreshed 2026-11-10T15:28:32.964Z** — However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.

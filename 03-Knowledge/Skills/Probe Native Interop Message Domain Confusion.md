@@ -19,9 +19,10 @@ confidence: 0.6
 created: "2026-11-10T07:26:24.964Z"
 times_used: 0
 tags: [skill, probe, l-bridge, surface-gap]
-updated: "2026-11-10T12:06:24.826Z"
+updated: "2026-11-10T15:27:53.370Z"
 status: active
 ---
+
 
 
 
@@ -64,3 +65,4 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 > **Refreshed 2026-11-10T07:31:07.358Z** — When the council opens a debate on Native Interop Message Domain Confusion, or when auditing a system that matches "When many chains share one messaging standard, a message is safe only if its domain binds chain, contract and version; any field left out lets a message valid on one chain be accepted on another.".
 > **Refreshed 2026-11-10T11:49:59.893Z** — When the council opens a debate on Native Interop Message Domain Confusion, or when auditing a system that matches "When many chains share one messaging standard, a message is safe only if its domain binds chain, contract and version; any field left out lets a message valid on one chain be accepted on another.".
 > **Refreshed 2026-11-10T12:06:24.825Z** — When the council opens a debate on Native Interop Message Domain Confusion, or when auditing a system that matches "When many chains share one messaging standard, a message is safe only if its domain binds chain, contract and version; any field left out lets a message valid on one chain be accepted on another.".
+> **Refreshed 2026-11-10T15:27:53.370Z** — When the council opens a debate on Native Interop Message Domain Confusion, or when auditing a system that matches "When many chains share one messaging standard, a message is safe only if its domain binds chain, contract and version; any field left out lets a message valid on one chain be accepted on another.".

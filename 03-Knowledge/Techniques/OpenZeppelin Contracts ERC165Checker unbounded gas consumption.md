@@ -13,9 +13,10 @@ source_id: GHSA-7grf-83vw-6f5x
 confidence: 0.65
 harvested: 2026-11-04
 tags: [technique, execution, cwe-400]
-updated: "2026-11-10T11:50:59.703Z"
+updated: "2026-11-10T15:28:32.975Z"
 status: known
 ---
+
 
 
 
@@ -48,3 +49,4 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 > **Refreshed 2026-11-10T08:12:51.663Z** — OpenZeppelin Contracts ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
 > **Refreshed 2026-11-10T11:08:39.404Z** — OpenZeppelin Contracts ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
 > **Refreshed 2026-11-10T11:50:59.703Z** — OpenZeppelin Contracts ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.
+> **Refreshed 2026-11-10T15:28:32.975Z** — OpenZeppelin Contracts ERC165Checker unbounded gas consumption The target contract of an EIP-165 supportsInterface query can cause unbounded gas consumption by returning a lot of data, while it is generally assumed that this operation has a bounded cost.

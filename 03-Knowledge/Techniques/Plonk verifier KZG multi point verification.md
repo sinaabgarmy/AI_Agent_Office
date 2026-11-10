@@ -15,8 +15,10 @@ harvested: 2026-11-10
 origin: feed
 trust: trusted
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-10T11:50:59.817Z"
+updated: "2026-11-10T15:28:33.077Z"
+status: known
 ---
+
 
 # Plonk verifier KZG multi point verification
 
@@ -35,3 +37,4 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 - OSV — gnark (zk-SNARK library) — GHSA-7p92-x423-vwj6
 - https://github.com/advisories/GHSA-7p92-x423-vwj6
 - Harvested: 2026-11-10T11:50:59.622Z
+> **Refreshed 2026-11-10T15:28:33.077Z** — Plonk verifier KZG multi point verification The vulnerability allows a third party to derive a valid proof from a valid initial tuple {proof, public_inputs}, corresponding to the same public inputs as the initial proof.
