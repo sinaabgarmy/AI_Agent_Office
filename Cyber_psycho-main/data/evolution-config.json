@@ -1,0 +1,35 @@
+{
+  "enabled": true,
+  "minHoursBetweenCycles": 6,
+  "vault": {
+    "learn": true
+  },
+  "webCapture": {
+    "enabled": true,
+    "maxQueries": 4,
+    "maxPages": 6,
+    "trustWeb": true
+  },
+  "scenarios": {
+    "enabled": true,
+    "maxPerCycle": 3,
+    "maxBacklog": 12
+  },
+  "skills": {
+    "rebuild": true,
+    "prune": true,
+    "unusedDays": 14
+  },
+  "agents": {
+    "enabled": true,
+    "maxAuto": 6
+  },
+  "sources": {
+    "selfTune": true,
+    "disableAfterFailures": 3,
+    "retryAfterDays": 7
+  },
+  "artifacts": {
+    "enabled": true
+  }
+}

@@ -11,9 +11,11 @@ source: GitHub Advisories — go-ethereum
 source_url: "https://github.com/ethereum/go-ethereum/security/advisories/GHSA-59hh-656j-3p7v"
 source_id: GHSA-59hh-656j-3p7v
 confidence: 0.89
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.430Z"
+updated: "2026-11-10T11:50:59.719Z"
 ---
 
 # DoS via malicious snap/1 request

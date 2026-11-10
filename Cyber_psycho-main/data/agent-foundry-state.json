@@ -1,0 +1,34 @@
+{
+  "created": [
+    {
+      "id": "bot-custom-auto-governance-quorum",
+      "layer": "Governance",
+      "at": "2026-11-10T07:26:39.257Z",
+      "reason": "Governance had no dedicated specialist while 2 of its surfaces are uncovered (1 critical) and 7 techniques are on file.",
+      "source": "foundry"
+    },
+    {
+      "id": "bot-custom-auto-key-management-keywarden",
+      "layer": "Key Management",
+      "at": "2026-11-10T07:26:28.123Z",
+      "reason": "Key Management had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 0 techniques are on file.",
+      "source": "foundry"
+    },
+    {
+      "id": "bot-custom-auto-supply-chain-provenance",
+      "layer": "Supply Chain",
+      "at": "2026-11-09T23:31:37.018Z",
+      "reason": "Supply Chain had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 6 techniques are on file.",
+      "source": "foundry"
+    },
+    {
+      "id": "bot-custom-auto-infrastructure-uplink",
+      "layer": "Infrastructure",
+      "at": "2026-11-09T23:13:48.093Z",
+      "reason": "Infrastructure had no dedicated specialist while 0 of its surfaces are uncovered (0 critical) and 18 techniques are on file.",
+      "source": "foundry"
+    }
+  ],
+  "dismissed": [],
+  "lastRunAt": "2026-11-10T07:26:39.258Z"
+}

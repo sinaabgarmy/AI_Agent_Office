@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/04/10/checkpoint-9"
 source_id: ef-blog-checkpoint-9-apr-2026
 confidence: 0.71
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-05T16:34:49.376Z"
+updated: "2026-11-10T11:50:59.659Z"
 ---
 
 # Checkpoint #9: Apr 2026

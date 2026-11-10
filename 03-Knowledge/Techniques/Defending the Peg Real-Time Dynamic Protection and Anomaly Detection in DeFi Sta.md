@@ -12,9 +12,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2608.25600v1"
 source_id: arxiv-defending-the-peg-real-time-dynamic-prot
 confidence: 0.82
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, l-bridge, cwe-345]
-updated: "2026-11-05T16:34:49.384Z"
+updated: "2026-11-10T11:50:59.668Z"
 ---
 
 # Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins

@@ -13,9 +13,14 @@ source_id: GHSA-4h4f-925g-8h9p
 confidence: 0.94
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-436]
-updated: "2026-11-05T16:34:49.435Z"
+updated: "2026-11-10T11:50:59.725Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Harvested: 2026-11-04T18:52:17.339Z
 > **Refreshed 2026-11-04T18:54:02.490Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
 > **Refreshed 2026-11-05T16:34:49.435Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
+> **Refreshed 2026-11-09T23:14:19.537Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
+> **Refreshed 2026-11-10T07:26:05.757Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
+> **Refreshed 2026-11-10T08:12:51.676Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
+> **Refreshed 2026-11-10T11:08:39.441Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.
+> **Refreshed 2026-11-10T11:50:59.725Z** — EIP-7702 and sender signature recovery skips the secp256k1 curve-order bound, so native and BouncyCastle backends recover different authorities (consensus split) EIP-7702 code-delegation signature recovery skips the secp256k1 curve-order bound.

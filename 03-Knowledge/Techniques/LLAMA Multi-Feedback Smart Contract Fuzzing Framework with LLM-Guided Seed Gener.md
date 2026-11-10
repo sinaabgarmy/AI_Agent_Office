@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2507.12084v1"
 source_id: arxiv-llama-multi-feedback-smart-contract-fuzz
 confidence: 0.77
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.392Z"
+updated: "2026-11-10T11:50:59.677Z"
 ---
 
 # LLAMA: Multi-Feedback Smart Contract Fuzzing Framework with LLM-Guided Seed Generation

@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-cgvq-9xfq-c54j"
 source_id: GHSA-cgvq-9xfq-c54j
 confidence: 0.82
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-20]
-updated: "2026-11-05T16:34:49.435Z"
+updated: "2026-11-10T11:50:59.725Z"
 ---
 
 # Besu accepts RLP-wrapped typed transactions in… — in ExecutionPayload block bodies

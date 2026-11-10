@@ -48,7 +48,10 @@ export const VAULT_FOLDERS = [
   '08-System-Logs',
   '09-Hunt-Targets',
   '10-Datasets',
-  '11-Reports'
+  '11-Reports',
+  '12-Web-Captures',
+  '13-Scenarios',
+  '14-Artifacts'
 ];
 
 export interface VaultConfig {
@@ -88,6 +91,7 @@ export class ObsidianVault {
   private activityBuffer: VaultActivityItem[] = [];
   private lastSync: string | null = null;
   private bootError: string | null = null;
+  private ready: Promise<void> = Promise.resolve();
 
   constructor(private dataDir: string, private projectRoot: string) {
     this.loadPersistedConfig();
@@ -104,16 +108,65 @@ export class ObsidianVault {
       if (fs.existsSync(this.configFilePath())) {
         const stored = JSON.parse(fs.readFileSync(this.configFilePath(), 'utf8'));
         if (stored?.path && fs.existsSync(stored.path)) {
-          this.activate(stored.path, stored).catch(e => {
+          this.ready = this.activate(stored.path, stored).catch(e => {
             this.bootError = `Vault found in config but failed to open: ${e.message}`;
             console.warn('[Vault]', this.bootError);
           });
+          return;
+        }
+        // The configured folder is gone (vault moved to another drive, or the
+        // project was copied to another PC). Without this, the app silently
+        // boots with NO memory. Recover when the vault is unambiguous: the
+        // app folder sits inside a folder that is itself an Obsidian vault.
+        if (stored?.path) {
+          const relocated = this.findRelocatedVault();
+          if (relocated) {
+            const healed = { ...stored, path: relocated };
+            this.ready = this.activate(relocated, healed).then(() => {
+              try { fs.writeFileSync(this.configFilePath(), JSON.stringify(healed, null, 2)); } catch {}
+              for (const dir of VAULT_FOLDERS) {
+                try { fs.mkdirSync(resolveWithin(relocated, dir), { recursive: true }); } catch {}
+              }
+              console.log(`[Vault] Configured path "${stored.path}" no longer exists — reconnected to the vault found at "${relocated}".`);
+              this.logActivity('system', `Vault path self-healed: "${stored.path}" was missing, reconnected at "${relocated}".`);
+            }).catch(e => {
+              this.bootError = `Vault relocation failed: ${e.message}`;
+              console.warn('[Vault]', this.bootError);
+            });
+            return;
+          }
+          this.bootError = `The configured vault folder "${stored.path}" does not exist on this PC. Reconnect it in the Knowledge Vault tab.`;
+          console.warn('[Vault]', this.bootError);
         }
       }
     } catch (e) {
       console.warn('[Vault] Config load failed:', e);
     }
   }
+
+  /**
+   * Looks for the vault this app evidently belongs to: the nearest ancestor
+   * of the project folder that contains BOTH an `.obsidian` settings folder
+   * and the ChronoZero `00-System` folder. Returns null when ambiguous.
+   */
+  private findRelocatedVault(): string | null {
+    try {
+      let dir = path.resolve(this.projectRoot);
+      for (let i = 0; i < 3; i++) {
+        const parent = path.resolve(dir, '..');
+        if (parent === dir) break;
+        dir = parent;
+        if (fs.existsSync(path.join(dir, '.obsidian')) && fs.existsSync(path.join(dir, '00-System'))) return dir;
+      }
+    } catch { /* fall through */ }
+    return null;
+  }
+
+  /** Resolves once the persisted vault (if any) has finished opening. */
+  whenReady(): Promise<void> { return this.ready; }
+
+  /** Absolute path of the app folder — callers use it to keep the app out of vault scans. */
+  getProjectRoot(): string { return this.projectRoot; }
 
   isConnected(): boolean { return !!(this.config && this.index); }
   getConfig(): VaultConfig | null { return this.config; }
@@ -206,7 +259,25 @@ export class ObsidianVault {
           attachmentFolderPath: '_attachments'
         }, null, 2));
       }
+      this.excludeAppFolderFromObsidian(vaultPath, appJson);
     } catch { /* Obsidian will create its own defaults */ }
+  }
+
+  /**
+   * When the app folder lives INSIDE the vault, Obsidian indexes thousands of
+   * node_modules README files into search and the graph. Add the app folder
+   * to Obsidian's "Excluded files" list — only when the operator has not
+   * configured that list themselves.
+   */
+  private excludeAppFolderFromObsidian(vaultPath: string, appJson: string): void {
+    try {
+      const rel = path.relative(vaultPath, this.projectRoot).replace(/\\/g, '/');
+      if (!rel || rel.startsWith('..') || path.isAbsolute(rel)) return; // app is outside the vault
+      const settings = JSON.parse(fs.readFileSync(appJson, 'utf8'));
+      if (Array.isArray(settings.userIgnoreFilters)) return; // operator-owned setting
+      settings.userIgnoreFilters = [`${rel}/`];
+      fs.writeFileSync(appJson, JSON.stringify(settings, null, 2));
+    } catch { /* cosmetic only */ }
   }
 
   /* --------------------------- note I/O ---------------------------- */
@@ -360,8 +431,12 @@ export class ObsidianVault {
       fs.writeFileSync(destAbs, content, 'utf8');
       fs.unlinkSync(srcAbs);
 
-      index.removeNote(relPath);
+      // Read the index entry and its links BEFORE removing it — the old order
+      // (remove, then read) always saw `undefined`, so every moved note was
+      // re-indexed as an untagged "decision" and lost its links.
       const note = index.getNote(relPath);
+      const priorLinks = index.linksFor(relPath);
+      index.removeNote(relPath);
       const updated: IndexedNote = {
         id: destRel,
         title: filename,
@@ -375,7 +450,7 @@ export class ObsidianVault {
         tokens: note?.tokens ?? tokenize(`${filename} ${parsed.body}`)
       };
       index.upsertNote(updated);
-      for (const l of index.linksFor(relPath)) {
+      for (const l of priorLinks) {
         index.addLink({ ...l, source: destRel });
       }
       return destRel;

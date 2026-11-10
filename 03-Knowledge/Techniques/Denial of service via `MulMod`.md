@@ -13,9 +13,14 @@ source_id: GHSA-jm5c-rv3w-w83m
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.428Z"
+updated: "2026-11-10T11:50:59.714Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ fix this would be to merge the fix into uint256, make a new release of that libr
 - Harvested: 2026-11-04T18:52:17.336Z
 > **Refreshed 2026-11-04T18:54:02.481Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
 > **Refreshed 2026-11-05T16:34:49.427Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+> **Refreshed 2026-11-09T23:14:19.431Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+> **Refreshed 2026-11-10T07:26:05.753Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+> **Refreshed 2026-11-10T08:12:51.671Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+> **Refreshed 2026-11-10T11:08:39.423Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…
+> **Refreshed 2026-11-10T11:50:59.714Z** — Denial of service via MulMod Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…

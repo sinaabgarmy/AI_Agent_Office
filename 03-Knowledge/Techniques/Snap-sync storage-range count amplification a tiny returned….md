@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-h552-3fxr-chmx"
 source_id: GHSA-h552-3fxr-chmx
 confidence: 0.78
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-400]
-updated: "2026-11-05T16:34:49.449Z"
+updated: "2026-11-10T11:50:59.732Z"
 ---
 
 # Snap-sync storage-range count amplification: a tiny returned…

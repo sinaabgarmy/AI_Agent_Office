@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-f429-4669-7rpx"
 source_id: GHSA-f429-4669-7rpx
 confidence: 0.63
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-287]
-updated: "2026-11-05T16:34:49.451Z"
+updated: "2026-11-10T11:50:59.733Z"
 ---
 
 # Engine API JWT secret exposed in application logs when ephemeral key file cannot be written

@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/05/11/protocol-update-may-26"
 source_id: ef-blog-protocol-cluster-updates-may-2026
 confidence: 0.6
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.368Z"
+updated: "2026-11-10T11:50:59.652Z"
 ---
 
 # Protocol Cluster Updates: May 2026

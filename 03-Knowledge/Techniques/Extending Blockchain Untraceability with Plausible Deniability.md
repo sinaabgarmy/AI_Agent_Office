@@ -13,9 +13,14 @@ source_id: arxiv-extending-blockchain-untraceability-with
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.400Z"
+updated: "2026-11-10T11:50:59.684Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-04T18:52:17.400Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
 > **Refreshed 2026-11-04T18:54:02.455Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
 > **Refreshed 2026-11-05T16:34:49.400Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-09T23:14:18.994Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-10T07:26:05.738Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-10T08:12:51.649Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-10T11:08:39.353Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.
+> **Refreshed 2026-11-10T11:50:59.684Z** — This paper studies a stronger goal: whether the transfer event itself can be made unobservable by blending into common decentralized-finance (DeFi) activity.

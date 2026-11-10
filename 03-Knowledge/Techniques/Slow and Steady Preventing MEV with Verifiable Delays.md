@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2608.13271v1"
 source_id: arxiv-slow-and-steady-preventing-mev-with-veri
 confidence: 0.57
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-664]
-updated: "2026-11-05T16:34:49.406Z"
+updated: "2026-11-10T11:50:59.691Z"
 ---
 
 # Slow and Steady: Preventing MEV with Verifiable Delays

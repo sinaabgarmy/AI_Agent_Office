@@ -13,9 +13,14 @@ source_id: ef-blog-announcing-a-trillion-dollar-security-gr
 confidence: 0.6
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.367Z"
+updated: "2026-11-10T11:50:59.650Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-04T18:52:17.372Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
 > **Refreshed 2026-11-04T18:54:02.429Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
 > **Refreshed 2026-11-05T16:34:49.367Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
+> **Refreshed 2026-11-09T23:14:18.659Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
+> **Refreshed 2026-11-10T07:26:05.720Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
+> **Refreshed 2026-11-10T08:12:51.625Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
+> **Refreshed 2026-11-10T11:08:39.278Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.
+> **Refreshed 2026-11-10T11:50:59.650Z** — Announcing a Trillion Dollar Security grant for WEBCAT The Ethereum Foundation’s Trillion Dollar Security (1TS) initiative is proud to announce a grant allocation to Freedom of the Press Foundation (FPF) to support the continued development of WEBCAT.

@@ -17,10 +17,20 @@ source: NVD — Solidity CVEs — tech-zksolc-all-llvm-versions-since-2015-fold-
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2024-45056"
 confidence: 0.94
 created: "2026-11-05T16:15:55.468Z"
-times_used: 0
+times_used: 179
 tags: [skill, hunt, execution, cwe-682]
-updated: "2026-11-05T16:35:51.816Z"
+updated: "2026-11-10T12:06:24.774Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt zksolc — All LLVM versions since 2015 fold `(xor (shl 1, x), -1)` to `(rotl ~1, x)` if…
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-682 · **Confidence:** 94%
@@ -52,3 +62,12 @@ workarounds for this vulnerability
 - NVD — Solidity CVEs — tech-zksolc-all-llvm-versions-since-2015-fold-xor
 - https://nvd.nist.gov/vuln/detail/CVE-2024-45056
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.177Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-09T23:23:30.784Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T07:26:24.967Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T07:27:22.251Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T07:28:19.689Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T07:30:39.130Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T07:31:07.311Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T11:49:59.843Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.
+> **Refreshed 2026-11-10T12:06:24.774Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.

@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2601.06914v1"
 source_id: arxiv-towards-compositional-generalization-in
 confidence: 0.89
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-362]
-updated: "2026-11-05T16:34:49.394Z"
+updated: "2026-11-10T11:50:59.679Z"
 ---
 
 # Towards Compositional Generalization in LLMs for Smart… — Towards Compositional Generalization in LLMs for…

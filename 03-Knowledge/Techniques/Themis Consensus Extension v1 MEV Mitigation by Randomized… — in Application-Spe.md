@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2607.21406v1"
 source_id: arxiv-themis-consensus-extension-v1-mev-mitiga
 confidence: 0.89
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-330]
-updated: "2026-11-05T16:34:49.402Z"
+updated: "2026-11-10T11:50:59.686Z"
 ---
 
 # Themis Consensus Extension v1: MEV Mitigation by Randomized… — in Application-Specific Blockchains

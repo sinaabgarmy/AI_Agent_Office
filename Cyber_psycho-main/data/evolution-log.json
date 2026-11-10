@@ -1,0 +1,229 @@
+[
+  {
+    "id": "chg-mwadfo18-wtcjr",
+    "at": "2026-11-10T07:31:12.620Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261110-073112.html, scenario-pack-20261110-073112.html, skill-audit-20261110-073112.html."
+  },
+  {
+    "id": "chg-mwadfiwx-95tfg",
+    "at": "2026-11-10T07:31:05.985Z",
+    "kind": "web",
+    "summary": "Web research on 3 gap(s): 1 page(s) filed, 0 flagged, 0 technique(s) distilled.",
+    "detail": "RISC-V"
+  },
+  {
+    "id": "chg-mwadf44r-g300b",
+    "at": "2026-11-10T07:30:46.827Z",
+    "kind": "vault",
+    "summary": "Vault reconciled with disk: 0 new, 63 changed, 0 removed (524 notes)."
+  },
+  {
+    "id": "chg-mwadc1sd-z3jpo",
+    "at": "2026-11-10T07:28:23.821Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261110-072823.html, scenario-pack-20261110-072823.html, skill-audit-20261110-072823.html."
+  },
+  {
+    "id": "chg-mwadc0bs-kamp9",
+    "at": "2026-11-10T07:28:21.928Z",
+    "kind": "scenario",
+    "summary": "Generated 3 debate scenario(s): \"MPC Custody Provider Concentration\" [surface]; \"Defect path: Data-Availability Fee Market Starvation → Signature Malleability Enabling Message Replay → Restaked Security Correlated Slashing\" [path]; \"Besu's DiscV4 UDP discovery remote DoS\" [intel].",
+    "detail": "2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario."
+  },
+  {
+    "id": "chg-mwadbxuw-44278",
+    "at": "2026-11-10T07:28:18.728Z",
+    "kind": "config",
+    "summary": "Autopilot tuned settings: webCapture.maxQueries: 3 → 4",
+    "detail": "3 of 5 pages were worth filing"
+  },
+  {
+    "id": "chg-mwadbxuv-ldmnm",
+    "at": "2026-11-10T07:28:18.727Z",
+    "kind": "web",
+    "summary": "Web research on 3 gap(s): 3 page(s) filed, 0 flagged, 3 technique(s) distilled.",
+    "detail": "History of bitcoin · Deforestation · Scam centers in Cambodia"
+  },
+  {
+    "id": "chg-mwadbn4k-bf272",
+    "at": "2026-11-10T07:28:04.820Z",
+    "kind": "vault",
+    "summary": "Vault reconciled with disk: 0 new, 68 changed, 0 removed (515 notes)."
+  },
+  {
+    "id": "chg-mwadatlz-vurk0",
+    "at": "2026-11-10T07:27:26.567Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261110-072726.html, scenario-pack-20261110-072726.html, skill-audit-20261110-072726.html."
+  },
+  {
+    "id": "chg-mwadas2z-icwhc",
+    "at": "2026-11-10T07:27:24.587Z",
+    "kind": "scenario",
+    "summary": "Generated 3 debate scenario(s): \"Security Council as a Permanent Upgrade Path\" [surface]; \"Defect path: MPC Custody Provider Concentration → Permit2 Signature Replay Across Nonces → Prover Market Liveness Failure\" [path]; \"A permissionless non-validator peer can halt QBFT finality…\" [intel].",
+    "detail": "2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario."
+  },
+  {
+    "id": "chg-mwadapg7-tf40e",
+    "at": "2026-11-10T07:27:21.175Z",
+    "kind": "web",
+    "summary": "Web research on 3 gap(s): 1 page(s) filed, 0 flagged, 1 technique(s) distilled.",
+    "detail": "Blockchain"
+  },
+  {
+    "id": "chg-mwad9t46-7rmfx",
+    "at": "2026-11-10T07:26:39.270Z",
+    "kind": "agent",
+    "summary": "Taught 7 technique assignment(s) after the roster change."
+  },
+  {
+    "id": "chg-mwad9t3v-j9fks",
+    "at": "2026-11-10T07:26:39.259Z",
+    "kind": "agent",
+    "summary": "Hired Idris Vale (@Quorum) — Governance Security Analyst.",
+    "detail": "Governance had no dedicated specialist while 2 of its surfaces are uncovered (1 critical) and 7 techniques are on file."
+  },
+  {
+    "id": "chg-mwad9ldn-vexd1",
+    "at": "2026-11-10T07:26:29.243Z",
+    "kind": "config",
+    "summary": "Operator changed settings: webCapture.trustWeb: false → true"
+  },
+  {
+    "id": "chg-mwad9lcf-klm1r",
+    "at": "2026-11-10T07:26:29.199Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261110-072629.html, scenario-pack-20261110-072629.html, skill-audit-20261110-072629.html."
+  },
+  {
+    "id": "chg-mwad9kil-er85f",
+    "at": "2026-11-10T07:26:28.125Z",
+    "kind": "agent",
+    "summary": "Hired Mara Okafor (@KeyWarden) — Key Management Auditor.",
+    "detail": "Key Management had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 0 techniques are on file."
+  },
+  {
+    "id": "chg-mwad9jpr-ymcv0",
+    "at": "2026-11-10T07:26:27.087Z",
+    "kind": "scenario",
+    "summary": "Generated 3 debate scenario(s): \"Shared Sequencer Cross-Rollup Atomicity\" [surface]; \"Defect path: Model-Driven Delegate Capture → Prover Market Liveness Failure → Intent Solver Collusion and Quote Shading\" [path]; \"OpenZeppelin Contracts initializer reentrancy may lead to double initialization\" [intel].",
+    "detail": "2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario."
+  },
+  {
+    "id": "chg-mwad9i3t-oqp0s",
+    "at": "2026-11-10T07:26:25.001Z",
+    "kind": "skill",
+    "summary": "Built 21 new skill(s) from current techniques, gaps and discoveries (61 active)."
+  },
+  {
+    "id": "chg-mwad9hby-1v0t6",
+    "at": "2026-11-10T07:26:23.998Z",
+    "kind": "web",
+    "summary": "Web research on 3 gap(s): 2 page(s) filed, 0 flagged, 2 technique(s) distilled (quarantined until released).",
+    "detail": "Proton AG · Avalanche (blockchain platform)"
+  },
+  {
+    "id": "chg-mwad93bt-3be6g",
+    "at": "2026-11-10T07:26:05.849Z",
+    "kind": "vault",
+    "summary": "Vault reconciled with disk: 0 new, 245 changed, 0 removed (478 notes)."
+  },
+  {
+    "id": "chg-mw9waxn7-fz0q1",
+    "at": "2026-11-09T23:31:38.323Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261109-233138.html, scenario-pack-20261109-233138.html, skill-audit-20261109-233138.html."
+  },
+  {
+    "id": "chg-mw9wawu2-34y25",
+    "at": "2026-11-09T23:31:37.274Z",
+    "kind": "agent",
+    "summary": "Taught 6 technique assignment(s) after the roster change."
+  },
+  {
+    "id": "chg-mw9wawnp-by7oi",
+    "at": "2026-11-09T23:31:37.045Z",
+    "kind": "agent",
+    "summary": "Hired Noor Haddad (@Provenance) — Supply Chain Security Analyst.",
+    "detail": "Supply Chain had no dedicated specialist while 3 of its surfaces are uncovered (1 critical) and 6 techniques are on file."
+  },
+  {
+    "id": "chg-mw9wavxf-65q3p",
+    "at": "2026-11-09T23:31:36.099Z",
+    "kind": "scenario",
+    "summary": "Generated 3 debate scenario(s): \"Restaked Security Correlated Slashing\" [surface]; \"Defect path: Security Council as a Permanent Upgrade Path → Restaked Security Correlated Slashing → Shared Sequencer Cross-Rollup Atomicity\" [path]; \"TimelockController vulnerability in OpenZeppelin Contracts\" [intel].",
+    "detail": "2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario."
+  },
+  {
+    "id": "chg-mw9w0imf-o0vas",
+    "at": "2026-11-09T23:23:32.295Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261109-232332.html, scenario-pack-20261109-232332.html, skill-audit-20261109-232332.html."
+  },
+  {
+    "id": "chg-mw9w0i56-2s8t0",
+    "at": "2026-11-09T23:23:31.674Z",
+    "kind": "skill",
+    "summary": "Retired 20 skill(s): 3 off-domain, 17 not-a-defect. Notes archived, restorable.",
+    "detail": "Hunt GNU Bourne-Again Shell (Bash) Arbitrary Code Execution… — GNU Bourne-Again Shell (Bash) Arbitrary Code… · Hunt OSGeo GeoServer Improper Restriction of XML External Entity… · Hunt Broadcom VMware Aria Operations and VMware Tools Privilege… — Broadcom VMware Aria Operations and VMware… · Hunt Clear Signing: Making Transaction Approvals Safer on Ethereum"
+  },
+  {
+    "id": "chg-mw9w0i32-7czgi",
+    "at": "2026-11-09T23:23:31.598Z",
+    "kind": "skill",
+    "summary": "Built 17 new skill(s) from current techniques, gaps and discoveries (60 active)."
+  },
+  {
+    "id": "chg-mw9vo0jm-g5pj2",
+    "at": "2026-11-09T23:13:48.994Z",
+    "kind": "artifact",
+    "summary": "Published 3 artifact(s): system-brief-20261109-231348.html, scenario-pack-20261109-231348.html, skill-audit-20261109-231348.html."
+  },
+  {
+    "id": "chg-mw9vo063-azw46",
+    "at": "2026-11-09T23:13:48.507Z",
+    "kind": "agent",
+    "summary": "Taught 18 technique assignment(s) after the roster change."
+  },
+  {
+    "id": "chg-mw9vnzv3-tsnrz",
+    "at": "2026-11-09T23:13:48.111Z",
+    "kind": "agent",
+    "summary": "Hired Tomas Reyes (@Uplink) — Node & Network Infrastructure Analyst.",
+    "detail": "Infrastructure had no dedicated specialist while 0 of its surfaces are uncovered (0 critical) and 18 techniques are on file."
+  },
+  {
+    "id": "chg-mw9vnziy-w4cqk",
+    "at": "2026-11-09T23:13:47.674Z",
+    "kind": "scenario",
+    "summary": "Generated 3 debate scenario(s): \"Permit2 Signature Replay Across Nonces\" [surface]; \"OpenZeppelin Contracts Bytes's lastIndexOf function with…\" [intel]; \"Unlinked finding: Apache Struts Remote Code Execution Vulnerability — Apache Struts\" [graph].",
+    "detail": "Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario."
+  },
+  {
+    "id": "chg-mw9vnz3q-hkape",
+    "at": "2026-11-09T23:13:47.126Z",
+    "kind": "skill",
+    "summary": "Retired 19 skill(s): 4 off-domain, 11 not-a-defect, 4 duplicate. Notes archived, restorable.",
+    "detail": "Hunt RISC Zero · Hunt OpenZeppelin Contracts Wizard · Hunt era-compiler-solidity · Hunt Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver"
+  },
+  {
+    "id": "chg-mw9vnz26-x31hh",
+    "at": "2026-11-09T23:13:47.070Z",
+    "kind": "skill",
+    "summary": "Built 15 new skill(s) from current techniques, gaps and discoveries (62 active)."
+  },
+  {
+    "id": "chg-mw9vnsp7-len9t",
+    "at": "2026-11-09T23:13:38.827Z",
+    "kind": "vault",
+    "summary": "Vault reconciled with disk: 0 new, 2 changed, 0 removed (365 notes)."
+  },
+  {
+    "id": "chg-mw9vnsp7-tqmji",
+    "at": "2026-11-09T23:13:38.827Z",
+    "kind": "repair",
+    "summary": "Recovered vesper's lost teachings into \"Memory — 0xNull\" (they were filed under the agent's id, which memory retrieval never reads).",
+    "detail": "stray note moved to .trash/06-Agent-Memory/Individual/Memory — vesper 2026-11-09T23-13-38-825Z.md"
+  }
+]

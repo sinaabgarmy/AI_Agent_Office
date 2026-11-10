@@ -11,9 +11,11 @@ source: CISA — Known Exploited Vulnerabilities
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2023-41061"
 source_id: CVE-2023-41061
 confidence: 0.62
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.357Z"
+updated: "2026-11-10T11:50:59.641Z"
 ---
 
 # Apple iOS, iPadOS, and watchOS Wallet Code Execution… — Apple iOS, iPadOS, and watchOS Wallet Code Execution…

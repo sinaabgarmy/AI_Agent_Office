@@ -13,9 +13,14 @@ source_id: GHSA-4h98-2769-gh6h
 confidence: 0.96
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.460Z"
+updated: "2026-11-10T11:50:59.746Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 - Harvested: 2026-11-04T18:52:17.343Z
 > **Refreshed 2026-11-04T18:54:02.507Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
 > **Refreshed 2026-11-05T16:34:49.460Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-09T23:14:19.727Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-10T07:26:05.766Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-10T08:12:51.689Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-10T11:08:39.473Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.
+> **Refreshed 2026-11-10T11:50:59.746Z** — ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature format.

@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2508.17964v3"
 source_id: arxiv-movescanner-analysis-of-security-risks-o
 confidence: 0.68
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.391Z"
+updated: "2026-11-10T11:50:59.676Z"
 ---
 
 # MoveScanner: Analysis of Security Risks of Move Smart Contracts

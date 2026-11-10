@@ -17,11 +17,20 @@ source: ChronoZero Surface Engine
 source_url: ""
 confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
-times_used: 0
+times_used: 803
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-05T16:35:51.837Z"
+updated: "2026-11-10T12:06:24.784Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,3 +65,12 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.664Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
 > **Refreshed 2026-11-05T16:35:51.837Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-09T23:13:46.948Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-09T23:23:31.201Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T07:26:24.974Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T07:27:22.258Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T07:28:19.695Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T07:30:39.137Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T07:31:07.320Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T11:49:59.855Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".
+> **Refreshed 2026-11-10T12:06:24.784Z** — When the council opens a debate on Permit2 Signature Replay Across Nonces, or when auditing a system that matches "A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.".

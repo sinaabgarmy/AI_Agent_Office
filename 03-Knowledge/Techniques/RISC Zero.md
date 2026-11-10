@@ -13,9 +13,14 @@ source_id: CVE-2025-52884
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, execution, cwe-159]
-updated: "2026-11-05T16:34:49.345Z"
+updated: "2026-11-10T11:50:59.627Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ fix has been released as part of risc0-ethereum 2
 > **Refreshed 2026-11-04T18:52:17.350Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
 > **Refreshed 2026-11-04T18:54:02.411Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
 > **Refreshed 2026-11-05T16:34:49.344Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
+> **Refreshed 2026-11-09T23:14:18.340Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
+> **Refreshed 2026-11-10T07:26:05.707Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
+> **Refreshed 2026-11-10T08:12:51.609Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
+> **Refreshed 2026-11-10T11:08:39.219Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.
+> **Refreshed 2026-11-10T11:50:59.627Z** — Because the digest is zero, it does not correspond to any block and there exist no known openings.

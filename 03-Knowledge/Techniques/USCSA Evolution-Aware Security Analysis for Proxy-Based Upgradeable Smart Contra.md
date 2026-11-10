@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2512.08372v3"
 source_id: arxiv-uscsa-evolution-aware-security-analysis
 confidence: 0.97
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-362]
-updated: "2026-11-05T16:34:49.387Z"
+updated: "2026-11-10T11:50:59.673Z"
 ---
 
 # USCSA: Evolution-Aware Security Analysis for Proxy-Based Upgradeable Smart Contracts

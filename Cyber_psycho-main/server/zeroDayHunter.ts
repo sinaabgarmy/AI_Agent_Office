@@ -370,7 +370,41 @@ export class ZeroDayHunter {
   } {
     const limit = Math.min(options.limit ?? 40, 200);
     const state = this.readState();
+    const { targets: deduped, exhausted, totalCombinations: total } = this.enumerate(options);
 
+    // Mark previously-hunted targets.
+    const huntedSet = new Set(state.hunted);
+    const fresh = deduped.filter(t => !huntedSet.has(t.id));
+
+    state.hunted = Array.from(new Set([...state.hunted, ...fresh.map(t => t.id)])).slice(-500);
+    state.lastSweepAt = new Date().toISOString();
+    state.sweepLog.unshift({ at: state.lastSweepAt, targets: deduped.length, newTargets: fresh.length });
+    state.sweepLog = state.sweepLog.slice(0, 12);
+    this.writeState(state);
+
+    return {
+      targets: fresh.slice(0, limit),
+      newTargets: fresh.length,
+      exhausted,
+      totalCombinations: total,
+    };
+  }
+
+  /**
+   * Every open hunt target, ranked — WITHOUT recording anything.
+   *
+   * `sweep` returns only targets it has not handed out before and marks
+   * them as hunted. The "list / promote / report" routes used to call
+   * `sweep({ limit: 0 })` to look a target up, which (a) sliced the result
+   * to zero items and (b) marked every target as hunted — so a target could
+   * never be found again and promotion always answered 404. Lookups go
+   * through this read-only method instead.
+   */
+  enumerate(options: { includeGraphDerived?: boolean } = {}): {
+    targets: HuntTarget[];
+    exhausted: number;
+    totalCombinations: number;
+  } {
     // ---- what has already been argued ----
     const arguedTerms = new Map<string, Set<string>>();
     const addArgued = (layer: string, term: string) => {
@@ -443,22 +477,7 @@ export class ZeroDayHunter {
       return true;
     }).sort((a, b) => b.priority - a.priority);
 
-    // Mark previously-hunted targets.
-    const huntedSet = new Set(state.hunted);
-    const fresh = deduped.filter(t => !huntedSet.has(t.id));
-
-    state.hunted = Array.from(new Set([...state.hunted, ...fresh.map(t => t.id)])).slice(-500);
-    state.lastSweepAt = new Date().toISOString();
-    state.sweepLog.unshift({ at: state.lastSweepAt, targets: deduped.length, newTargets: fresh.length });
-    state.sweepLog = state.sweepLog.slice(0, 12);
-    this.writeState(state);
-
-    return {
-      targets: fresh.slice(0, limit),
-      newTargets: fresh.length,
-      exhausted,
-      totalCombinations: total,
-    };
+    return { targets: deduped, exhausted, totalCombinations: total };
   }
 
   private buildTarget(p: Primitive, s: Surface, priority: number, discovery: HuntTarget['discovery'], graphBasis?: string[]): HuntTarget {

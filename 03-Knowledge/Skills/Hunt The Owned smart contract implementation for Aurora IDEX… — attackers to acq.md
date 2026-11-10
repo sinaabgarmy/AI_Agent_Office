@@ -19,8 +19,18 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-841]
-updated: "2026-11-05T16:35:51.821Z"
+updated: "2026-11-10T12:06:24.777Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt The Owned smart contract implementation for Aurora IDEX… — attackers to acquire contract ownership because…
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-841 · **Confidence:** 91%
@@ -52,3 +62,12 @@ Never make an external call before final state mutation; validate the return val
 - NVD — Ethereum CVEs — tech-the-owned-smart-contract-implementation-for
 - https://nvd.nist.gov/vuln/detail/CVE-2018-10666
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.360Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-09T23:23:30.865Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:26:24.970Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:27:22.253Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:28:19.691Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:30:39.132Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:31:07.314Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T11:49:59.847Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T12:06:24.777Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.

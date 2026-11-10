@@ -5,7 +5,7 @@ name: ZeroCipher
 ideology: Formal Cryptography
 is_custom: false
 tags: [agent]
-updated: "2026-11-07T16:19:37.838Z"
+updated: "2026-11-10T11:07:47.359Z"
 ---
 
 # ZeroCipher (@ZeroCipher)

@@ -27,6 +27,8 @@ import { isoTimestamp, localDateStamp, slugify } from './paths';
 /* Domain matrix                                                       */
 /* ------------------------------------------------------------------ */
 
+import { FRONTIER_2030 } from './surfaceFrontier';
+
 export type SurfaceLayer =
   | 'Consensus'
   | 'Cryptography'
@@ -59,6 +61,8 @@ export interface SurfaceCell {
   suitedAgents: string[];
   /** Terms that mark this surface as "covered" in vault text. */
   keywords: string[];
+  /** '2030' marks a forward-looking surface from the frontier catalogue. */
+  era?: '2030';
 }
 
 export interface SurfaceCoverage {
@@ -95,6 +99,7 @@ export interface SurfaceGap {
   gapReason: string;
   /** Present when the gap was turned into a debate scenario. */
   scenarioId?: string;
+  era?: '2030';
 }
 
 /**
@@ -680,6 +685,10 @@ export const SURFACE_MATRIX: SurfaceCell[] = [
   },
 ];
 
+// The forward-looking catalogue lives in its own file so it can grow
+// without touching the established matrix.
+SURFACE_MATRIX.push(...FRONTIER_2030);
+
 /* ------------------------------------------------------------------ */
 /* Coverage scoring                                                   */
 /* ------------------------------------------------------------------ */
@@ -857,6 +866,7 @@ export class SurfaceEngine {
         suitedAgents: c.cell.suitedAgents,
         coverage: c.coverage,
         gapReason: c.gapReason,
+        era: c.cell.era,
         scenarioId: state.promoted.includes(c.cell.id) ? `surface-${c.cell.id}` : undefined,
       }));
   }

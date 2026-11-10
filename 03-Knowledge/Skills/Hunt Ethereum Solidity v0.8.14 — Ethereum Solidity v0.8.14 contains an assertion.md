@@ -19,8 +19,18 @@ confidence: 0.75
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-617]
-updated: "2026-11-05T16:35:51.819Z"
+updated: "2026-11-10T12:06:24.775Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt Ethereum Solidity v0.8.14 — Ethereum Solidity v0.8.14 contains an assertion failure via…
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-617 · **Confidence:** 75%
@@ -52,3 +62,12 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - NVD — Solidity CVEs — tech-ethereum-solidity-v0-8-14-ethereum-solidity
 - https://nvd.nist.gov/vuln/detail/CVE-2022-33069
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.243Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-09T23:23:30.804Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T07:26:24.968Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T07:27:22.252Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T07:28:19.689Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T07:30:39.130Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T07:31:07.312Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T11:49:59.843Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.
+> **Refreshed 2026-11-10T12:06:24.775Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-617.

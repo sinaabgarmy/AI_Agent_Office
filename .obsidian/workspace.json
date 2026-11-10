@@ -30,13 +30,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Features/New_Features_V2.md",
+                "file": "Personal_Investigation/Q & A.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "New_Features_V2"
+              "title": "Q & A"
             }
           }
         ],
@@ -135,8 +135,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "02c795da42a57339",
@@ -210,7 +209,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Features/New_Features_V2.md",
+                "file": "Personal_Investigation/Q & A.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -240,26 +239,27 @@
   },
   "active": "4199200cde267310",
   "lastOpenFiles": [
-    "Features/New_Features_V1.md",
+    "Personal_Investigation/Q & A.md",
+    "Personal_Investigation",
     "Features/New_Features_V2.md",
+    "Cyber_psycho-main/scripts/export-sarif.ts",
+    "Cyber_psycho-main/scripts/chrono-replay.ts",
+    "Cyber_psycho-main/scripts/vault-lint.ts",
+    "Cyber_psycho-main/eval/holdout.json",
+    "Cyber_psycho-main/eval/metrics.ts",
+    "Cyber_psycho-main/eval/corpus",
+    "Cyber_psycho-main/server/verification/RemediationVerification.ts",
+    "Cyber_psycho-main/server/analysis/adapters/echidna.ts",
+    "Cyber_psycho-main/server/analysis/adapters/slither.ts",
+    "Features/New_Features_V1.md",
     "Features/New_Feature_V0.md",
     "03-Knowledge/Claims/Claim so-zerocipher-what-exact-invariant-keeps-holding 2.md",
     "03-Knowledge/Claims/Claim prove-it-give-me-one-concrete-state-where-the-va.md",
     "03-Knowledge/Claims/Claim never-audit-source-the-only-truth-is-the-opcode.md",
-    "Features",
-    "Cyber_psycho-main/server/bus-test.ts",
     "03-Knowledge/Claims/Claim stop-that-claim-is-wrong-in-production-0xnull 2.md",
     "03-Knowledge/Claims/Claim after-that-your-economic-security-is-denominated 3.md",
     "03-Knowledge/Claims/Claim every-one-of-these-sub-arguments-assumes-the-con 2.md",
     "03-Knowledge/Claims/Claim if-the-protocol-consults-stale-pricing-without-f 2.md",
-    "Cyber_psycho-main/data/knowledge-index.db-shm",
-    "Cyber_psycho-main/data/knowledge-index.db-wal",
-    "Cyber_psycho-main/data/knowledge-index.db",
-    "Cyber_psycho-main/data/evidence-ledger.sqlite-shm",
-    "Cyber_psycho-main/data/evidence-ledger.sqlite-wal",
-    "Cyber_psycho-main/data/evidence-ledger.sqlite",
-    "Cyber_psycho-main/node_modules/better-sqlite3/build/Release/better_sqlite3.node",
-    "Cyber_psycho-main/node_modules/better-sqlite3/build/Release",
     "Cyber_psycho-main/node_modules/minimist/README.md",
     "Cyber_psycho-main/node_modules/napi-build-utils/README.md",
     "Cyber_psycho-main/node_modules/string_decoder/README.md",
@@ -275,7 +275,6 @@
     "Cyber_psycho-main/node_modules/buffer/README.md",
     "Cyber_psycho-main/node_modules/buffer/AUTHORS.md",
     "Cyber_psycho-main/node_modules/better-sqlite3/README.md",
-    "Cyber_psycho-main/node_modules/util-deprecate/History.md",
     "Pasted image 20261104194734.png"
   ]
 }

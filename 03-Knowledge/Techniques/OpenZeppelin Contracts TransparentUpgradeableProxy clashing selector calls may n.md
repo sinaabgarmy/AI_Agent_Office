@@ -11,9 +11,11 @@ source: "OSV — @openzeppelin/contracts"
 source_url: "https://github.com/advisories/GHSA-mx2q-35m2-x2rh"
 source_id: GHSA-mx2q-35m2-x2rh
 confidence: 0.74
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-436]
-updated: "2026-11-05T16:34:49.418Z"
+updated: "2026-11-10T11:50:59.700Z"
 ---
 
 # OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated

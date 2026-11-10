@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2607.28424v2"
 source_id: arxiv-demystifying-solana-bots-from-github-blu
 confidence: 0.71
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.385Z"
+updated: "2026-11-10T11:50:59.668Z"
 ---
 
 # Demystifying Solana Bots: From GitHub Blueprints to On-Chain Fingerprints

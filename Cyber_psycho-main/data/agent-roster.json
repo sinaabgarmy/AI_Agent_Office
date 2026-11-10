@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bot-custom-auto-infrastructure-uplink",
+    "handle": "@Uplink",
+    "name": "Tomas Reyes",
+    "layers": [
+      "Infrastructure"
+    ],
+    "source": "foundry",
+    "addedAt": "2026-11-09T23:13:48.093Z"
+  },
+  {
+    "id": "bot-custom-auto-supply-chain-provenance",
+    "handle": "@Provenance",
+    "name": "Noor Haddad",
+    "layers": [
+      "Supply Chain"
+    ],
+    "source": "foundry",
+    "addedAt": "2026-11-09T23:31:37.018Z"
+  },
+  {
+    "id": "bot-custom-auto-key-management-keywarden",
+    "handle": "@KeyWarden",
+    "name": "Mara Okafor",
+    "layers": [
+      "Key Management"
+    ],
+    "source": "foundry",
+    "addedAt": "2026-11-10T07:26:28.123Z"
+  },
+  {
+    "id": "bot-custom-auto-governance-quorum",
+    "handle": "@Quorum",
+    "name": "Idris Vale",
+    "layers": [
+      "Governance"
+    ],
+    "source": "foundry",
+    "addedAt": "2026-11-10T07:26:39.257Z"
+  }
+]

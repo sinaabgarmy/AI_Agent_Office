@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-qfmh-cxw4-9h66"
 source_id: GHSA-qfmh-cxw4-9h66
 confidence: 0.93
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.434Z"
+updated: "2026-11-10T11:50:59.724Z"
 ---
 
 # debug_traceTransaction and trace_* RPC methods missing…

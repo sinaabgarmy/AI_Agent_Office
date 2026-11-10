@@ -13,9 +13,14 @@ source_id: tob-blog-state-divergence-enables-unauthorized-ac
 confidence: 0.81
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-05T16:34:49.379Z"
+updated: "2026-11-10T11:50:59.662Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 > **Refreshed 2026-11-04T18:52:17.381Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
 > **Refreshed 2026-11-04T18:54:02.440Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
 > **Refreshed 2026-11-05T16:34:49.379Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-09T23:14:18.818Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-10T07:26:05.728Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-10T08:12:51.633Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-10T11:08:39.308Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="
+> **Refreshed 2026-11-10T11:50:59.662Z** — State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href="

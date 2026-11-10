@@ -238,5 +238,3 @@ Kimi recommends **Phase 1.1 (Slither)** first. I'd respectfully start with **`co
 - and it makes the existing 5 debates replayable instead of anecdotal.
 
 Then wire Slither behind `CompilationArtifact`, and the very first metric you print is: *"did detector + structured debate beat the current 2-turn baseline on the holdout set?"* That's the moment it stops being a debate simulator and starts being a lab.
-
-If you paste the `git ls-files` output + those two engine headers, I'll convert this into a numbered GitHub issue list with acceptance criteria per file. Want me to begin with the `RunManifest` + `vault-lint` PR, or with the repo-grounded re-audit first?

@@ -13,9 +13,14 @@ source_id: ef-blog-this-is-fine-until-the-grant-runs-out
 confidence: 0.64
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.360Z"
+updated: "2026-11-10T11:50:59.644Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-04T18:52:17.366Z** — This Is Fine (Until the Grant Runs Out) The commons called.
 > **Refreshed 2026-11-04T18:54:02.424Z** — This Is Fine (Until the Grant Runs Out) The commons called.
 > **Refreshed 2026-11-05T16:34:49.360Z** — This Is Fine (Until the Grant Runs Out) The commons called.
+> **Refreshed 2026-11-09T23:14:18.536Z** — This Is Fine (Until the Grant Runs Out) The commons called.
+> **Refreshed 2026-11-10T07:26:05.717Z** — This Is Fine (Until the Grant Runs Out) The commons called.
+> **Refreshed 2026-11-10T08:12:51.620Z** — This Is Fine (Until the Grant Runs Out) The commons called.
+> **Refreshed 2026-11-10T11:08:39.263Z** — This Is Fine (Until the Grant Runs Out) The commons called.
+> **Refreshed 2026-11-10T11:50:59.644Z** — This Is Fine (Until the Grant Runs Out) The commons called.

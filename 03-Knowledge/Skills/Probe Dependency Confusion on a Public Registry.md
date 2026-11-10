@@ -19,9 +19,18 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, supply-chain, surface-gap]
-updated: "2026-11-05T16:35:51.841Z"
+updated: "2026-11-10T12:06:24.790Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,3 +65,12 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.668Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
 > **Refreshed 2026-11-05T16:35:51.841Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-09T23:13:47.026Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-09T23:23:31.279Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T07:26:24.977Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T07:27:22.261Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T07:28:19.699Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T07:30:39.140Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T07:31:07.328Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T11:49:59.859Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".
+> **Refreshed 2026-11-10T12:06:24.789Z** — When the council opens a debate on Dependency Confusion on a Public Registry, or when auditing a system that matches "A package published to a public registry under a name the build system resolves before the private registry can claim it executes attacker code inside every consumer build.".

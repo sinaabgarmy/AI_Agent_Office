@@ -11,9 +11,11 @@ source: CISA — Known Exploited Vulnerabilities
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2014-7169"
 source_id: CVE-2014-7169
 confidence: 0.63
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.355Z"
+updated: "2026-11-10T11:50:59.637Z"
 ---
 
 # GNU Bourne-Again Shell (Bash) Arbitrary Code Execution… — GNU Bourne-Again Shell (Bash) Arbitrary Code…

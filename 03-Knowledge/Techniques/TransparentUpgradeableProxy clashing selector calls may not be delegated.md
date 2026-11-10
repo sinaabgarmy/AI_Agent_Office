@@ -13,9 +13,14 @@ source_id: GHSA-mx2q-35m2-x2rh
 confidence: 0.74
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.463Z"
+updated: "2026-11-10T11:50:59.751Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 - Harvested: 2026-11-04T18:52:17.344Z
 > **Refreshed 2026-11-04T18:54:02.511Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
 > **Refreshed 2026-11-05T16:34:49.463Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-09T23:14:19.808Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-10T07:26:05.767Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-10T08:12:51.691Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-10T11:08:39.476Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.
+> **Refreshed 2026-11-10T11:50:59.751Z** — TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.

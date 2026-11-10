@@ -19,8 +19,18 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-841]
-updated: "2026-11-05T16:35:51.824Z"
+updated: "2026-11-10T12:06:24.783Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt The mintToken function of a smart contract implementation for… — the owner to increase the total s
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-841 · **Confidence:** 91%
@@ -52,3 +62,12 @@ Never make an external call before final state mutation; validate the return val
 - NVD — Ethereum CVEs — tech-the-minttoken-function-of-a-smart-contract-i
 - https://nvd.nist.gov/vuln/detail/CVE-2018-12078
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.509Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-09T23:23:30.977Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:26:24.973Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:27:22.257Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:28:19.694Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:30:39.135Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:31:07.318Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T11:49:59.852Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T12:06:24.782Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.

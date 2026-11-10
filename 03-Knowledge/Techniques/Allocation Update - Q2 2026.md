@@ -13,9 +13,14 @@ source_id: ef-blog-allocation-update-q2-2026
 confidence: 0.68
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.363Z"
+updated: "2026-11-10T11:50:59.648Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ Source entropy from a CSPRNG with health monitoring; fail closed when the entrop
 > **Refreshed 2026-11-04T18:52:17.369Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
 > **Refreshed 2026-11-04T18:54:02.426Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
 > **Refreshed 2026-11-05T16:34:49.363Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-09T23:14:18.603Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-10T07:26:05.719Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-10T08:12:51.624Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-10T11:08:39.273Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.
+> **Refreshed 2026-11-10T11:50:59.648Z** — Allocation Update - Q2 2026 Q2 2026 carried forward our focus on advancing Ethereum’s resilience and capabilities, supporting key work in zero-knowledge proofs, client diversity, formal verification, and open-source tooling.

@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2606.07363v1"
 source_id: arxiv-on-the-shoulders-of-giants-empowering-au
 confidence: 0.87
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.389Z"
+updated: "2026-11-10T11:50:59.674Z"
 ---
 
 # On the Shoulders of Giants: Empowering Automated Smart Contract Auditing via the GiAnt Corpus

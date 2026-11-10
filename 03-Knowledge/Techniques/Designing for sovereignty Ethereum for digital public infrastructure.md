@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/11/03/digital-pub-infra"
 source_id: ef-blog-designing-for-sovereignty-ethereum-for-d
 confidence: 0.59
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.370Z"
+updated: "2026-11-10T11:50:59.653Z"
 ---
 
 # Designing for sovereignty: Ethereum for digital public infrastructure

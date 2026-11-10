@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-8j3g-67qm-7rqp"
 source_id: GHSA-8j3g-67qm-7rqp
 confidence: 0.84
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, l-bridge, cwe-345]
-updated: "2026-11-05T16:34:49.439Z"
+updated: "2026-11-10T11:50:59.731Z"
 ---
 
 # snap-sync isValidRangeProof accepts a non-empty range as… — when the full subtrie is supplied as proof

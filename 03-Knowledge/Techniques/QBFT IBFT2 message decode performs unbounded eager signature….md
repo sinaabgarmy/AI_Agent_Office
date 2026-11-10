@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-m886-r6ch-pjvr"
 source_id: GHSA-m886-r6ch-pjvr
 confidence: 0.92
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-400]
-updated: "2026-11-05T16:34:49.437Z"
+updated: "2026-11-10T11:50:59.727Z"
 ---
 
 # QBFT/IBFT2 message decode performs unbounded eager signature…

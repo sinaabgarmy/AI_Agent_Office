@@ -19,9 +19,18 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-05T16:35:51.840Z"
+updated: "2026-11-10T12:06:24.789Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,3 +65,12 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.667Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
 > **Refreshed 2026-11-05T16:35:51.840Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-09T23:13:47.008Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-09T23:23:31.267Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T07:26:24.976Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T07:27:22.260Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T07:28:19.698Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T07:30:39.139Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T07:31:07.327Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T11:49:59.858Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".
+> **Refreshed 2026-11-10T12:06:24.788Z** — When the council opens a debate on Selfdestruct-and-Redeploy Identity Confusion, or when auditing a system that matches "A contract that selfdestructs and is redeployed at the same address lets the new code inherit approvals and trust granted to the old one.".

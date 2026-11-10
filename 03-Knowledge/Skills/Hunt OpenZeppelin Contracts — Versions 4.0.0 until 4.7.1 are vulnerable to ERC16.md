@@ -17,10 +17,20 @@ source: NVD — Solidity CVEs — tech-openzeppelin-contracts-versions-4-0-0-unt
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2022-31170"
 confidence: 0.98
 created: "2026-11-05T16:15:55.468Z"
-times_used: 0
+times_used: 179
 tags: [skill, hunt, execution, cwe-20]
-updated: "2026-11-05T16:35:51.815Z"
+updated: "2026-11-10T12:06:24.772Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt OpenZeppelin Contracts — Versions 4.0.0 until 4.7.1 are vulnerable to ERC165Checker reverting instead…
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-20 · **Confidence:** 98%
@@ -52,3 +62,12 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - NVD — Solidity CVEs — tech-openzeppelin-contracts-versions-4-0-0-until
 - https://nvd.nist.gov/vuln/detail/CVE-2022-31170
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.134Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-09T23:23:30.741Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:26:24.966Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:27:22.250Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:28:19.688Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:30:39.128Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:31:07.309Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T11:49:59.841Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T12:06:24.772Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.

@@ -19,9 +19,18 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-05T16:35:51.839Z"
+updated: "2026-11-10T12:06:24.787Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,3 +65,12 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.667Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
 > **Refreshed 2026-11-05T16:35:51.839Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-09T23:13:46.989Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-09T23:23:31.251Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T07:26:24.976Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T07:27:22.260Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T07:28:19.697Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T07:30:39.139Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T07:31:07.325Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T11:49:59.857Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".
+> **Refreshed 2026-11-10T12:06:24.787Z** — When the council opens a debate on Delegatecall Storage Layout Collision, or when auditing a system that matches "An upgrade that changes a struct layout while preserving slot count silently aliases two logical variables, letting an attacker set one field by writing another.".

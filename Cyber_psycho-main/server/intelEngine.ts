@@ -33,6 +33,7 @@ import fs from 'fs';
 import path from 'path';
 import { ObsidianVault } from './obsidianVault';
 import { handleToFileBase, isoTimestamp, localDateStamp, slugify } from './paths';
+import { agentFileBase, extraAgentsForLayer } from './agentRegistry';
 
 /* ------------------------------------------------------------------ */
 /* Types                                                               */
@@ -44,7 +45,10 @@ export type IntelLayer =
   | 'Execution'
   | 'Economic'
   | 'L2 / Bridge'
-  | 'Infrastructure';
+  | 'Infrastructure'
+  | 'Governance'
+  | 'Supply Chain'
+  | 'Key Management';
 
 /**
  * Source trust weighting.
@@ -101,6 +105,14 @@ export interface Technique {
   tags: string[];
   /** Source trust weight — higher means more current/novel material. */
   sourceWeight?: number;
+  /** Where the raw item came from: a structured feed, an open-web capture, or the vault. */
+  origin?: 'feed' | 'web' | 'vault';
+  /**
+   * Quarantined techniques are searchable and can seed scenarios, but are
+   * NOT written into agent memory until the operator (or the trust-web
+   * autopilot setting) releases them. Open-web text is untrusted input.
+   */
+  quarantined?: boolean;
 }
 
 export interface IntelItem {
@@ -128,7 +140,7 @@ export interface TeachingRecord {
 
 export interface IntelStatus {
   enabled: boolean;
-  sources: Array<{ id: string; label: string; ok: boolean; items: number; lastError?: string }>;
+  sources: Array<{ id: string; label: string; ok: boolean; items: number; lastError?: string; enabled?: boolean; tier?: string }>;
   techniqueCount: number;
   taughtCount: number;
   lastHarvestAt: string | null;
@@ -190,8 +202,23 @@ const LAYER_RULES: LayerRule[] = [
     shared: /\b(liquidity|incentive|market|yield|price|econom|defi|treasury|reserve)\b/i,
   },
   {
+    layer: 'Governance',
+    distinctive: /\b(governance (attack|takeover|capture|proposal)|governor\w*|timelock\w*|quorum fraction|voting power|vote (buying|selling|delegation)|delegat(e|ed|ion) vot\w+|proposal (creation|threshold|execution)|dao (treasury|governance)|emergency multisig|guardian role)\b/i,
+    shared: /\b(governance|proposal|vote|voting|dao|multisig|admin|owner|privileged role)\b/i,
+  },
+  {
+    layer: 'Supply Chain',
+    distinctive: /\b(supply chain|dependency confusion|typosquat\w*|malicious (package|dependency|release)|compromised (package|maintainer|release)|ci\/cd|build (pipeline|system|provenance)|package registry|npm (package|publish)|container image|unsigned artifact|sbom|prototype pollution)\b/i,
+    shared: /\b(dependency|package|library|registry|release|provenance|maintainer|docker)\b/i,
+  },
+  {
+    layer: 'Key Management',
+    distinctive: /\b(key ?(ceremony|rotation|handover|custody|escrow|generation)|hot wallet|cold wallet|hsm|hardware security module|seed phrase|mnemonic|keystore|private key (leak|exposure|theft|extraction)|jwt secret|secret (exposed|leak\w*)|credential (leak|exposure))\b/i,
+    shared: /\b(private key|wallet|secret|credential|custody|signer)\b/i,
+  },
+  {
     layer: 'Infrastructure',
-    distinctive: /\b(rpc|eclipse|synod?c|discv?4|udp (discovery|datagram)|peer discovery|node (sybil|operator|isolation)|supply chain|ci\/cd|build (pipeline|system)|container image|docker|dependency confusion|devops|txpool|transaction pool|thread pool)\b/i,
+    distinctive: /\b(rpc|eclipse|synod?c|discv?4|udp (discovery|datagram)|peer discovery|node (sybil|operator|isolation)|devops|txpool|transaction pool|thread pool)\b/i,
     shared: /\b(node|network|peer|denial of service|dos|resource exhaustion|config|deployment)\b/i,
   },
   {
@@ -209,6 +236,9 @@ const LAYER_TEACHERS: Record<IntelLayer, string[]> = {
   'Economic': ['darkpool', 'sentinel', 'bytecode'],
   'L2 / Bridge': ['stateroot', 'zerocipher', 'sentinel'],
   'Infrastructure': ['vesper', 'consensusghost', 'sentinel'],
+  'Governance': ['darkpool', 'sentinel', 'bytecode'],
+  'Supply Chain': ['vesper', 'bytecode', 'sentinel'],
+  'Key Management': ['zerocipher', 'entropy', 'sentinel'],
 };
 
 /** Agents whose specialty should additionally be considered for a layer. */
@@ -219,6 +249,9 @@ const LAYER_SECONDARY: Record<IntelLayer, string[]> = {
   'Economic': ['zerocipher', 'consensusghost'],
   'L2 / Bridge': ['consensusghost', 'darkpool'],
   'Infrastructure': ['entropy', 'stateroot'],
+  'Governance': ['consensusghost', 'zerocipher'],
+  'Supply Chain': ['entropy', 'stateroot'],
+  'Key Management': ['vesper', 'stateroot'],
 };
 
 function classifyLayer(text: string): { layer: IntelLayer; confidence: number } {
@@ -275,6 +308,9 @@ function detectCwe(text: string, layer: IntelLayer): string {
     'Economic': 'CWE-682',
     'L2 / Bridge': 'CWE-345',
     'Infrastructure': 'CWE-400',
+    'Governance': 'CWE-863',
+    'Supply Chain': 'CWE-494',
+    'Key Management': 'CWE-522',
   };
   return byLayer[layer] ?? 'CWE-1035';
 }
@@ -456,6 +492,9 @@ function liftDetection(text: string, layer: IntelLayer): string {
     'Economic': 'Monitor price-source divergence, borrow utilisation and liquidation velocity; alert when oracle spread exceeds the deviation bound.',
     'L2 / Bridge': 'Watch sequencer inclusion, data-availability publication and proof-verification deltas; alert on a missing batch or an unfinalised state root.',
     'Infrastructure': 'Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.',
+    'Governance': 'Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.',
+    'Supply Chain': 'Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.',
+    'Key Management': 'Log every key use with its caller and purpose; alert on use outside the ceremony window, from a new host, or after a scheduled rotation.',
   };
   return byLayer[layer];
 }
@@ -484,6 +523,7 @@ function liftRemediation(text: string, layer: IntelLayer, cwe: string): string {
     'CWE-287': 'Bind signatures to chain id, contract address and nonce; reject replays at the verifier.',
     'CWE-863': 'Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.',
     'CWE-494': 'Pin and verify every build dependency by digest; sign release artifacts.',
+    'CWE-522': 'Keep key material in an HSM or threshold scheme, rotate on a schedule, and prove every handover with a signed ceremony record.',
     'CWE-1035': 'Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.',
   };
   return byCwe[cwe] || 'Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.';
@@ -508,6 +548,8 @@ interface SourceDef {
    * like the full NVD/CISA corpus must be keyword-filtered instead.
    */
   onTopic?: boolean;
+  /** 'core' sources shipped first; 'extended' ones widen method discovery; 'custom' are operator-added. */
+  tier?: 'core' | 'extended' | 'custom';
 }
 
 const SOURCES: SourceDef[] = [
@@ -525,6 +567,23 @@ const SOURCES: SourceDef[] = [
   { id: 'tob-blog', label: 'Trail of Bits Research', url: 'https://blog.trailofbits.com/feed/', kind: 'rss', onTopic: true },
   { id: 'arxiv-sc', label: 'arXiv — Smart Contract Security', url: 'http://export.arxiv.org/api/query?search_query=all:%22smart%20contract%20security%22&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true },
   { id: 'arxiv-mev', label: 'arXiv — MEV & Consensus', url: 'http://export.arxiv.org/api/query?search_query=all:%22maximal%20extractable%20value%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true },
+
+  // ---- EXTENDED catalogue: wider method discovery ----------------------
+  // The core list above covers execution and consensus well, but nothing in
+  // it speaks to bridges, zero-knowledge systems, governance, oracles or the
+  // software supply chain — exactly the layers the Surface Map reports as
+  // uncovered. Each entry below is keyless and public. A source that keeps
+  // failing is switched off automatically by the autopilot (see
+  // EvolutionEngine) and can be re-enabled from the Autopilot tab.
+  { id: 'arxiv-bridge', label: 'arXiv — Cross-Chain Bridge Security', url: 'http://export.arxiv.org/api/query?search_query=all:%22cross-chain%20bridge%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true, tier: 'extended' },
+  { id: 'arxiv-zk', label: 'arXiv — Zero-Knowledge Proof System Security', url: 'http://export.arxiv.org/api/query?search_query=all:%22zero-knowledge%20proof%22%20AND%20all:vulnerability&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true, tier: 'extended' },
+  { id: 'arxiv-governance', label: 'arXiv — DAO Governance Attacks', url: 'http://export.arxiv.org/api/query?search_query=all:%22DAO%20governance%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true, tier: 'extended' },
+  { id: 'arxiv-oracle', label: 'arXiv — Oracle Manipulation', url: 'http://export.arxiv.org/api/query?search_query=all:%22oracle%20manipulation%22&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true, tier: 'extended' },
+  { id: 'arxiv-supplychain', label: 'arXiv — Software Supply Chain Attacks', url: 'http://export.arxiv.org/api/query?search_query=all:%22software%20supply%20chain%20attack%22&start=0&max_results=12&sortBy=submittedDate&sortOrder=descending', kind: 'arxiv', onTopic: true, tier: 'extended' },
+  { id: 'nvd-smart-contract', label: 'NVD — Smart Contract CVEs', url: 'https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=smart%20contract&resultsPerPage=40', kind: 'nvd', tier: 'extended' },
+  { id: 'nvd-blockchain', label: 'NVD — Blockchain CVEs', url: 'https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=blockchain&resultsPerPage=40', kind: 'nvd', tier: 'extended' },
+  { id: 'solidity-blog', label: 'Solidity Compiler Blog', url: 'https://soliditylang.org/feed.xml', kind: 'rss', onTopic: true, tier: 'extended' },
+  { id: 'oz-blog', label: 'OpenZeppelin Security Blog', url: 'https://blog.openzeppelin.com/rss.xml', kind: 'rss', onTopic: true, tier: 'extended' },
 ];
 
 /**
@@ -536,12 +595,47 @@ const SOURCES: SourceDef[] = [
  * ids, affected ranges, aliases). OSV is therefore the primary source for
  * ecosystem advisories, with GitHub kept as a secondary.
  */
-const OSV_QUERIES: Array<{ id: string; label: string; name: string; ecosystem: string }> = [
+const OSV_QUERIES: Array<{ id: string; label: string; name: string; ecosystem: string; tier?: 'core' | 'extended' }> = [
   { id: 'osv-openzeppelin', label: 'OSV — @openzeppelin/contracts', name: '@openzeppelin/contracts', ecosystem: 'npm' },
   { id: 'osv-hardhat', label: 'OSV — hardhat', name: 'hardhat', ecosystem: 'npm' },
   { id: 'osv-ethers', label: 'OSV — ethers', name: 'ethers', ecosystem: 'npm' },
   { id: 'osv-web3', label: 'OSV — web3-utils', name: 'web3-utils', ecosystem: 'npm' },
+  // Extended: clients, compilers, consensus engines and zk libraries.
+  { id: 'osv-oz-upgradeable', label: 'OSV — @openzeppelin/contracts-upgradeable', name: '@openzeppelin/contracts-upgradeable', ecosystem: 'npm', tier: 'extended' },
+  { id: 'osv-vyper', label: 'OSV — vyper', name: 'vyper', ecosystem: 'PyPI', tier: 'extended' },
+  { id: 'osv-geth', label: 'OSV — go-ethereum', name: 'github.com/ethereum/go-ethereum', ecosystem: 'Go', tier: 'extended' },
+  { id: 'osv-cosmos-sdk', label: 'OSV — cosmos-sdk', name: 'github.com/cosmos/cosmos-sdk', ecosystem: 'Go', tier: 'extended' },
+  { id: 'osv-cometbft', label: 'OSV — cometbft', name: 'github.com/cometbft/cometbft', ecosystem: 'Go', tier: 'extended' },
+  { id: 'osv-gnark', label: 'OSV — gnark (zk-SNARK library)', name: 'github.com/consensys/gnark', ecosystem: 'Go', tier: 'extended' },
+  { id: 'osv-solana-web3', label: 'OSV — @solana/web3.js', name: '@solana/web3.js', ecosystem: 'npm', tier: 'extended' },
 ];
+
+/** Operator- and autopilot-editable source settings (data/intel-sources.json). */
+export interface IntelSourceConfig {
+  /** Source ids that are switched off. */
+  disabled: string[];
+  /** Why/when a source was switched off automatically. */
+  autoDisabled: Record<string, { at: string; reason: string }>;
+  /** Consecutive failed harvests per source id. */
+  failures: Record<string, number>;
+  /** Extra RSS / arXiv feeds added from the dashboard. */
+  custom: Array<{ id: string; label: string; url: string; kind: 'rss' | 'arxiv' }>;
+}
+
+export interface IntelSourceInfo {
+  id: string;
+  label: string;
+  kind: string;
+  tier: 'core' | 'extended' | 'custom';
+  enabled: boolean;
+  failures: number;
+  autoDisabled?: { at: string; reason: string };
+  lastOk?: boolean;
+  lastItems?: number;
+  lastError?: string;
+}
+
+const SOURCE_CONFIG_FILE = 'intel-sources.json';
 
 /**
  * Relevance is a SCORE, not a boolean. A generic CVE feed contains tens of
@@ -570,13 +664,63 @@ const WEAK_TERMS = [
   'audit', 'vulnerability', 'advisory', 'cve-', 'ghsa-', 'attack', 'exploit', 'security',
 ];
 
+/**
+ * CORE markers — unambiguous blockchain context.
+ *
+ * STRONG_TERMS deliberately includes words like "wallet" and "private key"
+ * so an on-topic feed is not under-scored. On a GENERIC feed (the full
+ * NVD / CISA corpus) those same words admit "Apple Wallet code execution"
+ * and "Fortinet private key" — real advisories, wrong domain. Generic feeds
+ * must therefore match one of these.
+ */
+const CORE_TERMS = [
+  'ethereum', 'solidity', 'smart contract', 'smart-contract', 'evm', 'web3', 'erc-', 'erc20', 'erc721',
+  'erc1155', 'erc4626', 'defi', 'decentralized finance', 'go-ethereum', 'geth', 'besu', 'openzeppelin',
+  'solc', 'vyper', 'secp256k1', 'rollup', 'zksync', 'arbitrum', 'optimism', 'solana', 'cosmos',
+  'tendermint', 'cometbft', 'bitcoin', 'lightning network', 'blockchain', 'dapp', 'uniswap', 'aave',
+  'makerdao', 'validator', 'staking', 'cryptocurrency', 'zk-snark', 'zero-knowledge',
+];
+
+/** True when the text unambiguously concerns a blockchain system. */
+export function hasCoreBlockchainContext(text: string): boolean {
+  return CORE_TERMS_RE.test(text ?? '');
+}
+
+/**
+ * Whole-word matcher for CORE_TERMS. A plain substring test let "defi"
+ * match "defined" and "function definitions", which is how GNU Bash, VMware
+ * and GeoServer advisories passed as blockchain material.
+ */
+const CORE_TERMS_RE = new RegExp(
+  `(?<![a-z0-9])(?:${CORE_TERMS.map(t => t.replace(/[^a-z0-9 ]/gi, c => '\\' + c)).join('|')})`
+  + `s?(?![a-z])`, 'i');
+
+/** A concrete defect or attack class — stricter than hasSecuritySignal's generic "security". */
+export function hasDefectMechanism(text: string): boolean {
+  return /\b(vulnerab\w*|exploit\w*|bypass\w*|overflow\w*|underflow\w*|reentran\w*|unauthori[sz]ed|injection|tamper\w*|forge\w*|replay\w*|front.?run\w*|sandwich\w*|manipulat\w*|denial of service|dos|leak\w*|collision|malleab\w*|bug|bugs|flaw\w*|drain\w*|steal\w*|theft|grief\w*|censor\w*|double.?spend\w*|eclipse|sybil|incorrect\w*|improper\w*|corrupt\w*|divergence|bad randomness|depeg\w*|insecure)\b/i.test(text ?? '');
+}
+
+/** Announcements, programme news and tooling/benchmark papers: informative, but nothing to hunt. */
+export function isNewsOrMeta(title: string): boolean {
+  const t = title ?? '';
+  return /^(announcing|introducing|join us|checkpoint|devcon|allocation update|protocol cluster)\b/i.test(t)
+    || /\b(recap|announcement|grant|fellowship|tickets|ama|initiative|update|mandate|priorities|tier list)\b/i.test(t)
+    || /\b(benchmark\w*|dataset|llms?|ai agents?|agentic|survey|evaluating|re-evaluating|fine-tuning|transformer-based|corpus)\b/i.test(t);
+}
+
+/** True when the text describes a defect, attack, audit finding or defence — not an announcement. */
+export function hasSecuritySignal(text: string): boolean {
+  return DEFECT_MARKER_RE.test(text ?? '')
+    || /\b(security|attack\w*|exploit\w*|audit\w*|bug|incident|mitigat\w*|threat\w*|adversar\w*|malicious|fuzz\w*|formal verification|invariant\w*|slashing|denial of service|dos|censorship|manipulat\w*|front.?run\w*|sandwich|mev)\b/i.test(text ?? '');
+}
+
 export interface Relevance {
   score: number;   // 0..1
   strong: boolean;
   matched: string[];
 }
 
-function scoreRelevance(text: string): Relevance {
+export function scoreRelevance(text: string): Relevance {
   const t = text.toLowerCase();
   const matched: string[] = [];
   let strongHits = 0;
@@ -854,6 +998,35 @@ function trimToClause(text: string, max: number): string {
   return first.slice(0, max).replace(/\s+\S*$/, '') + '…';
 }
 
+/**
+ * Is this technique something an agent can actually WORK — a defect with a
+ * mechanism — or is it news that slipped through the harvest?
+ *
+ * The library accumulated entries such as "Announcing the Platåberget
+ * Testnet", "Treasury Staking Initiative" and "Apache Struts Remote Code
+ * Execution". They are on a trusted feed, or mention a strong keyword, but
+ * they teach nothing about blockchain defects. Skills and scenarios are
+ * built only from actionable techniques.
+ */
+export function techniqueQuality(t: Pick<Technique, 'title' | 'primitive' | 'sourceName' | 'sourceId' | 'tags' | 'cwe'>): {
+  actionable: boolean; reasons: string[];
+} {
+  const text = `${t.title} ${t.primitive}`;
+  const reasons: string[] = [];
+  const isAdvisory = (t.tags ?? []).includes('advisory');
+  const scopedFeed = /^(OSV|GitHub Advisories)\b/.test(t.sourceName ?? '');
+  if (!scopedFeed && !hasCoreBlockchainContext(`${text} ${t.sourceName}`)) reasons.push('off-domain');
+  // CISA KEV spans all software: it needs blockchain context in its OWN text.
+  // An NVD keyword feed was filtered by NVD on the full description, and
+  // each entry is a CVE, so it is neither off-domain nor "not a defect".
+  if (/^CISA\b/.test(t.sourceName ?? '') && !hasCoreBlockchainContext(text)) {
+    if (!reasons.includes('off-domain')) reasons.push('off-domain');
+  }
+  const isCve = /^NVD\b/.test(t.sourceName ?? '');
+  if (!(isAdvisory && scopedFeed) && !isCve && (!hasDefectMechanism(text) || (!isAdvisory && isNewsOrMeta(t.title)))) reasons.push('not-a-defect');
+  return { actionable: reasons.length === 0, reasons };
+}
+
 export class IntelEngine {
   private stateFile: string;
   private lastCallAt = 0;
@@ -937,21 +1110,15 @@ export class IntelEngine {
   status(): IntelStatus {
     const state = this.readState();
     const techniques = this.listTechniques();
-    const lastLog = state.log[0];
-    const allSourceDefs = [
-      ...OSV_QUERIES.map(q => ({ id: q.id, label: q.label })),
-      ...SOURCES.map(s => ({ id: s.id, label: s.label })),
-    ];
-    const sources = allSourceDefs.map(s => {
-      const entry = (lastLog?.sources ?? []).find(x => x.id === s.id);
-      return {
-        id: s.id,
-        label: s.label,
-        ok: entry ? Boolean(entry.ok) : false,
-        items: entry ? Number(entry.items ?? 0) : 0,
-        lastError: entry?.error,
-      };
-    });
+    const sources = this.listSources().map(s => ({
+      id: s.id,
+      label: s.label,
+      ok: Boolean(s.lastOk),
+      items: s.lastItems ?? 0,
+      lastError: s.enabled ? s.lastError : (s.autoDisabled ? `switched off automatically: ${s.autoDisabled.reason}` : 'switched off'),
+      enabled: s.enabled,
+      tier: s.tier,
+    }));
     return {
       enabled: true,
       sources,
@@ -970,6 +1137,126 @@ export class IntelEngine {
     this.lastCallAt = Date.now();
   }
 
+  /* ---------------------- source catalogue ----------------------- */
+
+  private sourceConfigPath(): string { return path.join(this.dataDir, SOURCE_CONFIG_FILE); }
+
+  readSourceConfig(): IntelSourceConfig {
+    try {
+      if (fs.existsSync(this.sourceConfigPath())) {
+        const raw = JSON.parse(fs.readFileSync(this.sourceConfigPath(), 'utf8'));
+        return {
+          disabled: Array.isArray(raw.disabled) ? raw.disabled.map(String) : [],
+          autoDisabled: raw.autoDisabled && typeof raw.autoDisabled === 'object' ? raw.autoDisabled : {},
+          failures: raw.failures && typeof raw.failures === 'object' ? raw.failures : {},
+          custom: Array.isArray(raw.custom) ? raw.custom.filter((c: any) => c?.id && c?.url) : [],
+        };
+      }
+    } catch { /* fall back to defaults */ }
+    return { disabled: [], autoDisabled: {}, failures: {}, custom: [] };
+  }
+
+  private writeSourceConfig(cfg: IntelSourceConfig): void {
+    try {
+      fs.mkdirSync(this.dataDir, { recursive: true });
+      fs.writeFileSync(this.sourceConfigPath(), JSON.stringify(cfg, null, 2), 'utf8');
+    } catch (e) {
+      console.warn('[Intel] could not persist source config:', e);
+    }
+  }
+
+  /** Feed sources (built-in + operator-added) in harvest order. */
+  private feedSources(cfg: IntelSourceConfig): SourceDef[] {
+    const custom: SourceDef[] = cfg.custom.map(c => ({
+      id: c.id, label: c.label, url: c.url, kind: c.kind, onTopic: true, tier: 'custom' as const,
+    }));
+    return [...SOURCES, ...custom];
+  }
+
+  /** Every source the engine knows, with its switch and health. */
+  listSources(): IntelSourceInfo[] {
+    const cfg = this.readSourceConfig();
+    const lastLog = this.readState().log[0];
+    const disabled = new Set(cfg.disabled);
+    const info = (id: string, label: string, kind: string, tier: 'core' | 'extended' | 'custom'): IntelSourceInfo => {
+      const entry = (lastLog?.sources ?? []).find(x => x.id === id);
+      return {
+        id, label, kind, tier,
+        enabled: !disabled.has(id),
+        failures: Number(cfg.failures[id] ?? 0),
+        autoDisabled: cfg.autoDisabled[id],
+        lastOk: entry ? Boolean(entry.ok) : undefined,
+        lastItems: entry ? Number(entry.items ?? 0) : undefined,
+        lastError: entry?.error,
+      };
+    };
+    return [
+      ...OSV_QUERIES.map(q => info(q.id, q.label, 'osv', q.tier ?? 'core')),
+      ...this.feedSources(cfg).map(s => info(s.id, s.label, s.kind, s.tier ?? 'core')),
+    ];
+  }
+
+  /** Switches a source on or off. `reason` marks an automatic (autopilot) switch-off. */
+  setSourceEnabled(id: string, enabled: boolean, reason?: string): { ok: boolean; message: string } {
+    const known = this.listSources().find(s => s.id === id);
+    if (!known) return { ok: false, message: `Unknown source "${id}".` };
+    const cfg = this.readSourceConfig();
+    cfg.disabled = cfg.disabled.filter(x => x !== id);
+    delete cfg.autoDisabled[id];
+    if (!enabled) {
+      cfg.disabled.push(id);
+      if (reason) cfg.autoDisabled[id] = { at: isoTimestamp(), reason };
+    } else {
+      cfg.failures[id] = 0;
+    }
+    this.writeSourceConfig(cfg);
+    return { ok: true, message: `${known.label} ${enabled ? 'enabled' : 'disabled'}.` };
+  }
+
+  /** Adds an operator-supplied RSS/Atom or arXiv-API feed. */
+  addCustomSource(input: { label?: unknown; url?: unknown; kind?: unknown }): { ok: boolean; message: string; id?: string } {
+    const url = String(input.url ?? '').trim();
+    const label = String(input.label ?? '').trim().slice(0, 80);
+    const kind = input.kind === 'arxiv' ? 'arxiv' : 'rss';
+    let parsed: URL;
+    try { parsed = new URL(url); } catch { return { ok: false, message: 'Provide a valid feed URL.' }; }
+    if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return { ok: false, message: 'Only http(s) feeds are supported.' };
+    if (/^(localhost|127\.|10\.|192\.168\.|169\.254\.|0\.|\[?::1)/i.test(parsed.hostname) || /\.(local|internal|lan)$/i.test(parsed.hostname)) {
+      return { ok: false, message: 'Private or local addresses cannot be used as intel sources.' };
+    }
+    if (!label) return { ok: false, message: 'Provide a label for the source.' };
+    const cfg = this.readSourceConfig();
+    const id = `custom-${slugify(label, 32)}`;
+    if (this.listSources().some(s => s.id === id)) return { ok: false, message: `A source named "${label}" already exists.` };
+    if (cfg.custom.length >= 25) return { ok: false, message: 'Custom source limit (25) reached.' };
+    cfg.custom.push({ id, label, url: parsed.toString(), kind });
+    this.writeSourceConfig(cfg);
+    return { ok: true, message: `Added "${label}".`, id };
+  }
+
+  removeCustomSource(id: string): { ok: boolean; message: string } {
+    const cfg = this.readSourceConfig();
+    const before = cfg.custom.length;
+    cfg.custom = cfg.custom.filter(c => c.id !== id);
+    if (cfg.custom.length === before) return { ok: false, message: 'Only custom sources can be removed.' };
+    cfg.disabled = cfg.disabled.filter(x => x !== id);
+    delete cfg.failures[id];
+    delete cfg.autoDisabled[id];
+    this.writeSourceConfig(cfg);
+    return { ok: true, message: 'Source removed.' };
+  }
+
+  /** Updates per-source consecutive-failure counters after a harvest. */
+  private recordSourceHealth(reports: Array<{ id: string; ok: boolean; items: number; error?: string }>): void {
+    const cfg = this.readSourceConfig();
+    for (const r of reports) {
+      // A shared rate limit says nothing about the health of the source itself.
+      if (!r.ok && /rate limit/i.test(r.error ?? '')) continue;
+      cfg.failures[r.id] = r.ok ? 0 : Number(cfg.failures[r.id] ?? 0) + 1;
+    }
+    this.writeSourceConfig(cfg);
+  }
+
   /**
    * Harvests every source, distills techniques, writes them into the vault
    * and returns a summary. Offline-safe: unreachable sources are recorded
@@ -980,17 +1267,21 @@ export class IntelEngine {
     sourcesOk: number; sourcesTotal: number; error?: string;
   }> {
     const maxItems = Math.min(Math.max(Number(options.maxItems ?? 120), 10), 400);
+    const sourceCfg = this.readSourceConfig();
+    const disabledSources = new Set(sourceCfg.disabled);
+    const osvQueries = OSV_QUERIES.filter(q => !disabledSources.has(q.id));
+    const feedSources = this.feedSources(sourceCfg).filter(src => !disabledSources.has(src.id));
+    const sourcesTotal = osvQueries.length + feedSources.length;
     if (Date.now() < this.cooldownUntil) {
-      return { ok: false, harvested: 0, distilled: 0, taught: 0, sourcesOk: 0, sourcesTotal: SOURCES.length + OSV_QUERIES.length, error: `Cooldown active — retry in ${Math.ceil((this.cooldownUntil - Date.now()) / 1000)}s.` };
+      return { ok: false, harvested: 0, distilled: 0, taught: 0, sourcesOk: 0, sourcesTotal, error: `Cooldown active — retry in ${Math.ceil((this.cooldownUntil - Date.now()) / 1000)}s.` };
     }
 
     const state = this.readState();
-    const existing = new Map(state.techniques.map(t => [t.id, t]));
     const sourceReports: Array<{ id: string; ok: boolean; items: number; error?: string }> = [];
     const allItems: IntelItem[] = [];
 
     // OSV first — it is rate-limit free and returns the richest records.
-    for (const query of OSV_QUERIES) {
+    for (const query of osvQueries) {
       try {
         await this.politeGap();
         const items = await fetchOsv(query);
@@ -1011,7 +1302,7 @@ export class IntelEngine {
     // than burning four requests on guaranteed failures, and say why.
     let githubRateLimited = false;
 
-    for (const source of SOURCES) {
+    for (const source of feedSources) {
       if (source.kind === 'ghsa' && githubRateLimited) {
         sourceReports.push({ id: source.id, ok: false, items: 0, error: 'GitHub API rate limit reached (60/hour) — OSV covers this source' });
         continue;
@@ -1046,8 +1337,16 @@ export class IntelEngine {
           .map(i => ({ item: i, rel: scoreRelevance(`${i.title} ${i.description}`) }))
           .filter(({ item, rel }) => {
             if (rel.score < RELEVANCE_FLOOR) return false;
+            const text = `${item.title} ${item.description}`;
+            // A blog feed mixes security research with announcements ("Devcon
+            // tickets are live", "Allocation update"). Only posts that talk
+            // about a defect, an attack or a defence can become a technique.
+            if (source.kind === 'rss') return hasSecuritySignal(text);
             if (source.onTopic) return rel.score >= 0.2 || rel.strong;
-            return rel.strong || rel.score >= 0.5;
+            // Generic corpora (NVD keyword search, CISA KEV) must be
+            // unambiguously about a blockchain system — "wallet" alone
+            // admitted Apple Wallet and Fortinet advisories.
+            return hasCoreBlockchainContext(text);
           })
           .sort((a, b) => b.rel.score - a.rel.score);
 
@@ -1061,30 +1360,7 @@ export class IntelEngine {
     }
 
     // Distill — dedupe against what we already know.
-    let distilled = 0;
-    const techniques: Technique[] = [...existing.values()];
-    for (const item of allItems.slice(0, maxItems)) {
-      const text = `${item.title} ${item.description}`;
-      const { layer, confidence: layerConfidence } = classifyLayer(text);
-      const relevance = item.relevance ?? scoreRelevance(text).score;
-      if (relevance < RELEVANCE_FLOOR) continue;
-      // Final confidence blends "is this about our domain" with "do we know
-      // which layer it belongs to". A crypto CVE with no layer signal is
-      // still worth keeping, but it must never outrank a classified one.
-      const confidence = Number(Math.min(0.99, relevance * 0.62 + layerConfidence * 0.38).toFixed(2));
-      if (confidence < 0.4) continue;
-      const tech = distillTechnique(item, layer, confidence);
-      if (!tech.title || tech.title.length < 8) continue;
-      if (existing.has(tech.id)) {
-        // Refresh the confidence/description but keep the original harvest time.
-        const idx = techniques.findIndex(t => t.id === tech.id);
-        if (idx >= 0) techniques[idx] = { ...techniques[idx], confidence: Math.max(techniques[idx].confidence, tech.confidence), layer: tech.layer };
-        continue;
-      }
-      techniques.push(tech);
-      existing.set(tech.id, tech);
-      distilled += 1;
-    }
+    const { techniques, distilled } = this.distillInto(state.techniques, allItems.slice(0, maxItems), { origin: 'feed' });
 
     // Persist.
     state.techniques = techniques;
@@ -1095,11 +1371,12 @@ export class IntelEngine {
       harvested: allItems.length,
       distilled,
       sourcesOk: sourceReports.filter(s => s.ok).length,
-      sourcesTotal: SOURCES.length + OSV_QUERIES.length,
+      sourcesTotal,
       sources: sourceReports,
     });
     state.log = state.log.slice(0, 20);
     this.writeState(state);
+    this.recordSourceHealth(sourceReports);
     this.cooldownUntil = Date.now() + 60_000; // one harvest per minute
 
     // Write the techniques into the vault as first-class knowledge.
@@ -1125,8 +1402,92 @@ export class IntelEngine {
       distilled,
       taught,
       sourcesOk: sourceReports.filter(s => s.ok).length,
-      sourcesTotal: SOURCES.length + OSV_QUERIES.length,
+      sourcesTotal,
     };
+  }
+
+  /**
+   * Classifies raw items and merges the resulting techniques into `current`.
+   * Shared by the feed harvest and by open-web ingestion so both go through
+   * the same relevance floor, layer classifier and de-duplication.
+   */
+  private distillInto(
+    current: Technique[],
+    items: IntelItem[],
+    opts: { origin: 'feed' | 'web' | 'vault'; quarantine?: boolean },
+  ): { techniques: Technique[]; distilled: number; added: Technique[] } {
+    const existing = new Map(current.map(t => [t.id, t]));
+    const techniques: Technique[] = [...current];
+    const added: Technique[] = [];
+    for (const item of items) {
+      const text = `${item.title} ${item.description}`;
+      const { layer, confidence: layerConfidence } = classifyLayer(text);
+      const relevance = item.relevance ?? scoreRelevance(text).score;
+      if (relevance < RELEVANCE_FLOOR) continue;
+      // Final confidence blends "is this about our domain" with "do we know
+      // which layer it belongs to". A crypto CVE with no layer signal is
+      // still worth keeping, but it must never outrank a classified one.
+      let confidence = Number(Math.min(0.99, relevance * 0.62 + layerConfidence * 0.38).toFixed(2));
+      // An arbitrary web page is weaker evidence than a curated advisory feed.
+      if (opts.origin === 'web') confidence = Number(Math.min(confidence, 0.8).toFixed(2));
+      if (confidence < 0.4) continue;
+      const tech = distillTechnique(item, layer, confidence);
+      if (!tech.title || tech.title.length < 8) continue;
+      if (existing.has(tech.id)) {
+        // Refresh the confidence/description but keep the original harvest time.
+        const idx = techniques.findIndex(t => t.id === tech.id);
+        if (idx >= 0) techniques[idx] = { ...techniques[idx], confidence: Math.max(techniques[idx].confidence, tech.confidence), layer: tech.layer };
+        continue;
+      }
+      tech.origin = opts.origin;
+      if (opts.origin === 'web') {
+        tech.sourceWeight = 0.85;
+        tech.tags = [...tech.tags.filter(t => t !== 'advisory' && t !== 'external-intel'), 'web-capture'];
+      }
+      if (opts.quarantine) tech.quarantined = true;
+      techniques.push(tech);
+      existing.set(tech.id, tech);
+      added.push(tech);
+    }
+    return { techniques, distilled: added.length, added };
+  }
+
+  /**
+   * Ingests items gathered outside the feed catalogue (open-web captures,
+   * operator notes). They take the same distillation path as feed items.
+   * With `quarantine`, the new techniques are stored but not taught.
+   */
+  ingestItems(items: IntelItem[], opts: { origin: 'web' | 'vault'; quarantine?: boolean; teach?: boolean }): {
+    distilled: number; taught: number; techniqueIds: string[];
+  } {
+    if (items.length === 0) return { distilled: 0, taught: 0, techniqueIds: [] };
+    const state = this.readState();
+    const base = state.techniques.length > 0 ? state.techniques : this.rehydrateFromVault();
+    const { techniques, distilled, added } = this.distillInto(base, items, opts);
+    if (distilled === 0) return { distilled: 0, taught: 0, techniqueIds: [] };
+    state.techniques = techniques;
+    this.writeState(state);
+    for (const tech of added) {
+      try { this.writeTechniqueNote(tech); } catch { /* keep going */ }
+    }
+    const taught = opts.teach !== false && !opts.quarantine ? this.teachAll() : 0;
+    this.vault.logActivity('discovery', `Ingested ${items.length} ${opts.origin} item(s) — ${distilled} new technique(s)${opts.quarantine ? ' (quarantined, not taught)' : `, ${taught} taught`}.`);
+    return { distilled, taught, techniqueIds: added.map(t => t.id) };
+  }
+
+  /** Releases quarantined techniques so the next teaching pass can assign them. */
+  releaseQuarantine(ids?: string[]): number {
+    const state = this.readState();
+    const wanted = ids ? new Set(ids) : null;
+    let released = 0;
+    for (const t of state.techniques) {
+      if (t.quarantined && (!wanted || wanted.has(t.id))) { t.quarantined = false; released += 1; }
+    }
+    if (released > 0) {
+      this.writeState(state);
+      this.vault.logActivity('memory', `${released} quarantined technique(s) released for teaching.`);
+    }
+    return released;
   }
 
   /** Writes (or refreshes) a technique note in the vault. */
@@ -1185,7 +1546,9 @@ export class IntelEngine {
         source_id: tech.sourceId,
         confidence: tech.confidence,
         harvested: localDateStamp(),
-        tags: ['technique', tech.layer.toLowerCase().replace(/[^a-z]+/g, '-'), tech.cwe.toLowerCase()],
+        origin: tech.origin ?? 'feed',
+        trust: tech.quarantined ? 'quarantined' : 'trusted',
+        tags: ['technique', tech.layer.toLowerCase().replace(/[^a-z]+/g, '-'), tech.cwe.toLowerCase(), ...(tech.origin === 'web' ? ['web-capture'] : [])],
       },
       body,
     });
@@ -1219,6 +1582,13 @@ export class IntelEngine {
     for (const tech of techniques) {
       // Only reasonably confident techniques are worth teaching at all.
       if (tech.confidence < 0.5) continue;
+      // Untrusted (open-web) material stays out of agent memory until released.
+      if (tech.quarantined) continue;
+      // Specialists added after the built-in eight (Agent Foundry, Obsidian
+      // seed notes) learn their own layer first.
+      for (const handle of extraAgentsForLayer(tech.layer)) {
+        candidates.push({ tech, handle, primary: true });
+      }
       for (const handle of LAYER_TEACHERS[tech.layer] ?? []) {
         candidates.push({ tech, handle, primary: true });
       }
@@ -1283,7 +1653,8 @@ export class IntelEngine {
   private appendTeachingToMemory(agentHandle: string, tech: Technique): void {
     if (!this.vault.isConnected()) return;
     try {
-      const base = handleToFileBase(agentHandle, agentHandle);
+      // Notes are named after the agent's HANDLE; teaching is keyed by its id.
+      const base = handleToFileBase(agentFileBase(agentHandle), agentHandle);
       this.vault.appendToNote({
         dir: '06-Agent-Memory/Individual',
         filename: `Memory — ${base}`,
@@ -1315,6 +1686,7 @@ export class IntelEngine {
   }> {
     const techniques = this.listTechniques()
       .filter(t => t.confidence >= 0.5)
+      .filter(t => techniqueQuality(t).actionable)
       .map(t => ({ ...t, rank: t.confidence * (t.sourceWeight ?? 1) }))
       .sort((a, b) => b.rank - a.rank);
 
@@ -1324,17 +1696,24 @@ export class IntelEngine {
       'Execution': 'Smart Contract Exploit',
       'Economic': 'Economic Attack',
       'L2 / Bridge': 'L2 Rollup Security',
-      'Infrastructure': 'Consensus Flaw',
+      'Infrastructure': 'Infrastructure Attack',
+      'Governance': 'Governance Attack',
+      'Supply Chain': 'Supply Chain Attack',
+      'Key Management': 'Key Management',
     };
 
     return techniques.slice(0, limit).map(t => {
-      const teachers = (LAYER_TEACHERS[t.layer] ?? []).slice(0, 3);
+      const teachers = [...extraAgentsForLayer(t.layer), ...(LAYER_TEACHERS[t.layer] ?? [])]
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .slice(0, 3);
       return {
         id: `intel-${t.id.replace(/^tech-/, '')}`,
         title: t.title.slice(0, 110),
         category: categoryFor[t.layer] ?? 'Custom',
         briefing: [
-          `External intel harvested from ${t.sourceName} (${t.sourceId}).`,
+          t.origin === 'web'
+            ? `UNVERIFIED open-web research captured from ${t.sourceName} — treat every claim below as a hypothesis to test, not a fact.`
+            : `External intel harvested from ${t.sourceName} (${t.sourceId}).`,
           `Attack primitive: ${t.primitive}`,
           `The invariant at risk: ${t.detection}`,
           `Proposed remediation under review: ${t.remediation}`,

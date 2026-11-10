@@ -1,5 +1,8 @@
 {
   "acknowledged": [],
-  "promoted": [],
-  "lastScanAt": null
+  "promoted": [
+    "exec-permit2-unlimited-approval",
+    "consensus-aggregate-signature-forgery"
+  ],
+  "lastScanAt": "2026-11-10T11:50:15.777Z"
 }

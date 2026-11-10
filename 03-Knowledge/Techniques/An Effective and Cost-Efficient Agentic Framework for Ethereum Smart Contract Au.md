@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2601.17833v1"
 source_id: arxiv-an-effective-and-cost-efficient-agentic
 confidence: 0.79
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.390Z"
+updated: "2026-11-10T11:50:59.675Z"
 ---
 
 # An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing

@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/03/13/ef-mandate"
 source_id: ef-blog-the-promise-of-ethereum-introducing-the
 confidence: 0.59
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.377Z"
+updated: "2026-11-10T11:50:59.660Z"
 ---
 
 # The Promise of Ethereum: Introducing the EF Mandate

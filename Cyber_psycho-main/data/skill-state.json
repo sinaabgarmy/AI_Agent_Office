@@ -46,14 +46,16 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-31170",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 179,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T08:19:33.376Z",
+      "status": "active"
     },
     {
       "id": "skill-openzeppelin-contracts-versions-4-1-0-until",
@@ -101,14 +103,16 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-31172",
       "confidence": 0.97,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 982,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "status": "active"
     },
     {
       "id": "skill-zksolc-all-llvm-versions-since-2015-fold-xor",
@@ -156,14 +160,16 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-45056",
       "confidence": 0.94,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 179,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-682"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T08:19:33.376Z",
+      "status": "active"
     },
     {
       "id": "skill-risc-zero",
@@ -211,14 +217,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-52884",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-159"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-openzeppelin-contracts-wizard",
@@ -266,14 +275,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2026-57583",
       "confidence": 0.79,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-94"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-era-compiler-solidity",
@@ -321,14 +333,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2024-34704",
       "confidence": 0.93,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-682"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-ethereum-solidity-v0-8-14-ethereum-solidity",
@@ -376,14 +391,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2022-33069",
       "confidence": 0.75,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-617"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-solidity-0-7-5-in-smtutil-chcsmtlib2interfac",
@@ -431,14 +447,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2020-36402",
       "confidence": 0.71,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-787"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-an-integer-overflow-in-the-batchtransfer-fun",
@@ -486,14 +505,16 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10299",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 179,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T08:19:33.376Z",
+      "status": "active"
     },
     {
       "id": "skill-an-integer-overflow-in-the-transferproxy-fun",
@@ -541,14 +562,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10376",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "duplicate"
     },
     {
       "id": "skill-the-transferfrom-function-of-a-smart-contrac",
@@ -596,14 +620,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10468",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-the-owned-smart-contract-implementation-for",
@@ -651,14 +676,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10666",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-an-integer-overflow-in-the-transfermulti-fun",
@@ -706,14 +732,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10706",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "duplicate"
     },
     {
       "id": "skill-the-request-dividend-function-of-a-smart-con",
@@ -761,14 +790,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-10944",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-an-integer-overflow-in-the-transfer-function",
@@ -816,14 +846,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-11239",
       "confidence": 0.98,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "duplicate"
     },
     {
       "id": "skill-the-approveandcallcode-function-of-a-smart-c",
@@ -871,14 +904,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12702",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-20"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-the-buy-function-of-a-smart-contract-impleme",
@@ -926,14 +960,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-11446",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-the-sell-function-of-a-smart-contract-implem",
@@ -981,14 +1016,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12062",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-190"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-the-minttoken-function-of-a-smart-contract-i",
@@ -1036,14 +1072,15 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-12078",
       "confidence": 0.91,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-gnu-bourne-again-shell-bash-arbitrary-code-e",
@@ -1091,14 +1128,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2014-7169",
       "confidence": 0.63,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-osgeo-geoserver-improper-restriction-of-xml",
@@ -1146,14 +1186,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-58360",
       "confidence": 0.62,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-broadcom-vmware-aria-operations-and-vmware-t",
@@ -1201,14 +1244,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-41244",
       "confidence": 0.62,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-apple-ios-ipados-and-watchos-wallet-code-exe",
@@ -1256,14 +1302,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2023-41061",
       "confidence": 0.62,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-apache-struts-remote-code-execution-vulnerab",
@@ -1311,14 +1360,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2018-11776",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-fortinet-multiple-products-improper-verifica",
@@ -1366,14 +1418,17 @@
       "sourceUrl": "https://nvd.nist.gov/vuln/detail/CVE-2025-59718",
       "confidence": 0.55,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-287"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "off-domain"
     },
     {
       "id": "skill-clear-signing-making-transaction-approvals-s",
@@ -1421,14 +1476,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/05/12/clear-signing-announcement",
       "confidence": 0.65,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-eth-rangers-program-recap",
@@ -1476,14 +1534,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/04/16/eth-rangers-recap",
       "confidence": 0.65,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-this-is-fine-until-the-grant-runs-out",
@@ -1531,14 +1592,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/02/27/project-odin",
       "confidence": 0.64,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-introducing-zkapi-private-usage-credits-for",
@@ -1586,14 +1650,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/10/01/introducing-zkapi",
       "confidence": 0.7,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-330"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-raising-machine-checked-security-benchmarks",
@@ -1641,14 +1708,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/08/20/better-codes-challenge",
       "confidence": 0.7,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-330"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-allocation-update-q1-2026",
@@ -1696,14 +1766,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/04/29/allocation-q1-26",
       "confidence": 0.69,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-330"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-how-native-transaction-assertions-could-enfo",
@@ -1751,14 +1824,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/10/05/transaction-assertions",
       "confidence": 0.69,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-330"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-allocation-update-q2-2026",
@@ -1806,14 +1882,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/08/18/allocation-q2-26",
       "confidence": 0.68,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "cryptography",
         "cwe-330"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "duplicate"
     },
     {
       "id": "skill-glamsterdam-testnet-announcement",
@@ -1862,14 +1941,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/09/17/glamsterdam-testnet-announcement",
       "confidence": 0.66,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "consensus",
         "cwe-664"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-announcing-the-plat-berget-testnet",
@@ -1917,14 +1999,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/08/17/plataberget-testnet",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-announcing-a-trillion-dollar-security-grant",
@@ -1972,14 +2057,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/08/05/1ts-grant",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-the-triage-is-the-product-running-ai-agents",
@@ -2027,14 +2115,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/07/09/triage-is-the-product",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-protocol-cluster-updates-may-2026",
@@ -2082,14 +2173,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/05/11/protocol-update-may-26",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-treasury-staking-initiative",
@@ -2138,14 +2232,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/02/24/staking",
       "confidence": 0.76,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:13:47.073Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "economic",
         "cwe-682"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:13:47.073Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-designing-for-sovereignty-ethereum-for-digit",
@@ -2193,14 +2290,17 @@
       "sourceUrl": "https://blog.ethereum.org/en/2026/11/03/digital-pub-infra",
       "confidence": 0.59,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "hunt",
         "execution",
         "cwe-841"
-      ]
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
     },
     {
       "id": "skill-probe-consensus-aggregate-signature-forgery",
@@ -2248,14 +2348,16 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.812Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T11:49:59.838Z",
+      "timesUsed": 803,
       "tags": [
         "skill",
         "probe",
         "consensus",
         "surface-gap"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "status": "active"
     },
     {
       "id": "skill-probe-exec-permit2-unlimited-approval",
@@ -2302,14 +2404,16 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.813Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 803,
       "tags": [
         "skill",
         "probe",
         "execution",
         "surface-gap"
-      ]
+      ],
+      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "status": "active"
     },
     {
       "id": "skill-probe-exec-account-abstraction-validation",
@@ -2410,14 +2514,16 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.813Z",
-      "timesUsed": 0,
+      "updatedAt": "2026-11-10T11:49:59.838Z",
+      "timesUsed": 102,
       "tags": [
         "skill",
         "probe",
         "cryptography",
         "surface-gap"
-      ]
+      ],
+      "status": "active",
+      "lastUsedAt": "2026-11-10T12:05:59.787Z"
     },
     {
       "id": "skill-probe-exec-delegatecall-storage-collision",
@@ -2518,14 +2624,15 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.813Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "probe",
         "execution",
         "surface-gap"
-      ]
+      ],
+      "status": "active"
     },
     {
       "id": "skill-probe-supply-dependency-confusion",
@@ -2564,6 +2671,7 @@
       "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
       "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
       "trainedAgents": [
+        "bot-custom-auto-supply-chain-provenance",
         "vesper",
         "bytecode",
         "sentinel",
@@ -2573,18 +2681,3086 @@
       "source": "ChronoZero Surface Engine",
       "confidence": 0.6,
       "createdAt": "2026-11-05T16:15:55.468Z",
-      "updatedAt": "2026-11-05T16:35:51.813Z",
+      "updatedAt": "2026-11-10T07:31:07.308Z",
       "timesUsed": 0,
       "tags": [
         "skill",
         "probe",
         "supply-chain",
         "surface-gap"
-      ]
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-how-l1-and-l2s-can-build-the-strongest-possi",
+      "title": "Hunt How L1 and L2s can build the strongest possible Ethereum",
+      "kind": "hunt",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-345",
+      "trigger": "When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-345 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: How L1 and L2s can build the strongest possible Ethereum *The North Star of the Platform team is for Ethereum to scale as a cohesive system and enable confident adoption by all users.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Verify every input against its expected form before it can influence state or value.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Watch sequencer inclusion, data-availability publication and proof-verification deltas; alert on a missing batch or an unfinalised state root.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Verify every input against its expected form before it can influence state or value.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "Ethereum Foundation Blog — tech-how-l1-and-l2s-can-build-the-strongest-possi",
+      "sourceUrl": "https://blog.ethereum.org/en/2026/03/23/l1-l2-ethereum",
+      "confidence": 0.67,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "l-bridge",
+        "cwe-345"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-state-divergence-enables-unauthorized-access",
+      "title": "Hunt State divergence enables unauthorized access",
+      "kind": "hunt",
+      "domain": "Consensus",
+      "cwe": "CWE-664",
+      "trigger": "When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-664.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-664 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: State divergence enables unauthorized access <p>We found and reported a bug in Provenance Blockchain, a public proof-of-stake chain built on <a href=\"",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+      "trainedAgents": [
+        "consensusghost",
+        "sentinel",
+        "zerocipher",
+        "vesper",
+        "entropy"
+      ],
+      "source": "Trail of Bits Research — tech-state-divergence-enables-unauthorized-access",
+      "sourceUrl": "https://blog.trailofbits.com/2026/08/25/state-divergence-enables-unauthorized-access/",
+      "confidence": 0.81,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 5,
+      "tags": [
+        "skill",
+        "hunt",
+        "consensus",
+        "cwe-664"
+      ],
+      "lastUsedAt": "2026-11-10T07:26:18.092Z",
+      "status": "active"
+    },
+    {
+      "id": "skill-building-secure-uniswap-v4-hooks",
+      "title": "Hunt Building secure Uniswap v4 hooks",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: This flexibility moves some security responsibilities into application and hook code.</p> <p>The Cork and Bunni exploits are two app-level incidents that show what can go wrong in that code.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "Trail of Bits Research — tech-building-secure-uniswap-v4-hooks",
+      "sourceUrl": "https://blog.trailofbits.com/2026/07/30/building-secure-uniswap-v4-hooks/",
+      "confidence": 0.68,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-solidity-meets-llms-a-transformer-based-appr",
+      "title": "Hunt Solidity Meets LLMs: A Transformer-Based Approach to Smart Contract Vulnerability Detection",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Solidity Meets LLMs: A Transformer-Based Approach to Smart Contract Vulnerability Detection The growing adoption of blockchain technologies, particularly the Ethereum platform, has amplified the critical role of smart contracts in decentralized applications.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Detection\nThe growing adoption of blockchain technologies, particularly the Ethereum platform, has amplified the critical role of smart contracts in",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-solidity-meets-llms-a-transformer-based-appr",
+      "sourceUrl": "http://arxiv.org/abs/2609.27091v1",
+      "confidence": 0.94,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-defending-the-peg-real-time-dynamic-protecti",
+      "title": "Hunt Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins",
+      "kind": "hunt",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-345",
+      "trigger": "When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-345.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-345 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: The immutable nature of these systems post-deployment means that the exploitation of security vulnerabilities can lead to irreversible, massive economic losses and potentially trigger systemic financial risks.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Verify every input against its expected form before it can influence state or value.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Anomaly Detection in DeFi Stablecoins\nWith the rapid evolution of the Decentralized Finance (DeFi) ecosystem, stablecoins have emerged as a critica",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Verify every input against its expected form before it can influence state or value.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-defending-the-peg-real-time-dynamic-protecti",
+      "sourceUrl": "http://arxiv.org/abs/2608.25600v1",
+      "confidence": 0.82,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "l-bridge",
+        "cwe-345"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-cyberchainbench-can-ai-agents-secure-smart-c",
+      "title": "Hunt CyberChainBench: Can AI Agents Secure Smart Contracts Against… — AI Agents Secure Smart Contracts Against…",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: CyberChainBench: Can AI Agents Secure Smart Contracts Against Real-World On-Chain Vulnerabilities?",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "detection, exploit generation, and patch synthesis",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-cyberchainbench-can-ai-agents-secure-smart-c",
+      "sourceUrl": "http://arxiv.org/abs/2606.26216v1",
+      "confidence": 0.83,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-smart-contract-security-beyond-detection",
+      "title": "Hunt Smart Contract Security Beyond Detection",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Detection\nSmart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, auto",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-smart-contract-security-beyond-detection",
+      "sourceUrl": "http://arxiv.org/abs/2605.09124v2",
+      "confidence": 0.94,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-evmbench-evaluating-ai-agents-on-smart-contr",
+      "title": "Hunt EVMbench: Evaluating AI Agents on Smart Contract Security",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: EVMbench: Evaluating AI Agents on Smart Contract Security Smart contracts on public blockchains now manage large amounts of value, and vulnerabilities in these systems can lead to substantial losses.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: patch, and exploit smart contract vulnerabilities",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "detect, patch, and exploit smart contract vulnerabilities",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "patch, and exploit smart contract vulnerabilities",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-evmbench-evaluating-ai-agents-on-smart-contr",
+      "sourceUrl": "http://arxiv.org/abs/2603.04915v1",
+      "confidence": 0.83,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-where-do-smart-contract-security-analyzers-f",
+      "title": "Hunt Where Do Smart Contract Security Analyzers Fall Short?",
+      "kind": "hunt",
+      "domain": "Economic",
+      "cwe": "CWE-682",
+      "trigger": "When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-682 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Where Do Smart Contract Security Analyzers Fall Short?",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: State the invariant formally and assert it on every state transition so violations fail closed.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "detect such flaws exist, real-world attacks remain frequent, raising the question of whether these tools are truly effective or simply under-used",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "trainedAgents": [
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "zerocipher",
+        "consensusghost"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-where-do-smart-contract-security-analyzers-f",
+      "sourceUrl": "http://arxiv.org/abs/2603.00890v1",
+      "confidence": 0.78,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "economic",
+        "cwe-682"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-uscsa-evolution-aware-security-analysis-for",
+      "title": "Hunt USCSA: Evolution-Aware Security Analysis for Proxy-Based Upgradeable Smart Contracts",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-362",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-362.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-362 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: USCSA: Evolution-Aware Security Analysis for Proxy-Based Upgradeable Smart Contracts In the case of upgrading smart contracts on blockchain systems, it is essential to consider the continuity of upgrades and subsequent maintenance.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Apply checks-effects-interactions, add a reentrancy guard, and make state transitions atomic or explicitly ordered.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Apply checks-effects-interactions, add a reentrancy guard, and make state transitions atomic or explicitly ordered.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-uscsa-evolution-aware-security-analysis-for",
+      "sourceUrl": "http://arxiv.org/abs/2512.08372v3",
+      "confidence": 0.97,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-362"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-beyond-copying-lifelong-smart-contract-secur",
+      "title": "Hunt Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation AI agents can inspect code and run tests to support smart contract security.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-beyond-copying-lifelong-smart-contract-secur",
+      "sourceUrl": "http://arxiv.org/abs/2610.32453v1",
+      "confidence": 0.84,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-a-risk-stratified-benchmark-dataset-for-bad",
+      "title": "Hunt A Risk-Stratified Benchmark Dataset for Bad Randomness… — A Risk-Stratified Benchmark Dataset for Bad…",
+      "kind": "hunt",
+      "domain": "Cryptography",
+      "cwe": "CWE-330",
+      "trigger": "When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-330.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-330 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: A Risk-Stratified Benchmark Dataset for Bad Randomness (SWC-120) Vulnerabilities in Ethereum Smart Contracts Many Ethereum smart contracts rely on block attributes such as block.timestamp or blockhash to generate random numbers for applications like lotteries…",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Source entropy from a CSPRNG with health monitoring; fail closed when the entropy pool reports an error condition.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "detection tools identify only simple patterns and fail to verify whether protective modifiers actually guard vulnerable code",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Source entropy from a CSPRNG with health monitoring; fail closed when the entropy pool reports an error condition.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-a-risk-stratified-benchmark-dataset-for-bad",
+      "sourceUrl": "http://arxiv.org/abs/2601.09836v1",
+      "confidence": 0.84,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "cryptography",
+        "cwe-330"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-demystifying-agent-skills-for-smart-contract",
+      "title": "Hunt Demystifying Agent Skills for Smart Contract Auditing: Design, Effectiveness, Behavioral Impact",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: These agents can be enhanced with skills---reusable artifacts that package domain knowledge, workflows, and tool-use instructions.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "detection; and (ii",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-demystifying-agent-skills-for-smart-contract",
+      "sourceUrl": "http://arxiv.org/abs/2609.29454v1",
+      "confidence": 0.83,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-on-the-shoulders-of-giants-empowering-automa",
+      "title": "Hunt On the Shoulders of Giants: Empowering Automated Smart Contract Auditing via the GiAnt Corpus",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: On the Shoulders of Giants: Empowering Automated Smart Contract Auditing via the GiAnt Corpus High-quality smart contract auditing datasets are crucial for evaluating security tools and advancing smart contract security research.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-on-the-shoulders-of-giants-empowering-automa",
+      "sourceUrl": "http://arxiv.org/abs/2606.07363v1",
+      "confidence": 0.87,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-chaintrix-a-multi-pipeline-llm-augmented-fra",
+      "title": "Hunt CHAINTRIX: A multi-pipeline LLM-augmented framework for…",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: CHAINTRIX: A multi-pipeline LLM-augmented framework for automated smart-contract security auditing Smart-contract exploits have caused billions of USD in cumulative losses, yet audits remain expensive and slow.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-chaintrix-a-multi-pipeline-llm-augmented-fra",
+      "sourceUrl": "http://arxiv.org/abs/2605.09350v1",
+      "confidence": 0.75,
+      "createdAt": "2026-11-09T23:13:46.132Z",
+      "updatedAt": "2026-11-09T23:23:31.604Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "retired",
+      "retiredAt": "2026-11-09T23:23:31.604Z",
+      "retireReason": "not-a-defect"
+    },
+    {
+      "id": "skill-movescanner-analysis-of-security-risks-of-mo",
+      "title": "Hunt MoveScanner: Analysis of Security Risks of Move Smart Contracts",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: By incorporating cross-module call graph tracking, MoveScanner can effectively identify five key types of security vulnerabilities, including resource leaks, we",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-movescanner-analysis-of-security-risks-of-mo",
+      "sourceUrl": "http://arxiv.org/abs/2508.17964v3",
+      "confidence": 0.68,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-psr2-a-phase-based-semantic-reasoning-framew",
+      "title": "Hunt PSR2: A Phase-based Semantic Reasoning Framework for…",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Rigid rule sets often limit traditional static analyzers and lack deep contextual awareness, leading to high false-positive and false-negative rates when identifying vulnerabilities that depend on intermediate state inconsistencies.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Never make an external call before final state mutation; validate the return value of every untrusted call.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Detection via Contract Refinement\nWith the rapid advancement of decentralized applications, smart contract security faces severe challenges, particul",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "arXiv — Smart Contract Security — tech-psr2-a-phase-based-semantic-reasoning-framew",
+      "sourceUrl": "http://arxiv.org/abs/2604.06975v3",
+      "confidence": 0.69,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-how-much-must-a-private-mempool-hide-exact-l",
+      "title": "Hunt How Much Must a Private Mempool Hide? Exact Leakage Thresholds for Sandwich Attacks",
+      "kind": "hunt",
+      "domain": "Economic",
+      "cwe": "CWE-682",
+      "trigger": "When reviewing or red-teaming code in the Economic layer, or when the target system mentions CWE-682.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-682 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: We answer exactly for a fee-free constant-product automated market maker, the pricing rule behind Uniswap v2.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: State the invariant formally and assert it on every state transition so violations fail closed.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "observe an interval containing the victim's size and bid in a first-price auction for the right to sandwich it, and the winning front-run must keep",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "trainedAgents": [
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "zerocipher",
+        "consensusghost"
+      ],
+      "source": "arXiv — MEV & Consensus — tech-how-much-must-a-private-mempool-hide-exact-l",
+      "sourceUrl": "http://arxiv.org/abs/2609.31379v2",
+      "confidence": 0.87,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "economic",
+        "cwe-682"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-contains-incorrect-ca",
+      "title": "Hunt OpenZeppelin Contracts contains Incorrect Calculation",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-682",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-682.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-682 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: State the invariant formally and assert it on every state transition so violations fail closed.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-contains-incorrect-ca",
+      "sourceUrl": "https://github.com/advisories/GHSA-878m-3g6q-594q",
+      "confidence": 0.71,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-682"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-timelockcontroller-vulnerability-in-openzepp",
+      "title": "Hunt TimelockController vulnerability in OpenZeppelin Contracts",
+      "kind": "hunt",
+      "domain": "Governance",
+      "cwe": "CWE-269",
+      "trigger": "When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-269.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-269 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: Instances with the executor role set to \"open\" allow anyone to use the executor role, thus leaving the timelock at risk of being taken over by an attacker.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: fix is included in the following releases of @openzeppelin/contracts and @openzeppelin/contracts-upgradeable: - 4",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "fix is included in the following releases of @openzeppelin/contracts and @openzeppelin/contracts-upgradeable: - 4",
+      "trainedAgents": [
+        "bot-custom-auto-governance-quorum",
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "consensusghost",
+        "zerocipher"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-timelockcontroller-vulnerability-in-openzepp",
+      "sourceUrl": "https://github.com/advisories/GHSA-fg47-3c2x-m2wr",
+      "confidence": 0.98,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 179,
+      "tags": [
+        "skill",
+        "hunt",
+        "governance",
+        "cwe-269"
+      ],
+      "lastUsedAt": "2026-11-10T08:19:33.376Z",
+      "status": "active"
+    },
+    {
+      "id": "skill-erc1155supply-vulnerability-in-openzeppelin",
+      "title": "Hunt ERC1155Supply vulnerability in OpenZeppelin Contracts",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: ERC1155Supply vulnerability in OpenZeppelin Contracts When ERC1155 tokens are minted, a callback is invoked on the receiver of those tokens, as required by the spec.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: fix is included in version 4",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "fix is included in version 4",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-erc1155supply-vulnerability-in-openzeppelin",
+      "sourceUrl": "https://github.com/advisories/GHSA-wmpv-c2jp-j2xg",
+      "confidence": 0.87,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-s-signaturechecker-ma",
+      "title": "Hunt OpenZeppelin Contracts's SignatureChecker may revert on invalid EIP-1271 signers",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-20",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-20 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-1271 as expected.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-s-signaturechecker-ma",
+      "sourceUrl": "https://github.com/advisories/GHSA-4g63-c64m-25w9",
+      "confidence": 0.88,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 102,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-20"
+      ],
+      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-initializer-reentranc",
+      "title": "Hunt OpenZeppelin Contracts initializer reentrancy may lead to double initialization",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-665",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-665 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: OpenZeppelin Contracts initializer reentrancy may lead to double initialization Initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view…",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: fix is included in the version v4",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "fix is included in the version v4",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-initializer-reentranc",
+      "sourceUrl": "https://github.com/advisories/GHSA-9c22-pwxw-p6hx",
+      "confidence": 0.97,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 179,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-665"
+      ],
+      "lastUsedAt": "2026-11-10T08:19:33.376Z",
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-s-cross-chain-utiliti",
+      "title": "Hunt OpenZeppelin Contracts's Cross chain utilities for Arbitrum…",
+      "kind": "hunt",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-669",
+      "trigger": "When reviewing or red-teaming code in the L2 / Bridge layer, or when the target system mentions CWE-669.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-669 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Watch sequencer inclusion, data-availability publication and proof-verification deltas; alert on a missing batch or an unfinalised state root.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-s-cross-chain-utiliti",
+      "sourceUrl": "https://github.com/advisories/GHSA-9j3m-g383-29qr",
+      "confidence": 0.85,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "l-bridge",
+        "cwe-669"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-bytes-s-lastindexof-f",
+      "title": "Hunt OpenZeppelin Contracts Bytes's lastIndexOf function with…",
+      "kind": "hunt",
+      "domain": "Consensus",
+      "cwe": "CWE-125",
+      "trigger": "When reviewing or red-teaming code in the Consensus layer, or when the target system mentions CWE-125.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-125 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: The pos argument could be used to access arbitrary data outside of the buffer bounds.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "consensusghost",
+        "sentinel",
+        "zerocipher",
+        "vesper",
+        "entropy"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-bytes-s-lastindexof-f",
+      "sourceUrl": "https://github.com/advisories/GHSA-9rcw-c2f9-2j55",
+      "confidence": 0.97,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "consensus",
+        "cwe-125"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-uupsupgradeable-vulnerability-in-openzeppeli",
+      "title": "Hunt UUPSUpgradeable vulnerability in @openzeppelin/contracts",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-665",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-665.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-665 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: UUPSUpgradeable vulnerability in @openzeppelin/contracts Upgradeable contracts using UUPSUpgradeable may be vulnerable to an attack affecting uninitialized implementation contracts.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: fix is included in version 4",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "fix is included in version 4",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-uupsupgradeable-vulnerability-in-openzeppeli",
+      "sourceUrl": "https://github.com/advisories/GHSA-5vp3-v4hc-gx76",
+      "confidence": 0.84,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-665"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-vulnerable-to-imprope",
+      "title": "Hunt OpenZeppelin Contracts vulnerable to Improper Escaping of Output",
+      "kind": "hunt",
+      "domain": "Supply Chain",
+      "cwe": "CWE-116",
+      "trigger": "When reviewing or red-teaming code in the Supply Chain layer, or when the target system mentions CWE-116.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-116 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "bot-custom-auto-supply-chain-provenance",
+        "vesper",
+        "bytecode",
+        "sentinel",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-vulnerable-to-imprope",
+      "sourceUrl": "https://github.com/advisories/GHSA-g4vp-m682-qqmp",
+      "confidence": 0.77,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "supply-chain",
+        "cwe-116"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-s-erc165checker-may-r",
+      "title": "Hunt OpenZeppelin Contracts's ERC165Checker may revert instead of returning false",
+      "kind": "hunt",
+      "domain": "Execution",
+      "cwe": "CWE-20",
+      "trigger": "When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-20 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: However, an incorrect assumption about Solidity 0.8's abi.decode allows some cases to revert, given a target contract that doesn't implement EIP-165 as expected, specifically if it returns a value other than 0 or 1.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-s-erc165checker-may-r",
+      "sourceUrl": "https://github.com/advisories/GHSA-qh9x-gcfh-pcrw",
+      "confidence": 0.88,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "execution",
+        "cwe-20"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-vulnerable-to-ecdsa-s",
+      "title": "Hunt OpenZeppelin Contracts vulnerable to ECDSA signature malleability",
+      "kind": "hunt",
+      "domain": "Cryptography",
+      "cwe": "CWE-354",
+      "trigger": "When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-354 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: OpenZeppelin Contracts vulnerable to ECDSA signature malleability The functions ECDSA.recover and ECDSA.tryRecover are vulnerable to a kind of signature malleability due to accepting EIP-2098 compact signatures in addition to the traditional 65 byte signature…",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-vulnerable-to-ecdsa-s",
+      "sourceUrl": "https://github.com/advisories/GHSA-4h98-2769-gh6h",
+      "confidence": 0.93,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 803,
+      "tags": [
+        "skill",
+        "hunt",
+        "cryptography",
+        "cwe-354"
+      ],
+      "lastUsedAt": "2026-11-10T12:05:59.787Z",
+      "status": "active"
+    },
+    {
+      "id": "skill-governorcompatibilitybravo-incorrect-abi-enc",
+      "title": "Hunt GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior",
+      "kind": "hunt",
+      "domain": "Governance",
+      "cwe": "CWE-841",
+      "trigger": "When reviewing or red-teaming code in the Governance layer, or when the target system mentions CWE-841.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-841 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior The GovernorCompatibilityBravo module may lead to the creation of governance proposals that execute function calls with incorrect arguments due to bad ABI encoding.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: fix is included in version v4",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "fix is included in version v4",
+      "trainedAgents": [
+        "bot-custom-auto-governance-quorum",
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "consensusghost",
+        "zerocipher"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-governorcompatibilitybravo-incorrect-abi-enc",
+      "sourceUrl": "https://github.com/advisories/GHSA-m6w8-fq7v-ph4m",
+      "confidence": 0.93,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "governance",
+        "cwe-841"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-transparentupgradeabl",
+      "title": "Hunt OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated",
+      "kind": "hunt",
+      "domain": "Cryptography",
+      "cwe": "CWE-436",
+      "trigger": "When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-436.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-436 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated A function in the implementation contract may be inaccessible if its selector clashes with one of the proxy's own selectors.",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-transparentupgradeabl",
+      "sourceUrl": "https://github.com/advisories/GHSA-mx2q-35m2-x2rh",
+      "confidence": 0.74,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "cryptography",
+        "cwe-436"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-openzeppelin-contracts-using-merkleproof-mul",
+      "title": "Hunt OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitrary leaves for specific trees",
+      "kind": "hunt",
+      "domain": "Cryptography",
+      "cwe": "CWE-354",
+      "trigger": "When reviewing or red-teaming code in the Cryptography layer, or when the target system mentions CWE-354.",
+      "preconditions": [
+        "Read access to the target contract or system.",
+        "A test harness or fork environment that can execute the path."
+      ],
+      "steps": [
+        {
+          "action": "Locate the trust boundary in the code path that handles CWE-354 exposure: identify every external call, every stored-value write and every authorization check that precedes value transfer.",
+          "evidence": "A written list of external calls and state writes on the path, each with its caller."
+        },
+        {
+          "action": "Test the primitive directly: A contract may be vulnerable if it uses multiproofs for verification and the merkle tree that is processed includes a node with value 0 at depth 1 (just under the root).",
+          "evidence": "A failing test or trace that reproduces the unsafe ordering or missing check."
+        },
+        {
+          "action": "Confirm the invariant the primitive violates is actually load-bearing: identify what balances, permissions or consensus guarantees change if the primitive succeeds.",
+          "evidence": "A named invariant (e.g. \"Σ(balances) == Reserves\") plus the state delta the exploit produces."
+        },
+        {
+          "action": "Bound the impact: compute the maximum extractable value and the capital or permission needed to reach it.",
+          "evidence": "An upper bound on extraction and the preconditions an attacker must satisfy."
+        },
+        {
+          "action": "Propose the minimal fix and state which property it restores: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+          "evidence": "A patch that changes ordering or adds the missing check, plus the invariant it restores."
+        }
+      ],
+      "verification": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "stopCondition": "Stop and escalate when the primitive cannot be reached without an unrelated privilege escalation — the finding is then a precondition issue, not this defect class.",
+      "countermeasure": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "OSV — @openzeppelin/contracts — tech-openzeppelin-contracts-using-merkleproof-mul",
+      "sourceUrl": "https://github.com/advisories/GHSA-wprv-93r4-jj2p",
+      "confidence": 0.93,
+      "createdAt": "2026-11-09T23:23:30.738Z",
+      "updatedAt": "2026-11-10T12:06:24.768Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "hunt",
+        "cryptography",
+        "cwe-354"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-crypto-fhe-noise-budget",
+      "title": "Probe Encrypted-State Leakage via Decryption Oracles",
+      "kind": "probe",
+      "domain": "Cryptography",
+      "cwe": "CWE-203",
+      "trigger": "When the council opens a debate on Encrypted-State Leakage via Decryption Oracles, or when auditing a system that matches \"Confidential state is only confidential if nothing observable depends on it; any public branch, revert or gas difference that depends on an encrypted value is a decryption oracle.\".",
+      "preconditions": [
+        "A concrete target matching FHE or MPC-Based Confidential Smart Contracts.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (FHE or MPC-Based Confidential Smart Contracts) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Infer encrypted values from the public side effects of operations that depend on them.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "cryptography",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-consensus-restaking-correlated-slash",
+      "title": "Probe Restaked Security Correlated Slashing",
+      "kind": "probe",
+      "domain": "Consensus",
+      "cwe": "CWE-664",
+      "trigger": "When the council opens a debate on Restaked Security Correlated Slashing, or when auditing a system that matches \"Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.\".",
+      "preconditions": [
+        "A concrete target matching Restaking Layer Securing Multiple Actively Validated Services.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Restaking Layer Securing Multiple Actively Validated Services) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Trigger a slashing condition in the weakest service to remove collateral that the others assumed was independent.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "consensusghost",
+        "sentinel",
+        "zerocipher",
+        "vesper",
+        "entropy"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T07:31:07.308Z",
+      "timesUsed": 701,
+      "tags": [
+        "skill",
+        "probe",
+        "consensus",
+        "surface-gap"
+      ],
+      "status": "active",
+      "lastUsedAt": "2026-11-10T11:48:55.357Z"
+    },
+    {
+      "id": "skill-probe-f30-consensus-single-slot-finality-load",
+      "title": "Probe Fast-Finality Signature Aggregation Overload",
+      "kind": "probe",
+      "domain": "Consensus",
+      "cwe": "CWE-400",
+      "trigger": "When the council opens a debate on Fast-Finality Signature Aggregation Overload, or when auditing a system that matches \"Finalising in one slot requires aggregating the whole validator set within seconds, so the aggregation network becomes a liveness bottleneck that an adversary can stress without holding stake.\".",
+      "preconditions": [
+        "A concrete target matching Single-Slot Finality with Large Validator Sets.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Single-Slot Finality with Large Validator Sets) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Degrade the aggregation topology so the supermajority signature cannot be assembled inside the slot.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "consensusghost",
+        "sentinel",
+        "zerocipher",
+        "vesper",
+        "entropy"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "consensus",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-l2-shared-sequencer-atomicity",
+      "title": "Probe Shared Sequencer Cross-Rollup Atomicity",
+      "kind": "probe",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-662",
+      "trigger": "When the council opens a debate on Shared Sequencer Cross-Rollup Atomicity, or when auditing a system that matches \"A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so \"atomic\" cross-rollup actions can half-complete.\".",
+      "preconditions": [
+        "A concrete target matching Multiple Rollups Ordered by One Shared Sequencer.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Multiple Rollups Ordered by One Shared Sequencer) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Cause one leg of an atomically-included pair to revert on its rollup after the other leg has taken effect.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "l-bridge",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-l2-prover-liveness-monopoly",
+      "title": "Probe Prover Market Liveness Failure",
+      "kind": "probe",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-400",
+      "trigger": "When the council opens a debate on Prover Market Liveness Failure, or when auditing a system that matches \"A validity rollup finalises only when someone produces a proof; if proving is concentrated or unprofitable under load, withdrawals stall even though every sequencer is honest.\".",
+      "preconditions": [
+        "A concrete target matching Validity Rollup with an Outsourced or Permissioned Prover Set.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Validity Rollup with an Outsourced or Permissioned Prover Set) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Make proving uneconomic (or the dominant prover unavailable) for long enough that the finality and exit guarantees lapse.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "l-bridge",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-gov-ai-delegate-capture",
+      "title": "Probe Model-Driven Delegate Capture",
+      "kind": "probe",
+      "domain": "Governance",
+      "cwe": "CWE-451",
+      "trigger": "When the council opens a debate on Model-Driven Delegate Capture, or when auditing a system that matches \"Delegates that vote by model follow the text of a proposal, not its effect, so a proposal written to read well to the model can pass while doing something its summary does not say.\".",
+      "preconditions": [
+        "A concrete target matching DAO Where Voting Power Is Delegated to Automated or AI Delegates.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (DAO Where Voting Power Is Delegated to Automated or AI Delegates) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Draft a proposal whose description persuades automated voters while its executable payload differs from the description.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-governance-quorum",
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "consensusghost",
+        "zerocipher"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "governance",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-gov-security-council-key-rot",
+      "title": "Probe Security Council as a Permanent Upgrade Path",
+      "kind": "probe",
+      "domain": "Governance",
+      "cwe": "CWE-269",
+      "trigger": "When the council opens a debate on Security Council as a Permanent Upgrade Path, or when auditing a system that matches \"An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is.\".",
+      "preconditions": [
+        "A concrete target matching Rollup or Protocol with an Upgrade Council Above the Timelock.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Rollup or Protocol with an Upgrade Council Above the Timelock) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Reach the council threshold (through stale signers, shared custody providers or social pressure) and upgrade without delay.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-governance-quorum",
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "consensusghost",
+        "zerocipher"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "governance",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-infra-rpc-monoculture-view",
+      "title": "Probe RPC and Indexer Monoculture",
+      "kind": "probe",
+      "domain": "Infrastructure",
+      "cwe": "CWE-345",
+      "trigger": "When the council opens a debate on RPC and Indexer Monoculture, or when auditing a system that matches \"Wallets, frontends and agents that all read chain state through the same few providers share one view of reality, so whoever controls that view decides what users believe they are signing.\".",
+      "preconditions": [
+        "A concrete target matching Applications Dependent on a Small Set of RPC, Indexer or Simulation Providers.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Applications Dependent on a Small Set of RPC, Indexer or Simulation Providers) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Serve a selectively false state or simulation result to clients that have no independent source to compare against.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-infrastructure-uplink",
+        "vesper",
+        "consensusghost",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "infrastructure",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-infra-blob-da-pricing",
+      "title": "Probe Data-Availability Fee Market Starvation",
+      "kind": "probe",
+      "domain": "Infrastructure",
+      "cwe": "CWE-400",
+      "trigger": "When the council opens a debate on Data-Availability Fee Market Starvation, or when auditing a system that matches \"Rollups that must post data to a shared blob market compete for the same space, so sustained demand from one can price the others out of posting in time.\".",
+      "preconditions": [
+        "A concrete target matching Rollups Posting to a Shared Blob / DA Fee Market.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Rollups Posting to a Shared Blob / DA Fee Market) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Keep the blob base fee high enough, long enough, that a target rollup cannot publish within its own liveness window.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-infrastructure-uplink",
+        "vesper",
+        "consensusghost",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T07:31:07.308Z",
+      "timesUsed": 701,
+      "tags": [
+        "skill",
+        "probe",
+        "infrastructure",
+        "surface-gap"
+      ],
+      "status": "active",
+      "lastUsedAt": "2026-11-10T11:48:55.357Z"
+    },
+    {
+      "id": "skill-probe-f30-supply-hallucinated-dependency",
+      "title": "Probe Hallucinated Dependency Registration",
+      "kind": "probe",
+      "domain": "Supply Chain",
+      "cwe": "CWE-829",
+      "trigger": "When the council opens a debate on Hallucinated Dependency Registration, or when auditing a system that matches \"Code assistants recommend package names that do not exist with stable regularity, so registering those names turns a model’s mistake into a distribution channel.\".",
+      "preconditions": [
+        "A concrete target matching Projects Whose Dependencies Are Suggested or Installed by AI Assistants.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Projects Whose Dependencies Are Suggested or Installed by AI Assistants) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Publish a package under a name assistants repeatedly invent, and wait for it to be installed.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-supply-chain-provenance",
+        "vesper",
+        "bytecode",
+        "sentinel",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "supply-chain",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-supply-compiler-toolchain-divergence",
+      "title": "Probe Compiler and Prover Toolchain Divergence",
+      "kind": "probe",
+      "domain": "Supply Chain",
+      "cwe": "CWE-733",
+      "trigger": "When the council opens a debate on Compiler and Prover Toolchain Divergence, or when auditing a system that matches \"Source is verified, bytecode is deployed, and a circuit is proven; when the compiler, the zk transpiler and the verifier disagree on semantics, each artefact is correct against a different program.\".",
+      "preconditions": [
+        "A concrete target matching Contracts Compiled to Both EVM Bytecode and zk Circuits.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Contracts Compiled to Both EVM Bytecode and zk Circuits) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Rely on a construct that the source-level audit, the compiled bytecode and the proven circuit interpret differently.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-supply-chain-provenance",
+        "vesper",
+        "bytecode",
+        "sentinel",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "supply-chain",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-keys-passkey-recovery-path",
+      "title": "Probe Passkey and Social-Recovery Weakest Path",
+      "kind": "probe",
+      "domain": "Key Management",
+      "cwe": "CWE-640",
+      "trigger": "When the council opens a debate on Passkey and Social-Recovery Weakest Path, or when auditing a system that matches \"A wallet secured by a passkey plus recovery guardians is as strong as its easiest recovery route, which is usually an email account, a cloud sync or a guardian who was never asked to verify anything.\".",
+      "preconditions": [
+        "A concrete target matching Smart Wallets with Passkeys, Cloud Sync and Guardian Recovery.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Smart Wallets with Passkeys, Cloud Sync and Guardian Recovery) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Take over the recovery route rather than the key, and rotate the wallet’s signer.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-key-management-keywarden",
+        "zerocipher",
+        "entropy",
+        "sentinel",
+        "vesper",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "key-management",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-keys-mpc-provider-concentration",
+      "title": "Probe MPC Custody Provider Concentration",
+      "kind": "probe",
+      "domain": "Key Management",
+      "cwe": "CWE-654",
+      "trigger": "When the council opens a debate on MPC Custody Provider Concentration, or when auditing a system that matches \"A threshold of key shares gives no independence if the shares run the same software from the same vendor on the same cloud: one library defect or one provider incident reaches every share.\".",
+      "preconditions": [
+        "A concrete target matching Institutional Custody Using Threshold-Signature Services.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Institutional Custody Using Threshold-Signature Services) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: A single defect in the shared signing library or provider control plane affects enough shares to meet the threshold.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-key-management-keywarden",
+        "zerocipher",
+        "entropy",
+        "sentinel",
+        "vesper",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "key-management",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-keys-agent-delegated-authority",
+      "title": "Probe Over-Broad Authority Delegated to Agents",
+      "kind": "probe",
+      "domain": "Key Management",
+      "cwe": "CWE-250",
+      "trigger": "When the council opens a debate on Over-Broad Authority Delegated to Agents, or when auditing a system that matches \"Giving an automated agent a session key is a key-management decision: without spend limits, scopes and expiry enforced on-chain, the agent’s compromise is the owner’s compromise.\".",
+      "preconditions": [
+        "A concrete target matching Wallets Issuing Session Keys or Allowances to Bots and AI Agents.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Wallets Issuing Session Keys or Allowances to Bots and AI Agents) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Use a long-lived, unscoped session key outside the purpose it was issued for.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-key-management-keywarden",
+        "zerocipher",
+        "entropy",
+        "sentinel",
+        "vesper",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "key-management",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-crypto-pq-migration-window",
+      "title": "Probe Post-Quantum Migration Window",
+      "kind": "probe",
+      "domain": "Cryptography",
+      "cwe": "CWE-327",
+      "trigger": "When the council opens a debate on Post-Quantum Migration Window, or when auditing a system that matches \"During a signature-scheme migration an account is only as strong as the weakest scheme still accepted for it, so every address that has revealed a classical public key stays exposed until the old path is disabled — not until the new one is enabled.\".",
+      "preconditions": [
+        "A concrete target matching Chain Migrating from ECDSA/BLS to Post-Quantum Signatures.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Chain Migrating from ECDSA/BLS to Post-Quantum Signatures) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Use the still-valid legacy signature path for an account that has already published its classical public key.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "zerocipher",
+        "entropy",
+        "stateroot",
+        "bytecode"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T07:31:07.308Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "cryptography",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-exec-delegated-eoa-code",
+      "title": "Probe Delegated Account Code Persistence",
+      "kind": "probe",
+      "domain": "Execution",
+      "cwe": "CWE-269",
+      "trigger": "When the council opens a debate on Delegated Account Code Persistence, or when auditing a system that matches \"An externally owned account that delegates its behaviour to contract code keeps that delegation after the signing session ends, so a one-time approval becomes a standing authority over the whole account.\".",
+      "preconditions": [
+        "A concrete target matching EOAs with Code Delegation (EIP-7702 Style) and Smart-Wallet Modules.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (EOAs with Code Delegation (EIP-7702 Style) and Smart-Wallet Modules) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Obtain a delegation signature for a benign-looking purpose whose target code retains broader control afterwards.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "execution",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-exec-transient-storage-assumption",
+      "title": "Probe Transient-Storage Lifetime Assumption",
+      "kind": "probe",
+      "domain": "Execution",
+      "cwe": "CWE-362",
+      "trigger": "When the council opens a debate on Transient-Storage Lifetime Assumption, or when auditing a system that matches \"A guard held in transient storage is cleared at the end of the transaction, not the end of the call, so code that assumes per-call isolation carries state between calls inside one transaction.\".",
+      "preconditions": [
+        "A concrete target matching Contracts Using Transient Storage for Locks and Flash Accounting.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Contracts Using Transient Storage for Locks and Flash Accounting) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Compose several calls in one transaction so a value left in transient storage by the first changes the behaviour of the second.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "execution",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-exec-hook-callback-authority",
+      "title": "Probe Hook and Plugin Callback Authority",
+      "kind": "probe",
+      "domain": "Execution",
+      "cwe": "CWE-829",
+      "trigger": "When the council opens a debate on Hook and Plugin Callback Authority, or when auditing a system that matches \"A protocol that calls third-party hooks inside its own state transition lends them its invariants; the core contract is then only as safe as the least careful hook any pool may attach.\".",
+      "preconditions": [
+        "A concrete target matching Singleton AMMs and Modular Protocols with User-Supplied Hooks.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Singleton AMMs and Modular Protocols with User-Supplied Hooks) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Attach a hook whose callback observes or alters accounting at a point where the core contract assumes exclusivity.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bytecode",
+        "vesper",
+        "sentinel",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "execution",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-econ-agent-wallet-prompt-steering",
+      "title": "Probe Autonomous Agent Wallet Steering",
+      "kind": "probe",
+      "domain": "Economic",
+      "cwe": "CWE-1427",
+      "trigger": "When the council opens a debate on Autonomous Agent Wallet Steering, or when auditing a system that matches \"An autonomous agent that reads on-chain or off-chain text before it signs treats that text as instruction, so anyone who can place text where the agent will read it can influence how it spends.\".",
+      "preconditions": [
+        "A concrete target matching AI Agents Holding Keys and Transacting Autonomously.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (AI Agents Holding Keys and Transacting Autonomously) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Place crafted content in data the agent consumes (token metadata, memos, web pages) so its next action serves the author.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "darkpool",
+        "sentinel",
+        "bytecode",
+        "zerocipher",
+        "consensusghost"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "economic",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-l2-interop-message-replay",
+      "title": "Probe Native Interop Message Domain Confusion",
+      "kind": "probe",
+      "domain": "L2 / Bridge",
+      "cwe": "CWE-294",
+      "trigger": "When the council opens a debate on Native Interop Message Domain Confusion, or when auditing a system that matches \"When many chains share one messaging standard, a message is safe only if its domain binds chain, contract and version; any field left out lets a message valid on one chain be accepted on another.\".",
+      "preconditions": [
+        "A concrete target matching Rollup Cluster with Native Cross-Chain Messaging.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Rollup Cluster with Native Cross-Chain Messaging) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Present a genuine message on a chain or contract version other than the one it was authorised for.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "stateroot",
+        "zerocipher",
+        "sentinel",
+        "consensusghost",
+        "darkpool"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T07:31:07.308Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "l-bridge",
+        "surface-gap"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "skill-probe-f30-supply-frontend-signing-surface",
+      "title": "Probe Frontend and Signing-UI Substitution",
+      "kind": "probe",
+      "domain": "Supply Chain",
+      "cwe": "CWE-451",
+      "trigger": "When the council opens a debate on Frontend and Signing-UI Substitution, or when auditing a system that matches \"The contract a user audits is not the thing they interact with; the transaction is assembled by a web frontend and displayed by a wallet, and either can show one action while requesting another.\".",
+      "preconditions": [
+        "A concrete target matching Multisig and Custody Workflows Signing via Hosted Web Interfaces.",
+        "The Surface Map gap list, so prior findings are not re-derived."
+      ],
+      "steps": [
+        {
+          "action": "Model the target architecture named in the hypothesis (Multisig and Custody Workflows Signing via Hosted Web Interfaces) and write down every actor that can influence it.",
+          "evidence": "An actor list with the privilege each actor holds."
+        },
+        {
+          "action": "Enumerate the reachable state transitions that could realize the mechanism: Alter the hosted interface or its build so signers approve a payload that differs from what the screen displays.",
+          "evidence": "A transition list showing which paths require which privilege."
+        },
+        {
+          "action": "Attempt the mechanism against the cheapest reachable path and record where it fails.",
+          "evidence": "A reproducible attempt that either succeeds or names the exact check that stopped it."
+        },
+        {
+          "action": "Derive the invariant the mechanism would break and test whether the current implementation asserts it anywhere.",
+          "evidence": "The invariant stated in code terms, plus proof it is unasserted."
+        },
+        {
+          "action": "Escalate to composition: check whether this mechanism combines with a known weakness in another layer.",
+          "evidence": "A composition note naming the second layer and the combined effect."
+        }
+      ],
+      "verification": "The mechanism is confirmed when the hypothesized state transition is reachable and produces the predicted invariant violation.",
+      "stopCondition": "Stop when the mechanism requires a capability no actor can obtain — record the gap and move to the next surface.",
+      "countermeasure": "Design the fix so the violated invariant is asserted explicitly at the point of transition.",
+      "trainedAgents": [
+        "bot-custom-auto-supply-chain-provenance",
+        "vesper",
+        "bytecode",
+        "sentinel",
+        "entropy",
+        "stateroot"
+      ],
+      "source": "ChronoZero Surface Engine",
+      "confidence": 0.6,
+      "createdAt": "2026-11-10T07:26:24.964Z",
+      "updatedAt": "2026-11-10T12:06:24.769Z",
+      "timesUsed": 0,
+      "tags": [
+        "skill",
+        "probe",
+        "supply-chain",
+        "surface-gap"
+      ],
+      "status": "active"
     }
   ],
-  "lastBuiltAt": "2026-11-05T16:35:51.813Z",
+  "lastBuiltAt": "2026-11-10T12:06:24.769Z",
   "buildLog": [
+    {
+      "at": "2026-11-10T12:06:24.769Z",
+      "built": 0,
+      "skipped": 209,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T11:49:59.838Z",
+      "built": 0,
+      "skipped": 187,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T07:31:07.308Z",
+      "built": 0,
+      "skipped": 192,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T07:30:39.127Z",
+      "built": 0,
+      "skipped": 192,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T07:28:19.686Z",
+      "built": 0,
+      "skipped": 192,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T07:27:22.248Z",
+      "built": 0,
+      "skipped": 191,
+      "total": 100
+    },
+    {
+      "at": "2026-11-10T07:26:24.964Z",
+      "built": 21,
+      "skipped": 169,
+      "total": 100
+    },
+    {
+      "at": "2026-11-09T23:23:30.739Z",
+      "built": 17,
+      "skipped": 152,
+      "total": 79
+    },
+    {
+      "at": "2026-11-09T23:13:46.133Z",
+      "built": 15,
+      "skipped": 118,
+      "total": 62
+    },
     {
       "at": "2026-11-05T16:35:51.813Z",
       "built": 0,
@@ -2602,6 +5778,58 @@
       "built": 47,
       "skipped": 130,
       "total": 47
+    }
+  ],
+  "usageTrackingSince": "2026-11-09T23:13:46.133Z",
+  "pruneLog": [
+    {
+      "at": "2026-11-10T07:31:07.365Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T07:30:39.177Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T07:28:19.739Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T07:27:22.291Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-10T07:26:25.004Z",
+      "retired": 0,
+      "reasons": {},
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-09T23:23:31.655Z",
+      "retired": 20,
+      "reasons": {
+        "off-domain": 3,
+        "not-a-defect": 17
+      },
+      "dryRun": false
+    },
+    {
+      "at": "2026-11-09T23:13:47.102Z",
+      "retired": 19,
+      "reasons": {
+        "off-domain": 4,
+        "not-a-defect": 11,
+        "duplicate": 4
+      },
+      "dryRun": false
     }
   ]
 }

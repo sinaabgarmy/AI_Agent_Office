@@ -13,9 +13,14 @@ source_id: ef-blog-announcing-the-plat-berget-testnet
 confidence: 0.6
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.366Z"
+updated: "2026-11-10T11:50:59.650Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-04T18:52:17.372Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
 > **Refreshed 2026-11-04T18:54:02.428Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
 > **Refreshed 2026-11-05T16:34:49.366Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
+> **Refreshed 2026-11-09T23:14:18.639Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
+> **Refreshed 2026-11-10T07:26:05.720Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
+> **Refreshed 2026-11-10T08:12:51.625Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
+> **Refreshed 2026-11-10T11:08:39.277Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.
+> **Refreshed 2026-11-10T11:50:59.650Z** — Announcing the Platåberget Testnet tl;dr: Meet Platåberget: Glamsterdam's (Gloas + Amsterdam) early testing ground open to public participation.

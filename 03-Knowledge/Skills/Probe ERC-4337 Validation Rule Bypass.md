@@ -19,9 +19,18 @@ confidence: 0.6
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, probe, execution, surface-gap]
-updated: "2026-11-05T16:35:51.838Z"
+updated: "2026-11-10T12:06:24.785Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,3 +65,12 @@ Design the fix so the violated invariant is asserted explicitly at the point of 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.665Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
 > **Refreshed 2026-11-05T16:35:51.838Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-09T23:13:46.959Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-09T23:23:31.215Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T07:26:24.975Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T07:27:22.259Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T07:28:19.696Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T07:30:39.137Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T07:31:07.321Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T11:49:59.856Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".
+> **Refreshed 2026-11-10T12:06:24.785Z** — When the council opens a debate on ERC-4337 Validation Rule Bypass, or when auditing a system that matches "A UserOperation validator that mis-scopes a signature check permits an operation to be sponsored by an account whose owner never authorized it.".

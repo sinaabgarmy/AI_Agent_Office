@@ -31,6 +31,15 @@ import { runPatchWatch } from './server/patchwatch';
 import { FoundryHarness } from './server/harness/foundry-harness';
 import { EchidnaHarness } from './server/harness/echidna-harness';
 import { DEBATE_TOPICS } from './src/data/topics';
+import { BOTS } from './src/data/bots';
+import { VaultSync } from './server/vaultSync';
+import { initAgentRegistry } from './server/agentRegistry';
+import { WebCapture } from './server/webCapture';
+import { ScenarioForge, scenarioFromGraphHypothesis, scenarioFromHuntTarget } from './server/scenarioForge';
+import { AgentFoundry } from './server/agentFoundry';
+import { ArtifactEngine, ARTIFACT_KINDS } from './server/artifactEngine';
+import { EvolutionEngine } from './server/evolutionEngine';
+import { techniqueQuality } from './server/intelEngine';
 
 dotenv.config();
 
@@ -57,6 +66,34 @@ const PROJECT_ROOT = findProjectRoot(path.dirname(__filename));
 
 app.use(express.json({ limit: '10mb' }));
 
+/**
+ * Cross-site request guard.
+ *
+ * The lab has no login — it trusts whoever can reach it, which is safe only
+ * while that is the operator's own browser tab. Any OTHER website open in
+ * the same browser can still fire a form POST at http://localhost:3000, and
+ * several routes act without a JSON body (run a cycle, disconnect the
+ * vault). Browsers attach an `Origin` header to such requests, so a
+ * state-changing API call whose Origin is not this server is refused.
+ * Split-host setups list their frontend in ALLOWED_ORIGINS (comma-separated).
+ */
+const EXTRA_ALLOWED_ORIGINS = new Set(
+  [process.env.APP_URL, ...(process.env.ALLOWED_ORIGINS ?? '').split(',')]
+    .map(o => (o ?? '').trim().replace(/\/+$/, '').toLowerCase())
+    .filter(Boolean)
+);
+app.use('/api', (req, res, next) => {
+  if (req.method === 'GET' || req.method === 'HEAD' || req.method === 'OPTIONS') return next();
+  const origin = String(req.headers.origin ?? '').trim().toLowerCase();
+  if (!origin) return next(); // non-browser clients (curl, scripts) send no Origin
+  let originHost = '';
+  try { originHost = new URL(origin).host; } catch { /* malformed → rejected below */ }
+  const sameHost = originHost !== '' && originHost === String(req.headers.host ?? '').toLowerCase();
+  const loopback = /^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/.test(originHost);
+  if (sameHost || loopback || EXTRA_ALLOWED_ORIGINS.has(origin)) return next();
+  res.status(403).json({ error: 'Cross-site request refused. Add this origin to ALLOWED_ORIGINS in .env if it is your own frontend.' });
+});
+
 // In-memory fallback stores if MongoDB Atlas is not yet configured by the user
 interface InMemoryStore {
   defects: any[];
@@ -76,6 +113,8 @@ const memoryStore: InMemoryStore = {
 /* Knowledge Vault + persistent memory + durable session storage        */
 /* ------------------------------------------------------------------ */
 const DATA_DIR = path.join(PROJECT_ROOT, 'data');
+// The roster registry must exist before any engine assigns work to agents.
+const agentRegistry = initAgentRegistry(DATA_DIR);
 const vault: ObsidianVault = initVault(DATA_DIR, PROJECT_ROOT);
 const agentToolRuntime = new AgentToolRuntime(vault, DATA_DIR);
 const knowledgeEngine = new KnowledgeEngine(vault, (info) => {
@@ -97,6 +136,56 @@ const graphIntel = new GraphIntelligence(vault);
 const hunter = new ZeroDayHunter(vault, DATA_DIR, graphIntel);
 const datasetEngine = new DatasetEngine(vault);
 const campaignReportEngine = new CampaignReportEngine(vault);
+
+/* ------------------------------------------------------------------ */
+/* Autopilot stack: vault sync, web capture, forge, foundry, artifacts  */
+/* ------------------------------------------------------------------ */
+const vaultSync = new VaultSync(vault, DATA_DIR);
+const webCapture = new WebCapture(vault, DATA_DIR, intelEngine);
+const scenarioForge = new ScenarioForge({
+  vault, dataDir: DATA_DIR, surface: surfaceEngine, intel: intelEngine,
+  graph: graphIntel, hunter, sync: vaultSync,
+});
+const agentFoundry = new AgentFoundry(vault, DATA_DIR, agentRegistry);
+const artifactEngine = new ArtifactEngine(vault, DATA_DIR);
+const evolutionEngine = new EvolutionEngine({
+  vault, dataDir: DATA_DIR, surface: surfaceEngine, intel: intelEngine, skills: skillEngine,
+  sync: vaultSync, capture: webCapture, forge: scenarioForge, foundry: agentFoundry,
+  registry: agentRegistry, artifacts: artifactEngine,
+  host: {
+    builtinTopics: () => DEBATE_TOPICS,
+    listScenarios: () => memoryStore.scenarios,
+    saveScenario: async scenario => { await upsertStored('scenarios', { ...scenario, isCustom: true, savedAt: new Date().toISOString() }); },
+    listAgents: () => memoryStore.agents,
+    saveAgent: async agent => { await upsertStored('agents', agent); },
+    builtinAgentCount: () => BOTS.length,
+    debatedTopicIds: () => new Set(
+      debateStore.listSessions(500).filter(s => (s.messages?.length ?? 0) >= 3).map(s => s.topicId)
+    ),
+    buildSkills: () => buildSkillLibrary(40),
+  },
+});
+
+/** Brings the index in line with the vault on disk, then keeps it live. */
+function startVaultSync(): void {
+  if (!vault.isConnected()) return;
+  try {
+    vaultSync.ensureTemplates();
+    const scan = vaultSync.scan();
+    if (scan.ok) {
+      console.log(`[VaultSync] ${scan.total} notes on disk — ${scan.added} new, ${scan.changed} changed, ${scan.removed} removed (${scan.operatorNotes} written by the operator).`);
+      if (evolutionEngine.getConfig().vault.learn) vaultSync.learn();
+    } else {
+      console.warn(`[VaultSync] initial scan skipped: ${scan.error}`);
+    }
+    const watching = vaultSync.startWatching(() => {
+      if (evolutionEngine.getConfig().vault.learn) { try { vaultSync.learn(); } catch { /* next cycle */ } }
+    });
+    console.log(`[VaultSync] Live sync ${watching ? 'ON — edits made in Obsidian are indexed within seconds' : 'unavailable on this platform — the hourly scan still runs'}.`);
+  } catch (e) {
+    console.warn('[VaultSync] start failed:', e);
+  }
+}
 
 /* ------------------------------------------------------------------ */
 /* ChronoZero admission bus: ledger + ingestor + harnesses             */
@@ -180,6 +269,17 @@ function writeAutomatedCoverageReport(predictions: SurfacePrediction[]): string 
 
 const automationScheduler = new AutomationScheduler(DATA_DIR, [
   {
+    // First, so every later job sees the vault as it is on disk right now.
+    id: 'vault-sync',
+    run: async () => {
+      if (!vault.isConnected()) return { summary: 'Vault not connected — nothing to sync.' };
+      const scan = vaultSync.scan();
+      if (!scan.ok) return { summary: `Vault scan skipped: ${scan.error}` };
+      const learned = evolutionEngine.getConfig().vault.learn ? vaultSync.learn().learned : 0;
+      return { summary: `Vault sync: ${scan.total} notes, ${scan.added} new, ${scan.changed} changed, ${scan.removed} removed; learned from ${learned} operator note(s).` };
+    },
+  },
+  {
     id: 'surface-scan',
     run: async previous => {
       const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
@@ -212,6 +312,12 @@ const automationScheduler = new AutomationScheduler(DATA_DIR, [
       return { summary };
     },
   },
+  {
+    // Last: the autopilot acts on everything the earlier jobs refreshed.
+    // Self-throttled (default every 6 h) and switchable from the Autopilot tab.
+    id: 'autopilot',
+    run: async () => ({ summary: await evolutionEngine.runScheduled() }),
+  },
 ]);
 
 // Restore the in-memory fallback store from disk so a restart no longer
@@ -224,6 +330,53 @@ if (restoredStore) {
   memoryStore.scenarios = restoredStore.scenarios ?? [];
 }
 function persistStore(): void { persistFallbackStore(DATA_DIR, memoryStore); }
+
+/**
+ * Single write path for stored agents and scenarios.
+ *
+ * `memoryStore` is the copy every engine reads (coverage scoring, the
+ * scenario forge, the agent foundry). The routes used to write to MongoDB
+ * OR to memoryStore, so with Atlas connected the engines never saw a single
+ * custom scenario or agent. Writes now always land in memoryStore and are
+ * mirrored to MongoDB when it is connected.
+ */
+async function upsertStored(collection: 'agents' | 'scenarios', doc: Record<string, any>): Promise<void> {
+  const list = memoryStore[collection];
+  const idx = list.findIndex(x => x.id === doc.id);
+  if (idx >= 0) list[idx] = doc;
+  else if (collection === 'scenarios') list.unshift(doc);
+  else list.push(doc);
+  persistStore();
+  if (isMongoConnected && mongoDb) {
+    const { _id, ...plain } = doc;
+    await mongoDb.collection(collection).updateOne({ id: doc.id }, { $set: plain }, { upsert: true });
+  }
+}
+
+async function removeStored(collection: 'agents' | 'scenarios', id: string): Promise<void> {
+  memoryStore[collection] = memoryStore[collection].filter(x => x.id !== id);
+  persistStore();
+  if (isMongoConnected && mongoDb) await mongoDb.collection(collection).deleteOne({ id });
+}
+
+/** After MongoDB connects, pull its agents/scenarios into the engine-visible copy. */
+async function mirrorFromMongo(): Promise<void> {
+  if (!isMongoConnected || !mongoDb) return;
+  try {
+    for (const collection of ['agents', 'scenarios'] as const) {
+      const remote = await mongoDb.collection(collection).find({}).toArray();
+      const byId = new Map<string, any>(memoryStore[collection].map(x => [x.id, x]));
+      for (const doc of remote) {
+        const { _id, ...plain } = doc as any;
+        if (plain.id) byId.set(plain.id, plain);
+      }
+      memoryStore[collection] = Array.from(byId.values());
+    }
+    persistStore();
+  } catch (e: any) {
+    console.warn(`[ChronoZero DB] Could not mirror MongoDB into the local store: ${e.message}`);
+  }
+}
 
 let dbClient: MongoClient | null = null;
 let mongoDb: Db | null = null;
@@ -286,6 +439,7 @@ async function connectToMongo(uri: string): Promise<boolean> {
     mongoConnectionError = '';
     currentMongoUri = uri;
     console.log('[ChronoZero DB] Successfully connected to MongoDB Atlas database: chronozero_lab');
+    await mirrorFromMongo();
     return true;
   } catch (err: any) {
     // Graceful silent fallback without spamming OpenSSL stack traces to stderr
@@ -414,18 +568,7 @@ app.post('/api/agents', async (req, res) => {
   }
 
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('agents').updateOne(
-        { id: agent.id },
-        { $set: agent },
-        { upsert: true }
-      );
-    } else {
-      const idx = memoryStore.agents.findIndex(a => a.id === agent.id);
-      if (idx >= 0) memoryStore.agents[idx] = agent;
-      else memoryStore.agents.push(agent);
-      persistStore();
-    }
+    await upsertStored('agents', agent);
     res.json({ success: true, agent });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -435,12 +578,9 @@ app.post('/api/agents', async (req, res) => {
 app.delete('/api/agents/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('agents').deleteOne({ id });
-    } else {
-      memoryStore.agents = memoryStore.agents.filter(a => a.id !== id);
-      persistStore();
-    }
+    await removeStored('agents', id);
+    // An agent the operator removed must not be re-created by the foundry.
+    agentFoundry.dismiss(id);
     res.json({ success: true });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -468,18 +608,7 @@ app.post('/api/scenarios', async (req, res) => {
 
   const withMeta = { ...scenario, savedAt: new Date().toISOString() };
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('scenarios').updateOne(
-        { id: withMeta.id },
-        { $set: withMeta },
-        { upsert: true }
-      );
-    } else {
-      const idx = memoryStore.scenarios.findIndex(s => s.id === withMeta.id);
-      if (idx >= 0) memoryStore.scenarios[idx] = withMeta;
-      else memoryStore.scenarios.unshift(withMeta);
-      persistStore();
-    }
+    await upsertStored('scenarios', withMeta);
     res.json({ success: true, scenario: withMeta });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -489,12 +618,9 @@ app.post('/api/scenarios', async (req, res) => {
 app.delete('/api/scenarios/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('scenarios').deleteOne({ id });
-    } else {
-      memoryStore.scenarios = memoryStore.scenarios.filter(s => s.id !== id);
-      persistStore();
-    }
+    await removeStored('scenarios', id);
+    // A scenario the operator deleted must not be regenerated by the forge.
+    scenarioForge.dismiss(id);
     res.json({ success: true });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -597,6 +723,10 @@ app.post('/api/vault/configure', async (req, res) => {
     return res.status(400).json({ ok: false, error: 'Provide { path: "D:\\AI-Research\\ChronoZero-Vault" }' });
   }
   const result = await vault.configure(rawPath, req.body?.settings ?? {});
+  if (result.ok) {
+    vaultSync.stopWatching();
+    startVaultSync();
+  }
   res.json(result);
 });
 
@@ -608,6 +738,7 @@ app.post('/api/vault/config', (req, res) => {
 });
 
 app.post('/api/vault/disconnect', (req, res) => {
+  vaultSync.stopWatching();
   vault.disconnect();
   res.json({ ok: true });
 });
@@ -731,6 +862,9 @@ app.post('/api/memory/for-agent', (req, res) => {
   try {
     const relevant = skillEngine.skillsForTopic(String(topicTitle), undefined, 6);
     if (relevant.length > 0) {
+      // Count the injection as a use — this is what tells the pruner which
+      // skills earn their place and which never match a debate.
+      skillEngine.markUsedMany(relevant.map(s => s.id));
       const lines = relevant.map(s => {
         const steps = s.steps.length
           ? s.steps.slice(0, 3).map((st, i) => `   ${i + 1}. ${st.action}`).join('\n')
@@ -943,14 +1077,7 @@ app.post('/api/intel/scenarios/promote', async (req, res) => {
   }
   const withMeta = { ...scenario, isCustom: true, promotedFromIntel: true, savedAt: new Date().toISOString() };
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('scenarios').updateOne({ id: withMeta.id }, { $set: withMeta }, { upsert: true });
-    } else {
-      const idx = memoryStore.scenarios.findIndex(s => s.id === withMeta.id);
-      if (idx >= 0) memoryStore.scenarios[idx] = withMeta;
-      else memoryStore.scenarios.unshift(withMeta);
-      persistStore();
-    }
+    await upsertStored('scenarios', withMeta);
   } catch (e: any) {
     return res.status(500).json({ error: e.message });
   }
@@ -1065,19 +1192,6 @@ app.post('/api/automation/run', async (_req, res) => {
 /* Helpers shared by the surface + skill routes                         */
 /* ------------------------------------------------------------------ */
 
-/** Which agents lead a hunt in each layer. Red-team roles go first. */
-const HUNTER_AGENTS_BY_LAYER: Record<string, string[]> = {
-  'Cryptography': ['entropy', 'zerocipher', 'stateroot'],
-  'Consensus': ['consensusghost', 'vesper', 'sentinel'],
-  'Execution': ['vesper', 'bytecode', 'darkpool'],
-  'Economic': ['darkpool', 'vesper', 'bytecode'],
-  'L2 / Bridge': ['stateroot', 'vesper', 'zerocipher'],
-  'Governance': ['darkpool', 'bytecode', 'vesper'],
-  'Infrastructure': ['vesper', 'entropy', 'consensusghost'],
-  'Supply Chain': ['vesper', 'bytecode', 'entropy'],
-  'Key Management': ['entropy', 'zerocipher', 'vesper'],
-};
-
 /** The scenarios the council currently knows about (for coverage scoring). */
 function currentScenarioLikeTopics(): Array<{ id: string; title: string; briefing?: string; category?: string }> {
   return [...DEBATE_TOPICS, ...memoryStore.scenarios];
@@ -1087,14 +1201,7 @@ function currentScenarioLikeTopics(): Array<{ id: string; title: string; briefin
 async function persistSurfaceScenario(scenario: any): Promise<any> {
   const withMeta = { ...scenario, isCustom: true, promotedFromSurface: true, savedAt: new Date().toISOString() };
   try {
-    if (isMongoConnected && mongoDb) {
-      await mongoDb.collection('scenarios').updateOne({ id: withMeta.id }, { $set: withMeta }, { upsert: true });
-    } else {
-      const idx = memoryStore.scenarios.findIndex(s => s.id === withMeta.id);
-      if (idx >= 0) memoryStore.scenarios[idx] = withMeta;
-      else memoryStore.scenarios.unshift(withMeta);
-      persistStore();
-    }
+    await upsertStored('scenarios', withMeta);
   } catch (e: any) {
     return { ...withMeta, saveError: e.message };
   }
@@ -1134,8 +1241,17 @@ app.get('/api/skills/topic', (req, res) => {
  *   external intel techniques + mapped attack surfaces + debate discoveries.
  */
 app.post('/api/skills/build', (req, res) => {
+  const result = buildSkillLibrary(Number(req.body?.maxPerKind ?? 40));
+  res.json({ ok: true, ...result });
+});
+
+/** Shared by the build route and the autopilot. */
+function buildSkillLibrary(maxPerKind: number): { built: number; skipped: number; total: number; sources: { techniques: number; surfaces: number; discoveries: number } } {
   const techniques = intelEngine.listTechniques()
     .filter(t => t.confidence >= 0.5)
+    // Untrusted web material and non-defects ("Announcing the … testnet")
+    // must not become procedures the agents are told to follow.
+    .filter(t => !t.quarantined && techniqueQuality(t).actionable)
     .map(t => ({
       id: t.id, title: t.title, layer: t.layer, cwe: t.cwe,
       primitive: t.primitive, detection: t.detection, remediation: t.remediation,
@@ -1168,14 +1284,9 @@ app.post('/api/skills/build', (req, res) => {
     } catch { /* vault unavailable */ }
   }
 
-  const result = skillEngine.buildAll({
-    techniques,
-    surfaces,
-    discoveries,
-    maxPerKind: Number(req.body?.maxPerKind ?? 40),
-  });
-  res.json({ ok: true, ...result, sources: { techniques: techniques.length, surfaces: surfaces.length, discoveries: discoveries.length } });
-});
+  const result = skillEngine.buildAll({ techniques, surfaces, discoveries, maxPerKind });
+  return { ...result, sources: { techniques: techniques.length, surfaces: surfaces.length, discoveries: discoveries.length } };
+}
 
 /** Records that a skill was used during a debate. */
 app.post('/api/skills/:id/used', (req, res) => {
@@ -1214,23 +1325,7 @@ app.post('/api/graph/promote', async (req, res) => {
   const h = snap.hypotheses.find(x => x.id === id);
   if (!h) return res.status(404).json({ error: `Unknown graph hypothesis "${id}".` });
 
-  const scenario = {
-    id: `graph-${h.id.replace(/^graph-/, '')}`,
-    title: h.title,
-    category: 'Custom',
-    briefing: [
-      `Graph-derived threat hypothesis (${h.signal}).`,
-      h.rationale,
-      `Invariant at risk: ${h.hypothesis}`,
-      `Ingredients the council has each argued but never composed: ${h.ingredients.join(' + ')}.`,
-      `This composition has no existing link in the vault — argue it from first principles.`,
-    ].join(' '),
-    targetArchitecture: h.targetArchitecture,
-    coreHypothesis: h.hypothesis,
-    defaultInvolvedBots: h.suitedAgents,
-    promotedFromGraph: true,
-  };
-  res.json({ ok: true, scenario: await persistSurfaceScenario(scenario) });
+  res.json({ ok: true, scenario: await persistSurfaceScenario(scenarioFromGraphHypothesis(h)) });
 });
 
 // ----------------- ZERO-DAY HUNTER (forward-looking exploit discovery) -----------------
@@ -1265,44 +1360,24 @@ app.post('/api/hunter/sweep', (req, res) => {
 
 /** The current hunt targets (from the last sweep, reconstructed). */
 app.get('/api/hunter/targets', (req, res) => {
-  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
-  res.json({ targets: result.targets, exhausted: result.exhausted, totalCombinations: result.totalCombinations });
+  // Read-only: `sweep` marks targets as handed out, so it must not be used for lookups.
+  const result = hunter.enumerate({ includeGraphDerived: true });
+  const limit = Math.min(Number(req.query?.limit ?? 60), 300);
+  res.json({ targets: result.targets.slice(0, limit), total: result.targets.length, exhausted: result.exhausted, totalCombinations: result.totalCombinations });
 });
 
 /** Promote a hunt target into a debate scenario. */
 app.post('/api/hunter/promote', async (req, res) => {
   const id = String(req.body?.id ?? '');
-  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
-  const target = result.targets.find(t => t.id === id);
+  const target = hunter.enumerate({ includeGraphDerived: true }).targets.find(t => t.id === id);
   if (!target) return res.status(404).json({ error: `Unknown hunt target "${id}".` });
-
-  const scenario = {
-    id: `hunt-${target.id.replace(/^hunt-/, '')}`,
-    title: `${target.primitiveName} against ${target.surfaceComponent}`,
-    category: 'Custom',
-    briefing: [
-      `ZERO-DAY HUNT — ${target.primitiveName} (${target.cwe}) against ${target.surfaceComponent} (${target.layer}).`,
-      `Invariant at risk: ${target.invariant}`,
-      `The defender's assumption: ${target.defenderAssumption}`,
-      `Attack chain: ${target.attackChain.join(' ')}`,
-      `Attacker capital: $${target.capitalUSD.toLocaleString()} · time to exploit: ${target.timeToExploit} · stealth: ${Math.round(target.stealth * 100)}%.`,
-      `This is a ONE-TIME attack: ${target.oneTimeAttack}`,
-      `RED TEAM ADVANTAGE: the hunter roles lead. Find the chain before the defence argues it.`,
-    ].join(' '),
-    targetArchitecture: `${target.surfaceComponent} (${target.layer})`,
-    coreHypothesis: `The primitive "${target.primitiveName}" breaks the invariant "${target.invariant}" on ${target.surfaceComponent} because ${target.defenderAssumption.toLowerCase()}`,
-    defaultInvolvedBots: HUNTER_AGENTS_BY_LAYER[target.layer] ?? ['vesper', 'bytecode', 'sentinel'],
-    promotedFromHunter: true,
-    hunterTargetId: target.id,
-  };
-  res.json({ ok: true, scenario: await persistSurfaceScenario(scenario) });
+  res.json({ ok: true, scenario: await persistSurfaceScenario(scenarioFromHuntTarget(target)) });
 });
 
 /** The full RED/BLUE campaign brief for a hunt target. */
 app.get('/api/hunter/report', (req, res) => {
   const id = String(req.query?.id ?? '');
-  const result = hunter.sweep({ limit: 0, includeGraphDerived: false });
-  const target = result.targets.find(t => t.id === id);
+  const target = hunter.enumerate({ includeGraphDerived: true }).targets.find(t => t.id === id);
   if (!target) return res.status(404).json({ error: `Unknown hunt target "${id}".` });
   const report = campaignReportEngine.build(target);
   const vaultPath = req.query?.write === 'true' ? campaignReportEngine.writeReport(report) : null;
@@ -1534,6 +1609,270 @@ app.post('/api/harness/echidna', async (req, res) => {
   res.json(await echidnaHarness.runFuzzing(target, { maxRuns: req.body?.maxRuns, seed: req.body?.seed }));
 });
 
+// ----------------- VAULT AS A DATABASE (two-way Obsidian sync) -----------------
+
+/** Sync health: what is tracked, what the operator wrote, what was learned. */
+app.get('/api/vault/sync', (_req, res) => {
+  res.json(vaultSync.status());
+});
+
+/** Re-reads the vault from disk now (and learns from changed operator notes). */
+app.post('/api/vault/rescan', (req, res) => {
+  if (!vault.isConnected()) return res.status(400).json({ ok: false, error: 'Vault not connected.' });
+  const scan = vaultSync.scan({ full: req.body?.full === true });
+  const learned = scan.ok && req.body?.learn !== false ? vaultSync.learn() : { learned: 0, pending: 0, digestPath: null };
+  if (scan.ok) vault.markSynced();
+  res.status(scan.ok ? 200 : 409).json({ ...scan, learned: learned.learned, pendingLearn: learned.pending, digestPath: learned.digestPath, status: vaultSync.status() });
+});
+
+/** Lists notes — every folder, including the ones you wrote by hand. */
+app.get('/api/vault/notes', (req, res) => {
+  const origin = req.query.origin === 'operator' || req.query.origin === 'engine' ? req.query.origin : undefined;
+  res.json(vaultSync.listNotes({
+    folder: req.query.folder ? String(req.query.folder) : undefined,
+    type: req.query.type ? String(req.query.type) : undefined,
+    q: req.query.q ? String(req.query.q) : undefined,
+    origin,
+    limit: Number(req.query.limit ?? 100),
+  }));
+});
+
+/** What the council digested from your own notes. */
+app.get('/api/vault/learned', (req, res) => {
+  res.json(vaultSync.learnedNotes(Math.min(Number(req.query.limit ?? 50), 200)));
+});
+
+/**
+ * Creates, overwrites or appends to a note anywhere in the vault.
+ * Body: { path, body?, frontmatter?, mode?: 'create' | 'overwrite' | 'append' | 'upsert' }
+ */
+app.put('/api/vault/note', (req, res) => {
+  const { path: notePath, body, frontmatter, mode } = req.body ?? {};
+  if (!notePath || typeof notePath !== 'string') return res.status(400).json({ ok: false, error: 'Provide { path, body }' });
+  if (frontmatter !== undefined && (typeof frontmatter !== 'object' || frontmatter === null || Array.isArray(frontmatter))) {
+    return res.status(400).json({ ok: false, error: 'frontmatter must be an object.' });
+  }
+  const allowed = ['create', 'overwrite', 'append', 'upsert'];
+  const result = vaultSync.writeNote({
+    path: notePath,
+    body: body === undefined ? undefined : String(body),
+    frontmatter,
+    mode: allowed.includes(mode) ? mode : 'upsert',
+  });
+  if (result.ok) vault.logActivity('memory', `Operator ${result.created ? 'created' : 'updated'} note "${result.path}" through the vault API.`);
+  res.status(result.ok ? 200 : 400).json(result);
+});
+
+/** Moves a note to the vault's .trash folder (recoverable from Obsidian or Explorer). */
+app.delete('/api/vault/note', (req, res) => {
+  const notePath = String(req.query.path ?? req.body?.path ?? '');
+  if (!notePath) return res.status(400).json({ ok: false, error: 'Provide ?path=' });
+  const result = vaultSync.trashNote(notePath);
+  if (result.ok) vault.logActivity('memory', `Operator moved "${notePath}" to ${result.trashedTo}.`);
+  res.status(result.ok ? 200 : 404).json(result);
+});
+
+// ----------------- INTEL SOURCES (method discovery catalogue) -----------------
+
+app.get('/api/intel/sources', (_req, res) => {
+  res.json(intelEngine.listSources());
+});
+
+app.post('/api/intel/sources/:id/toggle', (req, res) => {
+  if (typeof req.body?.enabled !== 'boolean') return res.status(400).json({ ok: false, message: 'Provide { enabled: true | false }' });
+  const result = intelEngine.setSourceEnabled(String(req.params.id), req.body.enabled);
+  res.status(result.ok ? 200 : 404).json(result);
+});
+
+/** Adds your own RSS/Atom or arXiv-API feed to the harvest. */
+app.post('/api/intel/sources', (req, res) => {
+  const result = intelEngine.addCustomSource(req.body ?? {});
+  res.status(result.ok ? 200 : 400).json(result);
+});
+
+app.delete('/api/intel/sources/:id', (req, res) => {
+  const result = intelEngine.removeCustomSource(String(req.params.id));
+  res.status(result.ok ? 200 : 400).json(result);
+});
+
+/** Releases quarantined (open-web) techniques so agents may be taught them. */
+app.post('/api/intel/quarantine/release', (req, res) => {
+  const ids = Array.isArray(req.body?.ids) ? req.body.ids.map(String) : undefined;
+  const released = intelEngine.releaseQuarantine(ids);
+  const taught = released > 0 ? intelEngine.teachAll() : 0;
+  res.json({ ok: true, released, taught });
+});
+
+// ----------------- SKILL LIFECYCLE (usage + pruning) -----------------
+
+app.get('/api/skills/retired', (_req, res) => {
+  res.json(skillEngine.retiredSkills());
+});
+
+/** Preview (dryRun) or apply a pruning pass. */
+app.post('/api/skills/prune', (req, res) => {
+  const cfg = evolutionEngine.getConfig();
+  const result = skillEngine.prune({
+    unusedDays: Number(req.body?.unusedDays ?? cfg.skills.unusedDays),
+    dryRun: req.body?.dryRun !== false,
+  });
+  res.json({ ok: true, ...result });
+});
+
+app.post('/api/skills/:id/restore', (req, res) => {
+  const result = skillEngine.restore(String(req.params.id));
+  res.status(result.ok ? 200 : 404).json(result);
+});
+
+// ----------------- WEB CAPTURE (open-web research) -----------------
+
+app.get('/api/capture/status', (_req, res) => {
+  res.json({ ...webCapture.status(), recent: webCapture.list(30) });
+});
+
+/**
+ * Researches a query (or, with no query, the current worst coverage gaps)
+ * and files what it finds in 12-Web-Captures.
+ */
+app.post('/api/capture/run', async (req, res) => {
+  const cfg = evolutionEngine.getConfig();
+  const query = req.body?.query ? String(req.body.query).slice(0, 180) : '';
+  const targets = query
+    ? [{ query }]
+    : surfaceEngine.gaps(12).map(g => ({ query: `${g.title} blockchain security vulnerability analysis`, surfaceId: g.id }));
+  const result = await webCapture.run(targets, {
+    maxQueries: query ? 1 : Number(req.body?.maxQueries ?? cfg.webCapture.maxQueries),
+    maxPages: Number(req.body?.maxPages ?? (query ? 4 : cfg.webCapture.maxPages)),
+    trustWeb: cfg.webCapture.trustWeb,
+    force: Boolean(query),
+  });
+  res.status(result.ok ? 200 : 409).json(result);
+});
+
+// ----------------- SCENARIO FORGE (auto-generated scenarios) -----------------
+
+app.get('/api/forge/status', (_req, res) => {
+  const debated = new Set(debateStore.listSessions(500).filter(s => (s.messages?.length ?? 0) >= 3).map(s => s.topicId));
+  const auto = memoryStore.scenarios.filter(s => s.autoGenerated);
+  res.json({
+    ...scenarioForge.status(),
+    auto: auto.map(s => ({ id: s.id, title: s.title, origin: s.origin, category: s.category, layer: s.layer, rationale: s.rationale, generatedAt: s.generatedAt, debated: debated.has(s.id) })),
+    backlog: auto.filter(s => !debated.has(s.id)).length,
+  });
+});
+
+/** The ranked candidates the forge could generate right now (nothing is saved). */
+app.get('/api/forge/candidates', (req, res) => {
+  const limit = Math.min(Number(req.query?.limit ?? 30), 100);
+  res.json(scenarioForge.candidates(currentScenarioLikeTopics()).slice(0, limit));
+});
+
+/** Generates and saves a batch of scenarios now. */
+app.post('/api/forge/generate', async (req, res) => {
+  const cfg = evolutionEngine.getConfig();
+  const out = scenarioForge.generate(currentScenarioLikeTopics(), {
+    max: Number(req.body?.max ?? cfg.scenarios.maxPerCycle),
+    backlog: 0, // an explicit request overrides the backlog pause
+  });
+  try {
+    for (const sc of out.scenarios) {
+      await upsertStored('scenarios', { ...sc, isCustom: true, savedAt: new Date().toISOString() });
+    }
+  } catch (e: any) {
+    return res.status(500).json({ ok: false, error: e.message });
+  }
+  res.json({ ok: true, generated: out.scenarios.length, candidates: out.candidates, scenarios: out.scenarios });
+});
+
+// ----------------- AGENT FOUNDRY (auto-added agents) -----------------
+
+function foundryDemand() {
+  const coverage = surfaceEngine.scan({ topics: currentScenarioLikeTopics() });
+  const byLayer: Record<string, number> = {};
+  for (const t of intelEngine.listTechniques()) byLayer[t.layer] = (byLayer[t.layer] ?? 0) + 1;
+  return agentFoundry.analyse(coverage, byLayer, memoryStore.agents.map(a => String(a.id)));
+}
+
+app.get('/api/foundry/status', (_req, res) => {
+  res.json({
+    ...agentFoundry.status(),
+    demand: foundryDemand(),
+    roster: agentRegistry.list(),
+    autoAgents: memoryStore.agents.filter(a => a.autoGenerated).map(a => ({ id: a.id, name: a.name, handle: a.handle, role: a.role, coversLayers: a.coversLayers, createdBy: a.createdBy, createdBecause: a.createdBecause, createdAt: a.createdAt })),
+    maxAuto: evolutionEngine.getConfig().agents.maxAuto,
+  });
+});
+
+/** Imports vault seed agents and hires the next specialist the roster needs. */
+app.post('/api/foundry/hire', async (_req, res) => {
+  try {
+    const cycle = await evolutionEngine.runCycle('manual', ['agents']);
+    const step = cycle.steps.find(s => s.id === 'agents');
+    res.json({ ok: Boolean(step?.ok), summary: step?.summary ?? '', changes: cycle.changes });
+  } catch (e: any) {
+    res.status(409).json({ ok: false, error: e.message });
+  }
+});
+
+// ----------------- ARTIFACTS (self-contained HTML documents) -----------------
+
+app.get('/api/artifacts', (_req, res) => {
+  res.json({ kinds: ARTIFACT_KINDS, items: artifactEngine.list() });
+});
+
+app.post('/api/artifacts/generate', (req, res) => {
+  const requested = Array.isArray(req.body?.kinds) ? req.body.kinds.map(String) : (req.body?.kind ? [String(req.body.kind)] : []);
+  const kinds = requested.filter((k: string) => (ARTIFACT_KINDS as string[]).includes(k));
+  if (requested.length > 0 && kinds.length === 0) return res.status(400).json({ ok: false, error: `Unknown artifact kind. Use one of: ${ARTIFACT_KINDS.join(', ')}.` });
+  try {
+    res.json({ ok: true, items: evolutionEngine.generateArtifacts(kinds) });
+  } catch (e: any) {
+    res.status(500).json({ ok: false, error: e.message });
+  }
+});
+
+/** Serves one artifact. The document carries no scripts; the header enforces it. */
+app.get('/api/artifacts/view/:name', (req, res) => {
+  const abs = artifactEngine.resolve(String(req.params.name));
+  if (!abs) return res.status(404).send('Artifact not found.');
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'; frame-ancestors 'self'");
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  if (req.query.download === '1') res.setHeader('Content-Disposition', `attachment; filename="${path.basename(abs)}"`);
+  res.send(fs.readFileSync(abs, 'utf8'));
+});
+
+// ----------------- AUTOPILOT (self-maintenance cycle) -----------------
+
+app.get('/api/evolution/status', (_req, res) => {
+  res.json(evolutionEngine.status());
+});
+
+app.put('/api/evolution/config', (req, res) => {
+  res.json({ ok: true, config: evolutionEngine.updateConfig(req.body ?? {}, 'operator') });
+});
+
+app.post('/api/evolution/config/revert', (_req, res) => {
+  const result = evolutionEngine.revertConfig();
+  res.status(result.ok ? 200 : 409).json(result);
+});
+
+/** Runs a full cycle now, or only the listed steps: { steps: ['scenarios', 'agents'] }. */
+app.post('/api/evolution/run', async (req, res) => {
+  const valid = ['sync', 'sources', 'capture', 'skills', 'scenarios', 'agents', 'artifacts'];
+  const steps = Array.isArray(req.body?.steps) ? req.body.steps.map(String).filter((s: string) => valid.includes(s)) : undefined;
+  try {
+    res.json({ ok: true, cycle: await evolutionEngine.runCycle('manual', steps && steps.length ? steps : undefined) });
+  } catch (e: any) {
+    res.status(/already running/.test(e.message) ? 409 : 500).json({ ok: false, error: e.message });
+  }
+});
+
+app.get('/api/evolution/changelog', (req, res) => {
+  res.json(evolutionEngine.changelog(Number(req.query.limit ?? 60)));
+});
+
 // ----------------- VITE INTEGRATION ------------------ //
 
 async function startServer() {
@@ -1558,6 +1897,10 @@ async function startServer() {
   }
 
   const displayUrl = `http://localhost:${PORT}`;
+
+  // Wait for the persisted vault to open, then reconcile the index with disk.
+  await vault.whenReady();
+  startVaultSync();
 
   const server = app.listen(PORT, HOST, () => {
     automationScheduler.start();
@@ -1598,6 +1941,7 @@ startServer();
 
 // Durable stores get flushed on shutdown (Ctrl+C included)
 process.on('SIGINT', () => {
+  vaultSync.stopWatching();
   automationScheduler.stop();
   try { debateStore.saveNow(); persistStore(); } catch {}
   process.exit(0);

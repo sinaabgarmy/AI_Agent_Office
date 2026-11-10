@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2601.09836v1"
 source_id: arxiv-a-risk-stratified-benchmark-dataset-for
 confidence: 0.84
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.388Z"
+updated: "2026-11-10T11:50:59.674Z"
 ---
 
 # A Risk-Stratified Benchmark Dataset for Bad Randomness… — A Risk-Stratified Benchmark Dataset for Bad…

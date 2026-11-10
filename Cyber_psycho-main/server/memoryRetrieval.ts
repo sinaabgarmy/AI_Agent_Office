@@ -69,8 +69,10 @@ export function retrieveForAgent(
 
   /* ---------- Level 3: long-term knowledge by topic similarity ---------- */
   const query = [req.topicTitle, req.coreHypothesis ?? '', req.briefing ?? ''].join(' ').slice(0, 600);
-  const knowledgeTypes = ['concept', 'claim', 'discovery', 'decision', 'technique'];
-  const searchHits = index.search(query, { types: knowledgeTypes, limit: 8 });
+  // 'note' = anything the operator wrote by hand in Obsidian (kept in sync by
+  // VaultSync); 'capture' = web research the system saved on its own.
+  const knowledgeTypes = ['concept', 'claim', 'discovery', 'decision', 'technique', 'note', 'capture'];
+  const searchHits = index.search(query, { types: knowledgeTypes, limit: 9 });
   if (searchHits.length > 0) {
     const lines: string[] = [];
     for (const hit of searchHits) {
@@ -83,6 +85,8 @@ export function retrieveForAgent(
       const snippet = (meaningful || body).replace(/\s+/g, ' ').trim().slice(0, 200);
       const typeLabel =
         hit.note.type === 'decision' && hit.note.status === 'open' ? 'OPEN QUESTION' :
+        hit.note.type === 'note' ? 'OPERATOR NOTE' :
+        hit.note.type === 'capture' ? 'WEB CAPTURE — unverified' :
         hit.note.type.toUpperCase();
       lines.push(`- [${typeLabel}] ${hit.note.title}: ${snippet}`);
       hits += 1;

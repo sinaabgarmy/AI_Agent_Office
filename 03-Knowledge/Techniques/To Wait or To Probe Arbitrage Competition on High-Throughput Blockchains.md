@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2606.00720v2"
 source_id: arxiv-to-wait-or-to-probe-arbitrage-competitio
 confidence: 0.88
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.404Z"
+updated: "2026-11-10T11:50:59.689Z"
 ---
 
 # To Wait or To Probe: Arbitrage Competition on High-Throughput Blockchains

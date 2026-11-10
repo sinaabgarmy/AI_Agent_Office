@@ -119,7 +119,18 @@ export async function searchWeb(query: string, limit = 5): Promise<{ results: We
     return { results: ddg.slice(0, limit), provider: 'duckduckgo' };
   } catch (ddgErr) {
     try {
-      const wiki = await searchWikipedia(query);
+      let wiki = await searchWikipedia(query);
+      // Wikipedia's search is strict: a long descriptive query ("X blockchain
+      // security vulnerability analysis") matches nothing. Retry with the
+      // leading subject words before giving up.
+      if (wiki.length === 0) {
+        const core = query.replace(/[^\w\s-]/g, ' ').split(/\s+/).filter(w => w.length > 2)
+          .filter(w => !/^(vulnerability|analysis|security|attack|mitigation|blockchain|against|across|the|and|for|via)$/i.test(w));
+        for (const n of [4, 2]) {
+          if (wiki.length > 0 || core.length === 0) break;
+          wiki = await searchWikipedia(core.slice(0, n).join(' '));
+        }
+      }
       if (wiki.length > 0) {
         cache.set(key, { at: Date.now(), results: wiki });
         return { results: wiki.slice(0, limit), provider: 'wikipedia', error: `duckduckgo unavailable (${(ddgErr as Error).message})` };
@@ -135,26 +146,65 @@ export async function searchWeb(query: string, limit = 5): Promise<{ results: We
   }
 }
 
+/**
+ * True only for http(s) URLs that point at the PUBLIC internet.
+ *
+ * The page reader is reachable from the API and is now also driven by
+ * search results the system follows on its own. Without this check a
+ * crafted link (or a redirect) could make the server read its own admin
+ * endpoints, the router, or cloud metadata — a server-side request forgery.
+ */
+export function isSafePublicUrl(raw: string): boolean {
+  let u: URL;
+  try { u = new URL(raw); } catch { return false; }
+  if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
+  if (u.username || u.password) return false;
+  const host = u.hostname.toLowerCase().replace(/^\[|\]$/g, '');
+  if (!host || host === 'localhost' || host.endsWith('.localhost')) return false;
+  if (/\.(local|internal|lan|home|corp|intranet)$/.test(host)) return false;
+  // IPv4 literals: loopback, private, link-local, CGNAT, unspecified.
+  const v4 = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(host);
+  if (v4) {
+    const [a, b] = [Number(v4[1]), Number(v4[2])];
+    if (a === 0 || a === 10 || a === 127 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31)
+      || (a === 192 && b === 168) || (a === 100 && b >= 64 && b <= 127) || a >= 224) return false;
+  }
+  // IPv6 literals: loopback, unique-local, link-local, v4-mapped.
+  if (host.includes(':') && (/^(::1?|f[cd][0-9a-f]{2}:|fe[89ab][0-9a-f]:|::ffff:)/.test(host))) return false;
+  // Bare hostnames without a dot are intranet names.
+  if (!host.includes('.') && !host.includes(':')) return false;
+  return true;
+}
+
 /** Fetches a page and returns readable plain text (for agent citations). */
-export async function fetchPageText(url: string, maxChars = 4000): Promise<{ text: string; error?: string }> {
+export async function fetchPageText(url: string, maxChars = 4000): Promise<{ text: string; error?: string; finalUrl?: string; title?: string }> {
   try {
     if (!/^https?:\/\//i.test(url)) return { text: '', error: 'only http(s) URLs are allowed' };
+    if (!isSafePublicUrl(url)) return { text: '', error: 'private, local or malformed addresses are not fetched' };
     await politeGap();
     const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(10000) });
+    // A public URL may redirect to a private one — check where we landed.
+    if (res.url && !isSafePublicUrl(res.url)) return { text: '', error: 'redirected to a private or local address' };
     if (!res.ok) return { text: '', error: `http ${res.status}` };
     const contentType = res.headers.get('content-type') ?? '';
     if (!contentType.includes('text/html') && !contentType.includes('text/plain')) {
       return { text: '', error: `unsupported content-type ${contentType}` };
     }
-    const html = await res.text();
+    // Cap the download: a research page never needs more than ~1.5 MB of HTML.
+    const html = (await res.text()).slice(0, 1_500_000);
+    const title = stripTags(/<title[^>]*>([\s\S]*?)<\/title>/i.exec(html)?.[1] ?? '').slice(0, 160);
     const text = stripTags(
       html
         .replace(/<script[\s\S]*?<\/script>/gi, ' ')
         .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ')
+        .replace(/<head[\s\S]*?<\/head>/gi, ' ')
         .replace(/<nav[\s\S]*?<\/nav>/gi, ' ')
+        .replace(/<header[\s\S]*?<\/header>/gi, ' ')
+        .replace(/<aside[\s\S]*?<\/aside>/gi, ' ')
         .replace(/<footer[\s\S]*?<\/footer>/gi, ' ')
     );
-    return { text: text.slice(0, maxChars) };
+    return { text: text.slice(0, maxChars), finalUrl: res.url || url, title };
   } catch (e: any) {
     return { text: '', error: e.message };
   }

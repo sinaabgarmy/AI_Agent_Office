@@ -11,9 +11,11 @@ source: NVD — Solidity CVEs
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2024-45056"
 source_id: CVE-2024-45056
 confidence: 0.94
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-05T16:34:49.344Z"
+updated: "2026-11-10T11:50:59.627Z"
 ---
 
 # zksolc — All LLVM versions since 2015 fold `(xor (shl 1, x), -1)` to `(rotl ~1, x)` if…

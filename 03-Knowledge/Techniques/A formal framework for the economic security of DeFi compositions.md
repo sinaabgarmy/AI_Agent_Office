@@ -13,9 +13,14 @@ source_id: arxiv-a-formal-framework-for-the-economic-secu
 confidence: 0.98
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.398Z"
+updated: "2026-11-10T11:50:59.683Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-04T18:52:17.398Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
 > **Refreshed 2026-11-04T18:54:02.454Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
 > **Refreshed 2026-11-05T16:34:49.398Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
+> **Refreshed 2026-11-09T23:14:18.979Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
+> **Refreshed 2026-11-10T07:26:05.738Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
+> **Refreshed 2026-11-10T08:12:51.648Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
+> **Refreshed 2026-11-10T11:08:39.349Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.
+> **Refreshed 2026-11-10T11:50:59.683Z** — We study two adversarial models, with bounded and unbounded wealth, and establish sufficient conditions and locality principles that enable modular reasoning about secure composability.

@@ -11,9 +11,11 @@ source: NVD — Solidity CVEs
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2022-33069"
 source_id: CVE-2022-33069
 confidence: 0.75
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-617]
-updated: "2026-11-05T16:34:49.347Z"
+updated: "2026-11-10T11:50:59.630Z"
 ---
 
 # Ethereum Solidity v0.8.14 — Ethereum Solidity v0.8.14 contains an assertion failure via…

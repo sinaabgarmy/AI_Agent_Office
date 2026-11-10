@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/09/07/protocol-priorities"
 source_id: ef-blog-ef-protocol-current-and-emerging-priorit
 confidence: 0.59
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.371Z"
+updated: "2026-11-10T11:50:59.654Z"
 ---
 
 # EF Protocol: Current and Emerging Priorities

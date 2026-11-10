@@ -13,9 +13,14 @@ source_id: GHSA-xw6x-9526-6w9r
 confidence: 0.97
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.433Z"
+updated: "2026-11-10T11:50:59.723Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 - Harvested: 2026-11-04T18:52:17.338Z
 > **Refreshed 2026-11-04T18:54:02.488Z** — One remote host can send datagrams faster than the thread decodes.
 > **Refreshed 2026-11-05T16:34:49.433Z** — One remote host can send datagrams faster than the thread decodes.
+> **Refreshed 2026-11-09T23:14:19.510Z** — One remote host can send datagrams faster than the thread decodes.
+> **Refreshed 2026-11-10T07:26:05.756Z** — One remote host can send datagrams faster than the thread decodes.
+> **Refreshed 2026-11-10T08:12:51.674Z** — One remote host can send datagrams faster than the thread decodes.
+> **Refreshed 2026-11-10T11:08:39.435Z** — One remote host can send datagrams faster than the thread decodes.
+> **Refreshed 2026-11-10T11:50:59.723Z** — One remote host can send datagrams faster than the thread decodes.

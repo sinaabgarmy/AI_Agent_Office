@@ -13,9 +13,14 @@ source_id: GHSA-878m-3g6q-594q
 confidence: 0.71
 harvested: 2026-11-04
 tags: [technique, execution, cwe-682]
-updated: "2026-11-05T16:34:49.407Z"
+updated: "2026-11-10T11:50:59.692Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ State the invariant formally and assert it on every state transition so violatio
 - Harvested: 2026-11-04T18:52:17.322Z
 > **Refreshed 2026-11-04T18:54:02.463Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-05T16:34:49.407Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-09T23:14:19.052Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T07:26:05.743Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T08:12:51.656Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T11:08:39.374Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T11:50:59.692Z** — OpenZeppelin Contracts contains Incorrect Calculation The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.

@@ -1,0 +1,75 @@
+{
+  "generated": [
+    "surface-exec-permit2-unlimited-approval",
+    "intel-openzeppelin-contracts-bytes-s-lastindexof-f",
+    "graph-orphan-apache-struts-remote-code-execution-vuln",
+    "surface-f30-consensus-restaking-correlated-slash",
+    "path-security-council-key-r-restaking-correlated-s-shared-sequencer-atomi",
+    "intel-timelockcontroller-vulnerability-in-openzepp",
+    "surface-f30-l2-shared-sequencer-atomicity",
+    "path-ai-delegate-capture-prover-liveness-monopo-intent-solver-collusio",
+    "intel-openzeppelin-contracts-initializer-reentranc",
+    "surface-f30-gov-security-council-key-rot",
+    "path-mpc-provider-concentra-permit2-unlimited-appr-prover-liveness-monopo",
+    "intel-a-permissionless-non-validator-peer-can-halt",
+    "surface-f30-keys-mpc-provider-concentration",
+    "path-blob-da-pricing-signature-malleability-restaking-correlated-s",
+    "intel-besu-s-discv4-udp-discovery-remote-dos"
+  ],
+  "dismissed": [
+    "graph-orphan-apache-struts-remote-code-execution-vuln"
+  ],
+  "log": [
+    {
+      "at": "2026-11-10T07:28:21.925Z",
+      "generated": 3,
+      "candidates": 102,
+      "byOrigin": {
+        "surface": 1,
+        "path": 1,
+        "intel": 1
+      }
+    },
+    {
+      "at": "2026-11-10T07:27:24.584Z",
+      "generated": 3,
+      "candidates": 105,
+      "byOrigin": {
+        "surface": 1,
+        "path": 1,
+        "intel": 1
+      }
+    },
+    {
+      "at": "2026-11-10T07:26:27.084Z",
+      "generated": 3,
+      "candidates": 108,
+      "byOrigin": {
+        "surface": 1,
+        "path": 1,
+        "intel": 1
+      }
+    },
+    {
+      "at": "2026-11-09T23:31:36.073Z",
+      "generated": 3,
+      "candidates": 111,
+      "byOrigin": {
+        "surface": 1,
+        "path": 1,
+        "intel": 1
+      }
+    },
+    {
+      "at": "2026-11-09T23:13:47.656Z",
+      "generated": 3,
+      "candidates": 76,
+      "byOrigin": {
+        "surface": 1,
+        "intel": 1,
+        "graph": 1
+      }
+    }
+  ],
+  "lastRunAt": "2026-11-10T07:28:21.925Z"
+}

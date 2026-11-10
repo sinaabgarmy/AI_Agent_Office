@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2512.02399v2"
 source_id: arxiv-atomgraph-tackling-atomicity-violation-i
 confidence: 0.65
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.392Z"
+updated: "2026-11-10T11:50:59.676Z"
 ---
 
 # AtomGraph: Tackling Atomicity Violation in Smart Contracts using Multimodal GCNs

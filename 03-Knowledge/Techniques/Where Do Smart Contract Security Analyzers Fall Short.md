@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2603.00890v1"
 source_id: arxiv-where-do-smart-contract-security-analyze
 confidence: 0.78
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.386Z"
+updated: "2026-11-10T11:50:59.671Z"
 ---
 
 # Where Do Smart Contract Security Analyzers Fall Short?

@@ -17,7 +17,7 @@ export interface AutomationJobResult {
 }
 
 export interface AutomationJob {
-  id: 'surface-scan' | 'agent-training' | 'defensive-report' | 'intel-ingest';
+  id: 'vault-sync' | 'surface-scan' | 'agent-training' | 'defensive-report' | 'intel-ingest' | 'autopilot';
   run: (previousPredictions: SurfacePrediction[]) => Promise<AutomationJobResult>;
 }
 

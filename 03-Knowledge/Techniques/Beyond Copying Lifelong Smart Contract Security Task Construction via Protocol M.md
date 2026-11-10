@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2610.32453v1"
 source_id: arxiv-beyond-copying-lifelong-smart-contract-s
 confidence: 0.84
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.387Z"
+updated: "2026-11-10T11:50:59.673Z"
 ---
 
 # Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation

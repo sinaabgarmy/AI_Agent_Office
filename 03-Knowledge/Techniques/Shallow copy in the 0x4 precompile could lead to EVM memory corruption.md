@@ -13,9 +13,14 @@ source_id: GHSA-69v6-xc2j-r2jf
 confidence: 0.85
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.428Z"
+updated: "2026-11-10T11:50:59.716Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Never make an external call before final state mutation; validate the return val
 - Harvested: 2026-11-04T18:52:17.336Z
 > **Refreshed 2026-11-04T18:54:02.482Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
 > **Refreshed 2026-11-05T16:34:49.428Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-09T23:14:19.448Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T07:26:05.754Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T08:12:51.671Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T11:08:39.425Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.
+> **Refreshed 2026-11-10T11:50:59.716Z** — Shallow copy in the 0x4 precompile could lead to EVM memory corruption This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.

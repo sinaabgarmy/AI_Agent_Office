@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2609.27424v1"
 source_id: arxiv-evage-autonomous-mev-generation-and-adap
 confidence: 0.92
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.401Z"
+updated: "2026-11-10T11:50:59.685Z"
 ---
 
 # EVAGE: Autonomous MEV Generation and Adaptation via Multi-Agent Harness

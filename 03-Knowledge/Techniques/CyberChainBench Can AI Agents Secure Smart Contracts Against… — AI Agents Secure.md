@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2606.26216v1"
 source_id: arxiv-cyberchainbench-can-ai-agents-secure-sma
 confidence: 0.83
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.385Z"
+updated: "2026-11-10T11:50:59.669Z"
 ---
 
 # CyberChainBench: Can AI Agents Secure Smart Contracts Against… — AI Agents Secure Smart Contracts Against…

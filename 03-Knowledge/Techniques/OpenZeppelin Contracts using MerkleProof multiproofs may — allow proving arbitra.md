@@ -11,9 +11,11 @@ source: "OSV — @openzeppelin/contracts"
 source_url: "https://github.com/advisories/GHSA-wprv-93r4-jj2p"
 source_id: GHSA-wprv-93r4-jj2p
 confidence: 0.93
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-354]
-updated: "2026-11-05T16:34:49.418Z"
+updated: "2026-11-10T11:50:59.701Z"
 ---
 
 # OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitrary leaves for specific trees

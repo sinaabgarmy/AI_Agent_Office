@@ -13,9 +13,14 @@ source_id: CVE-2024-34704
 confidence: 0.93
 harvested: 2026-11-04
 tags: [technique, execution, cwe-682]
-updated: "2026-11-05T16:34:49.346Z"
+updated: "2026-11-10T11:50:59.629Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-04T18:52:17.352Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
 > **Refreshed 2026-11-04T18:54:02.412Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
 > **Refreshed 2026-11-05T16:34:49.346Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
+> **Refreshed 2026-11-09T23:14:18.352Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
+> **Refreshed 2026-11-10T07:26:05.708Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
+> **Refreshed 2026-11-10T08:12:51.611Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
+> **Refreshed 2026-11-10T11:08:39.233Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).
+> **Refreshed 2026-11-10T11:50:59.629Z** — The issue arises when attempting to fold the expression !(x cc y) into (x !cc y).

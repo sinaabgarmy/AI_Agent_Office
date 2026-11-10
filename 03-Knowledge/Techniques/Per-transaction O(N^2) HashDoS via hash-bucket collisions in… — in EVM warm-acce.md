@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-m2pj-j62h-7jwm"
 source_id: GHSA-m2pj-j62h-7jwm
 confidence: 0.78
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.436Z"
+updated: "2026-11-10T11:50:59.726Z"
 ---
 
 # Per-transaction O(N^2) HashDoS via hash-bucket collisions in… — in EVM warm-access and EIP-1153…

@@ -13,9 +13,14 @@ source_id: arxiv-smart-contract-security-beyond-detection
 confidence: 0.94
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.385Z"
+updated: "2026-11-10T11:50:59.670Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -41,3 +46,8 @@ Never make an external call before final state mutation; validate the return val
 > **Refreshed 2026-11-04T18:52:17.387Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
 > **Refreshed 2026-11-04T18:54:02.445Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
 > **Refreshed 2026-11-05T16:34:49.385Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-09T23:14:18.924Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-10T07:26:05.732Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-10T08:12:51.639Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-10T11:08:39.323Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.
+> **Refreshed 2026-11-10T11:50:59.670Z** — Smart Contract Security Beyond Detection Smart contract security has progressed from vulnerability detection toward a broader research agenda that includes semantic reasoning, automated repair, adversarial robustness, and real-time exploit detection.

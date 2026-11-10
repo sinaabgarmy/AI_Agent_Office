@@ -11,9 +11,11 @@ source: NVD — Solidity CVEs
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2022-31170"
 source_id: CVE-2022-31170
 confidence: 0.98
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-05T16:34:49.343Z"
+updated: "2026-11-10T11:50:59.626Z"
 ---
 
 # OpenZeppelin Contracts — Versions 4.0.0 until 4.7.1 are vulnerable to ERC165Checker reverting instead…

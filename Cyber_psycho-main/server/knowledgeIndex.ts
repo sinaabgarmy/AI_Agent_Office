@@ -50,13 +50,15 @@ export interface KnowledgeIndexEngine {
   allNotes(): IndexedNote[];
   notesByType(type: string): IndexedNote[];
   addLink(link: IndexedLink): void;
+  /** Drops every outgoing link of a note (used when a note is re-read from disk). */
+  removeLinksFrom(source: string): void;
   linksFor(source: string): IndexedLink[];
   allLinks(): IndexedLink[];
   search(query: string, opts?: { types?: string[]; limit?: number }): SearchHit[];
   findByTitle(title: string): IndexedNote | undefined;
 }
 
-const STOPWORDS = new Set(['the', 'and', 'for', 'with', 'that', 'this', 'from', 'into', 'over', 'under', 'when', 'what', 'which', 'their', 'there', 'been', 'were', 'have', 'has', 'had', 'not', 'but', 'are', 'was', 'will', 'can', 'our', 'your', 'its', 'all', 'any', 'per', 'via']);
+export const STOPWORDS = new Set(['the', 'and', 'for', 'with', 'that', 'this', 'from', 'into', 'over', 'under', 'when', 'what', 'which', 'their', 'there', 'been', 'were', 'have', 'has', 'had', 'not', 'but', 'are', 'was', 'will', 'can', 'our', 'your', 'its', 'all', 'any', 'per', 'via']);
 
 export function tokenize(text: string, max = 80): string[] {
   const seen = new Set<string>();
@@ -83,7 +85,14 @@ const TYPE_BOOST: Record<string, number> = {
   agent: 1.0,
   report: 1.05,
   system: 0.9,
-  log: 0.7
+  log: 0.7,
+  // Operator-authored notes are first-hand knowledge: rank them with claims.
+  note: 1.2,
+  technique: 1.15,
+  skill: 1.05,
+  scenario: 1.0,
+  // Web captures are unverified until reviewed — never outrank vault knowledge.
+  capture: 0.85
 };
 
 function recencyBoost(mtime: string): number {
@@ -153,13 +162,22 @@ export class JsonIndex implements KnowledgeIndexEngine {
   }
 
   upsertNote(note: IndexedNote): void { this.notes.set(note.id, note); this.scheduleSave(); }
-  removeNote(id: string): void { this.notes.delete(id); this.scheduleSave(); }
+  removeNote(id: string): void {
+    this.notes.delete(id);
+    this.links = this.links.filter(l => l.source !== id);
+    this.scheduleSave();
+  }
   getNote(id: string): IndexedNote | undefined { return this.notes.get(id); }
   allNotes(): IndexedNote[] { return Array.from(this.notes.values()); }
   notesByType(type: string): IndexedNote[] { return this.allNotes().filter(n => n.type === type); }
   addLink(link: IndexedLink): void {
     const dup = this.links.find(l => l.source === link.source && l.target === link.target && l.type === link.type);
     if (!dup) { this.links.push(link); this.scheduleSave(); }
+  }
+  removeLinksFrom(source: string): void {
+    const before = this.links.length;
+    this.links = this.links.filter(l => l.source !== source);
+    if (this.links.length !== before) this.scheduleSave();
   }
   linksFor(source: string): IndexedLink[] { return this.links.filter(l => l.source === source); }
   allLinks(): IndexedLink[] { return this.links; }
@@ -220,6 +238,7 @@ export class SqliteIndex implements KnowledgeIndexEngine {
   removeNote(id: string): void {
     this.db.prepare('DELETE FROM notes WHERE id = ?').run(id);
     this.db.prepare('DELETE FROM notes_fts WHERE id = ?').run(id);
+    this.db.prepare('DELETE FROM links WHERE source = ?').run(id);
   }
 
   getNote(id: string): IndexedNote | undefined {
@@ -246,6 +265,10 @@ export class SqliteIndex implements KnowledgeIndexEngine {
 
   addLink(link: IndexedLink): void {
     this.db.prepare('INSERT OR IGNORE INTO links (source,target,type) VALUES (?,?,?)').run(link.source, link.target, link.type);
+  }
+
+  removeLinksFrom(source: string): void {
+    this.db.prepare('DELETE FROM links WHERE source = ?').run(source);
   }
 
   linksFor(source: string): IndexedLink[] {

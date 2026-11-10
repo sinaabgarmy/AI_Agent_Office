@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2603.04915v1"
 source_id: arxiv-evmbench-evaluating-ai-agents-on-smart-c
 confidence: 0.83
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.386Z"
+updated: "2026-11-10T11:50:59.671Z"
 ---
 
 # EVMbench: Evaluating AI Agents on Smart Contract Security

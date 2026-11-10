@@ -18,10 +18,11 @@ import { ScenarioStudio } from './components/ScenarioStudio';
 import { VaultDashboard } from './components/VaultDashboard';
 import { SurfaceMap } from './components/SurfaceMap';
 import { IntelLab } from './components/IntelLab';
+import { EvolutionLab } from './components/EvolutionLab';
 import type { VaultStatus } from './types';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface'>('debate');
+  const [activeTab, setActiveTab] = useState<'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface' | 'autopilot'>('debate');
   const [currentTopic, setCurrentTopic] = useState<DebateTopic>(DEBATE_TOPICS[0]);
   const [allBots, setAllBots] = useState<Bot[]>(BOTS);
   const [activeBotIds, setActiveBotIds] = useState<BotId[]>([
@@ -614,6 +615,21 @@ ${m.technicalDetails ? `\`\`\`${m.technicalDetails.protocolLayer}\n${m.technical
       .catch(() => {});
   }, []);
 
+  /** Pulls agents the autopilot added (foundry hires, vault seeds) into the roster. */
+  const refreshAgents = useCallback(() => {
+    fetch(apiUrl('/api/agents'))
+      .then(res => res.json())
+      .then(saved => {
+        if (!Array.isArray(saved)) return;
+        setAllBots(prev => {
+          const known = new Set(prev.map(b => b.id));
+          const fresh = saved.filter((a: Bot) => !known.has(a.id));
+          return fresh.length ? [...fresh, ...prev] : prev;
+        });
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased">
       {/* Top Navigation Bar adhering to Top Bar Contract */}
@@ -721,6 +737,10 @@ ${m.technicalDetails ? `\`\`\`${m.technicalDetails.protocolLayer}\n${m.technical
 
         {activeTab === 'vault' && (
           <VaultDashboard bots={allBots} />
+        )}
+
+        {activeTab === 'autopilot' && (
+          <EvolutionLab onRosterOrScenariosChanged={() => { refreshScenarios(); refreshAgents(); }} />
         )}
 
         {activeTab === 'roster' && (

@@ -13,9 +13,14 @@ source_id: GHSA-r33q-22hv-j29q
 confidence: 0.8
 harvested: 2026-11-04
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.430Z"
+updated: "2026-11-10T11:50:59.719Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Bound every loop by an explicit cap and reject calls whose input exceeds the cap
 - Harvested: 2026-11-04T18:52:17.337Z
 > **Refreshed 2026-11-04T18:54:02.485Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
 > **Refreshed 2026-11-05T16:34:49.430Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
+> **Refreshed 2026-11-09T23:14:19.482Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
+> **Refreshed 2026-11-10T07:26:05.755Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
+> **Refreshed 2026-11-10T08:12:51.673Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
+> **Refreshed 2026-11-10T11:08:39.429Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.
+> **Refreshed 2026-11-10T11:50:59.718Z** — LES Server DoS via GetProofsV2 A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.

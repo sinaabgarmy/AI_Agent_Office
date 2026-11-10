@@ -206,6 +206,26 @@ The app runs an hourly, local-only automation cycle by default while the server 
 - Write a defensive coverage-priority report under `data/automation/reports/`.
 - Persist the schedule, coverage trends, and last 40 cycle results in `data/automation-state.json`.
 
-The Surface Map tab lets you pause or resume automation, choose hourly, six-hourly, or daily intervals, and run a cycle manually. Coverage priorities compare local coverage and severity; they are not predictions of real-world exploitability. Scheduled jobs do not probe targets or make web requests. Manual intel harvesting and web research remain separate actions.
+The Surface Map tab lets you pause or resume automation, choose hourly, six-hourly, or daily intervals, and run a cycle manually. Coverage priorities compare local coverage and severity; they are not predictions of real-world exploitability. Scheduled jobs never probe target systems. They do make outbound requests to public sources: the hourly intel harvest and, when enabled, the autopilot's web research (see below).
 
 The default server bind address is `127.0.0.1`. Set `HOST` explicitly only if you intend to make the app reachable from another device and have secured that access.
+
+## Autopilot (self-maintenance)
+
+The **Autopilot** tab runs one cycle (default every 6 hours, or on demand) and logs every change to `00-System/Evolution Log.md`:
+
+| Step | What it does |
+|---|---|
+| Vault sync | Reads the whole Obsidian vault from disk (any folder), keeps the index live while Obsidian is open, and digests notes **you** wrote into `06-Agent-Memory/Shared/Operator Knowledge.md` so agents retrieve them. |
+| Source health | Switches off intel sources that fail 3 harvests in a row, retries them after 7 days. 31 keyless sources ship (16 new: bridges, zk, governance, oracles, supply chain); add your own RSS/arXiv feeds. |
+| Web research | Searches the web for the worst coverage gaps, saves short attributed excerpts to `12-Web-Captures/`. Web-derived techniques are **quarantined** (not taught to agents) unless you enable "Trust web captures". |
+| Skills | Counts every time a skill is injected into a turn; retires off-domain, non-defect, duplicate and long-unused skills to `03-Knowledge/Skills/_Archive` (restorable). |
+| Scenario forge | Generates debate scenarios from gaps, intel, graph hypotheses, hunt targets and vault seed notes; pauses while 12 are waiting to be debated. |
+| Agent foundry | Adds a specialist for a layer with no dedicated agent (max 6) and trains it on that layer. |
+| Artifacts | Publishes System Brief, Scenario Pack and Skill Audit as standalone HTML in `14-Artifacts/`. |
+
+**Add scenarios and agents from Obsidian:** copy a template from `00-System/Templates/`, set `type: scenario-seed` or `type: agent-seed`, fill it in — the next sync imports it.
+
+**Vault API:** `GET /api/vault/notes`, `GET /api/vault/note?path=`, `PUT /api/vault/note` (`create | overwrite | append | upsert`), `DELETE /api/vault/note?path=` (moves to `.trash`), `POST /api/vault/rescan`.
+
+The autopilot edits configuration, knowledge, skills, roster and scenarios — never source code. Each feature has its own switch and settings changes can be undone from the tab.

@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/07/09/triage-is-the-product"
 source_id: ef-blog-the-triage-is-the-product-running-ai-age
 confidence: 0.6
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.368Z"
+updated: "2026-11-10T11:50:59.651Z"
 ---
 
 # The triage is the product: running AI agents against Ethereum's protocol code

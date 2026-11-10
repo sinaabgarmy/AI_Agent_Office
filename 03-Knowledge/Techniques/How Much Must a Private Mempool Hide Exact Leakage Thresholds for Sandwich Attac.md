@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2609.31379v2"
 source_id: arxiv-how-much-must-a-private-mempool-hide-exa
 confidence: 0.87
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.402Z"
+updated: "2026-11-10T11:50:59.685Z"
 ---
 
 # How Much Must a Private Mempool Hide? Exact Leakage Thresholds for Sandwich Attacks

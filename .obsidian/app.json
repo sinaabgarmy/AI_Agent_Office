@@ -1,4 +1,7 @@
 {
   "trashOption": "none",
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "userIgnoreFilters": [
+    "Cyber_psycho-main/"
+  ]
 }

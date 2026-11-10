@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/10/01/introducing-zkapi"
 source_id: ef-blog-introducing-zkapi-private-usage-credits
 confidence: 0.7
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.361Z"
+updated: "2026-11-10T11:50:59.645Z"
 ---
 
 # Introducing zkAPI: private usage credits for any API

@@ -11,9 +11,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2605.23648v1"
 source_id: arxiv-herring-parallel-batch-order-fairness-on
 confidence: 0.94
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-05T16:34:49.401Z"
+updated: "2026-11-10T11:50:59.684Z"
 ---
 
 # Herring: Parallel Batch-Order-Fairness on DAG-based Blockchain Consensus

@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2511.08403v1"
 source_id: arxiv-blockly2hooks-smart-contracts-for-everyo
 confidence: 0.73
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.395Z"
+updated: "2026-11-10T11:50:59.680Z"
 ---
 
 # Blockly2Hooks: Smart Contracts for Everyone with the XRP Ledger and Google Blockly

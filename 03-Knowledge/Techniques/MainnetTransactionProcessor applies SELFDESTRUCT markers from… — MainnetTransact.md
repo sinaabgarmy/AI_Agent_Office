@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-j2cm-8hc2-6975"
 source_id: GHSA-j2cm-8hc2-6975
 confidence: 0.88
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.454Z"
+updated: "2026-11-10T11:50:59.736Z"
 ---
 
 # MainnetTransactionProcessor applies SELFDESTRUCT markers from… — MainnetTransactionProcessor applies…

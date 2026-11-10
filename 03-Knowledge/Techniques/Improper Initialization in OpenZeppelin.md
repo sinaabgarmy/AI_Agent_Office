@@ -13,9 +13,14 @@ source_id: GHSA-88g8-f5mf-f5rj
 confidence: 0.92
 harvested: 2026-11-04
 tags: [technique, execution, cwe-665]
-updated: "2026-11-05T16:34:49.421Z"
+updated: "2026-11-10T11:50:59.704Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Harvested: 2026-11-04T18:52:17.326Z
 > **Refreshed 2026-11-04T18:54:02.475Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
 > **Refreshed 2026-11-05T16:34:49.421Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-09T23:14:19.265Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-10T07:26:05.750Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-10T08:12:51.664Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-10T11:08:39.407Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.
+> **Refreshed 2026-11-10T11:50:59.704Z** — Improper Initialization in OpenZeppelin In OpenZeppelin <=v4.4.0, initializer functions that are invoked separate from contract creation (the most prominent example being minimal proxies) may be reentered if they make an untrusted non-view external call.

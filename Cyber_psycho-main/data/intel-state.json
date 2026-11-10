@@ -2229,7 +2229,7 @@
     {
       "id": "tech-timelockcontroller-vulnerability-in-openzepp",
       "title": "TimelockController vulnerability in OpenZeppelin Contracts",
-      "layer": "Consensus",
+      "layer": "Governance",
       "cwe": "CWE-269",
       "primitive": "Instances with the executor role set to \"open\" allow anyone to use the executor role, thus leaving the timelock at risk of being taken over by an attacker.",
       "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
@@ -2237,7 +2237,7 @@
       "sourceName": "OSV — @openzeppelin/contracts",
       "sourceUrl": "https://github.com/advisories/GHSA-fg47-3c2x-m2wr",
       "sourceId": "GHSA-fg47-3c2x-m2wr",
-      "confidence": 0.79,
+      "confidence": 0.98,
       "harvestedAt": "2026-11-04T18:52:17.323Z",
       "tags": [
         "consensus",
@@ -2376,7 +2376,7 @@
     {
       "id": "tech-openzeppelin-contracts-vulnerable-to-imprope",
       "title": "OpenZeppelin Contracts vulnerable to Improper Escaping of Output",
-      "layer": "Execution",
+      "layer": "Supply Chain",
       "cwe": "CWE-116",
       "primitive": "OpenZeppelin Contracts vulnerable to Improper Escaping of Output OpenZeppelin Contracts is a library for secure smart contract development.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -2439,7 +2439,7 @@
     {
       "id": "tech-governorcompatibilitybravo-incorrect-abi-enc",
       "title": "GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior",
-      "layer": "Execution",
+      "layer": "Governance",
       "cwe": "CWE-841",
       "primitive": "GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior The GovernorCompatibilityBravo module may lead to the creation of governance proposals that execute function calls with incorrect arguments due to bad ABI encoding.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -2447,7 +2447,7 @@
       "sourceName": "OSV — @openzeppelin/contracts",
       "sourceUrl": "https://github.com/advisories/GHSA-m6w8-fq7v-ph4m",
       "sourceId": "GHSA-m6w8-fq7v-ph4m",
-      "confidence": 0.69,
+      "confidence": 0.93,
       "harvestedAt": "2026-11-04T18:52:17.326Z",
       "tags": [
         "execution",
@@ -2523,7 +2523,7 @@
     {
       "id": "tech-openzeppelin-contracts-s-governor-proposal-c",
       "title": "OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning",
-      "layer": "Execution",
+      "layer": "Governance",
       "cwe": "CWE-862",
       "primitive": "OpenZeppelin Contracts's governor proposal creation may be blocked by frontrunning By frontrunning the creation of a proposal, an attacker can become the proposer and gain the ability to cancel it.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -2628,7 +2628,7 @@
     {
       "id": "tech-governorcompatibilitybravo-may-trim-proposal",
       "title": "GovernorCompatibilityBravo may trim proposal calldata",
-      "layer": "Execution",
+      "layer": "Governance",
       "cwe": "CWE-20",
       "primitive": "GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -2636,7 +2636,7 @@
       "sourceName": "OSV — @openzeppelin/contracts",
       "sourceUrl": "https://github.com/advisories/GHSA-93hq-5wgc-jc82",
       "sourceId": "GHSA-93hq-5wgc-jc82",
-      "confidence": 0.46,
+      "confidence": 0.57,
       "harvestedAt": "2026-11-04T18:52:17.327Z",
       "tags": [
         "execution",
@@ -2649,7 +2649,7 @@
     {
       "id": "tech-web3-utils-prototype-pollution-vulnerability",
       "title": "web3-utils Prototype Pollution vulnerability",
-      "layer": "Execution",
+      "layer": "Supply Chain",
       "cwe": "CWE-1321",
       "primitive": "An attacker has the ability to modify an object's prototype, which could result in changing the behavior of all objects that inherit from the impacted prototype by providing carefully crafted input to function.",
       "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
@@ -2657,7 +2657,7 @@
       "sourceName": "OSV — web3-utils",
       "sourceUrl": "https://github.com/advisories/GHSA-2g4c-8fpm-c46v",
       "sourceId": "GHSA-2g4c-8fpm-c46v",
-      "confidence": 0.62,
+      "confidence": 0.88,
       "harvestedAt": "2026-11-04T18:52:17.327Z",
       "tags": [
         "execution",
@@ -3695,6 +3695,2246 @@
         "advisory"
       ],
       "sourceWeight": 1.4
+    },
+    {
+      "id": "tech-inconsistent-storage-layout-for-erc2771conte",
+      "title": "Inconsistent storage layout for ERC2771ContextUpgradeable",
+      "layer": "Supply Chain",
+      "cwe": "CWE-494",
+      "primitive": "This difference in layout could result in breaking upgrades if someone upgrades from an affected version to a non-affected version.",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "Pin and verify every build dependency by digest; sign release artifacts.",
+      "sourceName": "OSV — @openzeppelin/contracts-upgradeable",
+      "sourceUrl": "https://github.com/advisories/GHSA-7j52-6fjp-58gr",
+      "sourceId": "GHSA-7j52-6fjp-58gr",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-09T23:14:18.327Z",
+      "tags": [
+        "supply-chain",
+        "cwe-494",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-vve-2021-0002-incorrect-returndatasize-when",
+      "title": "VVE-2021-0002: Incorrect `returndatasize` when using simple…",
+      "layer": "Execution",
+      "cwe": "CWE-20",
+      "primitive": "If you are an end user of a forwarder-style proxy deployed using Vyper's built-in create_forwarder_to function AND you have a function that returns >4096 bytes AND you do no return data sanitation on the value returned, you could potentially see a data…",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "patched when we upgraded to EIP-1167 style forwarder proxies in #2281",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://github.com/advisories/GHSA-375m-5fvv-xq23",
+      "sourceId": "GHSA-375m-5fvv-xq23",
+      "confidence": 0.81,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-ecrecover-can-return-undefined-data-if-signa",
+      "title": "ecrecover can return undefined data if signature does not verify",
+      "layer": "Execution",
+      "cwe": "CWE-252",
+      "primitive": "ecrecover can return undefined data if signature does not verify the ecrecover precompile does not fill the output buffer if the signature does not verify, see",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://github.com/advisories/GHSA-f5x6-7qgp-jhf3",
+      "sourceId": "GHSA-f5x6-7qgp-jhf3",
+      "confidence": 0.98,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-252",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-vyper-interfaces-returning-integer-types-les",
+      "title": "Vyper interfaces returning integer types less than 256 bits…",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "This allows users to read an interface that returns a uint8 value to be stored into a uint256 variable without any explicit casting or input validation.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "workaround while the correct resolution is in process",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://github.com/advisories/GHSA-mr6r-mvw4-736g",
+      "sourceId": "GHSA-mr6r-mvw4-736g",
+      "confidence": 0.87,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-133",
+      "title": "PYSEC-2023-133",
+      "layer": "Cryptography",
+      "cwe": "CWE-345",
+      "primitive": "Prior to version 0.3.10, the ecrecover precompile does not fill the output buffer if the signature does not verify.",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "Verify every input against its expected form before it can influence state or value.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-133",
+      "sourceId": "PYSEC-2023-133",
+      "confidence": 0.84,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "cryptography",
+        "cwe-345",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-142",
+      "title": "PYSEC-2023-142",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "PYSEC-2023-142 Vyer is a Pythonic Smart Contract Language for the Ethereum Virtual Machine (EVM).",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-142",
+      "sourceId": "PYSEC-2023-142",
+      "confidence": 0.83,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-305",
+      "title": "PYSEC-2023-305",
+      "layer": "Execution",
+      "cwe": "CWE-362",
+      "primitive": "PYSEC-2023-305 Vyper is a Pythonic Smart Contract Language for the Ethereum Virtual Machine (EVM).",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "workaround, ensure the lock name is a non-empty string",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-305",
+      "sourceId": "PYSEC-2023-305",
+      "confidence": 0.94,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-362",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-306",
+      "title": "PYSEC-2023-306",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In version 0.3.9 and prior, under certain conditions, the memory used by the builtins raw_call, create_from_blueprint and create_copy_of can be corrupted.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-306",
+      "sourceId": "PYSEC-2023-306",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-307",
+      "title": "PYSEC-2023-307",
+      "layer": "Execution",
+      "cwe": "CWE-682",
+      "primitive": "The intermediate floating point step can produce a rounding error if there are enough bits set in the IEEE-754 mantissa.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-307",
+      "sourceId": "PYSEC-2023-307",
+      "confidence": 0.83,
+      "harvestedAt": "2026-11-09T23:14:18.328Z",
+      "tags": [
+        "execution",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-76",
+      "title": "PYSEC-2023-76",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "An attacker can overwrite the owner variable.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-76",
+      "sourceId": "PYSEC-2023-76",
+      "confidence": 0.81,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-147",
+      "title": "PYSEC-2024-147",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "There is an error in the stack management when compiling the IR for sha3_64.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-147",
+      "sourceId": "PYSEC-2024-147",
+      "confidence": 0.87,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-149",
+      "title": "PYSEC-2024-149",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In versions 0.3.10 and earlier, the bounds check for slices does not account for the ability for start + length to overflow when the values aren't literals.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-149",
+      "sourceId": "PYSEC-2024-149",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-150",
+      "title": "PYSEC-2024-150",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Arrays can be keyed by a signed integer, while they are defined for unsigned integers only.",
+      "detection": "invariant in the form `assert index < x`, the developer will suppose that no elements on indexes `y | y >= x` are accessible",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-150",
+      "sourceId": "PYSEC-2024-150",
+      "confidence": 0.81,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-151",
+      "title": "PYSEC-2024-151",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Vyper compiler allows passing a value in builtin raw_call even if the call is a delegatecall or a staticcall.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-151",
+      "sourceId": "PYSEC-2024-151",
+      "confidence": 0.98,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-163",
+      "title": "PYSEC-2024-163",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "PYSEC-2024-163 Vyper is a pythonic Smart Contract Language for the Ethereum virtual machine.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-163",
+      "sourceId": "PYSEC-2024-163",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-164",
+      "title": "PYSEC-2024-164",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "If an excessively large value is specified as the starting index for an array in _abi_decode, it can cause the read position to overflow.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-164",
+      "sourceId": "PYSEC-2024-164",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2025-31",
+      "title": "PYSEC-2025-31",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "However, in the case when target is an access to a DynArray and the rhs modifies the array, the cached target will evaluate first, and the bounds check will not be re-evaluated during the write portion of the statement.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "workarounds for this vulnerability",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2025-31",
+      "sourceId": "PYSEC-2025-31",
+      "confidence": 0.83,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2025-33",
+      "title": "PYSEC-2025-33",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "When the Vyper Compiler uses the precompiles EcRecover (0x1) and Identity (0x4), the success flag of the call is not checked.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2025-33",
+      "sourceId": "PYSEC-2025-33",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2023-78",
+      "title": "PYSEC-2023-78",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "The issue seems to happen only in loops of type for i in range(a, a + N) as in loops of type for i in range(start, stop) and for i in range(stop), the compiler is able to raise a TypeMismatch when trying to overflow the variable.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2023-78",
+      "sourceId": "PYSEC-2023-78",
+      "confidence": 0.82,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-103",
+      "title": "PYSEC-2024-103",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "The concat built-in can write over the bounds of the memory buffer that was allocated for it and thus overwrite existing valid data.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-103",
+      "sourceId": "PYSEC-2024-103",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-205",
+      "title": "PYSEC-2024-205",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "When using the built-in extract32(b, start), if the start index provided has for side effect to update b, the byte array to extract 32 bytes from, it could be that some dirty memory is read and returned by extract32.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-205",
+      "sourceId": "PYSEC-2024-205",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-207",
+      "title": "PYSEC-2024-207",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In versions 0.3.10 and prior, using the slice builtin can result in a double eval vulnerability when the buffer argument is either msg.data, self.code or <address>.code and either the start or length arguments have side-effects.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-207",
+      "sourceId": "PYSEC-2024-207",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-208",
+      "title": "PYSEC-2024-208",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In versions 0.3.10 and prior, using the create_from_blueprint builtin can result in a double eval vulnerability when raw_args=True and the args argument has side-effects.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-208",
+      "sourceId": "PYSEC-2024-208",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2024-209",
+      "title": "PYSEC-2024-209",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In versions 0.3.10 and prior, using the sqrt builtin can result in double eval vulnerability when the argument has side-effects.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2024-209",
+      "sourceId": "PYSEC-2024-209",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2025-29",
+      "title": "PYSEC-2025-29",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Unfortunately, improper handling of the oscillating final states may lead to sqrt incorrectly returning rounded up results.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "fix is expected in version 0",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2025-29",
+      "sourceId": "PYSEC-2025-29",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.329Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2025-30",
+      "title": "PYSEC-2025-30",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "While the iterator expression cannot produce multiple writes, it can consume side effects produced in the loop body (e.g.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "prevent the iterator from consuming side effects provided by the body of the loop",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2025-30",
+      "sourceId": "PYSEC-2025-30",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2021-365",
+      "title": "PYSEC-2021-365",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "In affected versions when performing a function call inside a literal struct, there is a memory corruption issue that occurs because of an incorrect pointer to the the top of the stack.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2021-365",
+      "sourceId": "PYSEC-2021-365",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2021-366",
+      "title": "PYSEC-2021-366",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "PYSEC-2021-366 Vyper is a Pythonic Smart Contract Language for the EVM.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2021-366",
+      "sourceId": "PYSEC-2021-366",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2022-196",
+      "title": "PYSEC-2022-196",
+      "layer": "Supply Chain",
+      "cwe": "CWE-494",
+      "primitive": "In version 0.3.1 and prior, bytestrings can have dirty bytes in them, resulting in the word-for-word comparisons giving incorrect results.",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "patch is available and expected to be part of the 0",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2022-196",
+      "sourceId": "PYSEC-2022-196",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "supply-chain",
+        "cwe-494",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2022-197",
+      "title": "PYSEC-2022-197",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "PYSEC-2022-197 Vyper is a pythonic Smart Contract Language for the ethereum virtual machine.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "workarounds for this issue",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2022-197",
+      "sourceId": "PYSEC-2022-197",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-pysec-2022-198",
+      "title": "PYSEC-2022-198",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "This issue can result in a misinterpretation of the integer value and lead to incorrect behavior.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "workaround for this issue",
+      "sourceName": "OSV — vyper",
+      "sourceUrl": "https://osv.dev/vulnerability/PYSEC-2022-198",
+      "sourceId": "PYSEC-2022-198",
+      "confidence": 0.77,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-vulnerable-to-dos-via-malicious",
+      "title": "go-ethereum vulnerable to DoS via malicious p2p message",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "go-ethereum vulnerable to DoS via malicious p2p message A vulnerable node can be made to consume very large amounts of memory when handling specially crafted p2p messages sent from an attacker node.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "fix has been included in geth version 1",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-4xc9-8hmq-j652",
+      "sourceId": "GHSA-4xc9-8hmq-j652",
+      "confidence": 0.86,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-ethereum-contains-consensus-flaw-during-bloc",
+      "title": "Ethereum Contains Consensus Flaw During Block Processing",
+      "layer": "Execution",
+      "cwe": "CWE-436",
+      "primitive": "Ethereum Contains Consensus Flaw During Block Processing A vulnerability in the Geth EVM could cause a node to reject the canonical chain.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "patch is included in the v1",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-9856-9gg9-qcmq",
+      "sourceId": "GHSA-9856-9gg9-qcmq",
+      "confidence": 0.81,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-436",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-denial-of-service",
+      "title": "Go Ethereum Denial of Service",
+      "layer": "Execution",
+      "cwe": "CWE-476",
+      "primitive": "Go Ethereum Denial of Service cmd/evm/runner.go in Go Ethereum (aka geth) allows attackers to cause a denial of service (SEGV) via crafted bytecode.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-9h4h-8w5p-f28w",
+      "sourceId": "GHSA-9h4h-8w5p-f28w",
+      "confidence": 0.84,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "execution",
+        "cwe-476",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-denial-of-service-in-geth",
+      "title": "Denial of service in geth",
+      "layer": "Supply Chain",
+      "cwe": "CWE-125",
+      "primitive": "Denial of service in geth Denial-of-service (crash) during block processing Affected versions suffer from a vulnerability which can be exploited through the MULMOD operation, by specifying a modulo of 0: mulmod(a,b,0), causing a panic in the underlying…",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "fix this would be to merge the fix into uint256, make a new release of that library and then update the geth-dependency",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-jm5c-rv3w-w83m",
+      "sourceId": "GHSA-jm5c-rv3w-w83m",
+      "confidence": 0.94,
+      "harvestedAt": "2026-11-09T23:14:18.330Z",
+      "tags": [
+        "supply-chain",
+        "cwe-125",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-denial-of-service-in-go-ethereum-due-to-cve",
+      "title": "Denial of service in go-ethereum due to CVE-2020-28362",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Alternatively, if you are running binaries distributed via one of our official channels, we’re going to release v1.9.24 ourselves built with Go 1.15.5.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-m6gx-rhvj-fh52",
+      "sourceId": "GHSA-m6gx-rhvj-fh52",
+      "confidence": 0.85,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-denial-of-service-in-go-ethereum",
+      "title": "Denial of Service in Go-Ethereum",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Denial of Service in Go-Ethereum A design flaw in all versions of Go-Ethereum allows an attacker node to send 5120 pending transactions of a high gas price from one account that all fully spend the full balance of the account to a victim Geth node, which can…",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "prevent new transactions from entering the pool, resulting in a denial of service (DoS)",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-vmf7-hmh6-vv57",
+      "sourceId": "GHSA-vmf7-hmh6-vv57",
+      "confidence": 0.97,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-consensus-flaw-during-block-processing-in-gi",
+      "title": "Consensus flaw during block processing in github.com/ethereum/go-ethereum",
+      "layer": "Execution",
+      "cwe": "CWE-682",
+      "primitive": "Consensus flaw during block processing in github.com/ethereum/go-ethereum A consensus-vulnerability in Geth could cause a chain split, where vulnerable versions refuse to accept the canonical chain.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-xw37-57qp-9mm4",
+      "sourceId": "GHSA-xw37-57qp-9mm4",
+      "confidence": 0.87,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "execution",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-les-protocol-implementation-vuln",
+      "title": "Go Ethereum LES protocol implementation vulnerable to Denial of Service",
+      "layer": "Infrastructure",
+      "cwe": "CWE-129",
+      "primitive": "The vulnerable remote node would be crashed by such an attack immediately, aka the EPoD (Ethereum Packet of Death) issue.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-p5gc-957x-gfw9",
+      "sourceId": "GHSA-p5gc-957x-gfw9",
+      "confidence": 0.85,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "infrastructure",
+        "cwe-129",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-vulnerable-to-denial-of-service",
+      "title": "Go-Ethereum vulnerable to denial of service via malicious p2p message",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Go-Ethereum vulnerable to denial of service via malicious p2p message A vulnerable node, can be made to consume unbounded amounts of memory when handling specially crafted p2p messages sent from an attacker node.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "fix is included in geth version 1",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-ppjg-v974-84cm",
+      "sourceId": "GHSA-ppjg-v974-84cm",
+      "confidence": 0.93,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-erroneous-proof-of-work-calculation-in-geth",
+      "title": "Erroneous Proof of Work calculation in geth",
+      "layer": "L2 / Bridge",
+      "cwe": "CWE-682",
+      "primitive": "Erroneous Proof of Work calculation in geth An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).",
+      "detection": "Watch sequencer inclusion, data-availability publication and proof-verification deltas; alert on a missing batch or an unfinalised state root.",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-v592-xf75-856p",
+      "sourceId": "GHSA-v592-xf75-856p",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:14:18.333Z",
+      "tags": [
+        "l-bridge",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-improper-input-validation",
+      "title": "Go Ethereum Improper Input Validation",
+      "layer": "Execution",
+      "cwe": "CWE-20",
+      "primitive": "Go Ethereum Improper Input Validation In Go Ethereum (aka geth) before 1.8.14, TraceChain in eth/api_tracer.go does not verify that the end block is after the start block.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-qr2j-wrhx-4829",
+      "sourceId": "GHSA-qr2j-wrhx-4829",
+      "confidence": 0.69,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "execution",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-shallow-copy-bug-in-geth-in-github-com-ether",
+      "title": "Shallow copy bug in geth in github.com/ethereum/go-ethereum",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Shallow copy bug in geth in github.com/ethereum/go-ethereum Shallow copy bug in geth in github.com/ethereum/go-ethereum",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2022-0771",
+      "sourceId": "GO-2022-0771",
+      "confidence": 0.69,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-shallow-copy-bug-in-geth",
+      "title": "Shallow copy bug in geth",
+      "layer": "Execution",
+      "cwe": "CWE-682",
+      "primitive": "Shallow copy bug in geth This is a Consensus vulnerability, which can be used to cause a chain-split where vulnerable nodes reject the canonical chain.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-69v6-xc2j-r2jf",
+      "sourceId": "GHSA-69v6-xc2j-r2jf",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "execution",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-improperly-validates-the-ecies-p",
+      "title": "Go Ethereum Improperly Validates the ECIES Public Key in RLPx Handshake",
+      "layer": "Execution",
+      "cwe": "CWE-203",
+      "primitive": "We recommend rotating the node key after applying the upgrade, which can be done by removing the file <datadir>/geth/nodekey before starting Geth.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-m6j8-rg6r-7mv8",
+      "sourceId": "GHSA-m6j8-rg6r-7mv8",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-203",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-denial-of-service-in-github-com-ethereum-go",
+      "title": "Denial of service in github.com/ethereum/go-ethereum",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Denial of service in github.com/ethereum/go-ethereum A DoS vulnerability can make a LES server crash via malicious GetProofsV2 request from a connected LES client.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-r33q-22hv-j29q",
+      "sourceId": "GHSA-r33q-22hv-j29q",
+      "confidence": 0.88,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-attackers-to-use-manipulation-of",
+      "title": "Go Ethereum — attackers to use manipulation of time-difference values to achieve…",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Go Ethereum allows attackers to use manipulation of time-difference values to achieve replacement of main-chain blocks Go Ethereum (aka geth) through 1.10.21 allows attackers to increase rewards by mining blocks in certain situations, and using a manipulation…",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-rqmg-hrg4-fm69",
+      "sourceId": "GHSA-rqmg-hrg4-fm69",
+      "confidence": 0.67,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-is-vulnerable-to-high-cpu-usage",
+      "title": "go-ethereum is vulnerable to high CPU usage leading to DoS via malicious p2p message",
+      "layer": "Infrastructure",
+      "cwe": "CWE-20",
+      "primitive": "go-ethereum is vulnerable to high CPU usage leading to DoS via malicious p2p message",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-mq3p-rrmp-79jg",
+      "sourceId": "GHSA-mq3p-rrmp-79jg",
+      "confidence": 0.73,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-dos-via-malicious-p2p-message-in-go-ethereum",
+      "title": "DoS via malicious p2p message in Go Ethereum",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "DoS via malicious p2p message in Go Ethereum A vulnerable node, if configured to use high verbosity logging, can be made to crash when handling specially crafted p2p messages sent from an attacker node.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-wjxw-gh3m-7pm5",
+      "sourceId": "GHSA-wjxw-gh3m-7pm5",
+      "confidence": 0.84,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-consensus-flaw-in-github-com-ethereum-go-eth",
+      "title": "Consensus flaw in github.com/ethereum/go-ethereum",
+      "layer": "Supply Chain",
+      "cwe": "CWE-494",
+      "primitive": "Consensus flaw in github.com/ethereum/go-ethereum Due to an incorrect state calculation, a specific set of transactions could cause a consensus disagreement, causing users of this package to reject a canonical chain.",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "Pin and verify every build dependency by digest; sign release artifacts.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2021-0105",
+      "sourceId": "GO-2021-0105",
+      "confidence": 0.73,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "supply-chain",
+        "cwe-494",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-ethereum-affected-by-dos-via-malicious-p2",
+      "title": "Go Ethereum affected by DoS via malicious p2p message",
+      "layer": "Infrastructure",
+      "cwe": "CWE-20",
+      "primitive": "Go Ethereum affected by DoS via malicious p2p message A vulnerable node can be forced to shutdown/crash using a specially crafted message.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — go-ethereum",
+      "sourceUrl": "https://github.com/advisories/GHSA-2gjw-fg97-vg3r",
+      "sourceId": "GHSA-2gjw-fg97-vg3r",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-barberry-security-advisory-regarding-x-auth",
+      "title": "Barberry Security Advisory - regarding x/auth periodic vesting accounts",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Barberry Security Advisory - regarding x/auth periodic vesting accounts In PeriodicVestingAccount, defined in x/auth, an attacker can initialize a victim's account as a malicious vesting account, which allows deposits but does not allow withdrawals.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "workaround for this issue",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-j2cr-jc39-wpx5",
+      "sourceId": "GHSA-j2cr-jc39-wpx5",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-005-potential-slashing-evasion-duri",
+      "title": "ASA-2024-005: Potential slashing evasion during re-delegation",
+      "layer": "Consensus",
+      "cwe": "CWE-372",
+      "primitive": "If a delegation contributed to byzantine behavior of a validator, and the validator has not yet been slashed, it may be possible for that delegation to evade a pending slashing penalty through re-delegation behavior.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "patched version is available, it is recommended that network operators upgrade",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-86h5-xcpx-cfqc",
+      "sourceId": "GHSA-86h5-xcpx-cfqc",
+      "confidence": 0.92,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "consensus",
+        "cwe-372",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-github-com-cosmos-cosmos-sdk-s-x-crisis-does",
+      "title": "github.com/cosmos/cosmos-sdk's x/crisis does not charge ConstantFee",
+      "layer": "Infrastructure",
+      "cwe": "CWE-682",
+      "primitive": "github.com/cosmos/cosmos-sdk's x/crisis does not charge ConstantFee If a transaction is sent to the x/crisis module to check an invariant, the ConstantFee parameter of the chain is NOT charged.",
+      "detection": "invariant, the ConstantFee parameter of the chain is NOT charged",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-w5w5-2882-47pc",
+      "sourceId": "GHSA-w5w5-2882-47pc",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.334Z",
+      "tags": [
+        "infrastructure",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-002-default-prepareproposalhandler",
+      "title": "ASA-2024-002: Default `PrepareProposalHandler` may produce… — when used with default `SenderNonceMempool`",
+      "layer": "Infrastructure",
+      "cwe": "CWE-1285",
+      "primitive": "If this state is reached, it can lead to a reduction in block production for a network.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "patched version is available, it is recommended that network operators upgrade",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-2557-x9mg-76w8",
+      "sourceId": "GHSA-2557-x9mg-76w8",
+      "confidence": 0.85,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-1285",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-authz-module-non-determinism",
+      "title": "Authz Module Non-Determinism",
+      "layer": "Infrastructure",
+      "cwe": "CWE-754",
+      "primitive": "Authz Module Non-Determinism Consensus failure for 0.43.x and 0.44.{0,1} users.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-2p6r-37p9-89p2",
+      "sourceId": "GHSA-2p6r-37p9-89p2",
+      "confidence": 0.72,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-754",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-003-missing-blockedaddressed-valida",
+      "title": "ASA-2024-003: Missing `BlockedAddressed` Validation in Vesting Module",
+      "layer": "Infrastructure",
+      "cwe": "CWE-20",
+      "primitive": "If this case is triggered, there is the potential for a chain halt if the uninitialized account in question is called by GetModuleAccount in Begin/EndBlock of a module.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "prevent creation of a periodic vesting account in this scenario",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-4j93-fm92-rp4m",
+      "sourceId": "GHSA-4j93-fm92-rp4m",
+      "confidence": 0.82,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-006-validatevoteextensions-helper-f",
+      "title": "ASA-2024-006: ValidateVoteExtensions helper function in… — allow incorrect voting power assumptions",
+      "layer": "Governance",
+      "cwe": "CWE-20",
+      "primitive": "If your chain utilizes the ValidateVoteExtensions helper in ProcessProposal, a dishonest proposer can potentially mutate voting power of each validator it includes in the injected VoteExtension, which could have potentially unexpected or negative consequences…",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "patched version is available, it is recommended that network operators upgrade",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-95rx-m9m5-m94v",
+      "sourceId": "GHSA-95rx-m9m5-m94v",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "governance",
+        "cwe-20",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-sdk-s-integer-overflow-vulnerability",
+      "title": "Cosmos SDK's Integer Overflow vulnerability in its Validator…",
+      "layer": "Execution",
+      "cwe": "CWE-190",
+      "primitive": "An issue was discovered in the distribution module where a malicious deposit into the Validator Rewards pool would result in an integer overflow that would cause a chain halt.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Patches Has the problem been patched? What versions should users upgrade to? The new Cosmos SDK release [v0",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-p22h-3m2v-cmgh",
+      "sourceId": "GHSA-p22h-3m2v-cmgh",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "execution",
+        "cwe-190",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-sdk-cosmovisor-component-may-be-vulne",
+      "title": "Cosmos-SDK Cosmovisor component may be vulnerable to denial of service",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "If a validator is utilizing an affected version of Cosmovisor with DAEMON_ALLOW_DOWNLOAD_BINARIES set to true, a non-default configuration, it may be possible for an attacker to trigger a Remote Code Execution path as well on the host.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-23px-mw2p-46qm",
+      "sourceId": "GHSA-23px-mw2p-46qm",
+      "confidence": 0.89,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-sdk-x-group-can-halt-when-erroring-in",
+      "title": "Cosmos SDK: x/group can halt when erroring in EndBlocker",
+      "layer": "Infrastructure",
+      "cwe": "CWE-755",
+      "primitive": "An issue was discovered in the groups module where malicious proposals would result in an errors triggered in the module's end blocker that could result in a chain halt.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "patched? What versions should users upgrade to?_ The new Cosmos SDK release [v0",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-47ww-ff84-4jrg",
+      "sourceId": "GHSA-47ww-ff84-4jrg",
+      "confidence": 0.79,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-755",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-0012-asa-2024-0013-cosmossdk-transa",
+      "title": "ASA-2024-0012, ASA-2024-0013: CosmosSDK: Transaction decoding… — result in a stack overflow or resource…",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Nested messages in a transaction can consume exponential cpu and memory on UnpackAny calls.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-8wcc-m6j2-qxvm",
+      "sourceId": "GHSA-8wcc-m6j2-qxvm",
+      "confidence": 0.89,
+      "harvestedAt": "2026-11-09T23:14:18.335Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-integer-overflow-vulnerability-in-its-valida",
+      "title": "Integer Overflow vulnerability in its Validator Rewards pool…",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Integer Overflow vulnerability in its Validator Rewards pool can cause a chain halt in github.com/cosmos/cosmos-sdk Integer Overflow vulnerability in its Validator Rewards pool can cause a chain halt in github.com/cosmos/cosmos-sdk",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2025-3803",
+      "sourceId": "GO-2025-3803",
+      "confidence": 0.86,
+      "harvestedAt": "2026-11-09T23:14:18.336Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-sdk-groups-module-can-halt-chain-when",
+      "title": "Cosmos SDK: Groups module can halt chain when handling a malicious proposal",
+      "layer": "Governance",
+      "cwe": "CWE-369",
+      "primitive": "Any user that can interact with the groups module can introduce this state.",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-x5vx-95h7-rv4p",
+      "sourceId": "GHSA-x5vx-95h7-rv4p",
+      "confidence": 0.75,
+      "harvestedAt": "2026-11-09T23:14:18.336Z",
+      "tags": [
+        "governance",
+        "cwe-369",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-barberry-vulnerability-in-github-com",
+      "title": "Cosmos \"Barberry\" vulnerability in github.com/cosmos/cosmos-sdk",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Cosmos \"Barberry\" vulnerability in github.com/cosmos/cosmos-sdk The cosmos-sdk module is affected by the vulnerability codenamed \"Barberry\".",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2023-1861",
+      "sourceId": "GO-2023-1861",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-09T23:14:18.336Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-slashing-evasion-in-github-com-cosmos-cosmos",
+      "title": "Slashing evasion in github.com/cosmos/cosmos-sdk",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "Slashing evasion in github.com/cosmos/cosmos-sdk Slashing evasion in github.com/cosmos/cosmos-sdk",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-2584",
+      "sourceId": "GO-2024-2584",
+      "confidence": 0.72,
+      "harvestedAt": "2026-11-09T23:14:18.336Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-validatevoteextensions-function-in-cosmos-sd",
+      "title": "ValidateVoteExtensions function in Cosmos SDK may — allow incorrect voting power assumptions in github",
+      "layer": "Governance",
+      "cwe": "CWE-863",
+      "primitive": "ValidateVoteExtensions function in Cosmos SDK may allow incorrect voting power assumptions in github.com/cosmos/cosmos-sdk The default ValidateVoteExtensions helper function infers total voting power based on the injected VoteExtension, which are injected by…",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-2638",
+      "sourceId": "GO-2024-2638",
+      "confidence": 0.87,
+      "harvestedAt": "2026-11-09T23:14:18.336Z",
+      "tags": [
+        "governance",
+        "cwe-863",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-spankchain",
+      "title": "SpankChain",
+      "layer": "Execution",
+      "cwe": "CWE-362",
+      "primitive": "SpankChain [ 7 ] In 2018, a malicious attacker stole 165 Ether (valued at $40,000) from SpankChain by exploiting a vulnerability in the Ethereum blockchain.",
+      "detection": "Detect and Prevent Ethereum Blockchain Smart Contract Reentrancy Attacks\" (PDF)",
+      "remediation": "Prevent Ethereum Blockchain Smart Contract Reentrancy Attacks\" (PDF)",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/SpankChain",
+      "sourceId": "web-8f9afff61bc637b0",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-09T23:17:05.960Z",
+      "tags": [
+        "execution",
+        "cwe-362",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web",
+      "quarantined": true
+    },
+    {
+      "id": "tech-proton-ag",
+      "title": "Proton AG",
+      "layer": "Execution",
+      "cwe": "CWE-287",
+      "primitive": "On 21 January 2020, Proton announced that Proton VPN would now be open source, to allow independent security experts to analyze it, becoming the first VPN service to do so, simultaneously announcing that an independent security audit had been conducted.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Bind signatures to chain id, contract address and nonce; reject replays at the verifier.",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Proton_AG",
+      "sourceId": "web-bc575eaa358c4948",
+      "confidence": 0.65,
+      "harvestedAt": "2026-11-10T07:26:11.622Z",
+      "tags": [
+        "execution",
+        "cwe-287",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web",
+      "quarantined": true
+    },
+    {
+      "id": "tech-avalanche-blockchain-platform",
+      "title": "Avalanche (blockchain platform)",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "Avalanche (blockchain platform) [ 9 ] [ 10 ] In August 2022, the whistleblower group Crypto Leaks published a report alleging that Ava Labs had entered secret agreements with Kyle Roche of Roche Freedmen law firm with the intent to legally undermine…",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "prevent a single actor from dominating the random samples by running many nodes (a Sybil attack ), Avalanche uses proof of stake : the probability of a valid",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Avalanche_(blockchain_platform)",
+      "sourceId": "web-4aa79cf013160184",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-10T07:26:22.745Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web",
+      "quarantined": true
+    },
+    {
+      "id": "tech-blockchain",
+      "title": "Blockchain",
+      "layer": "Cryptography",
+      "cwe": "CWE-330",
+      "primitive": "[ 4 ] [ 12 ] They wanted to implement a system wherein document timestamps could not be tampered with.",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "mitigate the effects of a theft of 50 million NXT from a major cryptocurrency exchange",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Blockchain",
+      "sourceId": "web-84cd2836b303b881",
+      "confidence": 0.78,
+      "harvestedAt": "2026-11-10T07:27:15.575Z",
+      "tags": [
+        "cryptography",
+        "cwe-330",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web"
+    },
+    {
+      "id": "tech-history-of-bitcoin",
+      "title": "History of bitcoin",
+      "layer": "Consensus",
+      "cwe": "CWE-664",
+      "primitive": "[ 30 ] [ 31 ] On 6 August 2010, a major vulnerability in the bitcoin protocol was spotted.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "Expose liveness and participation metrics with alerting thresholds tied to the protocol’s safety margin.",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/History_of_bitcoin",
+      "sourceId": "web-6e301a0e5033cab8",
+      "confidence": 0.8,
+      "harvestedAt": "2026-11-10T07:28:08.455Z",
+      "tags": [
+        "consensus",
+        "cwe-664",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web"
+    },
+    {
+      "id": "tech-deforestation",
+      "title": "Deforestation",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Deforestation This reduces the potential of forests to assist with climate change mitigation.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Deforestation",
+      "sourceId": "web-a1c3cc6773815c30",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-10T07:28:15.440Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web"
+    },
+    {
+      "id": "tech-scam-centers-in-cambodia",
+      "title": "Scam centers in Cambodia",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "[ 1 ] Several non-governmental organizations (NGOs) and eyewitness accounts report cases of human trafficking, forced labor, torture, child exploitation and other forms of abuse from Cambodian scam centers.",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "Web capture — en.wikipedia.org",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scam_centers_in_Cambodia",
+      "sourceId": "web-c5e19c44d36b98d0",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-10T07:28:18.717Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "web-capture"
+      ],
+      "sourceWeight": 0.85,
+      "origin": "web"
+    },
+    {
+      "id": "tech-transaction-decoding-may-result-in-a-stack-o",
+      "title": "Transaction decoding may result in a stack overflow or…",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "Transaction decoding may result in a stack overflow or resource exhaustion in github.com/cosmos/cosmos-sdk Transaction decoding may result in a stack overflow or resource exhaustion in github.com/cosmos/cosmos-sdk",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-3339",
+      "sourceId": "GO-2024-3339",
+      "confidence": 0.72,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-go-package-github-com-cosmos-cosmos-sdk-modu",
+      "title": "Go package github.com/cosmos/cosmos-sdk module x/crisis does NOT cause chain halt",
+      "layer": "Infrastructure",
+      "cwe": "CWE-682",
+      "primitive": "Go package github.com/cosmos/cosmos-sdk module x/crisis does NOT cause chain halt If an invariant check fails on a Cosmos SDK network and a transaction is sent to the x/crisis module to halt the chain, the chain does not halt.",
+      "detection": "invariant check fails on a Cosmos SDK network and a transaction is sent to the `x/crisis` module to halt the chain, the chain does not halt",
+      "remediation": "State the invariant formally and assert it on every state transition so violations fail closed.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://github.com/advisories/GHSA-qfc5-6r3j-jj22",
+      "sourceId": "GHSA-qfc5-6r3j-jj22",
+      "confidence": 0.73,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "infrastructure",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-the-x-crisis-package-does-not-cause-chain-ha",
+      "title": "The x/crisis package does not cause chain halt in github.com/cosmos/cosmos-sdk",
+      "layer": "Supply Chain",
+      "cwe": "CWE-682",
+      "primitive": "The x/crisis package does not cause chain halt in github.com/cosmos/cosmos-sdk If an invariant check fails on a Cosmos SDK network, and a transaction is sent to the x/crisis package to halt the chain, the chain does not halt as originally intended.",
+      "detection": "invariant check fails on a Cosmos SDK network, and a transaction is sent to the x/crisis package to halt the chain, the chain does not halt as origin",
+      "remediation": "patch will be released, as the package is planned to be deprecated and replaced",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2023-1821",
+      "sourceId": "GO-2023-1821",
+      "confidence": 0.73,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "supply-chain",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-the-x-crisis-package-does-not-charge-constan",
+      "title": "The x/crisis package does not charge ConstantFee in github.com/cosmos/cosmos-sdk",
+      "layer": "Supply Chain",
+      "cwe": "CWE-682",
+      "primitive": "The x/crisis package does not charge ConstantFee in github.com/cosmos/cosmos-sdk If a transaction is sent to the x/crisis module to check an invariant, the ConstantFee parameter of the chain is not charged.",
+      "detection": "invariant, the ConstantFee parameter of the chain is not charged",
+      "remediation": "patch will be released, as the package is planned to be deprecated and replaced",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2023-1881",
+      "sourceId": "GO-2023-1881",
+      "confidence": 0.71,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "supply-chain",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-invalid-block-proposal-in-github-com-cosmos",
+      "title": "Invalid block proposal in github.com/cosmos/cosmos-sdk",
+      "layer": "Governance",
+      "cwe": "CWE-863",
+      "primitive": "Invalid block proposal in github.com/cosmos/cosmos-sdk Invalid block proposal in github.com/cosmos/cosmos-sdk",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-2571",
+      "sourceId": "GO-2024-2571",
+      "confidence": 0.71,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "governance",
+        "cwe-863",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-missing-blockedaddressed-validation-in-vesti",
+      "title": "Missing BlockedAddressed Validation in Vesting Module in github.com/cosmos/cosmos-sdk",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Missing BlockedAddressed Validation in Vesting Module in github.com/cosmos/cosmos-sdk Missing BlockedAddressed Validation in Vesting Module in github.com/cosmos/cosmos-sdk",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-2572",
+      "sourceId": "GO-2024-2572",
+      "confidence": 0.59,
+      "harvestedAt": "2026-11-10T11:50:59.618Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cosmos-sdk-can-halt-when-erroring-in-endbloc",
+      "title": "Cosmos SDK can halt when erroring in EndBlocker in github.com/cosmos/cosmos-sdk/",
+      "layer": "Execution",
+      "cwe": "CWE-841",
+      "primitive": "Cosmos SDK can halt when erroring in EndBlocker in github.com/cosmos/cosmos-sdk/ Cosmos SDK can halt when erroring in EndBlocker in github.com/cosmos/cosmos-sdk/",
+      "detection": "Instrument external calls, state-transition ordering and balance conservation; alert on any reentrant or post-effect external interaction.",
+      "remediation": "Never make an external call before final state mutation; validate the return value of every untrusted call.",
+      "sourceName": "OSV — cosmos-sdk",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2025-3516",
+      "sourceId": "GO-2025-3516",
+      "confidence": 0.59,
+      "harvestedAt": "2026-11-10T11:50:59.619Z",
+      "tags": [
+        "execution",
+        "cwe-841",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft",
+      "title": "CometBFT",
+      "layer": "Consensus",
+      "cwe": "CWE-703",
+      "primitive": "This breaks a core BFT Time guarantee: \"A faulty process cannot arbitrarily increase the Time value.\" Downstream impact on chains affects any module, smart contract, or system that relies on the block timestamp.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-c32p-wcqj-j677",
+      "sourceId": "GHSA-c32p-wcqj-j677",
+      "confidence": 0.9,
+      "harvestedAt": "2026-11-10T11:50:59.619Z",
+      "tags": [
+        "consensus",
+        "cwe-703",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-s-state-syncing-validator-from-mali",
+      "title": "CometBFT's state syncing validator from malicious node may lead to a chain split",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "In order for this node to be ready to run consensus and block sync from the installed snapshot height, we also need to install a valid State in the node, which is the starting state from which it is able to validate new blocks and append them to the…",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-g5xx-c4hv-9ccc",
+      "sourceId": "GHSA-g5xx-c4hv-9ccc",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-10T11:50:59.619Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-validation-of-voteextensionsenableheight-can",
+      "title": "Validation of `VoteExtensionsEnableHeight` can cause chain… — in Go package github",
+      "layer": "Governance",
+      "cwe": "CWE-863",
+      "primitive": "If a parameter change proposal including a VoteExtensionsEnableHeight modification is passed, nodes running the affected versions may panic, halting the network.",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-qr8r-m495-7hc4",
+      "sourceId": "GHSA-qr8r-m495-7hc4",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-10T11:50:59.620Z",
+      "tags": [
+        "governance",
+        "cwe-863",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-is-unstability-during-blocksync-whe",
+      "title": "CometBFT is unstability during blocksync when syncing from malicious peer",
+      "layer": "Infrastructure",
+      "cwe": "CWE-610",
+      "primitive": "Nodes that are vulnerable to this state may experience a Denial of Service condition in which syncing will not work as expected when joining a network as a client.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "patch so that blocksync functions as expected and is tolerant of malicious peers presenting invalid data in this situation",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-hg58-rf2h-6rr7",
+      "sourceId": "GHSA-hg58-rf2h-6rr7",
+      "confidence": 0.88,
+      "harvestedAt": "2026-11-10T11:50:59.620Z",
+      "tags": [
+        "infrastructure",
+        "cwe-610",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-peerstate-json-serialization-deadlo",
+      "title": "CometBFT PeerState JSON serialization deadlock",
+      "layer": "Infrastructure",
+      "cwe": "CWE-401",
+      "primitive": "CometBFT PeerState JSON serialization deadlock An internal modification to the way struct PeerState is serialized to JSON introduced a deadlock when new function MarshallJSON is called.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-mvj3-qrqh-cjvr",
+      "sourceId": "GHSA-mvj3-qrqh-cjvr",
+      "confidence": 0.88,
+      "harvestedAt": "2026-11-10T11:50:59.620Z",
+      "tags": [
+        "infrastructure",
+        "cwe-401",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-s-default-for-blockparams-maxbytes",
+      "title": "CometBFT's default for `BlockParams.MaxBytes` consensus…",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "It is advised that chains consider their specific needs for their use case when setting the BlockParams.MaxBytes consensus parameter.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-hq58-p9mv-338c",
+      "sourceId": "GHSA-hq58-p9mv-338c",
+      "confidence": 0.59,
+      "harvestedAt": "2026-11-10T11:50:59.620Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-asa-2024-004-default-configuration-param-for",
+      "title": "ASA-2024-004: Default configuration param for Evidence may limit window of validity",
+      "layer": "Consensus",
+      "cwe": "CWE-1188",
+      "primitive": "If the conditions of both of these parameters are exceeded, evidence may be prematurely expired and considered no longer valid, potentially allowing for unpunished Byzantine behavior if evidence is discovered outside of that window.",
+      "detection": "Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated.",
+      "remediation": "prevent the slashing mechanism from working in specific cases",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-555p-m4v6-cqxv",
+      "sourceId": "GHSA-555p-m4v6-cqxv",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-10T11:50:59.620Z",
+      "tags": [
+        "consensus",
+        "cwe-1188",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-a-malicious-peer-to-stall-the-netwo",
+      "title": "CometBFT — a malicious peer to stall the network by disseminating seemingly valid block…",
+      "layer": "Infrastructure",
+      "cwe": "CWE-345",
+      "primitive": "If a node is producing these malicious proofs, the only mitigation is to upgrade CometBFT.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "prevent this condition from happening",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-r3r4-g7hq-pq4f",
+      "sourceId": "GHSA-r3r4-g7hq-pq4f",
+      "confidence": 0.57,
+      "harvestedAt": "2026-11-10T11:50:59.621Z",
+      "tags": [
+        "infrastructure",
+        "cwe-345",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-allows-a-malicious-peer-to-make-nod",
+      "title": "CometBFT allows a malicious peer to make node stuck in blocksync",
+      "layer": "Infrastructure",
+      "cwe": "CWE-703",
+      "primitive": "In the blocksync protocol peers send their base and latest heights when they connect to a new node (A), which is syncing to the tip of a network.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-22qq-3xwm-r5x4",
+      "sourceId": "GHSA-22qq-3xwm-r5x4",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-10T11:50:59.621Z",
+      "tags": [
+        "infrastructure",
+        "cwe-703",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-s-invalid-bitarray-handling-can-lea",
+      "title": "CometBFT's invalid BitArray handling can lead to network halt",
+      "layer": "Infrastructure",
+      "cwe": "CWE-228",
+      "primitive": "Additional validation was added to prevent processing BitArray's in this invalid state, as well as guards to prevent panics on BitArray methods if one of these invalid states is processed.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "prevent processing BitArray's in this invalid state, as well as guards to prevent panics on BitArray methods if one of these invalid states is processed",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-hrhf-2vcr-ghch",
+      "sourceId": "GHSA-hrhf-2vcr-ghch",
+      "confidence": 0.56,
+      "harvestedAt": "2026-11-10T11:50:59.621Z",
+      "tags": [
+        "infrastructure",
+        "cwe-228",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-cometbft-vote-extensions-panic-when-receivin",
+      "title": "CometBFT Vote Extensions: Panic when receiving a Pre-commit with an invalid data",
+      "layer": "Governance",
+      "cwe": "CWE-129",
+      "primitive": "The invalid field of the Vote message is the ValidatorIndex, which identifies the sender in the ValidatorSet running that height of consensus.",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://github.com/advisories/GHSA-p7mv-53f2-4cwj",
+      "sourceId": "GHSA-p7mv-53f2-4cwj",
+      "confidence": 0.6,
+      "harvestedAt": "2026-11-10T11:50:59.621Z",
+      "tags": [
+        "governance",
+        "cwe-129",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-denial-of-service-via-oom-in-github-com-come",
+      "title": "Denial of service via OOM in github.com/cometbft/cometbft",
+      "layer": "Infrastructure",
+      "cwe": "CWE-400",
+      "primitive": "This can lead to duplicate transactions that cannot be removed, even after they are committed in a block.",
+      "detection": "Track peer-set diversity, RPC error budget and dependency provenance; alert on peer churn, latency spikes and unsigned artifacts.",
+      "remediation": "Bound every loop by an explicit cap and reject calls whose input exceeds the cap rather than iterating on it.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2023-1883",
+      "sourceId": "GO-2023-1883",
+      "confidence": 0.46,
+      "harvestedAt": "2026-11-10T11:50:59.621Z",
+      "tags": [
+        "infrastructure",
+        "cwe-400",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-chain-halt-panic-in-github-com-cometbft-come",
+      "title": "Chain halt panic in github.com/cometbft/cometbft",
+      "layer": "Governance",
+      "cwe": "CWE-863",
+      "primitive": "Chain halt panic in github.com/cometbft/cometbft A vulnerability in CometBFT’s validation logic for VoteExtensionsEnableHeight can result in a chain halt when triggered through a governance parameter change proposal on an ABCI2 Application Chain.",
+      "detection": "Monitor proposal creation, voting-power concentration and timelock queue changes; alert when a single block shifts enough votes to pass or veto.",
+      "remediation": "Check the caller explicitly rather than trusting ambient context; no privileged path without an explicit authorisation check.",
+      "sourceName": "OSV — cometbft",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-2471",
+      "sourceId": "GO-2024-2471",
+      "confidence": 0.44,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "governance",
+        "cwe-863",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-gnark-is-vulnerable-to-signature-malleabilit",
+      "title": "gnark is vulnerable to signature malleability in EdDSA and ECDSA due to missing scalar checks",
+      "layer": "Cryptography",
+      "cwe": "CWE-347",
+      "primitive": "Since gnark’s native EdDSA and ECDSA circuits lack essential constraints, multiple distinct witnesses can satisfy the same public inputs.",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "Generate nonces with RFC 6979 deterministic derivation and assert uniqueness across every signature issued by the key.",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://github.com/advisories/GHSA-95v9-hv42-pwrj",
+      "sourceId": "GHSA-95v9-hv42-pwrj",
+      "confidence": 0.91,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "cryptography",
+        "cwe-347",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-plonk-verifier-kzg-multi-point-verification",
+      "title": "Plonk verifier KZG multi point verification",
+      "layer": "Cryptography",
+      "cwe": "CWE-330",
+      "primitive": "Plonk verifier KZG multi point verification The vulnerability allows a third party to derive a valid proof from a valid initial tuple {proof, public_inputs}, corresponding to the same public inputs as the initial proof.",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "Source entropy from a CSPRNG with health monitoring; fail closed when the entropy pool reports an error condition.",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://github.com/advisories/GHSA-7p92-x423-vwj6",
+      "sourceId": "GHSA-7p92-x423-vwj6",
+      "confidence": 0.73,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "cryptography",
+        "cwe-330",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-gnark-unsoundness-in-variable-comparison-non",
+      "title": "gnark unsoundness in variable comparison / non-unique binary decomposition",
+      "layer": "Supply Chain",
+      "cwe": "CWE-191",
+      "primitive": "This allows a malicious prover to construct a valid proof for a statement a < b even if a > b.",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "Fix has been implemented in pull request #835 and merged in commit 59a4087261a6c73f13e80d695c17b398c3d0934f to master branch",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://github.com/advisories/GHSA-498w-5j49-vqjg",
+      "sourceId": "GHSA-498w-5j49-vqjg",
+      "confidence": 0.74,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "supply-chain",
+        "cwe-191",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-proof-forgery-due-to-insufficient-randomness",
+      "title": "Proof forgery due to insufficient randomness in github.com/consensys/gnark",
+      "layer": "L2 / Bridge",
+      "cwe": "CWE-330",
+      "primitive": "Proof forgery due to insufficient randomness in github.com/consensys/gnark A a third party may derive a valid proof from a valid initial tuple {proof, public_inputs}, corresponding to the same public inputs as the initial proof.",
+      "detection": "Watch sequencer inclusion, data-availability publication and proof-verification deltas; alert on a missing batch or an unfinalised state root.",
+      "remediation": "Source entropy from a CSPRNG with health monitoring; fail closed when the entropy pool reports an error condition.",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2023-2119",
+      "sourceId": "GO-2023-2119",
+      "confidence": 0.76,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "l-bridge",
+        "cwe-330",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-gnark-commitments-to-private-witnesses-in-gr",
+      "title": "gnark commitments to private witnesses in Groth16 as implemented break zero-knowledge property",
+      "layer": "Cryptography",
+      "cwe": "CWE-200",
+      "primitive": "gnark commitments to private witnesses in Groth16 as implemented break zero-knowledge property This report concerns the Groth16 prover when used with commitments (as in frontend.Committer).",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://github.com/advisories/GHSA-9xcg-3q8v-7fq6",
+      "sourceId": "GHSA-9xcg-3q8v-7fq6",
+      "confidence": 0.59,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "cryptography",
+        "cwe-200",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-gnark-s-range-checker-gadget-allows-wider-in",
+      "title": "gnark's range checker gadget allows wider inputs up to word alignment",
+      "layer": "Cryptography",
+      "cwe": "CWE-682",
+      "primitive": "gnark's range checker gadget allows wider inputs up to word alignment gnark provides a gadget in the standard library to allow optimized checking of the bitwidth of the inputs.",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "patched in the stable branch of gnark",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://github.com/advisories/GHSA-rjjm-x32p-m3f7",
+      "sourceId": "GHSA-rjjm-x32p-m3f7",
+      "confidence": 0.47,
+      "harvestedAt": "2026-11-10T11:50:59.622Z",
+      "tags": [
+        "cryptography",
+        "cwe-682",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-commitments-to-private-witnesses-in-groth16",
+      "title": "Commitments to private witnesses in Groth16 as implemented… — in Groth16 as implemented break zero-knowledge…",
+      "layer": "Cryptography",
+      "cwe": "CWE-330",
+      "primitive": "Commitments to private witnesses in Groth16 as implemented break zero-knowledge property in github.com/consensys/gnark Commitments to private witnesses in Groth16 as implemented break zero-knowledge property in github.com/consensys/gnark",
+      "detection": "Fingerprint key material and signature vectors; alert on repeated nonces, reused material, or entropy-source state anomalies.",
+      "remediation": "Source entropy from a CSPRNG with health monitoring; fail closed when the entropy pool reports an error condition.",
+      "sourceName": "OSV — gnark (zk-SNARK library)",
+      "sourceUrl": "https://osv.dev/vulnerability/GO-2024-3123",
+      "sourceId": "GO-2024-3123",
+      "confidence": 0.42,
+      "harvestedAt": "2026-11-10T11:50:59.623Z",
+      "tags": [
+        "cryptography",
+        "cwe-330",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
+    },
+    {
+      "id": "tech-modified-package-published-to-npm-containing",
+      "title": "Modified package published to npm, containing malware that exfiltrates private key material",
+      "layer": "Supply Chain",
+      "cwe": "CWE-200",
+      "primitive": "Modified package published to npm, containing malware that exfiltrates private key material Earlier today, a publish-access account was compromised for @solana/web3.js, a JavaScript library that is commonly used by Solana dapps.",
+      "detection": "Pin every dependency by digest and diff each release against its source; alert on a new maintainer, an unsigned artifact or an install-time script.",
+      "remediation": "Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.",
+      "sourceName": "OSV — @solana/web3.js",
+      "sourceUrl": "https://github.com/advisories/GHSA-jcxm-7wvp-g6p5",
+      "sourceId": "GHSA-jcxm-7wvp-g6p5",
+      "confidence": 0.84,
+      "harvestedAt": "2026-11-10T11:50:59.623Z",
+      "tags": [
+        "supply-chain",
+        "cwe-200",
+        "external-intel",
+        "advisory"
+      ],
+      "sourceWeight": 1,
+      "origin": "feed"
     }
   ],
   "teachings": [
@@ -7171,11 +9411,1090 @@
       "agentHandle": "darkpool",
       "taughtAt": "2026-11-05T16:34:49.660Z",
       "rationale": "Layer Execution is adjacent to this agent's specialty."
+    },
+    {
+      "techniqueId": "tech-besu-s-discv4-udp-discovery-remote-dos",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.037Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-in-go-ethereum",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.064Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-besu-s-transaction-pool",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.087Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-eip-7825-per-block-transaction-gas-cap-compa",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.114Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-jwt-algorithm-confusion-allows-token-forgery",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.147Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-dos-via-malicious-p2p-message",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.177Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-debug-tracetransaction-and-trace-rpc-methods",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.211Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-go-ethereum-vulnerable-to-denial-of-service",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.244Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-dos-via-malicious-snap-1-request",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.263Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-cosmos-sdk-cosmovisor-component-may-be-vulne",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.288Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-asa-2024-0012-asa-2024-0013-cosmossdk-transa",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.318Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-in-github-com-ethereum-go",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.353Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-due-to-go-cve-2020-28362",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.397Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-via-mulmod",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.453Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-besu-nodes-with-the-snap-server-enabled-sche",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.489Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-go-ethereum-vulnerable-to-dos-via-malicious",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.516Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-in-go-ethereum-due-to-cve",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.550Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-go-ethereum-les-protocol-implementation-vuln",
+      "agentHandle": "bot-custom-auto-infrastructure-uplink",
+      "taughtAt": "2026-11-09T23:14:20.580Z",
+      "rationale": "Layer Infrastructure is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-denial-of-service-in-geth",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.050Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-web3-utils-prototype-pollution-vulnerability",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.070Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-openzeppelin-contracts-vulnerable-to-imprope",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.107Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-inconsistent-storage-layout-for-erc2771conte",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.141Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-pysec-2022-196",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.175Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-consensus-flaw-in-github-com-ethereum-go-eth",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-09T23:31:37.206Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-timelockcontroller-vulnerability-in-openzepp",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.262Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-governorcompatibilitybravo-incorrect-abi-enc",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.263Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-openzeppelin-contracts-s-governor-proposal-c",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.263Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-asa-2024-006-validatevoteextensions-helper-f",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.264Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-validatevoteextensions-function-in-cosmos-sd",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.264Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-cosmos-sdk-groups-module-can-halt-chain-when",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.264Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-governorcompatibilitybravo-may-trim-proposal",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T07:26:39.265Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-validation-of-voteextensionsenableheight-can",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T11:50:59.824Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-modified-package-published-to-npm-containing",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T11:50:59.825Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-gnark-unsoundness-in-variable-comparison-non",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T11:50:59.826Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-the-x-crisis-package-does-not-cause-chain-ha",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T11:50:59.827Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-the-x-crisis-package-does-not-charge-constan",
+      "agentHandle": "bot-custom-auto-supply-chain-provenance",
+      "taughtAt": "2026-11-10T11:50:59.828Z",
+      "rationale": "Layer Supply Chain is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-invalid-block-proposal-in-github-com-cosmos",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T11:50:59.828Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
+    },
+    {
+      "techniqueId": "tech-cometbft-vote-extensions-panic-when-receivin",
+      "agentHandle": "bot-custom-auto-governance-quorum",
+      "taughtAt": "2026-11-10T11:50:59.829Z",
+      "rationale": "Layer Governance is this agent's primary specialty."
     }
   ],
-  "lastHarvestAt": "2026-11-07T15:28:14.304Z",
-  "lastHarvestCount": 143,
+  "lastHarvestAt": "2026-11-10T11:50:59.623Z",
+  "lastHarvestCount": 455,
   "log": [
+    {
+      "at": "2026-11-10T11:50:59.623Z",
+      "harvested": 455,
+      "distilled": 28,
+      "sourcesOk": 31,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": true,
+          "items": 21
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-ethers",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-web3",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": true,
+          "items": 22
+        },
+        {
+          "id": "osv-vyper",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-geth",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": true,
+          "items": 24
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": true,
+          "items": 13
+        },
+        {
+          "id": "osv-gnark",
+          "ok": true,
+          "items": 8
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": true,
+          "items": 3
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "kev",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": true,
+          "items": 17
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "ef-blog",
+          "ok": true,
+          "items": 11
+        },
+        {
+          "id": "tob-blog",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": true,
+          "items": 10
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": true,
+          "items": 9
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "solidity-blog",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "oz-blog",
+          "ok": true,
+          "items": 8
+        }
+      ]
+    },
+    {
+      "at": "2026-11-10T11:08:39.210Z",
+      "harvested": 455,
+      "distilled": 0,
+      "sourcesOk": 31,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": true,
+          "items": 21
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-ethers",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-web3",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": true,
+          "items": 22
+        },
+        {
+          "id": "osv-vyper",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-geth",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": true,
+          "items": 24
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": true,
+          "items": 13
+        },
+        {
+          "id": "osv-gnark",
+          "ok": true,
+          "items": 8
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": true,
+          "items": 3
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "kev",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": true,
+          "items": 17
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "ef-blog",
+          "ok": true,
+          "items": 11
+        },
+        {
+          "id": "tob-blog",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": true,
+          "items": 10
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": true,
+          "items": 9
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "solidity-blog",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "oz-blog",
+          "ok": true,
+          "items": 8
+        }
+      ]
+    },
+    {
+      "at": "2026-11-10T08:12:51.603Z",
+      "harvested": 0,
+      "distilled": 0,
+      "sourcesOk": 0,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-ethers",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-web3",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-vyper",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-geth",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-gnark",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "kev",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "ef-blog",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "tob-blog",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "solidity-blog",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        },
+        {
+          "id": "oz-blog",
+          "ok": false,
+          "items": 0,
+          "error": "fetch failed"
+        }
+      ]
+    },
+    {
+      "at": "2026-11-10T07:26:05.703Z",
+      "harvested": 455,
+      "distilled": 0,
+      "sourcesOk": 31,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": true,
+          "items": 21
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-ethers",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-web3",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": true,
+          "items": 22
+        },
+        {
+          "id": "osv-vyper",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-geth",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": true,
+          "items": 24
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": true,
+          "items": 13
+        },
+        {
+          "id": "osv-gnark",
+          "ok": true,
+          "items": 8
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": true,
+          "items": 3
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "kev",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": true,
+          "items": 17
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "ef-blog",
+          "ok": true,
+          "items": 11
+        },
+        {
+          "id": "tob-blog",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": true,
+          "items": 10
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": true,
+          "items": 9
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "solidity-blog",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "oz-blog",
+          "ok": true,
+          "items": 8
+        }
+      ]
+    },
+    {
+      "at": "2026-11-09T23:14:18.336Z",
+      "harvested": 460,
+      "distilled": 67,
+      "sourcesOk": 31,
+      "sourcesTotal": 31,
+      "sources": [
+        {
+          "id": "osv-openzeppelin",
+          "ok": true,
+          "items": 21
+        },
+        {
+          "id": "osv-hardhat",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-ethers",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "osv-web3",
+          "ok": true,
+          "items": 1
+        },
+        {
+          "id": "osv-oz-upgradeable",
+          "ok": true,
+          "items": 22
+        },
+        {
+          "id": "osv-vyper",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-geth",
+          "ok": true,
+          "items": 30
+        },
+        {
+          "id": "osv-cosmos-sdk",
+          "ok": true,
+          "items": 24
+        },
+        {
+          "id": "osv-cometbft",
+          "ok": true,
+          "items": 13
+        },
+        {
+          "id": "osv-gnark",
+          "ok": true,
+          "items": 8
+        },
+        {
+          "id": "osv-solana-web3",
+          "ok": true,
+          "items": 3
+        },
+        {
+          "id": "nvd-solidity",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "nvd-ethereum",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "kev",
+          "ok": true,
+          "items": 6
+        },
+        {
+          "id": "ghsa-ethereum",
+          "ok": true,
+          "items": 17
+        },
+        {
+          "id": "ghsa-besu",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "ghsa-openzeppelin",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "ghsa-solc",
+          "ok": true,
+          "items": 0
+        },
+        {
+          "id": "ef-blog",
+          "ok": true,
+          "items": 11
+        },
+        {
+          "id": "tob-blog",
+          "ok": true,
+          "items": 12
+        },
+        {
+          "id": "arxiv-sc",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "arxiv-mev",
+          "ok": true,
+          "items": 20
+        },
+        {
+          "id": "arxiv-bridge",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-zk",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "arxiv-governance",
+          "ok": true,
+          "items": 15
+        },
+        {
+          "id": "arxiv-oracle",
+          "ok": true,
+          "items": 10
+        },
+        {
+          "id": "arxiv-supplychain",
+          "ok": true,
+          "items": 9
+        },
+        {
+          "id": "nvd-smart-contract",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "nvd-blockchain",
+          "ok": true,
+          "items": 25
+        },
+        {
+          "id": "solidity-blog",
+          "ok": true,
+          "items": 14
+        },
+        {
+          "id": "oz-blog",
+          "ok": true,
+          "items": 8
+        }
+      ]
+    },
     {
       "at": "2026-11-07T15:28:14.304Z",
       "harvested": 143,

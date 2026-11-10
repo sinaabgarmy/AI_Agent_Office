@@ -11,9 +11,11 @@ source: NVD — Solidity CVEs
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2020-36402"
 source_id: CVE-2020-36402
 confidence: 0.71
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-787]
-updated: "2026-11-05T16:34:49.348Z"
+updated: "2026-11-10T11:50:59.631Z"
 ---
 
 # Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver

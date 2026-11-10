@@ -13,9 +13,14 @@ source_id: GHSA-9rcw-c2f9-2j55
 confidence: 0.87
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-05T16:34:49.468Z"
+updated: "2026-11-10T11:50:59.755Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Expose liveness and participation metrics with alerting thresholds tied to the p
 - Harvested: 2026-11-04T18:52:17.344Z
 > **Refreshed 2026-11-04T18:54:02.515Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
 > **Refreshed 2026-11-05T16:34:49.467Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-09T23:14:19.933Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-10T07:26:05.769Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-10T08:12:51.694Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-10T11:08:39.481Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…
+> **Refreshed 2026-11-10T11:50:59.755Z** — Bytes's lastIndexOf function with position argument performs out-of-bound memory access on empty buffers The lastIndexOf(bytes,byte,uint256) function of the Bytes.sol library may access uninitialized memory when the following two conditions hold: 1) the…

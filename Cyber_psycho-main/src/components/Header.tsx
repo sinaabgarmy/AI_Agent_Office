@@ -1,10 +1,10 @@
 import React from 'react';
-import { ShieldAlert, Terminal, MessageSquare, Cpu, FileText, Users, Download, Sparkles, Database, Vault, Radar, Compass } from 'lucide-react';
+import { ShieldAlert, Terminal, MessageSquare, Cpu, FileText, Users, Download, Sparkles, Database, Vault, Radar, Compass, Sparkles as AutopilotIcon } from 'lucide-react';
 import { DatabaseStatus } from '../types';
 
 interface HeaderProps {
-  activeTab: 'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface';
-  setActiveTab: (tab: 'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface') => void;
+  activeTab: 'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface' | 'autopilot';
+  setActiveTab: (tab: 'debate' | 'decrypt' | 'sandbox' | 'defects' | 'roster' | 'agents' | 'vault' | 'intel' | 'surface' | 'autopilot') => void;
   onExportPlaybook: () => void;
   decryptedCount: number;
   totalLogs: number;
@@ -139,6 +139,18 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <Vault className="w-4 h-4" />
           <span>Knowledge Vault</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('autopilot')}
+          className={`flex items-center gap-1.5 py-1 transition-colors whitespace-nowrap shrink-0 border-b-2 ${
+            activeTab === 'autopilot'
+              ? 'border-emerald-500 text-emerald-300 font-semibold'
+              : 'border-transparent text-slate-400 hover:text-slate-200'
+          }`}
+        >
+          <AutopilotIcon className="w-4 h-4" />
+          <span>Autopilot</span>
         </button>
       </nav>
 

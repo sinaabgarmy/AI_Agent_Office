@@ -10,12 +10,17 @@ remediation: Adopt the upstream advisory’s remediation guidance and verify the
 source: "OSV — @openzeppelin/contracts"
 source_url: "https://github.com/advisories/GHSA-93hq-5wgc-jc82"
 source_id: GHSA-93hq-5wgc-jc82
-confidence: 0.46
+confidence: 0.57
 harvested: 2026-11-04
 tags: [technique, execution, cwe-20]
-updated: "2026-11-05T16:34:49.423Z"
+updated: "2026-11-10T11:50:59.708Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Harvested: 2026-11-04T18:52:17.327Z
 > **Refreshed 2026-11-04T18:54:02.476Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
 > **Refreshed 2026-11-05T16:34:49.422Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-09T23:14:19.313Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-10T07:26:05.750Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-10T08:12:51.665Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-10T11:08:39.410Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.
+> **Refreshed 2026-11-10T11:50:59.707Z** — GovernorCompatibilityBravo may trim proposal calldata The proposal creation entrypoint (propose) in GovernorCompatibilityBravo allows the creation of proposals with a signatures array shorter than the calldatas array.

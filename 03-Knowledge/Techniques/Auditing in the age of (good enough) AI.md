@@ -13,9 +13,14 @@ source_id: tob-blog-auditing-in-the-age-of-good-enough-ai
 confidence: 0.41
 harvested: 2026-11-04
 tags: [technique, cryptography, cwe-330]
-updated: "2026-11-05T16:34:49.383Z"
+updated: "2026-11-10T11:50:59.666Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ patch-the-planet/">we’re one of them</a>)
 > **Refreshed 2026-11-04T18:52:17.383Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
 > **Refreshed 2026-11-04T18:54:02.442Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
 > **Refreshed 2026-11-05T16:34:49.383Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-09T23:14:18.872Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-10T07:26:05.730Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-10T08:12:51.636Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-10T11:08:39.315Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="
+> **Refreshed 2026-11-10T11:50:59.666Z** — Auditing in the age of (good enough) AI <p>Security firms have published numerous blog posts describing how they pointed their agent harness at a codebase and found dozens of bugs (<a href="

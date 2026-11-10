@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2510.21401v1"
 source_id: arxiv-flames-fine-tuning-llms-to-synthesize-in
 confidence: 0.83
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-682]
-updated: "2026-11-05T16:34:49.390Z"
+updated: "2026-11-10T11:50:59.676Z"
 ---
 
 # FLAMES: Fine-tuning LLMs to Synthesize Invariants for Smart Contract Security

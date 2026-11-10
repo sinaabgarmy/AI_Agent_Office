@@ -11,9 +11,11 @@ source: arXiv — Smart Contract Security
 source_url: "http://arxiv.org/abs/2609.29454v1"
 source_id: arxiv-demystifying-agent-skills-for-smart-cont
 confidence: 0.83
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.388Z"
+updated: "2026-11-10T11:50:59.674Z"
 ---
 
 # Demystifying Agent Skills for Smart Contract Auditing: Design, Effectiveness, Behavioral Impact

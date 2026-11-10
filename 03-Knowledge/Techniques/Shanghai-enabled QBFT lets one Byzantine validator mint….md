@@ -13,9 +13,14 @@ source_id: GHSA-p4h2-gvh4-pv6j
 confidence: 0.88
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-20]
-updated: "2026-11-05T16:34:49.452Z"
+updated: "2026-11-10T11:50:59.734Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Harvested: 2026-11-04T18:52:17.342Z
 > **Refreshed 2026-11-04T18:54:02.498Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
 > **Refreshed 2026-11-05T16:34:49.452Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
+> **Refreshed 2026-11-09T23:14:19.592Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
+> **Refreshed 2026-11-10T07:26:05.762Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
+> **Refreshed 2026-11-10T08:12:51.681Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
+> **Refreshed 2026-11-10T11:08:39.459Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.
+> **Refreshed 2026-11-10T11:50:59.734Z** — A Byzantine proposer can include a nonempty withdrawal list that passes body validation and is then executed as native-balance credits.

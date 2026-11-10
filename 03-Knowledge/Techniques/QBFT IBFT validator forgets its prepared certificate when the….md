@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-x2jm-6mc4-8g78"
 source_id: GHSA-x2jm-6mc4-8g78
 confidence: 0.57
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-664]
-updated: "2026-11-05T16:34:49.456Z"
+updated: "2026-11-10T11:50:59.741Z"
 ---
 
 # QBFT/IBFT validator forgets its prepared certificate when the…

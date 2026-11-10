@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/07/01/ethereum-for-institutions"
 source_id: ef-blog-ethereum-for-governments-and-institution
 confidence: 0.67
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, infrastructure, cwe-400]
-updated: "2026-11-05T16:34:49.374Z"
+updated: "2026-11-10T11:50:59.657Z"
 ---
 
 # Ethereum for Governments and Institutions: Why neutral infrastructure matters now

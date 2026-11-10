@@ -13,9 +13,14 @@ source_id: GHSA-9856-9gg9-qcmq
 confidence: 0.89
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.425Z"
+updated: "2026-11-10T11:50:59.711Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ patch is included in the v1
 - Harvested: 2026-11-04T18:52:17.336Z
 > **Refreshed 2026-11-04T18:54:02.479Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
 > **Refreshed 2026-11-05T16:34:49.425Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-09T23:14:19.388Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-10T07:26:05.752Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-10T08:12:51.667Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-10T11:08:39.418Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.
+> **Refreshed 2026-11-10T11:50:59.711Z** — RETURNDATA corruption via datacopy A vulnerability in the Geth EVM could cause a node to reject the canonical chain.

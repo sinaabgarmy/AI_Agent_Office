@@ -13,9 +13,14 @@ source_id: GHSA-v592-xf75-856p
 confidence: 0.71
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.429Z"
+updated: "2026-11-10T11:50:59.717Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Never make an external call before final state mutation; validate the return val
 - Harvested: 2026-11-04T18:52:17.337Z
 > **Refreshed 2026-11-04T18:54:02.483Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
 > **Refreshed 2026-11-05T16:34:49.429Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-09T23:14:19.467Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T07:26:05.754Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T08:12:51.672Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T11:08:39.427Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).
+> **Refreshed 2026-11-10T11:50:59.717Z** — Ethash DAG generation bug can cause miners to create invalid PoW An ethash mining DAG generation flaw in Geth could cause miners to erroneously calculate PoW in an upcoming epoch (estimated early January, 2021).

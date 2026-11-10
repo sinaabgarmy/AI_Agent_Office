@@ -11,9 +11,11 @@ source: CISA — Known Exploited Vulnerabilities
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2025-41244"
 source_id: CVE-2025-41244
 confidence: 0.62
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.356Z"
+updated: "2026-11-10T11:50:59.640Z"
 ---
 
 # Broadcom VMware Aria Operations and VMware Tools Privilege… — Broadcom VMware Aria Operations and VMware…

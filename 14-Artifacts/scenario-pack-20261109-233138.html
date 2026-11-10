@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Scenario Pack</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--ink:#14181f;--muted:#5b6472;--line:#e2e6ec;
+  --accent:#0b6e99;--accent-soft:#dcedf5;--track:#e9edf2;
+  --crit:#b3261e;--crit-bg:#fbe9e7;--high:#9a5b00;--high-bg:#fff1d6;--med:#3d5a80;--med-bg:#e6edf6;
+  --ok:#1b6e3c;--ok-bg:#e3f4e9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1319;--surface:#171c24;--ink:#e8ecf2;--muted:#98a2b3;--line:#262d38;
+    --accent:#5ab8dd;--accent-soft:#16303c;--track:#232a35;
+    --crit:#ff8a80;--crit-bg:#3a1a18;--high:#ffc46b;--high-bg:#35280f;--med:#a9c1e6;--med-bg:#1b2637;
+    --ok:#7fd4a0;--ok-bg:#143021;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 56px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:18px;margin:36px 0 12px;letter-spacing:-.005em}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.lede{color:var(--muted);max-width:68ch}
+.meta{color:var(--muted);font-size:13px}
+a{color:var(--accent)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-size:26px;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tile .s{font-size:12px;color:var(--muted);margin-top:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.scroll{overflow-x:auto}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+  padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.row{display:grid;grid-template-columns:minmax(110px,170px) 1fr auto;gap:12px;align-items:center;padding:7px 0;
+  border-bottom:1px solid var(--line);font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .v{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;
+  background:var(--med-bg);color:var(--med)}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}
+.pill.high{background:var(--high-bg);color:var(--high)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.plain{background:var(--accent-soft);color:var(--accent)}
+.quiet{color:var(--muted)}
+.hyp{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:8px 0}
+.small{font-size:13px}
+ul.flat{list-style:none;margin:0;padding:0}
+ul.flat li{padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+ul.flat li:last-child{border-bottom:0}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.card,.tile{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Auto-generated scenarios</div>
+  <h1>Scenario Pack</h1>
+  <p class="lede">Debate scenarios the system proposed on its own from coverage gaps, harvested intel, graph analysis, hunt targets and your vault seed notes. Each is a hypothesis to argue, not an established finding.</p>
+  <p class="meta">Generated 2026-11-09 23:31 UTC · ChronoZero Exploit Defect Lab · local, self-contained document</p>
+</header>
+<div class="grid">
+    <div class="tile"><div class="n">5</div><div class="l">auto-generated scenarios</div></div>
+    <div class="tile"><div class="n">5</div><div class="l">waiting to be debated</div></div>
+    <div class="tile"><div class="n">2</div><div class="l">from intel</div></div><div class="tile"><div class="n">1</div><div class="l">from path</div></div><div class="tile"><div class="n">2</div><div class="l">from surface</div></div>
+  </div><h2>Briefings</h2><article class="card">
+      <h3>TimelockController vulnerability in OpenZeppelin Contracts</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Governance Attack</span>
+        <span class="pill">Governance</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When Instances with the executor role set to &quot;open&quot; anyone to use the executor role, thus leaving the timelock at risk…, the CWE-269 class invariant around TimelockController vulnerability in OpenZeppelin Contracts fails, so fix is included in the following releases of @openzeppelin/contracts and… becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Governance — CWE-269 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-fg47-3c2x-m2wr). Attack primitive: Instances with the executor role set to &quot;open&quot; allow anyone to use the executor role, thus leaving the timelock at risk of being taken over by an attacker. The invariant at risk: Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated. Proposed remediation under review: fix is included in the following releases of @openzeppelin/contracts and @openzeppelin/contracts-upgradeable: - 4</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 98%. · Suggested council: DarkPool, SentinEL, Bytecode</p>
+    </article><article class="card">
+      <h3>Defect path: Security Council as a Permanent Upgrade Path → Restaked Security Correlated Slashing → Shared Sequencer Cross-Rollup Atomicity</h3>
+      <p><span class="pill plain">path</span> <span class="pill">L2 Rollup Security</span>
+        <span class="pill">L2 / Bridge</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A weakness in &quot;Security Council as a Permanent Upgrade Path&quot; supplies the precondition for &quot;Restaked Security Correlated Slashing&quot;, which in turn makes &quot;Shared Sequencer Cross-Rollup Atomicity&quot; reachable — so the system fails across three layers although no single-layer review finds a critical defect.</div>
+      <p class="small"><strong>Target architecture.</strong> Rollup or Protocol with an Upgrade Council Above the Timelock + Restaking Layer Securing Multiple Actively Validated Services + Multiple Rollups Ordered by One Shared Sequencer</p>
+      <p class="small">Cross-layer defect path (Governance → Consensus → L2 / Bridge). ENTRY — Security Council as a Permanent Upgrade Path: An emergency council meant as training wheels becomes the real trust assumption if it is never removed: the chain is exactly as secure as that council’s signer set, however decentralised everything else is. PIVOT — Restaked Security Correlated Slashing: Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on. IMPACT — Shared Sequencer Cross-Rollup Atomicity: A shared sequencer can promise that two rollups include a pair of transactions together, but cannot promise both execute successfully, so &quot;atomic&quot; cross-rollup actions can half-complete. Each step is reviewed by a different team and each looks contained on its own. Argue whether the entry really yi</p>
+      <p class="meta">Why it was generated: Three-layer chain Governance → Consensus → L2 / Bridge (3 of 3 steps are 2030-era surfaces); no existing scenario composes these. · Suggested council: DarkPool, ConsensusGhost, StateRoot, SentinEL</p>
+    </article><article class="card">
+      <h3>Restaked Security Correlated Slashing</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on.</div>
+      <p class="small"><strong>Target architecture.</strong> Restaking Layer Securing Multiple Actively Validated Services</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Trigger a slashing condition in the weakest service to remove collateral that the others assumed was independent. Invariant at risk: Stake that secures many services at once is counted as security by each of them, so a fault in one service can slash the collateral every other service believed it could rely on. Target architecture: Restaking Layer Securing Multiple Actively Validated Services. Reference class: CWE-664 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: 2030-era surface · Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: ConsensusGhost, DarkPool, SentinEL</p>
+    </article><article class="card">
+      <h3>OpenZeppelin Contracts Bytes&#39;s lastIndexOf function with…</h3>
+      <p><span class="pill plain">intel</span> <span class="pill">Consensus Flaw</span>
+        <span class="pill">Consensus</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> When The pos argument could be used to access arbitrary data outside of the buffer bounds., the CWE-125 class invariant around OpenZeppelin Contracts Bytes&#39;s lastIndexOf function with… fails, so adopt the upstream advisory’s remediation guidance and verify the fix against the stated… becomes mandatory rather than advisory.</div>
+      <p class="small"><strong>Target architecture.</strong> Consensus — CWE-125 class</p>
+      <p class="small">External intel harvested from OSV — @openzeppelin/contracts (GHSA-9rcw-c2f9-2j55). Attack primitive: The pos argument could be used to access arbitrary data outside of the buffer bounds. The invariant at risk: Track finality latency and validator participation distribution; alert when a quorum-intersection assumption is violated. Proposed remediation under review: Adopt the upstream advisory’s remediation guidance and verify the fix against the stated invariant.</p>
+      <p class="meta">Why it was generated: External intel (OSV — @openzeppelin/contracts), confidence 97%. · Suggested council: ConsensusGhost, SentinEL, ZeroCipher</p>
+    </article><article class="card">
+      <h3>Permit2 Signature Replay Across Nonces</h3>
+      <p><span class="pill plain">surface</span> <span class="pill">Smart Contract Exploit</span>
+        <span class="pill">Execution</span>
+        <span class="pill high">not yet debated</span></p>
+      <div class="hyp"><strong>Hypothesis.</strong> A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance.</div>
+      <p class="small"><strong>Target architecture.</strong> Permit2 / EIP-712 Allowance Contract</p>
+      <p class="small">Unmapped attack surface identified by the Surface Engine (coverage 0%). Uncovered — never debated, no external intel, no scenario. Exploitation mechanism: Replay a captured permit against a different spender or after the intended expiry. Invariant at risk: A permit2 signature that does not bind the spender or the nonce allows a single signed approval to be replayed into an unlimited allowance. Target architecture: Permit2 / EIP-712 Allowance Contract. Reference class: CWE-287 · Severity: Critical. The council has no prior debate on this surface. Treat it as uncharted: establish the mechanism, state the invariant, and identify where the defense actually fails.</p>
+      <p class="meta">Why it was generated: Coverage gap (0% covered, Critical) — Uncovered — never debated, no external intel, no scenario. · Suggested council: Bytecode, Entropy, SentinEL</p>
+    </article>
+<footer>
+  This artifact was generated automatically from the local knowledge vault. Coverage scores measure how much the
+  council has argued and learned about a topic — they are not predictions of real-world exploitability.
+  Web captures and techniques marked “unverified” have not been reviewed by a human.
+</footer>
+</div>
+</body>
+</html>

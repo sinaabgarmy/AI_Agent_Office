@@ -13,9 +13,14 @@ source_id: GHSA-878m-3g6q-594q
 confidence: 0.67
 harvested: 2026-11-04
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.464Z"
+updated: "2026-11-10T11:50:59.752Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Never make an external call before final state mutation; validate the return val
 - Harvested: 2026-11-04T18:52:17.344Z
 > **Refreshed 2026-11-04T18:54:02.512Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
 > **Refreshed 2026-11-05T16:34:49.464Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-09T23:14:19.832Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T07:26:05.768Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T08:12:51.692Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T11:08:39.476Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.
+> **Refreshed 2026-11-10T11:50:59.752Z** — ERC721Consecutive incorrect balance update with batch of 1 The ERC721Consecutive contract designed for minting NFTs in batches does not update balances when a batch has size 1 and consists of a single token.

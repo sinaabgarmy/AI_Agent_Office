@@ -17,11 +17,20 @@ source: NVD — Ethereum CVEs — tech-an-integer-overflow-in-the-batchtransfer-
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2018-10299"
 confidence: 0.98
 created: "2026-11-05T16:15:55.468Z"
-times_used: 0
+times_used: 179
 tags: [skill, hunt, execution, cwe-190]
-updated: "2026-11-05T16:35:51.819Z"
+updated: "2026-11-10T12:06:24.776Z"
 status: active
 ---
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,3 +66,12 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
 > **Refreshed 2026-11-05T16:35:17.644Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
 > **Refreshed 2026-11-05T16:35:51.819Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-09T23:13:46.286Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-09T23:23:30.823Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:26:24.969Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:27:22.252Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:28:19.690Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:30:39.131Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:31:07.312Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T11:49:59.845Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T12:06:24.776Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.

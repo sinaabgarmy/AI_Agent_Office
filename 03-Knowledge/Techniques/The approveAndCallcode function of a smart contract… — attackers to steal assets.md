@@ -11,9 +11,11 @@ source: NVD — Ethereum CVEs
 source_url: "https://nvd.nist.gov/vuln/detail/CVE-2018-12702"
 source_id: CVE-2018-12702
 confidence: 0.91
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-20]
-updated: "2026-11-05T16:34:49.354Z"
+updated: "2026-11-10T11:50:59.636Z"
 ---
 
 # The approveAndCallcode function of a smart contract… — attackers to steal assets (e

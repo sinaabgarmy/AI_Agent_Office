@@ -19,8 +19,18 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-190]
-updated: "2026-11-05T16:35:51.823Z"
+updated: "2026-11-10T12:06:24.781Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt The buy function of a smart contract implementation for Gold… — a potential trap that could be used to cause…
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-190 · **Confidence:** 91%
@@ -52,3 +62,12 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - NVD — Ethereum CVEs — tech-the-buy-function-of-a-smart-contract-impleme
 - https://nvd.nist.gov/vuln/detail/CVE-2018-11446
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.458Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-09T23:23:30.933Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:26:24.972Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:27:22.256Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:28:19.693Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:30:39.134Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T07:31:07.316Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T11:49:59.850Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.
+> **Refreshed 2026-11-10T12:06:24.780Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-190.

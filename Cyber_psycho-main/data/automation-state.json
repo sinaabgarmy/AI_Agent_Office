@@ -1,8 +1,307 @@
 {
   "enabled": true,
   "intervalMinutes": 60,
-  "nextRunAt": "2026-11-07T16:21:23.877Z",
-  "lastCycleAt": null,
-  "predictions": [],
-  "history": []
+  "nextRunAt": "2026-11-10T13:06:10.815Z",
+  "lastCycleAt": "2026-11-10T12:06:10.815Z",
+  "predictions": [
+    {
+      "id": "exec-permit2-unlimited-approval",
+      "title": "Permit2 Signature Replay Across Nonces",
+      "layer": "Execution",
+      "severity": "Critical",
+      "coverage": 0.167,
+      "priorityScore": 250,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-l2-shared-sequencer-atomicity",
+      "title": "Shared Sequencer Cross-Rollup Atomicity",
+      "layer": "L2 / Bridge",
+      "severity": "Critical",
+      "coverage": 0.167,
+      "priorityScore": 250,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-gov-security-council-key-rot",
+      "title": "Security Council as a Permanent Upgrade Path",
+      "layer": "Governance",
+      "severity": "Critical",
+      "coverage": 0.167,
+      "priorityScore": 250,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-keys-mpc-provider-concentration",
+      "title": "MPC Custody Provider Concentration",
+      "layer": "Key Management",
+      "severity": "Critical",
+      "coverage": 0.167,
+      "priorityScore": 250,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-crypto-fhe-noise-budget",
+      "title": "Encrypted-State Leakage via Decryption Oracles",
+      "layer": "Cryptography",
+      "severity": "High",
+      "coverage": 0,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-econ-agent-wallet-prompt-steering",
+      "title": "Autonomous Agent Wallet Steering",
+      "layer": "Economic",
+      "severity": "Critical",
+      "coverage": 0.333,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-gov-ai-delegate-capture",
+      "title": "Model-Driven Delegate Capture",
+      "layer": "Governance",
+      "severity": "High",
+      "coverage": 0,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-supply-hallucinated-dependency",
+      "title": "Hallucinated Dependency Registration",
+      "layer": "Supply Chain",
+      "severity": "High",
+      "coverage": 0,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-supply-frontend-signing-surface",
+      "title": "Frontend and Signing-UI Substitution",
+      "layer": "Supply Chain",
+      "severity": "Critical",
+      "coverage": 0.333,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-supply-compiler-toolchain-divergence",
+      "title": "Compiler and Prover Toolchain Divergence",
+      "layer": "Supply Chain",
+      "severity": "High",
+      "coverage": 0,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-keys-passkey-recovery-path",
+      "title": "Passkey and Social-Recovery Weakest Path",
+      "layer": "Key Management",
+      "severity": "High",
+      "coverage": 0,
+      "priorityScore": 200,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-consensus-single-slot-finality-load",
+      "title": "Fast-Finality Signature Aggregation Overload",
+      "layer": "Consensus",
+      "severity": "High",
+      "coverage": 0.167,
+      "priorityScore": 167,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-l2-prover-liveness-monopoly",
+      "title": "Prover Market Liveness Failure",
+      "layer": "L2 / Bridge",
+      "severity": "High",
+      "coverage": 0.167,
+      "priorityScore": 167,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-infra-rpc-monoculture-view",
+      "title": "RPC and Indexer Monoculture",
+      "layer": "Infrastructure",
+      "severity": "High",
+      "coverage": 0.167,
+      "priorityScore": 167,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-keys-agent-delegated-authority",
+      "title": "Over-Broad Authority Delegated to Agents",
+      "layer": "Key Management",
+      "severity": "High",
+      "coverage": 0.167,
+      "priorityScore": 167,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-exec-transient-storage-assumption",
+      "title": "Transient-Storage Lifetime Assumption",
+      "layer": "Execution",
+      "severity": "High",
+      "coverage": 0.333,
+      "priorityScore": 133,
+      "trend": "stable"
+    },
+    {
+      "id": "f30-exec-hook-callback-authority",
+      "title": "Hook and Plugin Callback Authority",
+      "layer": "Execution",
+      "severity": "High",
+      "coverage": 0.333,
+      "priorityScore": 133,
+      "trend": "stable"
+    }
+  ],
+  "history": [
+    {
+      "startedAt": "2026-11-10T12:06:08.000Z",
+      "completedAt": "2026-11-10T12:06:10.815Z",
+      "jobs": [
+        {
+          "id": "vault-sync",
+          "ok": true,
+          "summary": "Vault sync: 558 notes, 0 new, 0 changed, 0 removed; learned from 0 operator note(s)."
+        },
+        {
+          "id": "surface-scan",
+          "ok": true,
+          "summary": "Scanned 73 local surfaces; 17 prioritized gaps. Vault note: 00-System/Attack Surface Coverage.md."
+        },
+        {
+          "id": "agent-training",
+          "ok": true,
+          "summary": "Added 0 confidence-ranked technique assignments from the local intel library."
+        },
+        {
+          "id": "defensive-report",
+          "ok": true,
+          "summary": "Wrote local defensive coverage report: E:\\My Vault\\Hermes_AI\\123\\AI_Agent_Office\\Cyber_psycho-main\\data\\automation\\reports\\coverage-review-2026-11-10T12-06-10-812Z.md"
+        },
+        {
+          "id": "intel-ingest",
+          "ok": true,
+          "summary": "Ingest throttled — last run 2026-11-10T11:08:39.534Z"
+        },
+        {
+          "id": "autopilot",
+          "ok": true,
+          "summary": "Autopilot waiting — last cycle 2026-11-10 11:53, next after 6h."
+        }
+      ]
+    },
+    {
+      "startedAt": "2026-11-10T11:07:59.691Z",
+      "completedAt": "2026-11-10T11:08:39.535Z",
+      "jobs": [
+        {
+          "id": "vault-sync",
+          "ok": true,
+          "summary": "Vault sync: 528 notes, 0 new, 0 changed, 0 removed; learned from 0 operator note(s)."
+        },
+        {
+          "id": "surface-scan",
+          "ok": true,
+          "summary": "Scanned 73 local surfaces; 21 prioritized gaps. Vault note: 00-System/Attack Surface Coverage.md."
+        },
+        {
+          "id": "agent-training",
+          "ok": true,
+          "summary": "Added 0 confidence-ranked technique assignments from the local intel library."
+        },
+        {
+          "id": "defensive-report",
+          "ok": true,
+          "summary": "Wrote local defensive coverage report: E:\\My Vault\\Hermes_AI\\123\\AI_Agent_Office\\Cyber_psycho-main\\data\\automation\\reports\\coverage-review-2026-11-10T11-08-01-680Z.md"
+        },
+        {
+          "id": "intel-ingest",
+          "ok": true,
+          "summary": "Ingest complete: 455 harvested, 0 distilled, 0 taught, 0 evidence admitted, 0 rejected"
+        },
+        {
+          "id": "autopilot",
+          "ok": true,
+          "summary": "Autopilot waiting — last cycle 2026-11-10 07:31, next after 6h."
+        }
+      ]
+    },
+    {
+      "startedAt": "2026-11-10T07:25:31.594Z",
+      "completedAt": "2026-11-10T07:26:29.201Z",
+      "jobs": [
+        {
+          "id": "vault-sync",
+          "ok": true,
+          "summary": "Vault sync: 477 notes, 0 new, 0 changed, 0 removed; learned from 0 operator note(s)."
+        },
+        {
+          "id": "surface-scan",
+          "ok": true,
+          "summary": "Scanned 73 local surfaces; 21 prioritized gaps. Vault note: 00-System/Attack Surface Coverage.md."
+        },
+        {
+          "id": "agent-training",
+          "ok": true,
+          "summary": "Added 0 confidence-ranked technique assignments from the local intel library."
+        },
+        {
+          "id": "defensive-report",
+          "ok": true,
+          "summary": "Wrote local defensive coverage report: E:\\My Vault\\Hermes_AI\\123\\AI_Agent_Office\\Cyber_psycho-main\\data\\automation\\reports\\coverage-review-2026-11-10T07-25-34-716Z.md"
+        },
+        {
+          "id": "intel-ingest",
+          "ok": true,
+          "summary": "Ingest complete: 455 harvested, 0 distilled, 0 taught, 0 evidence admitted, 0 rejected"
+        },
+        {
+          "id": "autopilot",
+          "ok": true,
+          "summary": "Autopilot cycle: 6 change(s) — sync:ok, sources:ok, capture:ok, skills:ok, scenarios:ok, agents:ok, artifacts:ok."
+        }
+      ]
+    },
+    {
+      "startedAt": "2026-11-09T23:13:39.292Z",
+      "completedAt": "2026-11-09T23:14:20.673Z",
+      "jobs": [
+        {
+          "id": "vault-sync",
+          "ok": true,
+          "summary": "Vault sync: 364 notes, 0 new, 1 changed, 0 removed; learned from 0 operator note(s)."
+        },
+        {
+          "id": "surface-scan",
+          "ok": true,
+          "summary": "Scanned 46 local surfaces; 2 prioritized gaps. Vault note: 00-System/Attack Surface Coverage.md."
+        },
+        {
+          "id": "agent-training",
+          "ok": true,
+          "summary": "Added 0 confidence-ranked technique assignments from the local intel library."
+        },
+        {
+          "id": "defensive-report",
+          "ok": true,
+          "summary": "Wrote local defensive coverage report: C:\\Users\\ataja\\Desktop\\123\\AI_Agent_Office\\Cyber_psycho-main\\data\\automation\\reports\\coverage-review-2026-11-09T23-13-40-162Z.md"
+        },
+        {
+          "id": "intel-ingest",
+          "ok": true,
+          "summary": "Ingest complete: 460 harvested, 67 distilled, 18 taught, 0 evidence admitted, 0 rejected"
+        },
+        {
+          "id": "autopilot",
+          "ok": true,
+          "summary": "Autopilot waiting — last cycle 2026-11-09 23:13, next after 6h."
+        }
+      ]
+    }
+  ]
 }

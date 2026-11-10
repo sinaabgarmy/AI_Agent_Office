@@ -11,9 +11,11 @@ source: GitHub Advisories — Hyperledger Besu
 source_url: "https://github.com/besu-eth/besu/security/advisories/GHSA-p6f8-q9mp-7mj9"
 source_id: GHSA-p6f8-q9mp-7mj9
 confidence: 0.78
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, consensus, cwe-400]
-updated: "2026-11-05T16:34:49.439Z"
+updated: "2026-11-10T11:50:59.732Z"
 ---
 
 # Log filter and subscription address lists — Log filter and subscription address lists are unbounded and…

@@ -5,7 +5,7 @@ name: Sentinel
 ideology: White-Hat Defense
 is_custom: false
 tags: [agent]
-updated: "2026-11-07T16:19:37.862Z"
+updated: "2026-11-10T11:07:47.368Z"
 ---
 
 # Sentinel (@SentinEL)

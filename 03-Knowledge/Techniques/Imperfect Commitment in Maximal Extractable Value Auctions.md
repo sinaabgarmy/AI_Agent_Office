@@ -13,9 +13,14 @@ source_id: arxiv-imperfect-commitment-in-maximal-extracta
 confidence: 0.86
 harvested: 2026-11-04
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.404Z"
+updated: "2026-11-10T11:50:59.689Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -40,3 +45,8 @@ State the invariant formally and assert it on every state transition so violatio
 > **Refreshed 2026-11-04T18:52:17.406Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
 > **Refreshed 2026-11-04T18:54:02.460Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
 > **Refreshed 2026-11-05T16:34:49.404Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-09T23:14:19.028Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-10T07:26:05.741Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-10T08:12:51.654Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-10T11:08:39.367Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.
+> **Refreshed 2026-11-10T11:50:59.689Z** — Using the libMEV dataset, we estimate $γ(τ)$ from right-tail bribe plateaus and decompose observed auction revenue against the surplus a defecting builder could capture.

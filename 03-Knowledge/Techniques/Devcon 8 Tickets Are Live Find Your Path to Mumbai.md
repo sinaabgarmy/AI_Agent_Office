@@ -11,9 +11,11 @@ source: Ethereum Foundation Blog
 source_url: "https://blog.ethereum.org/en/2026/07/14/devcon8-tickets"
 source_id: ef-blog-devcon-8-tickets-are-live-find-your-path
 confidence: 0.59
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, execution, cwe-841]
-updated: "2026-11-05T16:34:49.373Z"
+updated: "2026-11-10T11:50:59.657Z"
 ---
 
 # Devcon 8 Tickets Are Live: Find Your Path to Mumbai

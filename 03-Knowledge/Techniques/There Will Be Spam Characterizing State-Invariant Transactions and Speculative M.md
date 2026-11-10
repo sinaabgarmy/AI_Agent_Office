@@ -12,9 +12,11 @@ source: "arXiv — MEV & Consensus"
 source_url: "http://arxiv.org/abs/2607.24172v1"
 source_id: arxiv-there-will-be-spam-characterizing-state
 confidence: 0.87
-harvested: 2026-11-05
+harvested: 2026-11-10
+origin: feed
+trust: trusted
 tags: [technique, economic, cwe-682]
-updated: "2026-11-05T16:34:49.396Z"
+updated: "2026-11-10T11:50:59.682Z"
 ---
 
 # There Will Be Spam: Characterizing State-Invariant Transactions and Speculative MEV

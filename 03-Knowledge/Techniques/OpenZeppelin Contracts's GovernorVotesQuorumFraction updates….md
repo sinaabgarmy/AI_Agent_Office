@@ -13,9 +13,14 @@ source_id: GHSA-xrc4-737v-9q75
 confidence: 0.93
 harvested: 2026-11-04
 tags: [technique, consensus, cwe-682]
-updated: "2026-11-05T16:34:49.419Z"
+updated: "2026-11-10T11:50:59.701Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ State the invariant formally and assert it on every state transition so violatio
 - Harvested: 2026-11-04T18:52:17.326Z
 > **Refreshed 2026-11-04T18:54:02.473Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
 > **Refreshed 2026-11-05T16:34:49.419Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-09T23:14:19.215Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T07:26:05.748Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T08:12:51.662Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T11:08:39.399Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.
+> **Refreshed 2026-11-10T11:50:59.701Z** — In affected instances, when a proposal is passed to lower the quorum requirement, past proposals may become executable if they had been defeated only due to lack of quorum, and the number of votes it received meets the new quorum requirement.

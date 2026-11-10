@@ -2,6 +2,10 @@
 type: system
 role: registry
 agents:
+  - "[[Uplink]]"
+  - "[[Provenance]]"
+  - "[[KeyWarden]]"
+  - "[[Quorum]]"
   - "[[ZeroCipher]]"
   - "[[0xNull]]"
   - "[[SentinEL]]"
@@ -11,13 +15,17 @@ agents:
   - "[[Bytecode]]"
   - "[[StateRoot]]"
 tags: [system, agents]
-updated: "2026-11-07T16:19:37.985Z"
+updated: "2026-11-10T11:07:47.410Z"
 ---
 
 # Agent Registry
 
-8 agents are registered in this vault.
+12 agents are registered in this vault.
 
+- [[Uplink]]
+- [[Provenance]]
+- [[KeyWarden]]
+- [[Quorum]]
 - [[ZeroCipher]]
 - [[0xNull]]
 - [[SentinEL]]

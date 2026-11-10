@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Skill Audit</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--ink:#14181f;--muted:#5b6472;--line:#e2e6ec;
+  --accent:#0b6e99;--accent-soft:#dcedf5;--track:#e9edf2;
+  --crit:#b3261e;--crit-bg:#fbe9e7;--high:#9a5b00;--high-bg:#fff1d6;--med:#3d5a80;--med-bg:#e6edf6;
+  --ok:#1b6e3c;--ok-bg:#e3f4e9;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1319;--surface:#171c24;--ink:#e8ecf2;--muted:#98a2b3;--line:#262d38;
+    --accent:#5ab8dd;--accent-soft:#16303c;--track:#232a35;
+    --crit:#ff8a80;--crit-bg:#3a1a18;--high:#ffc46b;--high-bg:#35280f;--med:#a9c1e6;--med-bg:#1b2637;
+    --ok:#7fd4a0;--ok-bg:#143021;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 56px}
+header.top{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1{font-size:28px;line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:18px;margin:36px 0 12px;letter-spacing:-.005em}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.lede{color:var(--muted);max-width:68ch}
+.meta{color:var(--muted);font-size:13px}
+a{color:var(--accent)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.tile .n{font-size:26px;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+.tile .s{font-size:12px;color:var(--muted);margin-top:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+.scroll{overflow-x:auto}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.03em;text-transform:uppercase;
+  padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{height:8px;border-radius:999px;background:var(--track);overflow:hidden;min-width:90px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.row{display:grid;grid-template-columns:minmax(110px,170px) 1fr auto;gap:12px;align-items:center;padding:7px 0;
+  border-bottom:1px solid var(--line);font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .v{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap;
+  background:var(--med-bg);color:var(--med)}
+.pill.crit{background:var(--crit-bg);color:var(--crit)}
+.pill.high{background:var(--high-bg);color:var(--high)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.plain{background:var(--accent-soft);color:var(--accent)}
+.quiet{color:var(--muted)}
+.hyp{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:8px 0}
+.small{font-size:13px}
+ul.flat{list-style:none;margin:0;padding:0}
+ul.flat li{padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+ul.flat li:last-child{border-bottom:0}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+@media print{body{background:#fff}.card,.tile{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Skill library</div>
+  <h1>Skill Audit</h1>
+  <p class="lede">Which procedures the agents actually use, which sit idle, and which the pruner retired. Retired skills are archived in the vault and can be restored from the Autopilot tab.</p>
+  <p class="meta">Generated 2026-11-10 07:26 UTC · ChronoZero Exploit Defect Lab · local, self-contained document</p>
+</header>
+<div class="grid">
+    <div class="tile"><div class="n">61</div><div class="l">active skills</div></div>
+    <div class="tile"><div class="n">1</div><div class="l">applied at least once</div><div class="s">5 total uses</div></div>
+    <div class="tile"><div class="n">60</div><div class="l">never applied</div></div>
+    <div class="tile"><div class="n">39</div><div class="l">retired</div><div class="s">archived, restorable</div></div>
+  </div>
+<h2>Most applied</h2>
+<div class="card"><div class="row"><div>Hunt State divergence enables unauthorized access</div><div class="bar" role="img" aria-label="Hunt State divergence enables unauthorized access: 5×"><i style="width:100%"></i></div><div class="v">5×</div></div></div>
+<h2>Active but never applied</h2>
+<div class="card scroll"><table>
+  <thead><tr><th>Skill</th><th>Kind</th><th>Domain</th><th class="num">Confidence</th></tr></thead>
+  <tbody><tr><td>Hunt OpenZeppelin Contracts — Versions 4.0.0 until 4.7.1 are vulnerable to ERC165Checker reverting instead…</td><td>hunt</td><td>Execution</td><td class="num">98%</td></tr><tr><td>Hunt An integer overflow in the batchTransfer function of a smart…</td><td>hunt</td><td>Execution</td><td class="num">98%</td></tr><tr><td>Hunt TimelockController vulnerability in OpenZeppelin Contracts</td><td>hunt</td><td>Governance</td><td class="num">98%</td></tr><tr><td>Hunt OpenZeppelin Contracts — Versions 4.1.0 until 4.7.1 are vulnerable to the SignatureChecker reverting.</td><td>hunt</td><td>Execution</td><td class="num">97%</td></tr><tr><td>Hunt OpenZeppelin Contracts initializer reentrancy may lead to double initialization</td><td>hunt</td><td>Execution</td><td class="num">97%</td></tr><tr><td>Hunt OpenZeppelin Contracts Bytes&#39;s lastIndexOf function with…</td><td>hunt</td><td>Consensus</td><td class="num">97%</td></tr><tr><td>Hunt zksolc — All LLVM versions since 2015 fold `(xor (shl 1, x), -1)` to `(rotl ~1, x)` if…</td><td>hunt</td><td>Execution</td><td class="num">94%</td></tr><tr><td>Hunt Smart Contract Security Beyond Detection</td><td>hunt</td><td>Execution</td><td class="num">94%</td></tr><tr><td>Hunt OpenZeppelin Contracts vulnerable to ECDSA signature malleability</td><td>hunt</td><td>Cryptography</td><td class="num">93%</td></tr><tr><td>Hunt GovernorCompatibilityBravo incorrect ABI encoding may lead to unexpected behavior</td><td>hunt</td><td>Governance</td><td class="num">93%</td></tr><tr><td>Hunt OpenZeppelin Contracts using MerkleProof multiproofs may — allow proving arbitrary leaves for specific trees</td><td>hunt</td><td>Cryptography</td><td class="num">93%</td></tr><tr><td>Hunt The transferFrom function of a smart contract implementation… — attackers to steal assets (e</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The Owned smart contract implementation for Aurora IDEX… — attackers to acquire contract ownership because…</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The request_dividend function of a smart contract… — attackers to steal all of the contract&#39;s Ether</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The approveAndCallcode function of a smart contract… — attackers to steal assets (e</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The buy function of a smart contract implementation for Gold… — a potential trap that could be used to cause…</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The sell function of a smart contract implementation for… — a potential trap that could be used to cause…</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt The mintToken function of a smart contract implementation for… — the owner to increase the total s</td><td>hunt</td><td>Execution</td><td class="num">91%</td></tr><tr><td>Hunt OpenZeppelin Contracts&#39;s SignatureChecker may revert on invalid EIP-1271 signers</td><td>hunt</td><td>Execution</td><td class="num">88%</td></tr><tr><td>Hunt OpenZeppelin Contracts&#39;s ERC165Checker may revert instead of returning false</td><td>hunt</td><td>Execution</td><td class="num">88%</td></tr><tr><td>Hunt How Much Must a Private Mempool Hide? Exact Leakage Thresholds for Sandwich Attacks</td><td>hunt</td><td>Economic</td><td class="num">87%</td></tr><tr><td>Hunt ERC1155Supply vulnerability in OpenZeppelin Contracts</td><td>hunt</td><td>Execution</td><td class="num">87%</td></tr><tr><td>Hunt OpenZeppelin Contracts&#39;s Cross chain utilities for Arbitrum…</td><td>hunt</td><td>L2 / Bridge</td><td class="num">85%</td></tr><tr><td>Hunt UUPSUpgradeable vulnerability in @openzeppelin/contracts</td><td>hunt</td><td>Execution</td><td class="num">84%</td></tr><tr><td>Hunt Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins</td><td>hunt</td><td>L2 / Bridge</td><td class="num">82%</td></tr><tr><td>Hunt OpenZeppelin Contracts vulnerable to Improper Escaping of Output</td><td>hunt</td><td>Supply Chain</td><td class="num">77%</td></tr><tr><td>Hunt Ethereum Solidity v0.8.14 — Ethereum Solidity v0.8.14 contains an assertion failure via…</td><td>hunt</td><td>Execution</td><td class="num">75%</td></tr><tr><td>Hunt OpenZeppelin Contracts TransparentUpgradeableProxy clashing selector calls may not be delegated</td><td>hunt</td><td>Cryptography</td><td class="num">74%</td></tr><tr><td>Hunt OpenZeppelin Contracts contains Incorrect Calculation</td><td>hunt</td><td>Execution</td><td class="num">71%</td></tr><tr><td>Hunt PSR2: A Phase-based Semantic Reasoning Framework for…</td><td>hunt</td><td>Execution</td><td class="num">69%</td></tr><tr><td>Hunt Building secure Uniswap v4 hooks</td><td>hunt</td><td>Execution</td><td class="num">68%</td></tr><tr><td>Hunt MoveScanner: Analysis of Security Risks of Move Smart Contracts</td><td>hunt</td><td>Execution</td><td class="num">68%</td></tr><tr><td>Probe Aggregate Signature Forgery on Attestation Sets</td><td>probe</td><td>Consensus</td><td class="num">60%</td></tr><tr><td>Probe Permit2 Signature Replay Across Nonces</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe ERC-4337 Validation Rule Bypass</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Rogue-Key Attack on BLS Aggregation</td><td>probe</td><td>Cryptography</td><td class="num">60%</td></tr><tr><td>Probe Delegatecall Storage Layout Collision</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Selfdestruct-and-Redeploy Identity Confusion</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Dependency Confusion on a Public Registry</td><td>probe</td><td>Supply Chain</td><td class="num">60%</td></tr><tr><td>Probe Encrypted-State Leakage via Decryption Oracles</td><td>probe</td><td>Cryptography</td><td class="num">60%</td></tr><tr><td>Probe Restaked Security Correlated Slashing</td><td>probe</td><td>Consensus</td><td class="num">60%</td></tr><tr><td>Probe Fast-Finality Signature Aggregation Overload</td><td>probe</td><td>Consensus</td><td class="num">60%</td></tr><tr><td>Probe Shared Sequencer Cross-Rollup Atomicity</td><td>probe</td><td>L2 / Bridge</td><td class="num">60%</td></tr><tr><td>Probe Prover Market Liveness Failure</td><td>probe</td><td>L2 / Bridge</td><td class="num">60%</td></tr><tr><td>Probe Model-Driven Delegate Capture</td><td>probe</td><td>Governance</td><td class="num">60%</td></tr><tr><td>Probe Security Council as a Permanent Upgrade Path</td><td>probe</td><td>Governance</td><td class="num">60%</td></tr><tr><td>Probe RPC and Indexer Monoculture</td><td>probe</td><td>Infrastructure</td><td class="num">60%</td></tr><tr><td>Probe Data-Availability Fee Market Starvation</td><td>probe</td><td>Infrastructure</td><td class="num">60%</td></tr><tr><td>Probe Hallucinated Dependency Registration</td><td>probe</td><td>Supply Chain</td><td class="num">60%</td></tr><tr><td>Probe Compiler and Prover Toolchain Divergence</td><td>probe</td><td>Supply Chain</td><td class="num">60%</td></tr><tr><td>Probe Passkey and Social-Recovery Weakest Path</td><td>probe</td><td>Key Management</td><td class="num">60%</td></tr><tr><td>Probe MPC Custody Provider Concentration</td><td>probe</td><td>Key Management</td><td class="num">60%</td></tr><tr><td>Probe Over-Broad Authority Delegated to Agents</td><td>probe</td><td>Key Management</td><td class="num">60%</td></tr><tr><td>Probe Post-Quantum Migration Window</td><td>probe</td><td>Cryptography</td><td class="num">60%</td></tr><tr><td>Probe Delegated Account Code Persistence</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Transient-Storage Lifetime Assumption</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Hook and Plugin Callback Authority</td><td>probe</td><td>Execution</td><td class="num">60%</td></tr><tr><td>Probe Autonomous Agent Wallet Steering</td><td>probe</td><td>Economic</td><td class="num">60%</td></tr><tr><td>Probe Native Interop Message Domain Confusion</td><td>probe</td><td>L2 / Bridge</td><td class="num">60%</td></tr><tr><td>Probe Frontend and Signing-UI Substitution</td><td>probe</td><td>Supply Chain</td><td class="num">60%</td></tr></tbody>
+</table></div>
+<h2>Retired</h2>
+<div class="card scroll"><table>
+  <thead><tr><th>Skill</th><th>Domain</th><th>Reason</th><th>Retired</th></tr></thead>
+  <tbody><tr><td>Hunt GNU Bourne-Again Shell (Bash) Arbitrary Code Execution… — GNU Bourne-Again Shell (Bash) Arbitrary Code…</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt OSGeo GeoServer Improper Restriction of XML External Entity…</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Broadcom VMware Aria Operations and VMware Tools Privilege… — Broadcom VMware Aria Operations and VMware…</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Clear Signing: Making Transaction Approvals Safer on Ethereum</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt ETH Rangers Program Recap</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Raising machine-checked security benchmarks to advance…</td><td>Cryptography</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Allocation Update - Q1 2026</td><td>Cryptography</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Announcing a Trillion Dollar Security grant for WEBCAT</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Designing for sovereignty: Ethereum for digital public infrastructure</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt How L1 and L2s can build the strongest possible Ethereum</td><td>L2 / Bridge</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Solidity Meets LLMs: A Transformer-Based Approach to Smart Contract Vulnerability Detection</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt CyberChainBench: Can AI Agents Secure Smart Contracts Against… — AI Agents Secure Smart Contracts Against…</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt EVMbench: Evaluating AI Agents on Smart Contract Security</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Where Do Smart Contract Security Analyzers Fall Short?</td><td>Economic</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt USCSA: Evolution-Aware Security Analysis for Proxy-Based Upgradeable Smart Contracts</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt A Risk-Stratified Benchmark Dataset for Bad Randomness… — A Risk-Stratified Benchmark Dataset for Bad…</td><td>Cryptography</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt Demystifying Agent Skills for Smart Contract Auditing: Design, Effectiveness, Behavioral Impact</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt On the Shoulders of Giants: Empowering Automated Smart Contract Auditing via the GiAnt Corpus</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt CHAINTRIX: A multi-pipeline LLM-augmented framework for…</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:23</td></tr><tr><td>Hunt RISC Zero</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt OpenZeppelin Contracts Wizard</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt era-compiler-solidity</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Solidity 0.7.5 — in smtutil::CHCSmtLib2Interface::querySolver</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt An integer overflow in the transferProxy function of a smart…</td><td>Execution</td>
+      <td><span class="pill high">duplicate</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt An integer overflow in the transferMulti function of a smart…</td><td>Execution</td>
+      <td><span class="pill high">duplicate</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt An integer overflow in the _transfer function of a smart…</td><td>Execution</td>
+      <td><span class="pill high">duplicate</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Apple iOS, iPadOS, and watchOS Wallet Code Execution… — Apple iOS, iPadOS, and watchOS Wallet Code Execution…</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Apache Struts Remote Code Execution Vulnerability — Apache Struts</td><td>Execution</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Fortinet Multiple Products Improper Verification of…</td><td>Cryptography</td>
+      <td><span class="pill high">off-domain</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt This Is Fine (Until the Grant Runs Out)</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Introducing zkAPI: private usage credits for any API</td><td>Cryptography</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt How native transaction assertions could enforce a transaction&#39;s final outcome</td><td>Cryptography</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Allocation Update - Q2 2026</td><td>Cryptography</td>
+      <td><span class="pill high">duplicate</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Glamsterdam Testnet Announcement</td><td>Consensus</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Announcing the Platåberget Testnet</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt The triage is the product: running AI agents against Ethereum&#39;s protocol code</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Protocol Cluster Updates: May 2026</td><td>Execution</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr><tr><td>Hunt Treasury Staking Initiative</td><td>Economic</td>
+      <td><span class="pill high">not-a-defect</span></td><td class="quiet">2026-11-09 23:13</td></tr></tbody>
+</table></div>
+<footer>
+  This artifact was generated automatically from the local knowledge vault. Coverage scores measure how much the
+  council has argued and learned about a topic — they are not predictions of real-world exploitability.
+  Web captures and techniques marked “unverified” have not been reviewed by a human.
+</footer>
+</div>
+</body>
+</html>

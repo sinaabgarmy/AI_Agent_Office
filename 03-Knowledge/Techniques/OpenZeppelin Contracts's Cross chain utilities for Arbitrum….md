@@ -13,9 +13,14 @@ source_id: GHSA-9j3m-g383-29qr
 confidence: 0.85
 harvested: 2026-11-04
 tags: [technique, l-bridge, cwe-669]
-updated: "2026-11-05T16:34:49.412Z"
+updated: "2026-11-10T11:50:59.695Z"
 status: known
 ---
+
+
+
+
+
 
 
 
@@ -38,3 +43,8 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - Harvested: 2026-11-04T18:52:17.324Z
 > **Refreshed 2026-11-04T18:54:02.467Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
 > **Refreshed 2026-11-05T16:34:49.412Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-09T23:14:19.136Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-10T07:26:05.745Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-10T08:12:51.658Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-10T11:08:39.385Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.
+> **Refreshed 2026-11-10T11:50:59.695Z** — This is assessed as low severity because any action taken by an EOA on the contract could also be taken by the EOA through the bridge if the issue was not present.

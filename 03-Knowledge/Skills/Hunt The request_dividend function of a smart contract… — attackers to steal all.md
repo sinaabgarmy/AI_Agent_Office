@@ -19,8 +19,18 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-841]
-updated: "2026-11-05T16:35:51.822Z"
+updated: "2026-11-10T12:06:24.778Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt The request_dividend function of a smart contract… — attackers to steal all of the contract's Ether
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-841 · **Confidence:** 91%
@@ -52,3 +62,12 @@ Never make an external call before final state mutation; validate the return val
 - NVD — Ethereum CVEs — tech-the-request-dividend-function-of-a-smart-con
 - https://nvd.nist.gov/vuln/detail/CVE-2018-10944
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.399Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-09T23:23:30.886Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:26:24.971Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:27:22.254Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:28:19.692Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:30:39.133Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T07:31:07.314Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T11:49:59.848Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.
+> **Refreshed 2026-11-10T12:06:24.778Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-841.

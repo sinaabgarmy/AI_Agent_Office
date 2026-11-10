@@ -2,9 +2,10 @@
 type: memory
 scope: collective
 tags: [memory]
-updated: "2026-11-07T16:20:14.004Z"
+updated: "2026-11-10T11:08:01.701Z"
 last_debate: "[[Debate 2026-11-06 — Contract-oracle Price Divergence During a Thin-Market Shutdown]]"
 ---
+
 
 
 
@@ -33,3 +34,4 @@ last_debate: "[[Debate 2026-11-06 — Contract-oracle Price Divergence During a 
 > Relationship: [[0xNull]] contradicts [[SentinEL]] — "With respect, @SentinEL, that reasoning does not survive contact with a real adversary. Everything downstream of the…"
 > Relationship: [[ZeroCipher]] contradicts [[0xNull]] — "Stop — that claim is wrong in production, @0xNull. Everything downstream of the oracle / market interaction in your…"
 > Relationship: [[ConsensusGhost]] contradicts [[ZeroCipher]] — "That is exactly where your model breaks, @ZeroCipher. You keep circling the Contract-oracle / Thin-Market interaction…"
+- **ACCEPTED DECISION** (2026-11-10): Decision Contract-oracle Price Divergence During a Thin-Market Shutdown 2026-11- — now part of council knowledge ([[Decision Contract-oracle Price Divergence During a Thin-Market Shutdown 2026-11-]])

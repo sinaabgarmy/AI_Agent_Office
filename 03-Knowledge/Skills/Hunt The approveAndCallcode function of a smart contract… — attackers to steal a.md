@@ -19,8 +19,18 @@ confidence: 0.91
 created: "2026-11-05T16:15:55.468Z"
 times_used: 0
 tags: [skill, hunt, execution, cwe-20]
-updated: "2026-11-05T16:35:51.823Z"
+updated: "2026-11-10T12:06:24.779Z"
+status: active
 ---
+
+
+
+
+
+
+
+
+
 
 # Hunt The approveAndCallcode function of a smart contract… — attackers to steal assets (e
 > **Kind:** hunt · **Domain:** Execution · **CWE:** CWE-20 · **Confidence:** 91%
@@ -52,3 +62,12 @@ Adopt the upstream advisory’s remediation guidance and verify the fix against 
 - NVD — Ethereum CVEs — tech-the-approveandcallcode-function-of-a-smart-c
 - https://nvd.nist.gov/vuln/detail/CVE-2018-12702
 - Built: 2026-11-05T16:15:55.468Z · Times used: 0
+> **Refreshed 2026-11-09T23:13:46.436Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-09T23:23:30.907Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:26:24.971Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:27:22.255Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:28:19.692Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:30:39.133Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T07:31:07.315Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T11:49:59.849Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.
+> **Refreshed 2026-11-10T12:06:24.779Z** — When reviewing or red-teaming code in the Execution layer, or when the target system mentions CWE-20.

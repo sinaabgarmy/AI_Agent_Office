@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "description": "Holdout set for ChronoZero evaluation - IntelEngine is forbidden from harvesting these",
+  "contracts": [
+    {
+      "id": "holdout-001",
+      "name": "ReentrancyVulnerable",
+      "cwe": "CWE-841",
+      "vulnerableCommit": "abc123def456",
+      "patchedCommit": "def456abc123",
+      "description": "Classic reentrancy in withdraw function",
+      "sourceFiles": {
+        "contracts/ReentrancyVulnerable.sol": "// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract ReentrancyVulnerable {
+  mapping(address => uint256) public balances;
+  
+  function deposit() external payable {
+    balances[msg.sender] += msg.value;
+  }
+  
+  function withdraw() external {
+    uint256 amount = balances[msg.sender];
+    (bool success, ) = msg.sender.call{value: amount}("");
+    require(success);
+    balances[msg.sender] = 0;
+  }
+}"
+      }
+    },
+    {
+      "id": "holdout-002",
+      "name": "UncheckedReturn",
+      "cwe": "CWE-252",
+      "vulnerableCommit": "ghi789jkl012",
+      "patchedCommit": "jkl012ghi789",
+      "description": "Unchecked return value from low-level call",
+      "sourceFiles": {
+        "contracts/UncheckedReturn.sol": "// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract UncheckedReturn {
+  function sendEth(address payable to) external {
+    to.call{value: 1 ether}(""); // No check
+  }
+}"
+      }
+    },
+    {
+      "id": "holdout-003",
+      "name": "IntegerOverflow",
+      "cwe": "CWE-190",
+      "vulnerableCommit": "mno345pqr678",
+      "patchedCommit": "pqr678mno345",
+      "description": "Integer overflow in Solidity < 0.8",
+      "sourceFiles": {
+        "contracts/IntegerOverflow.sol": "// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.0;
+
+contract IntegerOverflow {
+  uint8 public counter;
+  
+  function increment() external {
+    counter = counter + 1; // Overflows at 255
+  }
+}"
+      }
+    },
+    {
+      "id": "holdout-004",
+      "name": "AccessControlMissing",
+      "cwe": "CWE-284",
+      "vulnerableCommit": "stu901vwx234",
+      "patchedCommit": "vwx234stu901",
+      "description": "Missing access control on critical function",
+      "sourceFiles": {
+        "contracts/AccessControlMissing.sol": "// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract AccessControlMissing {
+  address public owner;
+  
+  constructor() { owner = msg.sender; }
+  
+  function criticalFunction() external {
+    // Missing onlyOwner modifier
+    selfdestruct(payable(msg.sender));
+  }
+}"
+      }
+    },
+    {
+      "id": "holdout-005",
+      "name": "TimestampDependence",
+      "cwe": "CWE-829",
+      "vulnerableCommit": "yz567abc890",
+      "patchedCommit": "abc890yz567",
+      "description": "Block timestamp used for entropy",
+      "sourceFiles": {
+        "contracts/TimestampDependence.sol": "// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TimestampDependence {
+  function random() public view returns (uint256) {
+    return uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty)));
+  }
+}"
+      }
+    }
+  ],
+  "forbiddenSources": [
+    "nvd",
+    "cisa-kev",
+    "ghsa",
+    "osv",
+    "github-advisories",
+    "rss-feeds"
+  ],
+  "createdAt": "2026-11-08T00:00:00.000Z",
+  "note": "These contracts are for evaluation ONLY. IntelEngine must not harvest or teach these."
+}
