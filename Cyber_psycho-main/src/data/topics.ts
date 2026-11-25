@@ -5,6 +5,15 @@ import { DebateTopic, BotId } from '../types';
 // 8 bots × 5 claim types × 3 distinct argument angles (120+ hand-written theses)
 export const DEBATE_TOPICS: DebateTopic[] = [
   {
+    id: 'topic-seed-entropy-custody',
+    title: 'SEED Phrase Entropy, Signing Nonce, and Custody Failure Chain',
+    category: 'Cryptographic Vulnerability',
+    targetArchitecture: 'Wallet seed generation, key derivation, MPC signing, and hardware custody',
+    coreHypothesis: 'Wallet funds are lost when a system mistakes low or reproducible entropy, weakened nonce consumption, unsafe derivation, or provenance loss for a cryptographically strong secret.',
+    defaultInvolvedBots: ['entropy', 'keywarden', 'zerocipher', 'vesper', 'stateroot'],
+    briefing: 'Debate the documented seed/entropy failure chain as a defensive control problem: weak or timestamp-only seeding, non-cryptographic PRNG misuse, incorrect consumption, recoverable ECDSA/ECDH or MPC nonce state, dependency rediscovery, boot-time entropy starvation, parser/curve-validation gaps, and hardware or memory leakage. For every claim, identify the invariant at risk, the earliest failing control, the measurable blast radius, and the mitigation that would stop the loss. Cover: Debian OpenSSL, Android SecureRandom, brainwallets, Randstorm/BitcoinJS, Cake Wallet, Profanity, Trust Wallet, Milk Sad/Libbitcoin, Coldcard, Ill Bloom/CryptoJS, Dual_EC_DRBG, PS3 nonce reuse, shared RSA primes, biased or timed-out ECDSA nonces, TPM-Fail, Polynonce, seedless custody, LLM-generated secrets, threshold/MPC nonce state, transitive dependencies, cloned boot images, and x-only/twist validation. Do not propose recovery of real secrets or exploitation of live systems. Focus on entropy provenance, fail-closed generation, independent reseeding, nonce single-use design, key rotation, multi-vendor custody, supply-chain age, attestation limits, and migration front-running defenses.',
+  },
+  {
     id: 'topic-1',
     title: 'ECDSA Nonce Collapse Across Validator Clusters',
     category: 'Cryptographic Vulnerability',
